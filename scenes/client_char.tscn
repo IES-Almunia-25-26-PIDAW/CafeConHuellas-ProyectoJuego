@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://cqfch5q72r07h"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6svsa"]
+[ext_resource type="Script" uid="uid://ducp5cr3uoka" path="res://scripts/client_char_sprite.gd" id="1_5rvex"]
+[ext_resource type="SpriteFrames" uid="uid://u2kasffg4rdv" path="res://assets/sprites/jasmine/jasmine_sprites.tres" id="1_tbvm5"]
 
-[node name="ClientChar" type="Node2D" unique_id=253241685]
+[node name="ClientCharSprite" type="Node2D" unique_id=253241685]
+position = Vector2(2, 0)
+script = ExtResource("1_5rvex")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=98979566]
-sprite_frames = SubResource("SpriteFrames_6svsa")
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=98979566]
+sprite_frames = ExtResource("1_tbvm5")
+animation = &"1_idle"
+frame_progress = 0.4852898

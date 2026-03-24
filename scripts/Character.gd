@@ -1,0 +1,42 @@
+class_name Character
+extends Node
+
+# Nombres de los personajes
+enum Name {
+	HUNTER,
+	JASMINE
+}
+
+# Información de los personajes
+const CHARACTER_DETAILS : Dictionary = {
+	Name.HUNTER: {
+		"name": "Hunter",
+		"sprite_frames": null,
+		"gender": "placeholder"
+	},
+	Name.JASMINE: {
+		"name": "Jasmine",
+		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
+		"gender": "female"
+	}
+}
+
+
+
+# Compara el nombre pasado con el del Enum para saber si existe
+static func get_enum_from_string(string_value: String) -> int:
+	var upper_string = string_value.to_upper()
+	if Name.has(upper_string):
+		return Name[upper_string]
+	else:
+		push_error("Invalid Character name: " + string_value)
+		return -1
+		
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass

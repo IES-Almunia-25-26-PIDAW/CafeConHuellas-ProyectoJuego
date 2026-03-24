@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://ldy3wgojlhqt"]
 
 [ext_resource type="Texture2D" uid="uid://bpmr4n1xqsx65" path="res://assets/images/fondodefault.jpg" id="1_hmmco"]
+[ext_resource type="Script" uid="uid://bn854aaerntbw" path="res://scripts/cafe_client_zone.gd" id="1_uemky"]
 [ext_resource type="PackedScene" uid="uid://cqfch5q72r07h" path="res://scenes/client_char.tscn" id="1_wf4sh"]
 [ext_resource type="PackedScene" uid="uid://ckiusgx7smoia" path="res://scenes/dialog_ui.tscn" id="2_ahhn6"]
 
-[node name="Scene" type="Node2D" unique_id=1225861441]
+[node name="CafeClientScene" type="Node2D" unique_id=1225861441]
+script = ExtResource("1_uemky")
 
 [node name="BackgroundCanvas" type="CanvasLayer" parent="." unique_id=474721871]
 layer = -1
@@ -20,6 +22,7 @@ texture = ExtResource("1_hmmco")
 [node name="CharacterCanvas" type="CanvasLayer" parent="." unique_id=133093996]
 
 [node name="Control" type="Control" parent="CharacterCanvas" unique_id=1528288476]
+y_sort_enabled = true
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -27,13 +30,21 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -20.0
-offset_top = -40.0
+offset_top = -540.0
 offset_right = 20.0
+offset_bottom = -500.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ClientChar" parent="CharacterCanvas/Control" unique_id=253241685 instance=ExtResource("1_wf4sh")]
+[node name="ClientCharSprite" parent="CharacterCanvas/Control" unique_id=253241685 instance=ExtResource("1_wf4sh")]
+unique_name_in_owner = true
 
-[node name="DialogUI" parent="." unique_id=1131618186 instance=ExtResource("2_ahhn6")]
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="DialogUI" parent="CharacterCanvas" unique_id=1131618186 instance=ExtResource("2_ahhn6")]
+unique_name_in_owner = true
+z_index = 1
+y_sort_enabled = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+grow_vertical = 0
