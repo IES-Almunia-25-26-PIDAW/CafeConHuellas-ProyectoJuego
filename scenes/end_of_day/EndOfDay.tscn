@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://dvcbw7q5lgxi6"]
+
+[ext_resource type="PackedScene" uid="uid://dfnerxyusdom8" path="res://scenes/end_of_day/PetSlot.tscn" id="1_pc0ax"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b547"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="EndOfDay" type="Control" unique_id=731455252]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1019281742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MonitorPanel" type="PanelContainer" parent="." unique_id=1967513049]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.1
+anchor_right = 0.85
+anchor_bottom = 0.9
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b547")
+
+[node name="MonitorVBox" type="VBoxContainer" parent="MonitorPanel" unique_id=730331914]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TabBarHBox" type="HBoxContainer" parent="MonitorPanel/MonitorVBox" unique_id=1599889039]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BtnMascotas" type="Button" parent="MonitorPanel/MonitorVBox/TabBarHBox" unique_id=1917348125]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MASCOTAS"
+
+[node name="BtnCorreo" type="Button" parent="MonitorPanel/MonitorVBox/TabBarHBox" unique_id=214598717]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CORREO"
+
+[node name="BtnDiario" type="Button" parent="MonitorPanel/MonitorVBox/TabBarHBox" unique_id=1536321505]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DIARIO"
+
+[node name="ContentStack" type="Control" parent="MonitorPanel/MonitorVBox" unique_id=341289216]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelMascotasGrid" type="GridContainer" parent="MonitorPanel/MonitorVBox/ContentStack" unique_id=726260830]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.04
+anchor_right = 0.386
+anchor_bottom = 0.368
+offset_right = 780.0
+offset_bottom = 462.0
+theme_override_constants/h_separation = 90
+theme_override_constants/v_separation = 90
+columns = 3
+
+[node name="PetSlot1" parent="MonitorPanel/MonitorVBox/ContentStack/PanelMascotasGrid" unique_id=1715224122 instance=ExtResource("1_pc0ax")]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="PetSlot2" parent="MonitorPanel/MonitorVBox/ContentStack/PanelMascotasGrid" unique_id=1414948206 instance=ExtResource("1_pc0ax")]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="PetSlot3" parent="MonitorPanel/MonitorVBox/ContentStack/PanelMascotasGrid" unique_id=1899561041 instance=ExtResource("1_pc0ax")]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="PetSlot4" parent="MonitorPanel/MonitorVBox/ContentStack/PanelMascotasGrid" unique_id=2033233853 instance=ExtResource("1_pc0ax")]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="PetSlot5" parent="MonitorPanel/MonitorVBox/ContentStack/PanelMascotasGrid" unique_id=452466634 instance=ExtResource("1_pc0ax")]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="PetSlot6" parent="MonitorPanel/MonitorVBox/ContentStack/PanelMascotasGrid" unique_id=1957364596 instance=ExtResource("1_pc0ax")]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="PanelCorreoVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack" unique_id=761186461]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelDiarioVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack" unique_id=139059939]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

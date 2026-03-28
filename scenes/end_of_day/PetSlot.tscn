@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dfnerxyusdom8"]
+
+[ext_resource type="Texture2D" uid="uid://20ivsh0p3q74" path="res://assets/placeholders/pet_slot_empty.png" id="1_56iim"]
+[ext_resource type="Texture2D" uid="uid://1y1eq2j6k8ne" path="res://assets/placeholders/icon_hunger.png" id="2_mbqpe"]
+[ext_resource type="Texture2D" uid="uid://ddrkvsof3s34q" path="res://assets/placeholders/icon_play.png" id="3_shl31"]
+[ext_resource type="Texture2D" uid="uid://cfp7yw6hboucb" path="res://assets/placeholders/icon_love.png" id="4_i43mv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56iim"]
+content_margin_left = 0.0
+content_margin_top = 5.0
+content_margin_right = 0.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="PetSlot" type="PanelContainer" unique_id=1715224122]
+custom_minimum_size = Vector2(200, 180)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_56iim")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=96839797]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="PetPortrait" type="TextureRect" parent="VBoxContainer" unique_id=1839378060]
+custom_minimum_size = Vector2(170, 130)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_56iim")
+
+[node name="StatsRowHBox" type="HBoxContainer" parent="VBoxContainer" unique_id=2053045135]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="HungerIcon" type="TextureRect" parent="VBoxContainer/StatsRowHBox" unique_id=378028545]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("2_mbqpe")
+
+[node name="PlayIcon" type="TextureRect" parent="VBoxContainer/StatsRowHBox" unique_id=372140671]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("3_shl31")
+
+[node name="LoveIcon" type="TextureRect" parent="VBoxContainer/StatsRowHBox" unique_id=1302034098]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("4_i43mv")
