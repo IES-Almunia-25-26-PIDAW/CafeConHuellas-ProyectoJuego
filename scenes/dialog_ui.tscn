@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ckiusgx7smoia"]
 
 [ext_resource type="Script" uid="uid://d0ds4l5tdca5r" path="res://scripts/dialog_ui.gd" id="1_xh3aw"]
+[ext_resource type="PackedScene" uid="uid://d0d4a32nx5fsy" path="res://scenes/player_choice.tscn" id="2_yjvli"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n58gf"]
 content_margin_left = 40.0
@@ -38,6 +39,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xh3aw")
+
+[node name="ChoicesContainer" type="CenterContainer" parent="." unique_id=1809819943]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -780.0
+offset_right = 500.0
+offset_bottom = -480.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ChoiceList" type="VBoxContainer" parent="ChoicesContainer" unique_id=1289251704]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 300)
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Button" parent="ChoicesContainer/ChoiceList" unique_id=1336306988 instance=ExtResource("2_yjvli")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="DialogBox" type="PanelContainer" parent="." unique_id=937349112]
 custom_minimum_size = Vector2(1000, 250)

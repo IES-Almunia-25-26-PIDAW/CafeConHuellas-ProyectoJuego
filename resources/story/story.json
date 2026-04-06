@@ -1,7 +1,23 @@
 [
 	{"speaker": "Jasmine", "text": "Hola, soy Jasmine. Esto es un ejemplo de texto."},
 	{"speaker": "Hunter", "text": "Hola, yo soy Hunter. Esto también es un ejemplo de texto."},
+	{"choices": 
+		[
+			{"text": "Primera.", "goto": "first_choice"},
+			{"text": "Segunda.", "goto": "second_choice"}
+		]
+	},
 	{"speaker": "Jasmine", "text": "Ojalá todo funcione bien."},
 	{"speaker": "Hunter", "text": "Eso espero T_T"},
-	{"speaker": "Jasmine", "text": "Probando las elecciones"},
+	
+	{"anchor": "first_choice"},
+	{"speaker": "Jasmine", "text": "Primera elección."},
+	{"goto": "end"},
+	
+	{"anchor": "second_choice"},
+	{"speaker": "Jasmine", "text": "Segunda  elección."},
+	{"goto": "end"},
+	
+	{"anchor": "end"},
+	{"speaker": "Hunter", "text": "Rarete"},
 ]

@@ -29,9 +29,37 @@ func _input(event):
 
 func process_current_line():
 	var line = dialog_lines[dialog_index]
-	var character_name = Character.get_enum_from_string(line["speaker"])
-	dialog_ui.change_line(character_name, line["text"])
-	character_sprite.change_character(character_name)
+	
+	# Mira si es un goto
+	if line.has("goto"):
+		dialog_index = get_anchor_position(line["goto"])
+		process_current_line()
+		return
+		
+	# Mira si es un anchor (no se muestra nada)
+	if line.has("anchor"):
+		dialog_index += 1
+		process_current_line()
+		return
+	
+	if line.has("choices"):
+		# Muestra las opciones
+		dialog_ui.display_choices(line["choices"])
+	else:
+		# Lee la línea del diálogo
+		var character_name = Character.get_enum_from_string(line["speaker"])
+		dialog_ui.change_line(character_name, line["text"])
+		character_sprite.change_character(character_name)
+	
+func get_anchor_position(anchor: String):
+	# Encuentra el anchor con el nombre correspondiente
+	for i in range(dialog_lines.size()):
+		if dialog_lines[i].has("anchor") and dialog_lines[i]["anchor"] == anchor:
+			return 1
+			
+	# Si llegamos a este error es que no se ha encontrado el anchor
+	printerr("Error: No se ha encontrado el anchor: ", anchor)
+	return null
 
 # Función para cargar el diálogo del JSON
 func load_dialog(file_path):

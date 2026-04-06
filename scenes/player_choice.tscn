@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d0d4a32nx5fsy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjvli"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edwrk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh3aw"]
+bg_color = Color(0.5, 0.24875, 0.16499999, 0.6745098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avaca"]
+
+[sub_resource type="Theme" id="Theme_yjvli"]
+Button/font_sizes/font_size = 30
+Button/styles/focus = SubResource("StyleBoxFlat_yjvli")
+Button/styles/hover = SubResource("StyleBoxFlat_edwrk")
+Button/styles/normal = SubResource("StyleBoxFlat_xh3aw")
+Button/styles/pressed = SubResource("StyleBoxFlat_avaca")
+
+[node name="Button" type="Button" unique_id=1336306988]
+custom_minimum_size = Vector2(500, 40)
+theme = SubResource("Theme_yjvli")
+text = "This is a choice."
