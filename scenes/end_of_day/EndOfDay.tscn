@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dvcbw7q5lgxi6"]
 
 [ext_resource type="PackedScene" uid="uid://dfnerxyusdom8" path="res://scenes/end_of_day/PetSlot.tscn" id="1_pc0ax"]
+[ext_resource type="Texture2D" uid="uid://bjqox8fix7mp3" path="res://icon.svg" id="2_a1l8v"]
+[ext_resource type="Texture2D" uid="uid://tb6uk6snb657" path="res://assets/placeholders/pet_placeholder_dog.png" id="2_y24ir"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b547"]
 content_margin_left = 20.0
@@ -67,6 +69,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="PanelMascotasGrid" type="GridContainer" parent="MonitorPanel/MonitorVBox/ContentStack" unique_id=726260830]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.02
@@ -110,13 +113,89 @@ size_flags_horizontal = 7
 size_flags_vertical = 7
 
 [node name="PanelCorreoVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack" unique_id=761186461]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="CorreoHBox" type="HBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox" unique_id=1491340441]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnAnterior" type="Button" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox" unique_id=1789332510]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "<--"
+
+[node name="ContenidoCorreoHBox" type="HBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox" unique_id=751912746]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 25
+
+[node name="ColumnaIzquierdaVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox" unique_id=535608856]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CabeceraRemitenteHBox" type="HBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox/ColumnaIzquierdaVBox" unique_id=393939544]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AvatarRemitente" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox/ColumnaIzquierdaVBox/CabeceraRemitenteHBox" unique_id=48372255]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+texture = ExtResource("2_a1l8v")
+
+[node name="InfoRemitenteVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox/ColumnaIzquierdaVBox/CabeceraRemitenteHBox" unique_id=2023220373]
+layout_mode = 2
+alignment = 1
+
+[node name="LblNombreRemitente" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox/ColumnaIzquierdaVBox/CabeceraRemitenteHBox/InfoRemitenteVBox" unique_id=1807889051]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Yoli Test"
+
+[node name="LblQuiereAdoptar" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox/ColumnaIzquierdaVBox/CabeceraRemitenteHBox/InfoRemitenteVBox" unique_id=772113612]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Quiere adoptar: Andriw Test"
+
+[node name="TextoMensajeCorreo" type="RichTextLabel" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox/ColumnaIzquierdaVBox" unique_id=2099535948]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hola, soy Yoli Test, me encantaría adoptar a Andriw Test. Tengo un jardín grande y mucho tiempo para cuidarla."
+
+[node name="ColumnaDerechaVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox" unique_id=1124477371]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TextureRect" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox/ColumnaDerechaVBox" unique_id=2092823849]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_y24ir")
+
+[node name="BtnAceptar" type="Button" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox/ColumnaDerechaVBox" unique_id=99946939]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "ACEPTAR"
+
+[node name="BtnRechazar" type="Button" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox/ContenidoCorreoHBox/ColumnaDerechaVBox" unique_id=614403562]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "RECHAZAR"
+
+[node name="BtnSiguiente" type="Button" parent="MonitorPanel/MonitorVBox/ContentStack/PanelCorreoVBox/CorreoHBox" unique_id=1437211745]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "-->"
 
 [node name="PanelDiarioVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack" unique_id=139059939]
 visible = false
