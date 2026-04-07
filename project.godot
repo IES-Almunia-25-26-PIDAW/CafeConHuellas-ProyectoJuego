@@ -26,6 +26,14 @@ window/stretch/mode="canvas_items"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[inkgd]
+
+register_templates=true
+
 [input]
 
 next_line={

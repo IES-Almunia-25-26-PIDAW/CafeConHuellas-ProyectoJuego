@@ -13,12 +13,17 @@ func _ready() -> void:
 	dialog_lines = load_dialog("res://resources/story/story.json")
 	# Señal de que la animación del texto ha acabado
 	dialog_ui.text_animation_done.connect(_on_text_animation_done)
+	# Señal de la opción escogida en el diálogo
+	dialog_ui.choice_selected.connect(_on_choice_selected)
 	# Primera línea de texto
 	dialog_index = 0
 	process_current_line()
 
 func _input(event):
-	if event.is_action_pressed("next_line"):
+	var line = dialog_lines[dialog_index]
+	var has_choices = line.has("choices")
+	
+	if event.is_action_pressed("next_line") and not has_choices:
 		if dialog_ui.animate_text:
 			dialog_ui.skip_text_animation()
 		else:
@@ -55,7 +60,7 @@ func get_anchor_position(anchor: String):
 	# Encuentra el anchor con el nombre correspondiente
 	for i in range(dialog_lines.size()):
 		if dialog_lines[i].has("anchor") and dialog_lines[i]["anchor"] == anchor:
-			return 1
+			return i
 			
 	# Si llegamos a este error es que no se ha encontrado el anchor
 	printerr("Error: No se ha encontrado el anchor: ", anchor)
@@ -89,3 +94,7 @@ func load_dialog(file_path):
 
 func _on_text_animation_done():
 	character_sprite.play_idle_animation()
+
+func _on_choice_selected(anchor: String):
+	dialog_index = get_anchor_position(anchor)
+	process_current_line()

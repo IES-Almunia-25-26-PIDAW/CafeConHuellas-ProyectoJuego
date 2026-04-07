@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckiusgx7smoia"]
 
-[ext_resource type="Script" uid="uid://d0ds4l5tdca5r" path="res://scripts/dialog_ui.gd" id="1_xh3aw"]
+[ext_resource type="Script" uid="uid://unhm66g4bwfr" path="res://scripts/dialog_ui.gd" id="1_yjvli"]
 [ext_resource type="PackedScene" uid="uid://d0d4a32nx5fsy" path="res://scenes/player_choice.tscn" id="2_yjvli"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n58gf"]
@@ -38,7 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xh3aw")
+script = ExtResource("1_yjvli")
 
 [node name="ChoicesContainer" type="CenterContainer" parent="." unique_id=1809819943]
 layout_mode = 1
