@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qcbmevt2bboh"
-path="res://.godot/imported/jasmine_1_talk3.png-ed0234c5e904c590d11a25ea105e34df.ctex"
+path="res://.godot/imported/jasmine_1_talk3.png-87b3ff60338a332a64d78d42bc73bd41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/jasmine/1_talk/jasmine_1_talk3.png"
-dest_files=["res://.godot/imported/jasmine_1_talk3.png-ed0234c5e904c590d11a25ea105e34df.ctex"]
+source_file="res://assets/sprites/jasmine/talk1/jasmine_1_talk3.png"
+dest_files=["res://.godot/imported/jasmine_1_talk3.png-87b3ff60338a332a64d78d42bc73bd41.ctex"]
 
 [params]
 
