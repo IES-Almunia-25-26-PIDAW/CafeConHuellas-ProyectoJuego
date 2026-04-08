@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dfnerxyusdom8" path="res://scenes/end_of_day/PetSlot.tscn" id="1_pc0ax"]
 [ext_resource type="Texture2D" uid="uid://bjqox8fix7mp3" path="res://icon.svg" id="2_a1l8v"]
 [ext_resource type="Texture2D" uid="uid://tb6uk6snb657" path="res://assets/placeholders/pet_placeholder_dog.png" id="2_y24ir"]
+[ext_resource type="Texture2D" uid="uid://cfp7yw6hboucb" path="res://assets/placeholders/icon_love.png" id="4_8ghnh"]
+[ext_resource type="Texture2D" uid="uid://bmj2ovehoybh8" path="res://assets/placeholders/pet_placeholder_cat.png" id="5_gyxuo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b547"]
 content_margin_left = 20.0
@@ -113,6 +115,7 @@ size_flags_horizontal = 7
 size_flags_vertical = 7
 
 [node name="PanelCorreoVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack" unique_id=761186461]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,10 +201,150 @@ theme_override_font_sizes/font_size = 30
 text = "-->"
 
 [node name="PanelDiarioVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack" unique_id=139059939]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DiarioHBox" type="HBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox" unique_id=1691225365]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="SeccionPersonasVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox" unique_id=504474695]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LblTituloPersonas" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox" unique_id=2121074511]
+layout_mode = 2
+text = "PERSONAS"
+horizontal_alignment = 1
+
+[node name="GridPersonas" type="GridContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox" unique_id=352878706]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="PersonaSlot1" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox/GridPersonas" unique_id=2030882745]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource("4_8ghnh")
+
+[node name="PersonaSlot2" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox/GridPersonas" unique_id=197800315]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("4_8ghnh")
+
+[node name="PersonaSlot3" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox/GridPersonas" unique_id=1710797391]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("4_8ghnh")
+
+[node name="PersonaSlot4" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox/GridPersonas" unique_id=198741789]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("4_8ghnh")
+
+[node name="PersonaSlot5" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox/GridPersonas" unique_id=1158166505]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("2_a1l8v")
+
+[node name="PersonaSlot6" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox/GridPersonas" unique_id=1086934076]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("2_a1l8v")
+
+[node name="PersonaSlot7" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox/GridPersonas" unique_id=1116871342]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("2_y24ir")
+
+[node name="PersonaSlot8" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox/GridPersonas" unique_id=204005690]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("5_gyxuo")
+
+[node name="PersonaSlot9" type="TextureRect" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionPersonasVBox/GridPersonas" unique_id=1421343369]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("4_8ghnh")
+
+[node name="SeccionInfoVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox" unique_id=810217109]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="LblTituloInfoActual" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionInfoVBox" unique_id=315338437]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "INFO ACTUAL"
+
+[node name="ScrollPistas" type="ScrollContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionInfoVBox" unique_id=1804770511]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ListaPistasVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionInfoVBox/ScrollPistas" unique_id=2011469640]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Pista1" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionInfoVBox/ScrollPistas/ListaPistasVBox" unique_id=412297013]
+layout_mode = 2
+size_flags_vertical = 1
+text = "• El cartero vio algo raro en la iglesia"
+autowrap_mode = 2
+
+[node name="Pista2" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionInfoVBox/ScrollPistas/ListaPistasVBox" unique_id=447397054]
+layout_mode = 2
+size_flags_vertical = 1
+text = "• La florista perdió a su gata hace 2 meses"
+autowrap_mode = 2
+
+[node name="Pista3" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionInfoVBox/ScrollPistas/ListaPistasVBox" unique_id=750506473]
+layout_mode = 2
+size_flags_vertical = 1
+text = "• El pastor cierra la iglesia por las noches"
+autowrap_mode = 2
+
+[node name="Pista4" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionInfoVBox/ScrollPistas/ListaPistasVBox" unique_id=1967151751]
+layout_mode = 2
+size_flags_vertical = 1
+text = "• Estas pistas son de ejemplo, luego en código haremos que se añada un nuevo Label a la lista sin que lo tengamos que crear nosotras los nodos a mano. El código se encargará de llenar el scroll de pistas, esto es solo para ver que funciona el diseño."
+autowrap_mode = 2
+
+[node name="Pista5" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionInfoVBox/ScrollPistas/ListaPistasVBox" unique_id=565123268]
+layout_mode = 2
+size_flags_vertical = 1
+text = "• Para hacer que el texto no se corte: Autowrap Mode y cámbialo de Off a Word"
+autowrap_mode = 2
+
+[node name="SeccionIdeasVBox" type="VBoxContainer" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox" unique_id=209028360]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LblTituloRelacionIdeas" type="Label" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionIdeasVBox" unique_id=1161893354]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "RELACIÓN DE IDEAS"
+
+[node name="ZonaIdeasControl" type="Control" parent="MonitorPanel/MonitorVBox/ContentStack/PanelDiarioVBox/DiarioHBox/SeccionIdeasVBox" unique_id=1144037962]
+layout_mode = 2
+size_flags_vertical = 3
