@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ldy3wgojlhqt"]
 
-[ext_resource type="Texture2D" uid="uid://bpmr4n1xqsx65" path="res://assets/images/fondodefault.jpg" id="1_hmmco"]
 [ext_resource type="Script" uid="uid://bn854aaerntbw" path="res://scripts/cafe_client_zone.gd" id="1_uemky"]
 [ext_resource type="PackedScene" uid="uid://cqfch5q72r07h" path="res://scenes/client_char.tscn" id="1_wf4sh"]
 [ext_resource type="PackedScene" uid="uid://ckiusgx7smoia" path="res://scenes/dialog_ui.tscn" id="2_ahhn6"]
+[ext_resource type="Texture2D" uid="uid://bmm4sao7657f3" path="res://assets/images/cafedefault.png" id="2_uemky"]
 
 [node name="CafeClientScene" type="Node2D" unique_id=1225861441]
 script = ExtResource("1_uemky")
@@ -12,12 +12,13 @@ script = ExtResource("1_uemky")
 layer = -1
 
 [node name="Background" type="TextureRect" parent="BackgroundCanvas" unique_id=1957370882]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_hmmco")
+texture = ExtResource("2_uemky")
 
 [node name="CharacterCanvas" type="CanvasLayer" parent="." unique_id=133093996]
 

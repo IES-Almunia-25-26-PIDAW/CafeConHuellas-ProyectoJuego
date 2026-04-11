@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpmr4n1xqsx65"
-path="res://.godot/imported/fondodefault.jpg-a8cb474dab339a289aee052657a0f4db.ctex"
+uid="uid://qcbmevt2bboh"
+path="res://.godot/imported/jasmine_1_talk3.png-5caef2fdad430d6b931cb4b96f5eadf4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/fondodefault.jpg"
-dest_files=["res://.godot/imported/fondodefault.jpg-a8cb474dab339a289aee052657a0f4db.ctex"]
+source_file="res://assets/sprites/jasmine/talk/jasmine_1_talk3.png"
+dest_files=["res://.godot/imported/jasmine_1_talk3.png-5caef2fdad430d6b931cb4b96f5eadf4.ctex"]
 
 [params]
 

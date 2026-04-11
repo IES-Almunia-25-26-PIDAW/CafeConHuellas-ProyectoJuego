@@ -6,17 +6,32 @@ extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-func change_character(character_name : Character.Name, is_talking : bool = true):
+func change_character(character_name : Character.Name, is_talking : bool, expression: String):
 	var sprite_frames = Character.CHARACTER_DETAILS[character_name]["sprite_frames"]
+	var stance = "talk" if is_talking else "idle"
+	# Si la expresión existe toma la animación con el mismo nombre, si no, toma la instancia y animación por defecto
+	var animation_name = expression + "-" + stance if expression else stance
+	
+	# Si el personaje tiene sprite_frames, actualiza animated_sprite y comienza la animación
 	if sprite_frames:
 		animated_sprite.sprite_frames = sprite_frames
-		if is_talking:
-			animated_sprite.play("1_talk")
+		# Revisa si la animación a la expresión asociada existe
+		# Si no, usa la animación por defecto (stance)
+		if animated_sprite.sprite_frames.has_animation(animation_name):
+			animated_sprite.play(animation_name)
 		else:
-			animated_sprite.play("1_idle")
+			animated_sprite.play(stance)
 	else:
-		animated_sprite.play("1_idle")
+		# Cambia a la animación idle del personaje que se está mostrando en pantalla
+		play_idle_animation()
 
 func play_idle_animation():
-	animated_sprite.play("1_idle")
-	
+	var last_animation = animated_sprite.animation
+	if last_animation and not last_animation.ends_with("-idle"):
+		# Si una expresión se muestra, intenta mostrar la animación idle correspondiente
+		# Si existe, se muestra. Si no, se muestra la por defecto.
+		var idle_expression = last_animation.replace("talk", "idle")
+		if animated_sprite.sprite_frames.has_animation(idle_expression):
+			animated_sprite.play(idle_expression)
+		else:
+			animated_sprite.play("idle")

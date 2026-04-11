@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var background = %Background
 @onready var character_sprite = %ClientCharSprite
 @onready var dialog_ui = %DialogUI
 
@@ -33,7 +34,27 @@ func _input(event):
 
 
 func process_current_line():
+	if dialog_index >= dialog_lines.size() or dialog_index < 0:
+		printerr("Error: dialog_index out of bounds: ", dialog_index)
+		return
+		
+	# Extrae la línea actual
 	var line = dialog_lines[dialog_index]
+	
+	# Mira si es el final de la escena
+	if line.has("next_scene"):
+		return
+	
+	# Mira si tiene una ubicación (location) y necesita cambiarla
+	if line.has("location"):
+		# Cambia el fondo
+		var background_file = "res://assets/images/" + line["location"] + ".png"
+		background.texture = load(background_file)
+		# TODO: para la música se hace lo mismo que aquí
+		# Va a la siguiente línea
+		dialog_index += 1
+		process_current_line()
+		return
 	
 	# Mira si es un goto
 	if line.has("goto"):
@@ -47,14 +68,26 @@ func process_current_line():
 		process_current_line()
 		return
 	
+	# Actualiza la expresión/animación del personaje de forma correcta. Vuelve a la default del personaje si no hay "show_character"
+	if line.has("show_character"):
+		var character_name = Character.get_enum_from_string(line["show_character"])
+		character_sprite.change_character(character_name, false, line.get("expression", ""))
+	elif line.has("speaker"):
+		var character_name = Character.get_enum_from_string(line["speaker"])
+		character_sprite.change_character(character_name, true, line.get("expression", ""))
+	
 	if line.has("choices"):
 		# Muestra las opciones
 		dialog_ui.display_choices(line["choices"])
-	else:
+	elif line.has("text"):
 		# Lee la línea del diálogo
-		var character_name = Character.get_enum_from_string(line["speaker"])
-		dialog_ui.change_line(character_name, line["text"])
-		character_sprite.change_character(character_name)
+		var speaker_name = Character.get_enum_from_string(line["speaker"])
+		dialog_ui.change_line(speaker_name, line["text"])
+	else:
+		# No hay elección ni línea de diálogo
+		dialog_index += 1
+		process_current_line()
+		return
 	
 func get_anchor_position(anchor: String):
 	# Encuentra el anchor con el nombre correspondiente
