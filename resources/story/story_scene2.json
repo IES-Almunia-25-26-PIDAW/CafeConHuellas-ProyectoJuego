@@ -3,4 +3,6 @@
 	
 	{"speaker": "Jasmine", "text": "Esta es la segunda escena!! YAY"},
 	{"speaker": "Hunter", "text": "YAYYYYYYYYYYYYYY"},
+	
+	{"next_scene": "", "transition": "fade"}
 ]

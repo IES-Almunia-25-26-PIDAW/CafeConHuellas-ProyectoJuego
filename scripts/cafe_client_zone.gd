@@ -4,21 +4,28 @@ extends Node2D
 @onready var character_sprite = %ClientCharSprite
 @onready var dialog_ui = %DialogUI
 
-var dialog_index : int = 0
+# Estas dos variables son lo que se actualizará cuando se cambie de escena
+var transition_effect: String = "fade"
+var dialog_file: String = "res://resources/story/story.json"
 
+var dialog_index : int = 0
 var dialog_lines : Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Cargamos el diálogo
-	dialog_lines = load_dialog("res://resources/story/story.json")
+	dialog_lines = load_dialog(dialog_file)
 	# Señal de que la animación del texto ha acabado
 	dialog_ui.text_animation_done.connect(_on_text_animation_done)
 	# Señal de la opción escogida en el diálogo
 	dialog_ui.choice_selected.connect(_on_choice_selected)
+	
+	SceneManager.transition_out_completed.connect(_on_transition_out_completed)
+	SceneManager.transition_in_completed.connect(_on_transition_in_completed)
+	
 	# Primera línea de texto
 	dialog_index = 0
-	process_current_line()
+	SceneManager.transition_in()
 
 func _input(event):
 	var line = dialog_lines[dialog_index]
@@ -43,6 +50,10 @@ func process_current_line():
 	
 	# Mira si es el final de la escena
 	if line.has("next_scene"):
+		var next_scene = line["next_scene"]
+		dialog_file = "res://resources/story/" + next_scene + ".json" if !next_scene.is_empty() else ""
+		transition_effect = line.get("transition", "fade") # Si no se especifica una transición se usa fade
+		SceneManager.transition_out(transition_effect)
 		return
 	
 	# Mira si tiene una ubicación (location) y necesita cambiarla
@@ -130,4 +141,22 @@ func _on_text_animation_done():
 
 func _on_choice_selected(anchor: String):
 	dialog_index = get_anchor_position(anchor)
+	process_current_line()
+
+func _on_transition_out_completed():
+	# Carga el nuevo diálogo
+	if !dialog_file.is_empty():
+		dialog_lines = load_dialog(dialog_file)
+		dialog_index = 0
+		var first_line = dialog_lines[dialog_index]
+		if first_line.has("location"):
+			background.texture = load("res://assets/images/" + first_line["location"] + ".png")
+			# para la música también se agregaría aquí ya que se pone en la primera línea
+			dialog_index += 1
+		SceneManager.transition_in(transition_effect)
+	else:
+		print("End")
+
+func _on_transition_in_completed():
+	# Comienza a procesar el diálogo
 	process_current_line()

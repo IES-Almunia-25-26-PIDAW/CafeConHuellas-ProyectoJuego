@@ -3,8 +3,9 @@ extends Node2D
 @onready var animated_sprite = $AnimatedSprite
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	# Resetea lo que se muestra en pantalla
+	self.modulate.a = 0
 
 func change_character(character_name : Character.Name, is_talking : bool, expression: String):
 	var sprite_frames = Character.CHARACTER_DETAILS[character_name]["sprite_frames"]
@@ -24,6 +25,10 @@ func change_character(character_name : Character.Name, is_talking : bool, expres
 	else:
 		# Cambia a la animación idle del personaje que se está mostrando en pantalla
 		play_idle_animation()
+	
+	# Revisa si no se está mostrando nada
+	if self.modulate.a == 0:
+		create_tween().tween_property(self, "modulate:a", 1.0, 0.3)
 
 func play_idle_animation():
 	var last_animation = animated_sprite.animation

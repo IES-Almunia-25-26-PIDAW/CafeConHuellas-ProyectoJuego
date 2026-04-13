@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="PawCafe"
-run/main_scene="uid://ldy3wgojlhqt"
+run/main_scene="uid://sw578em8eioq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Database="*uid://bawnf0y5aom6e"
+SceneManager="*uid://d0bdocf4qxrle"
 
 [display]
 

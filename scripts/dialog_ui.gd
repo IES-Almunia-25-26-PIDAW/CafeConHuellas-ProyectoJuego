@@ -20,8 +20,10 @@ var current_character_details : Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Oculta la lista de elecciones
+	# Resetea lo que se muestra en pantalla
 	choice_list.hide()
+	dialog_line.text = ""
+	speaker_name.text = ""
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
