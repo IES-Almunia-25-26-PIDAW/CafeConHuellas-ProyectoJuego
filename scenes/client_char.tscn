@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqfch5q72r07h"]
 
-[ext_resource type="Script" uid="uid://ducp5cr3uoka" path="res://scripts/client_char_sprite.gd" id="1_5rvex"]
+[ext_resource type="Script" uid="uid://ducp5cr3uoka" path="res://scripts/character/client_char_sprite.gd" id="1_5rvex"]
 [ext_resource type="SpriteFrames" uid="uid://u2kasffg4rdv" path="res://assets/sprites/jasmine/jasmine_sprites.tres" id="1_tbvm5"]
 
 [node name="ClientCharSprite" type="Node2D" unique_id=253241685]

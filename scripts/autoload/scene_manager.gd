@@ -20,6 +20,7 @@ func _ready() -> void:
 	# Se esconde por ahora para mostrarlo solo cuando se haga la animación de transición
 	transition_rect.visible = false
 	transition_layer.add_child(transition_rect)
+	# Se usa call_deferred() en caso de que el root esté ocupado cargando la escena
 	get_tree().root.add_child.call_deferred(transition_layer)
 
 func transition_out(effect: String = "fade"):

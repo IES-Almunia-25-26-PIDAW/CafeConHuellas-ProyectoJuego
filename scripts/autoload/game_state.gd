@@ -1,0 +1,143 @@
+extends Node
+
+# GameState: Se encarga de guardar todas las propiedades necesarias en las savefiles
+
+# Nombre del jugador
+var player_name: String = "Hunter"
+# Pronombres del jugador (0 - male, 1 - female, 2 - non-binary)
+var player_pronouns: int = 0
+# Nombre de la cafetería elegido por el jugador
+var cafe_name: String = "PawCafé"
+
+# Número del día en el que se encuentra la historia
+var day: int = 1
+# Archivo JSON por el cual va la historia actualmente
+var chapter_id: String = "chapter_1"
+# Línea actual en la que se encuentra la historia
+var dialogue_index: int = 0
+
+# Personajes conocidos dentro del juego
+var characters_met: Array[String] = []
+# Todas las elecciones tomadas por el jugador
+var choices_made: Array[String] = []
+# Todas las pistas obtenidas por el jugador
+var clues_found: Array[String] = []
+
+# Puntuación de la relación actual con Jasmine
+var relationship_jasmine: int = 0
+# Puntuación de la relación actual con Ronald
+var relationship_ronald: int = 0
+# Puntuación de la relación actual con Nilam
+var relationship_nilam: int = 0
+# Puntuación de la relación actual con lachicasecretamuejej
+var relationship_secretgirl: int = 0
+
+# Si se encuentra en la ruta Jasmine
+var route_jasmine: bool = false
+# Si se encuentra en la ruta Ronald
+var route_ronald: bool = false
+# Si se encuentra en la ruta Nilam
+var route_nilam: bool = false
+# Si se encuentra en la ruta lachicasecretamuejej
+var route_secretgirl: bool = false
+
+# Posteriormente: (también se pueden usar diccionarios pero no se en q contexto usarlos jejejj)
+#Hay que agregar las mascotas que se tienen en un array quizas?
+#Mascotas que han sido adoptadas, un array con buena puntuacion y otro array con mala
+
+# Valores por defecto que se usarán al iniciar un nuevo juego
+const DEFAULTS: Dictionary = {
+	"player_name": "Hunter",
+	"player_pronouns": 0,
+	"cafe_name": "PawCafé",
+	"day": 1,
+	"chapter_id": "chapter_1",
+	"dialogue_index": 0,
+	"relationship_jasmine": 0,
+	"relationship_ronald": 0,
+	"relationship_nilam": 0,
+	"relationship_secretgirl": 0,
+	"route_jasmine": false,
+	"route_ronald": false,
+	"route_nilam": false,
+	"route_secretgirl": false
+}
+
+# Función que resetea todos los valores a los por defecto para empezar una nueva savefile
+func reset() -> void:
+	player_name = DEFAULTS["player_name"]
+	player_pronouns = DEFAULTS["player_pronouns"]
+	cafe_name = DEFAULTS["cafe_name"]
+
+	day = DEFAULTS["day"]
+	chapter_id = DEFAULTS["chapter_id"]
+	dialogue_index = DEFAULTS["dialogue_index"]
+
+	characters_met = []
+	choices_made = []
+	clues_found = []
+
+	relationship_jasmine = DEFAULTS["relationship_jasmine"]
+	relationship_ronald = DEFAULTS["relationship_ronald"]
+	relationship_nilam = DEFAULTS["relationship_nilam"]
+	relationship_secretgirl = DEFAULTS["relationship_secretgirl"]
+
+	route_jasmine = DEFAULTS["route_jasmine"]
+	route_ronald = DEFAULTS["route_ronald"]
+	route_nilam = DEFAULTS["route_nilam"]
+	route_secretgirl = DEFAULTS["route_secretgirl"]
+
+# Convierte el estado a datos guardables (diccionario)
+func to_dict() -> Dictionary:
+	return {
+		"save_version": 1,
+		"timestamp": Time.get_datetime_string_from_system(),
+		
+		"player_name": player_name,
+		"player_pronouns": player_pronouns,
+		"cafe_name": cafe_name,
+		
+		"day": day,
+		"chapter_id": chapter_id,
+		"dialogue_index": dialogue_index,
+		
+		"characters_met": characters_met.duplicate(), # Debe ser duplicate() para no compartir la referencia ni modificar la save sin querer
+		"choices_made": choices_made.duplicate(),
+		"clues_found": clues_found.duplicate(),
+
+		"relationship_jasmine": relationship_jasmine,
+		"relationship_ronald": relationship_ronald,
+		"relationship_nilam": relationship_nilam,
+		"relationship_secretgirl": relationship_secretgirl,
+
+		"route_jasmine": route_jasmine,
+		"route_ronald": route_ronald,
+		"route_nilam": route_nilam,
+		"route_secretgirl": route_secretgirl,
+	}
+
+# Carga los datos en el juego (del diccionario a variables que mete en el juego)
+func from_dict(data: Dictionary) -> void:
+	player_name = data.get("player_name", DEFAULTS["player_name"])
+	player_pronouns = data.get("player_pronouns", DEFAULTS["player_pronouns"])
+	cafe_name = data.get("cafe_name", DEFAULTS["cafe_name"])
+
+	day = data.get("day", DEFAULTS["day"])
+	chapter_id = data.get("chapter_id", DEFAULTS["chapter_id"])
+	dialogue_index = data.get("dialogue_index", DEFAULTS["dialogue_index"])
+
+	characters_met.assign(data.get("characters_met", [])) # Assign vacía el array actual y copia los valores del array pasado
+	choices_made.assign(data.get("choices_made", [])) # Si da bugs raros, se puede usar la versión de .duplicate()
+	clues_found.assign(data.get("clues_found", []))
+
+	relationship_jasmine = data.get("relationship_jasmine", DEFAULTS["relationship_jasmine"])
+	relationship_ronald = data.get("relationship_ronald", DEFAULTS["relationship_ronald"])
+	relationship_nilam = data.get("relationship_nilam", DEFAULTS["relationship_nilam"])
+	relationship_secretgirl = data.get("relationship_secretgirl", DEFAULTS["relationship_secretgirl"])
+
+	route_jasmine = data.get("route_jasmine", DEFAULTS["route_jasmine"])
+	route_ronald = data.get("route_ronald", DEFAULTS["route_ronald"])
+	route_nilam = data.get("route_nilam", DEFAULTS["route_nilam"])
+	route_secretgirl = data.get("route_secretgirl", DEFAULTS["route_secretgirl"])
+
+# Handlers --- Info del Jugador

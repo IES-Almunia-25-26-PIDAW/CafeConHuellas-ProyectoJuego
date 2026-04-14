@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ldy3wgojlhqt"]
 
-[ext_resource type="Script" uid="uid://bn854aaerntbw" path="res://scripts/cafe_client_zone.gd" id="1_uemky"]
+[ext_resource type="Script" uid="uid://bn854aaerntbw" path="res://scripts/scenes/cafe_client_scene.gd" id="1_uemky"]
 [ext_resource type="PackedScene" uid="uid://cqfch5q72r07h" path="res://scenes/client_char.tscn" id="1_wf4sh"]
 [ext_resource type="PackedScene" uid="uid://ckiusgx7smoia" path="res://scenes/dialog_ui.tscn" id="2_ahhn6"]
 [ext_resource type="Texture2D" uid="uid://bmm4sao7657f3" path="res://assets/images/cafedefault.png" id="2_uemky"]

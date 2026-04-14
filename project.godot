@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 Database="*uid://bawnf0y5aom6e"
 SceneManager="*uid://d0bdocf4qxrle"
+GameState="*uid://bnf1p7ncqp3a8"
+SaveManager="*uid://lmql2qulky2a"
+SettingsManager="*uid://dyp2fg8p6317x"
 
 [display]
 
