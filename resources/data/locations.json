@@ -1,0 +1,42 @@
+{
+	"cafeteria": {
+		"name": "Cafetería",
+		"description": "La cafetería del protagonista, centro del juego"
+	},
+	"ayuntamiento": {
+		"name": "Ayuntamiento",
+		"description": "Viejo ayuntamiento en la parte central del pueblo"
+	},
+	"iglesia": {
+		"name": "Iglesia",
+		"description": "Iglesia antigua con pocas personas asistiendo a misa"
+	},
+	"tienda": {
+		"name": "Tienda",
+		"description": "Pequeña tienda donde se puede encontrar de todo"
+	},
+	"granja": {
+		"name": "Granja",
+		"description": "La única granja que sigue en pie, con cultivos, gallinas y vacas"
+	},
+	"biblioteca": {
+		"name": "Biblioteca",
+		"description": "Biblioteca abandonada con libros antiguos"
+	},
+	"taller": {
+		"name": "Taller",
+		"description": "Casa de un señor que arregla y consigue herramientas"
+	},
+	"floristeria": {
+		"name": "Floristería",
+		"description": "Pequeña floristería con un jardín de flores"
+	},
+	"bosque": {
+		"name": "Bosque",
+		"description": "Profundo y misterioso bosque con una clara y un lago cristalino"
+	},
+	"casa_hunter": {
+		"name": "Casa de Hunter",
+		"description": "La casita del protagonista en el pueblo"
+	}
+}

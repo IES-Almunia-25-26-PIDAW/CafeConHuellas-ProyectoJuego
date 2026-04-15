@@ -16,7 +16,7 @@ const MAX_SLOTS: int = 3
 
 # Versión actual del formato de guardado
 # Se debe incrementar cuando cambia la estructura y añadir lógica en _migrate_save_data() para actualizar saves antiguas
-const CURRENT_SAVE_VERSION: int = 1
+const CURRENT_SAVE_VERSION: int = 2
 
 func _ready() -> void:
 	# Hay que asegurarse que el directorio de las savefiles existe cuando el juego comienza
@@ -140,7 +140,13 @@ func _load_json(slot: int) -> bool:
 		data["relationship_nilam"] = int(data["relationship_nilam"])
 
 	if data.has("relationship_secretgirl"):
-		data["relationship_secretgirl"] = int(data["relationship_secretgirl"])
+		data["relationship_secretgirl"] = int(data["relationship_secretgirl"])	
+
+	# Castear los "day" dentro de orders_history
+	if data.has("orders_history") and data["orders_history"] is Array:
+		for order in data["orders_history"]:
+			if order is Dictionary and order.has("day"):
+				order["day"] = int(order["day"])
 
 	# Si la savefile es de una versión antigua, se debe actualizar antes de aplicarse
 	if data.get("save_version", 1) < CURRENT_SAVE_VERSION:
@@ -158,13 +164,35 @@ func _load_json(slot: int) -> bool:
 # Añade un nuevo 'if version < X' cada vez que cambie el formato!
 func _migrate_save_data(data: Dictionary) -> Dictionary:
 	var version: int = data.get("save_version", 1)
-
+	
 	# v1 -> v2: speaker_box_position and speaker_box_color were removed.
 	# We just discard them — from_dict() would have ignored them anyway,
 	# but erasing them here keeps the data clean.
 	if version < 2:
+		# Limpiar campos obsoletos
 		data.erase("speaker_box_position")
 		data.erase("speaker_box_color")
+
+		# Añadir campos nuevos con valores por defecto si no existen
+		if not data.has("animals_collected"):
+			data["animals_collected"] = []
+		if not data.has("animals_care"):
+			data["animals_care"] = {}
+		if not data.has("animals_adopted_good"):
+			data["animals_adopted_good"] = []
+		if not data.has("animals_adopted_bad"):
+			data["animals_adopted_bad"] = []
+		if not data.has("adoption_decisions"):
+			data["adoption_decisions"] = {}
+		if not data.has("orders_history"):
+			data["orders_history"] = []
+		if not data.has("day_work_done"):
+			data["day_work_done"] = false
+		if not data.has("day_animals_checked"):
+			data["day_animals_checked"] = false
+		if not data.has("day_night_done"):
+			data["day_night_done"] = false
+
 		data["save_version"] = 2
 
 	return data

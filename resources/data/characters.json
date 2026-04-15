@@ -1,0 +1,134 @@
+{
+	"alcalde": {
+		"id": 1,
+		"name": "Alcalde",
+		"role": "alcalde",
+		"age_range": "52-55",
+		"description": "Bajito y barrigón, traje que le queda pequeño, sonrisa forzada",
+		"personality": "Simpático falso, chistes malos, territorial y cobarde",
+		"likes": "Las apariencias, hablar de sí mismo, presidir eventos",
+		"dislikes": "Preguntas incómodas, que le contradigan",
+		"has_friendship_route": false
+	},
+	"pastor": {
+		"id": 2,
+		"name": "Pastor",
+		"role": "pastor",
+		"age_range": "45-50",
+		"description": "Alto, delgado, erguido, pelo oscuro, ojos claros e intensos",
+		"personality": "Calmado, encantador, nunca levanta la voz. Fanático",
+		"likes": "El orden, los rituales, el silencio",
+		"dislikes": "El caos, la incredulidad",
+		"has_friendship_route": false
+	},
+	"vendedor": {
+		"id": 3,
+		"name": "Vendedor/a",
+		"role": "tienda",
+		"age_range": "19-25",
+		"description": "Estética alternativa, ropa de segunda mano, piercing discreto",
+		"personality": "Fachada pasota, por dentro leal y directo/a",
+		"likes": "Música, podcasts de crimen, café con mucho azúcar",
+		"dislikes": "La gente falsa, el pueblo",
+		"has_friendship_route": true
+	},
+	"mama_granjera": {
+		"id": 4,
+		"name": "Mamá Granjera",
+		"role": "granjera_mama",
+		"age_range": "38-42",
+		"description": "Complexión fuerte, manos callosas, pelo recogido, botas de campo",
+		"personality": "Directa, fiable, orgullo callado",
+		"likes": "El trabajo bien hecho, su hija, los animales",
+		"dislikes": "Cotilleos, promesas vacías",
+		"has_friendship_route": false
+	},
+	"hija_granjera": {
+		"id": 5,
+		"name": "Hija Granjera",
+		"role": "granjera_hija",
+		"age_range": "10-12",
+		"description": "Trenzas, pecas, siempre con tierra encima, ropa colorida",
+		"personality": "Alegre, sin filtro, curiosísima",
+		"likes": "Animales, explorar, escuchar historias",
+		"dislikes": "Que la ignoren, las mentiras de adultos",
+		"has_friendship_route": false
+	},
+	"bruno": {
+		"id": 6,
+		"name": "Bruno",
+		"role": "taller",
+		"age_range": "30-34",
+		"description": "Alto, fornido, barba poblada, moño descuidado, delantal de cuero",
+		"personality": "El más buena gente del pueblo, habla despacio, nunca juzga",
+		"likes": "Arreglar cosas, el silencio productivo, el café de Hunter",
+		"dislikes": "El drama, tirar cosas que aún sirven",
+		"has_friendship_route": false
+	},
+	"jasmine": {
+		"id": 7,
+		"name": "Jasmine",
+		"role": "florista",
+		"age_range": "20-22",
+		"description": "Pelo rizado, flores en el pelo, ropa floral y pastel",
+		"personality": "Dulce, cabeza en las nubes. Triste por su gata desaparecida",
+		"likes": "Flores raras, su abuela, su gata",
+		"dislikes": "Lugares oscuros, el invierno, la frialdad",
+		"has_friendship_route": true
+	},
+	"abuela": {
+		"id": 8,
+		"name": "Abuela",
+		"role": "abuela_florista",
+		"age_range": "72-76",
+		"description": "Pequeñita, pelo blanco con horquillas, delantal de flores, gafas",
+		"personality": "La abuela de todo el pueblo, suelta info clave sin darse cuenta",
+		"likes": "Tejer, pajarillos, su nieta, las telenovelas",
+		"dislikes": "El frío, las prisas, que le recuerden que es mayor",
+		"has_friendship_route": false
+	},
+	"cartero": {
+		"id": 9,
+		"name": "Cartero",
+		"role": "cartero",
+		"age_range": "67-70",
+		"description": "Barrigón, nariz colorada, gorra siempre puesta, café en mano",
+		"personality": "Cotilla encantador, cliente fijo, da pistas sin querer",
+		"likes": "Su paseo, el café, contar historias, sentirse útil",
+		"dislikes": "Que le digan que ya está jubilado, el silencio",
+		"has_friendship_route": false
+	},
+	"sectario": {
+		"id": 10,
+		"name": "Sectario",
+		"role": "sectario",
+		"age_range": "28-32",
+		"description": "Discreto, ropa oscura, cara de cansancio, mirada ausente",
+		"personality": "Callado y nervioso, criado en la secta pero algo ha hecho clic",
+		"likes": "Los animales, la música tranquila, el aire libre",
+		"dislikes": "La violencia, las órdenes sin sentido",
+		"has_friendship_route": false
+	},
+	"solitario": {
+		"id": 11,
+		"name": "Solitario",
+		"role": "solitario",
+		"age_range": "70-78",
+		"description": "Delgado, muy arrugado, abrigo viejo, bastón, barba descuidada",
+		"personality": "Borde total al principio, lleva 50 años en el pueblo y lo ha visto todo",
+		"likes": "Su huerto, el silencio, los perros",
+		"dislikes": "Forasteros, preguntas, el alcalde",
+		"has_friendship_route": false
+	},
+	"bibliotecario": {
+		"id": 12,
+		"name": "Bibliotecario",
+		"role": "bibliotecario",
+		"age_range": "21-23",
+		"description": "Delgado, pálido, pelo alborotado, gafas, mochila enorme",
+		"personality": "Callado en general, habla sin parar de lo que le apasiona",
+		"likes": "Historia local, archivos viejos, café solo, los gatos de la cafetería",
+		"dislikes": "El ruido, que le interrumpan, que la biblioteca siga cerrada",
+		"has_friendship_route": true
+	}
+}

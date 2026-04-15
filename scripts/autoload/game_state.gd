@@ -2,6 +2,10 @@ extends Node
 
 # GameState: Se encarga de guardar todas las propiedades necesarias en las savefiles
 
+# ============================================================
+# DATOS DEL JUGADOR
+# ============================================================
+
 # Nombre del jugador
 var player_name: String = "Hunter"
 # Pronombres del jugador (0 - male, 1 - female, 2 - non-binary)
@@ -45,6 +49,41 @@ var route_secretgirl: bool = false
 #Hay que agregar las mascotas que se tienen en un array quizas?
 #Mascotas que han sido adoptadas, un array con buena puntuacion y otro array con mala
 
+# ============================================================
+# ANIMALES
+# ============================================================
+
+# Animales recogidos por el jugador (IDs: "mochi", "luna", "canela", "nube")
+var animals_collected: Array[String] = []
+
+# Estado de cuidado de cada animal recogido
+# Formato: {"noni": {"fed": false, "healed": false, "petted": false}}
+var animals_care: Dictionary = {}
+
+# Animales adoptados (buena o mala decisión)
+var animals_adopted_good: Array[String] = []
+var animals_adopted_bad: Array[String] = []
+
+# Emails de adopción respondidos: {"email_1": "accepted", "email_2": "rejected"}
+var adoption_decisions: Dictionary = {}
+
+# ============================================================
+# PEDIDOS
+# ============================================================
+
+# Historial de pedidos completados
+# Cada entrada: {"day": 1, "character_id": "alcalde", "recipes": ["cafe_solo"]}
+var orders_history: Array[Dictionary] = []
+
+# ============================================================
+# PROGRESO DEL DÍA
+# ============================================================
+
+var day_work_done: bool = false
+var day_animals_checked: bool = false
+var day_night_done: bool = false
+
+
 # Valores por defecto que se usarán al iniciar un nuevo juego
 const DEFAULTS: Dictionary = {
 	"player_name": "Hunter",
@@ -60,7 +99,10 @@ const DEFAULTS: Dictionary = {
 	"route_jasmine": false,
 	"route_ronald": false,
 	"route_nilam": false,
-	"route_secretgirl": false
+	"route_secretgirl": false,
+	"day_work_done": false,
+	"day_animals_checked": false,
+	"day_night_done": false
 }
 
 # Función que resetea todos los valores a los por defecto para empezar una nueva savefile
@@ -86,6 +128,15 @@ func reset() -> void:
 	route_ronald = DEFAULTS["route_ronald"]
 	route_nilam = DEFAULTS["route_nilam"]
 	route_secretgirl = DEFAULTS["route_secretgirl"]
+	animals_collected = []
+	animals_care = {}
+	animals_adopted_good = []
+	animals_adopted_bad = []
+	adoption_decisions = {}
+	orders_history = []
+	day_work_done = false
+	day_animals_checked = false
+	day_night_done = false
 
 # Convierte el estado a datos guardables (diccionario)
 func to_dict() -> Dictionary:
@@ -114,6 +165,16 @@ func to_dict() -> Dictionary:
 		"route_ronald": route_ronald,
 		"route_nilam": route_nilam,
 		"route_secretgirl": route_secretgirl,
+		
+		"animals_collected": animals_collected.duplicate(),
+		"animals_care": animals_care.duplicate(true),
+		"animals_adopted_good": animals_adopted_good.duplicate(),
+		"animals_adopted_bad": animals_adopted_bad.duplicate(),
+		"adoption_decisions": adoption_decisions.duplicate(),
+		"orders_history": orders_history.duplicate(true),
+		"day_work_done": day_work_done,
+		"day_animals_checked": day_animals_checked,
+		"day_night_done": day_night_done,
 	}
 
 # Carga los datos en el juego (del diccionario a variables que mete en el juego)
@@ -139,5 +200,149 @@ func from_dict(data: Dictionary) -> void:
 	route_ronald = data.get("route_ronald", DEFAULTS["route_ronald"])
 	route_nilam = data.get("route_nilam", DEFAULTS["route_nilam"])
 	route_secretgirl = data.get("route_secretgirl", DEFAULTS["route_secretgirl"])
+	
+	# Animales
+	var collected_data = data.get("animals_collected", [])
+	animals_collected = []
+	for item in collected_data:
+		animals_collected.append(str(item))
+
+	animals_care = data.get("animals_care", {})
+
+	var good_data = data.get("animals_adopted_good", [])
+	animals_adopted_good = []
+	for item in good_data:
+		animals_adopted_good.append(str(item))
+
+	var bad_data = data.get("animals_adopted_bad", [])
+	animals_adopted_bad = []
+	for item in bad_data:
+		animals_adopted_bad.append(str(item))
+
+	adoption_decisions = data.get("adoption_decisions", {})
+
+	# Pedidos
+	var orders_data = data.get("orders_history", [])
+	orders_history = []
+	for item in orders_data:
+		orders_history.append(item)
+
+	# Progreso del día
+	day_work_done = data.get("day_work_done", false)
+	day_animals_checked = data.get("day_animals_checked", false)
+	day_night_done = data.get("day_night_done", false)
+	
+	
+
+
+# ============================================================
+# FUNCIONES ÚTILES
+# ============================================================
+
+# --- AMISTAD ---
+
+func get_friendship_level(character_id: String) -> int:
+	match character_id:
+		"jasmine": return relationship_jasmine
+		"vendedor": return relationship_ronald
+		"bibliotecario": return relationship_nilam
+		_: return 0
+
+func add_friendship(character_id: String, amount: int = 1) -> void:
+	match character_id:
+		"jasmine": relationship_jasmine += amount
+		"vendedor": relationship_ronald += amount
+		"bibliotecario": relationship_nilam += amount
+
+# --- PISTAS ---
+
+func add_clue(clue_id: String) -> void:
+	if clue_id not in clues_found:
+		clues_found.append(clue_id)
+
+func has_clue(clue_id: String) -> bool:
+	return clue_id in clues_found
+
+func get_clue_count() -> int:
+	return clues_found.size()
+
+# --- ELECCIONES ---
+
+func save_choice(choice_id: String) -> void:
+	if choice_id not in choices_made:
+		choices_made.append(choice_id)
+
+# --- ANIMALES ---
+
+func collect_animal(animal_id: String) -> void:
+	if animal_id not in animals_collected:
+		animals_collected.append(animal_id)
+		animals_care[animal_id] = {"fed": false, "healed": false, "petted": false}
+
+func feed_animal(animal_id: String) -> void:
+	if animals_care.has(animal_id):
+		animals_care[animal_id]["fed"] = true
+
+func heal_animal(animal_id: String) -> void:
+	if animals_care.has(animal_id):
+		animals_care[animal_id]["healed"] = true
+
+func pet_animal(animal_id: String) -> void:
+	if animals_care.has(animal_id):
+		animals_care[animal_id]["petted"] = true
+
+func get_my_animals() -> Array[String]:
+	var result: Array[String] = []
+	for animal_id in animals_collected:
+		if animal_id not in animals_adopted_good and animal_id not in animals_adopted_bad:
+			result.append(animal_id)
+	return result
+
+func is_animal_fully_cared(animal_id: String) -> bool:
+	if not animals_care.has(animal_id):
+		return false
+	var care = animals_care[animal_id]
+	return care["fed"] and care["healed"] and care["petted"]
+
+# --- ADOPCIONES ---
+
+func decide_adoption(email_id: String, animal_id: String, accepted: bool, is_good: bool) -> void:
+	adoption_decisions[email_id] = "accepted" if accepted else "rejected"
+	if accepted:
+		if is_good:
+			animals_adopted_good.append(animal_id)
+		else:
+			animals_adopted_bad.append(animal_id)
+
+# --- PERSONAJES ---
+
+func meet_character(character_id: String) -> void:
+	if character_id not in characters_met:
+		characters_met.append(character_id)
+
+func has_met(character_id: String) -> bool:
+	return character_id in characters_met
+
+# --- PROGRESO DEL DÍA ---
+
+func advance_day() -> void:
+	if day < 15:
+		day += 1
+		day_work_done = false
+		day_animals_checked = false
+		day_night_done = false
+		# Resetear el cuidado diario de los animales
+		for animal_id in animals_care:
+			animals_care[animal_id] = {"fed": false, "healed": false, "petted": false}
+
+func complete_work() -> void:
+	day_work_done = true
+
+func complete_animals_check() -> void:
+	day_animals_checked = true
+
+func complete_night() -> void:
+	day_night_done = true
+
 
 # Handlers --- Info del Jugador
