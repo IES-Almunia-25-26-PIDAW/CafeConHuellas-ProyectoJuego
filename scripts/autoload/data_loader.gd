@@ -1,109 +1,124 @@
 extends Node
 
-# DataLoader: Carga los archivos JSON de datos fijos al iniciar el juego.
-# Estos datos NUNCA se modifican durante la partida, solo se consultan.
+# DataLoader: Carga todos los datos estáticos del juego al inicio desde archivos JSON
+# Estos datos NUNCA se modifican durante la partida, solo se consultan
+# Es un autoload singleton por lo que los datos están disponibles en cualquier parte del juego
 
-# Diccionarios donde se guardarán los datos de cada JSON al cargarlos
-# Empiezan vacíos y se llenan en _ready()
-var characters: Dictionary = {}
-var animals: Dictionary = {}
-var locations: Dictionary = {}
-var day_schedule: Dictionary = {}
-var endings: Dictionary = {}
+# ===== ARCHIVOS Y RUTA =====
 
-# Ruta donde están los archivos JSON dentro del proyecto
-const DATA_PATH := "res://resources/data/"
+const DATA_DIR: String = "res://resources/data/"
 
-# _ready() se ejecuta automáticamente cuando el juego arranca
-# Como es un Autoload, se ejecuta una sola vez al inicio
+# Diccionarios donde se guardarán los datos de cada JSON al cargarlos, se llenan en ready()
+const PATHS: Dictionary = {
+	"animals": DATA_DIR + "animals.json",
+	"characters": DATA_DIR + "characters.json",
+	"clues": DATA_DIR + "clues.json",
+	"emails": DATA_DIR + "emails.json",
+	"recipes": DATA_DIR + "recipes.json",
+	"cgs": DATA_DIR + "cgs.json",
+}
+
+# ALMACENAMIENTO INTERNO: Cada diccionario mapea un ID a sus datos
+var _animals: Dictionary = {}
+var _characters: Dictionary = {}
+var _clues: Dictionary = {}
+var _emails: Dictionary = {}
+var _recipes: Dictionary = {}
+var _cgs: Dictionary = {}
+
+
+# ===== INICIALIZACIÓN =====
+
 func _ready() -> void:
-	characters = _load_json("characters.json")
-	animals = _load_json("animals.json")
-	locations = _load_json("locations.json")
-	day_schedule = _load_json("day_schedule.json")
-	endings = _load_json("endings.json")
-	print("DataLoader: Datos cargados correctamente.")
+	_load_all()
 
-# Función privada que abre un archivo JSON y devuelve su contenido como Dictionary
-# Se llama una vez por cada archivo en _ready()
-func _load_json(filename: String) -> Dictionary:
-	var path := DATA_PATH + filename
+# Carga todos los archivos, se llama una vez al inicio del juego
+func _load_all() -> void:
+	_animals = _load_file(PATHS["animals"])
+	_characters = _load_file(PATHS["characters"])
+	_clues = _load_file(PATHS["clues"])
+	_emails = _load_file(PATHS["emails"])
+	_recipes = _load_file(PATHS["recipes"])
+	_cgs = _load_file(PATHS["cgs"])
+
+# Abre y parsea un archivo JSON, devolviendo un diccionario con los datos obtenidos
+func _load_file(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
-		push_error("DataLoader: No se encontró el archivo: " + path)
+		push_error("DataLoader: Archivo no encontrado: " + path)
 		return {}
 
 	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
-		push_error("DataLoader: Error al abrir: " + path)
+		push_error("DataLoader: Error al abrir el archivo: " + path)
 		return {}
 
-	var content := file.get_as_text()
-	var data = JSON.parse_string(content)
-
+	var data = JSON.parse_string(file.get_as_text())
 	if data == null or not data is Dictionary:
-		push_error("DataLoader: Error al parsear: " + path)
+		push_error("DataLoader: Error al parsear JSON en: " + path)
 		return {}
 
 	return data
+	
 
-# ============================================================
-# FUNCIONES DE CONSULTA
-# ============================================================
+# ===== PUBLIC API =====
+# En este apartado van todas las funciones que devuelven una copia del dato pedido o requerido
+# Usa el helper para recoger los datos: Si el ID no existe, se devuelve un diccionario vacío y un warning
 
-# Obtener los datos de un personaje por su ID ("jasmine", "alcalde", etc.)
-func get_character(character_id: String) -> Dictionary:
-	return characters.get(character_id, {})
+# --- Animales ---
 
-# Obtener el nombre visible de un personaje
-func get_character_name(character_id: String) -> String:
-	var data := get_character(character_id)
-	return data.get("name", character_id)
+func get_animal(id: String) -> Dictionary:
+	return _get_entry(_animals, id, "animal")
 
-# Obtener los personajes que visitan la cafetería un día concreto
-func get_today_characters(day_number: int) -> Array:
-	var day_str := str(day_number)
-	if not day_schedule.has(day_str):
-		return []
+func get_all_animals() -> Dictionary:
+	return _animals.duplicate(true)
 
-	var schedule: Array = day_schedule[day_str]
-	var result: Array = []
-	for entry in schedule:
-		var char_id: String = entry["character_id"]
-		var char_data: Dictionary = get_character(char_id).duplicate()
-		char_data["_id"] = char_id
-		char_data["visit_order"] = entry["visit_order"]
-		result.append(char_data)
+# --- Personajes ---
 
-	return result
+func get_character(id: String) -> Dictionary:
+	return _get_entry(_characters, id, "character")
 
-# Obtener los datos de un animal por su ID ("mochi", "luna", etc.)
-func get_animal(animal_id: String) -> Dictionary:
-	return animals.get(animal_id, {})
+func get_all_characters() -> Dictionary:
+	return _characters.duplicate(true)
 
-# Obtener el animal que aparece un día concreto
-func get_animal_for_day(day_number: int) -> Dictionary:
-	for animal_id in animals:
-		var animal: Dictionary = animals[animal_id]
-		if animal.get("appears_on_day", -1) == day_number:
-			var result := animal.duplicate()
-			result["_id"] = animal_id
-			return result
-	return {}
+# --- Pistas ---
 
-# Obtener los datos de un lugar
-func get_location(location_id: String) -> Dictionary:
-	return locations.get(location_id, {})
+func get_clue(id: String) -> Dictionary:
+	return _get_entry(_clues, id, "clue")
 
-# Obtener los datos de un final
-func get_ending(ending_id: String) -> Dictionary:
-	return endings.get(ending_id, {})
+func get_all_clues() -> Dictionary:
+	return _clues.duplicate(true)
 
-# Obtener todos los personajes que tienen ruta de amistad
-func get_friendship_characters() -> Array:
-	var result: Array = []
-	for char_id in characters:
-		if characters[char_id].get("has_friendship_route", false):
-			var data := characters[char_id].duplicate()
-			data["_id"] = char_id
-			result.append(data)
-	return result
+# --- Emails ---
+
+func get_email(id: String) -> Dictionary:
+	return _get_entry(_emails, id, "email")
+
+func get_all_emails() -> Dictionary:
+	return _emails.duplicate(true)
+
+# --- Recetas ---
+
+func get_recipe(id: String) -> Dictionary:
+	return _get_entry(_recipes, id, "recipe")
+
+func get_all_recipes() -> Dictionary:
+	return _recipes.duplicate(true)
+
+# --- CGs ---
+
+func get_cg(id: String) -> Dictionary:
+	return _get_entry(_cgs, id, "cg")
+
+func get_all_cgs() -> Dictionary:
+	return _cgs.duplicate(true)
+
+
+# ===== HELPER INTERNO =====
+
+# Busca una entrada en un diccionario de datos por su ID, centraliza su manejo y devuelve warnings descriptivos
+func _get_entry(dataset: Dictionary, id: String, type_name: String) -> Dictionary:
+	if not dataset.has(id):
+		push_warning("DataLoader: %s con ID '%s' no encontrado." % [type_name, id])
+		return {}
+	return dataset[id].duplicate(true)
+	
