@@ -1,5 +1,5 @@
 [
-	{"location": "cafedefault", "music": "themename"},
+	{"location": "cafedefault", "music": "pista_test1"},
 	
 	{"speaker": "Jasmine", "text": "Hola, soy Jasmine. Esto es un ejemplo de texto.", "expression": "normal"},
 	{"speaker": "Hunter", "text": "Hola, yo soy Hunter. Esto también es un ejemplo de texto.", "show_character": "Jasmine", "expression": "sad"},

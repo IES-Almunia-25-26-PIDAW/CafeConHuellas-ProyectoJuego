@@ -1,21 +1,13 @@
 extends Node
 
-# DataLoader: Carga los archivos JSON de datos fijos al iniciar el juego.
-# Estos datos NUNCA se modifican durante la partida, solo se consultan.
-
-# Diccionarios donde se guardarán los datos de cada JSON al cargarlos
-# Empiezan vacíos y se llenan en _ready()
 var characters: Dictionary = {}
 var animals: Dictionary = {}
 var locations: Dictionary = {}
 var day_schedule: Dictionary = {}
 var endings: Dictionary = {}
 
-# Ruta donde están los archivos JSON dentro del proyecto
 const DATA_PATH := "res://resources/data/"
 
-# _ready() se ejecuta automáticamente cuando el juego arranca
-# Como es un Autoload, se ejecuta una sola vez al inicio
 func _ready() -> void:
 	characters = _load_json("characters.json")
 	animals = _load_json("animals.json")
@@ -24,47 +16,33 @@ func _ready() -> void:
 	endings = _load_json("endings.json")
 	print("DataLoader: Datos cargados correctamente.")
 
-# Función privada que abre un archivo JSON y devuelve su contenido como Dictionary
-# Se llama una vez por cada archivo en _ready()
 func _load_json(filename: String) -> Dictionary:
-	var path := DATA_PATH + filename
+	var path: String = DATA_PATH + filename
 	if not FileAccess.file_exists(path):
 		push_error("DataLoader: No se encontró el archivo: " + path)
 		return {}
-
-	var file := FileAccess.open(path, FileAccess.READ)
+	var file: FileAccess = FileAccess.open(path, FileAccess.READ)
 	if file == null:
 		push_error("DataLoader: Error al abrir: " + path)
 		return {}
-
-	var content := file.get_as_text()
-	var data = JSON.parse_string(content)
-
+	var content: String = file.get_as_text()
+	var data: Variant = JSON.parse_string(content)
 	if data == null or not data is Dictionary:
 		push_error("DataLoader: Error al parsear: " + path)
 		return {}
-
 	return data
 
-# ============================================================
-# FUNCIONES DE CONSULTA
-# ============================================================
-
-# Obtener los datos de un personaje por su ID ("jasmine", "alcalde", etc.)
 func get_character(character_id: String) -> Dictionary:
 	return characters.get(character_id, {})
 
-# Obtener el nombre visible de un personaje
 func get_character_name(character_id: String) -> String:
-	var data := get_character(character_id)
+	var data: Dictionary = get_character(character_id)
 	return data.get("name", character_id)
 
-# Obtener los personajes que visitan la cafetería un día concreto
 func get_today_characters(day_number: int) -> Array:
-	var day_str := str(day_number)
+	var day_str: String = str(day_number)
 	if not day_schedule.has(day_str):
 		return []
-
 	var schedule: Array = day_schedule[day_str]
 	var result: Array = []
 	for entry in schedule:
@@ -73,37 +51,31 @@ func get_today_characters(day_number: int) -> Array:
 		char_data["_id"] = char_id
 		char_data["visit_order"] = entry["visit_order"]
 		result.append(char_data)
-
 	return result
 
-# Obtener los datos de un animal por su ID ("mochi", "luna", etc.)
 func get_animal(animal_id: String) -> Dictionary:
 	return animals.get(animal_id, {})
 
-# Obtener el animal que aparece un día concreto
 func get_animal_for_day(day_number: int) -> Dictionary:
 	for animal_id in animals:
 		var animal: Dictionary = animals[animal_id]
 		if animal.get("appears_on_day", -1) == day_number:
-			var result := animal.duplicate()
+			var result: Dictionary = animal.duplicate()
 			result["_id"] = animal_id
 			return result
 	return {}
 
-# Obtener los datos de un lugar
 func get_location(location_id: String) -> Dictionary:
 	return locations.get(location_id, {})
 
-# Obtener los datos de un final
 func get_ending(ending_id: String) -> Dictionary:
 	return endings.get(ending_id, {})
 
-# Obtener todos los personajes que tienen ruta de amistad
 func get_friendship_characters() -> Array:
 	var result: Array = []
 	for char_id in characters:
 		if characters[char_id].get("has_friendship_route", false):
-			var data := characters[char_id].duplicate()
+			var data: Dictionary = characters[char_id].duplicate()
 			data["_id"] = char_id
 			result.append(data)
 	return result

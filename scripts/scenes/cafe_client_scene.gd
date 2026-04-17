@@ -63,6 +63,9 @@ func process_current_line():
 		background.texture = load(background_file)
 		# TODO: para la música se hace lo mismo que aquí
 		# Va a la siguiente línea
+		# Si la línea tiene música, la reproducimos
+		if line.has("music"):
+			MusicManager.play(line["music"])
 		dialog_index += 1
 		process_current_line()
 		return
@@ -152,6 +155,8 @@ func _on_transition_out_completed():
 		if first_line.has("location"):
 			background.texture = load("res://assets/images/" + first_line["location"] + ".png")
 			# para la música también se agregaría aquí ya que se pone en la primera línea
+			if first_line.has("music"):
+				MusicManager.play(first_line["music"])
 			dialog_index += 1
 		SceneManager.transition_in(transition_effect)
 	else:

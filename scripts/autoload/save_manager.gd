@@ -16,7 +16,7 @@ const MAX_SLOTS: int = 3
 
 # Versión actual del formato de guardado
 # Se debe incrementar cuando cambia la estructura y añadir lógica en _migrate_save_data() para actualizar saves antiguas
-const CURRENT_SAVE_VERSION: int = 2
+const CURRENT_SAVE_VERSION: int = 1
 
 func _ready() -> void:
 	# Hay que asegurarse que el directorio de las savefiles existe cuando el juego comienza

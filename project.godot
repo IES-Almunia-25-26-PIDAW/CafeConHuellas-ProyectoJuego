@@ -22,6 +22,7 @@ GameState="*uid://bnf1p7ncqp3a8"
 SaveManager="*uid://lmql2qulky2a"
 SettingsManager="*uid://dyp2fg8p6317x"
 DataLoader="*uid://4n64qh450gsc"
+MusicManager="*uid://cqrmua6tiu2yt"
 
 [display]
 
