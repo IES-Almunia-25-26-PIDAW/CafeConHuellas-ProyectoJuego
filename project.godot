@@ -17,11 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SceneManager="*uid://d0bdocf4qxrle"
-GameState="*uid://bnf1p7ncqp3a8"
-SaveManager="*uid://lmql2qulky2a"
-SettingsManager="*uid://dyp2fg8p6317x"
 DataLoader="*uid://4n64qh450gsc"
+GameState="*uid://bnf1p7ncqp3a8"
+GlobalSave="*uid://bq6xktdp8w7gj"
+SaveManager="*uid://lmql2qulky2a"
+SceneManager="*uid://d0bdocf4qxrle"
+SettingsManager="*uid://dyp2fg8p6317x"
 MusicManager="*uid://cqrmua6tiu2yt"
 
 [display]

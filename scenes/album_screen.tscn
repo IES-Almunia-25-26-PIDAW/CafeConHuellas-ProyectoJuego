@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cuanxti6rnk04"]
+
+[ext_resource type="Script" uid="uid://jvx08xac1ukg" path="res://scripts/scenes/album_screen.gd" id="1_uhqty"]
+
+[node name="AlbumScreen" type="Node2D" unique_id=636467587]
+
+[node name="AlbumScreenControl" type="Control" parent="." unique_id=1056914686]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_uhqty")
+
+[node name="GridContainer" type="GridContainer" parent="AlbumScreenControl" unique_id=524297827]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
