@@ -119,3 +119,7 @@ label_settings = SubResource("LabelSettings_yjvli")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="." unique_id=1260894222]
+volume_db = -10.0
+bus = &"Voices"

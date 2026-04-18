@@ -17,7 +17,13 @@ const CHARACTER_DETAILS : Dictionary = {
 	Name.JASMINE: {
 		"name": "Jasmine",
 		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
-		"gender": "female"
+		"gender": "female",
+		# Bus de audio con los efectos propios de Jasmine
+		"voice_bus": "VoiceJasmine",
+		# Ruta al archivo de voz del personaje
+		"voice": "res://assets/audio/voices/voice_base.ogg",
+		# Tono de voz, más alto = más agudo
+		"voice_pitch": 2
 	}
 }
 
