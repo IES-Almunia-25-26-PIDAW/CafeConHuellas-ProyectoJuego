@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cqfch5q72r07h" path="res://scenes/client_char.tscn" id="1_wf4sh"]
 [ext_resource type="PackedScene" uid="uid://ckiusgx7smoia" path="res://scenes/dialog_ui.tscn" id="2_ahhn6"]
 [ext_resource type="Texture2D" uid="uid://bmm4sao7657f3" path="res://assets/images/cafedefault.png" id="2_uemky"]
+[ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="5_1ptve"]
+[ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="6_tp2fe"]
+[ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="7_e3vck"]
 
 [node name="CafeClientScene" type="Node2D" unique_id=1225861441]
 script = ExtResource("1_uemky")
@@ -49,3 +52,18 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 grow_vertical = 0
+
+[node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=22510218]
+layer = 10
+
+[node name="PauseButton" parent="PauseCanvas" unique_id=899153566 node_paths=PackedStringArray("button_visual") instance=ExtResource("5_1ptve")]
+pause_menu_scene = ExtResource("6_tp2fe")
+button_visual = NodePath("PauseTexture")
+
+[node name="PauseTexture" type="TextureRect" parent="PauseCanvas/PauseButton" unique_id=1039655261]
+custom_minimum_size = Vector2(60, 60)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 70.0
+texture = ExtResource("7_e3vck")

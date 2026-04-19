@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ntoxy6ssl6pb"]
+
+[ext_resource type="Script" uid="uid://dkchc6y4b6txu" path="res://scripts/menus/pause_button.gd" id="2_usvqd"]
+
+[node name="PauseButton" type="Node" unique_id=950623637]
+script = ExtResource("2_usvqd")

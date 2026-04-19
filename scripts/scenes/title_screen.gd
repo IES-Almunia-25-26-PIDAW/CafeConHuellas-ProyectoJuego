@@ -10,6 +10,7 @@ var scene_to_load: String = ""
 
 func _ready():
 	SceneManager.transition_in()
+	MusicManager.play("pista_test2") # Cambiar a una canción "menu_theme" o algo asi
 	
 	new_game_button.pressed.connect(_on_new_game_button_pressed)
 	# A tratar luego
@@ -21,6 +22,7 @@ func _ready():
 	SceneManager.transition_out_completed.connect(_on_transition_out_completed, CONNECT_ONE_SHOT)
 
 func _on_new_game_button_pressed():
+	MusicManager.stop()
 	scene_to_load = "res://scenes/cafe_client_zone.tscn"
 	SceneManager.transition_out()
 

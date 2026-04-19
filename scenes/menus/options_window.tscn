@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://ccdewhg87d5qe"]
+
+[ext_resource type="Script" uid="uid://ci44fray23kic" path="res://scripts/menus/options_window.gd" id="1_sodr0"]
+
+[node name="OptionsWindow" type="PanelContainer" unique_id=13526063]
+clip_contents = true
+custom_minimum_size = Vector2(1000, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -300.0
+offset_right = 500.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_sodr0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=817427972]
+layout_mode = 2
+alignment = 1
+
+[node name="OptionsTitle" type="RichTextLabel" parent="VBoxContainer" unique_id=655851172]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "OPCIONES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsSeparator" type="HSeparator" parent="VBoxContainer" unique_id=441249339]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="MusicSectionLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1089207648]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Música"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1548639003]
+custom_minimum_size = Vector2(800, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/MusicContainer" unique_id=1179504132]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 50)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+
+[node name="MusicValueLabel" type="RichTextLabel" parent="VBoxContainer/MusicContainer" unique_id=1597353117]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+text = "0 %"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VoicesSectionLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=740148609]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Voces"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VoicesContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=535733312]
+custom_minimum_size = Vector2(800, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VoicesSlider" type="HSlider" parent="VBoxContainer/VoicesContainer" unique_id=97525735]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 50)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+
+[node name="VoicesValueLabel" type="RichTextLabel" parent="VBoxContainer/VoicesContainer" unique_id=1167994849]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+text = "0 %"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonSeparator" type="HSeparator" parent="VBoxContainer" unique_id=341059130]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="VBoxContainer" unique_id=1425636139]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Cerrar"

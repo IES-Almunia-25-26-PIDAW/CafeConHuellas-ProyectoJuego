@@ -28,6 +28,10 @@ func _ready() -> void:
 	SceneManager.transition_in()
 
 func _input(event):
+	# No procesar input del diálogo si el juego está pausado
+	if get_tree().paused:
+		return
+	
 	var line = dialog_lines[dialog_index]
 	var has_choices = line.has("choices")
 	

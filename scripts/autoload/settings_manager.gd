@@ -2,44 +2,85 @@ extends Node
 
 # SettingsManager - Clase que permite cargar un singleton que maneja todo el guardado y cargado de preferencias de configuración del usuario
 # Estas preferencias se aplican sin importar qué savefile carga el usuario
+# Usa ConfigFile en vez de un JSON ya que para los settings es más apropiado y sencillo
 
 # Directorio base donde se van a guardar las preferencias
 const SETTINGS_PATH: String = "user://settings.cfg"
+const SECTION: String = "audio"
 
-# AJUSTES
-# Aquí tengo pensado meter algo como el volumen de la música o algo similar :p
+# Valores por defecto (rango 0.0 - 1.0)
+const DEFAULT_MUSIC_VOLUME: float = 0.8
+const DEFAULT_VOICE_VOLUME: float = 1.0
 
+# Nombre de los buses en el AudioServer de Godot
+const BUS_MUSIC: String = "Music"
+const BUS_VOICES: String = "Voices"
+
+var music_volume: float = DEFAULT_MUSIC_VOLUME
+var voice_volume: float = DEFAULT_VOICE_VOLUME
+
+# Carga los settings y los aplica al AudioServer
 func _ready() -> void:
 	load_settings()
+	_apply_to_audio_server()
 
 
 # ========= PUBLIC API =========
 
-# Guarda todos los ajustes en el archivo de configuración
-func save_settings() -> void:
-	# Crea una nueva instancia de ConfigFile
-	var config := ConfigFile.new()
-	
-	# set_value(section, key, value) guarda un valor bajo una sección
-	# ConfigFile maneja la serialización automáticamente
-	#config.set_value("display", "speaker_box_position", speaker_box_position) (EJ)
-	
-	# Guarda el archivo de configuración
-	var error := config.save(SETTINGS_PATH)
-	if error != OK:
-		push_error("SettingsManager: Error al guardar los archivos: " + error_string(error))
+# Cuando el usuario mueve un slider se aplica al audio
+func set_music_volume(value: float) -> void:
+	music_volume = clampf(value, 0.0, 1.0)
+	_set_bus_volume(BUS_MUSIC, music_volume)
+	save_settings()
 
-# Carga los ajustes desde el archivo de configuración. Vuelve a default si el archivo no existe
+func set_voice_volume(value: float) -> void:
+	voice_volume = clampf(value, 0.0, 1.0)
+	_set_bus_volume(BUS_VOICES, voice_volume)
+	save_settings()
+
+
+# ========= GUARDADO Y CARGADO =========
+
+func save_settings() -> void:
+	var config := ConfigFile.new()
+	config.set_value(SECTION, "music_volume", music_volume)
+	config.set_value(SECTION, "voice_volume", voice_volume)
+	
+	var err := config.save(SETTINGS_PATH)
+	if err != OK:
+		push_error("SettingsManager: Error al guardar settings: " + error_string(err))
+
 func load_settings() -> void:
 	var config := ConfigFile.new()
+	var err := config.load(SETTINGS_PATH)
 	
-	# config.load() devuelve un error de código. Si el archivo no existe vuelve a los valores por default
-	var error := config.load(SETTINGS_PATH)
-	if error != OK:
-		# Si el archivo no existe aún se usarán los valores por default
-		# Un archivo de configuración se creará la primera vez que save_settings() se llame
+	# Si el archivo no existe usamos los settings por default
+	if err == ERR_FILE_NOT_FOUND:
+		return
+	if err != OK:
+		push_error("SettingsManager: Error al cargar settings: " + error_string(err))
 		return
 	
-	# get_value(section, key, default) lee un valor de una configuración
-	# El tercer argumento es el fallback por si la key no existe y nos protege si agregamos más ajustes en un futuro
-	#speaker_box_position = config.get_value("display", "speaker_box_position", "left") (EJ)
+	music_volume = config.get_value(SECTION, "music_volume", DEFAULT_MUSIC_VOLUME)
+	voice_volume = config.get_value(SECTION, "voice_volume", DEFAULT_VOICE_VOLUME)
+
+
+# ========= HELPERS =========
+
+# Aplica los volúmenes cargados al AudioServer al iniciar el juego
+func _apply_to_audio_server() -> void:
+	_set_bus_volume(BUS_MUSIC,  music_volume)
+	_set_bus_volume(BUS_VOICES, voice_volume)
+
+# Convierte los valores 0.0-1.0 a dB y los aplica al bus indicado (0 es el máximo y -80 silencio)
+func _set_bus_volume(bus_name: String, linear_value: float) -> void:
+	var bus_idx := AudioServer.get_bus_index(bus_name)
+	if bus_idx == -1:
+		push_warning("SettingsManager: Bus de audio no encontrado: " + bus_name)
+		return
+	
+	if linear_value <= 0.0:
+		AudioServer.set_bus_mute(bus_idx, true)
+	else:
+		AudioServer.set_bus_mute(bus_idx, false)
+		AudioServer.set_bus_volume_db(bus_idx, linear_to_db(linear_value))

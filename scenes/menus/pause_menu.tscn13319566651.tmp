@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://ciqo2glja1xui"]
+
+[ext_resource type="PackedScene" uid="uid://ccdewhg87d5qe" path="res://scenes/menus/options_window.tscn" id="1_7unhi"]
+[ext_resource type="Script" uid="uid://dpjb20uku1nn0" path="res://scripts/menus/pause_menu.gd" id="1_gsnt3"]
+[ext_resource type="PackedScene" uid="uid://cplcewrlrnw35" path="res://scenes/menus/confirm_window.tscn" id="2_gsnt3"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1208517921]
+layer = 10
+script = ExtResource("1_gsnt3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1171247264]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="BackdropControl" type="Control" parent="." unique_id=2085962686]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BackdropControl" unique_id=637526816]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackdropControl/PanelContainer" unique_id=247087734]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="SaveButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=575084988]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Guardar"
+
+[node name="LoadButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=1909809238]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Cargar"
+
+[node name="OptionsButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=2037121701]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Opciones"
+
+[node name="QuitButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=764992750]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Salir al Menú"
+
+[node name="OptionsWindow" parent="BackdropControl/PanelContainer" unique_id=13526063 instance=ExtResource("1_7unhi")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ConfirmWindow" parent="BackdropControl/PanelContainer" unique_id=614904631 instance=ExtResource("2_gsnt3")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cplcewrlrnw35"]
+
+[ext_resource type="Script" uid="uid://bfd6nlmlwl4u" path="res://scripts/menus/confirm_window.gd" id="1_cddro"]
+
+[node name="ConfirmWindow" type="PanelContainer" unique_id=614904631]
+custom_minimum_size = Vector2(500, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -113.5
+offset_right = 20.0
+offset_bottom = 113.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_cddro")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1088641380]
+layout_mode = 2
+alignment = 1
+
+[node name="MessageLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=2096446722]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Mensaje a mostrar en la ventana"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=2142493250]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=63110677]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=113990376]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Confirmar"
+
+[node name="CancelButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=2026550218]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Cancelar"
