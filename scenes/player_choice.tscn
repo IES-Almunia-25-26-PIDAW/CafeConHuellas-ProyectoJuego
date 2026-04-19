@@ -1,22 +1,36 @@
 [gd_scene format=3 uid="uid://d0d4a32nx5fsy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjvli"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edwrk"]
+bg_color = Color(0.43681613, 0.3168574, 0.26132932, 0.9019608)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh3aw"]
-bg_color = Color(0.5, 0.24875, 0.16499999, 0.6745098)
+bg_color = Color(0.31, 0.21891166, 0.1767, 0.9019608)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avaca"]
+bg_color = Color(0.3834205, 0.27524343, 0.22514108, 0.9019608)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="Theme" id="Theme_yjvli"]
+Button/colors/font_color = Color(0.9160109, 0.8629231, 0.8233717, 1)
+Button/colors/font_hover_color = Color(0.94508773, 0.90988666, 0.8837679, 1)
+Button/colors/font_pressed_color = Color(0.9160109, 0.8629231, 0.8233717, 1)
 Button/font_sizes/font_size = 30
-Button/styles/focus = SubResource("StyleBoxFlat_yjvli")
 Button/styles/hover = SubResource("StyleBoxFlat_edwrk")
 Button/styles/normal = SubResource("StyleBoxFlat_xh3aw")
 Button/styles/pressed = SubResource("StyleBoxFlat_avaca")
 
 [node name="Button" type="Button" unique_id=1336306988]
-custom_minimum_size = Vector2(500, 40)
+custom_minimum_size = Vector2(500, 50)
 theme = SubResource("Theme_yjvli")
 text = "This is a choice."

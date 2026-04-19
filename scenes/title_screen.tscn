@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://sw578em8eioq"]
 
-[ext_resource type="Texture2D" uid="uid://bmm4sao7657f3" path="res://assets/images/cafedefault.png" id="1_fgkus"]
 [ext_resource type="Script" uid="uid://boyeq0poi2bkp" path="res://scripts/scenes/title_screen.gd" id="1_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://6lmlib41od4" path="res://assets/images/mainmenu.png" id="2_s4lrb"]
+[ext_resource type="Theme" uid="uid://deq5aplf33ikn" path="res://assets/themes/title_button_theme.tres" id="3_s4lrb"]
 
 [node name="TitleScreen" type="Node2D" unique_id=352405336]
 script = ExtResource("1_sa3yf")
@@ -11,15 +12,17 @@ script = ExtResource("1_sa3yf")
 [node name="TextureRect" type="TextureRect" parent="BackgroundLayer" unique_id=1264690675]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_fgkus")
+texture = ExtResource("2_s4lrb")
 
 [node name="ContentLayer" type="CanvasLayer" parent="." unique_id=1201115431]
 
 [node name="CenterContainer" type="CenterContainer" parent="ContentLayer" unique_id=111641634]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -540.0
+offset_right = 658.0
+offset_bottom = 540.0
 grow_vertical = 2
 size_flags_horizontal = 4
 
@@ -30,39 +33,48 @@ theme_override_constants/separation = 80
 [node name="Title" type="RichTextLabel" parent="ContentLayer/CenterContainer/VBoxContainer" unique_id=121958066]
 custom_minimum_size = Vector2(600, 200)
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/normal_font_size = 50
-text = "PawCafe Game VN"
+theme_override_font_sizes/normal_font_size = 110
+text = "PawCafe"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="ContentLayer/CenterContainer/VBoxContainer" unique_id=210397982]
+custom_minimum_size = Vector2(0, 600)
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 35
 
 [node name="NewGameButton" type="Button" parent="ContentLayer/CenterContainer/VBoxContainer/Buttons" unique_id=108482108]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(430, 140)
 layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_s4lrb")
 text = "Nuevo Juego"
 
 [node name="ContinueButton" type="Button" parent="ContentLayer/CenterContainer/VBoxContainer/Buttons" unique_id=732091337]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(430, 140)
 layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_s4lrb")
 text = "Continuar"
 
 [node name="AlbumButton" type="Button" parent="ContentLayer/CenterContainer/VBoxContainer/Buttons" unique_id=281939784]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(430, 140)
 layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_s4lrb")
 text = "Album"
 
 [node name="ExitButton" type="Button" parent="ContentLayer/CenterContainer/VBoxContainer/Buttons" unique_id=1441462778]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(430, 140)
 layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_s4lrb")
 text = "Salir"

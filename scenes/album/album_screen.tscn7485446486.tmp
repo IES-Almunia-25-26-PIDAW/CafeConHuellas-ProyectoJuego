@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c8e31tex6yxit"]
+
+[ext_resource type="Script" uid="uid://dkcownc8oj8gk" path="res://scripts/ui/album_screen.gd" id="1_qs7uk"]
+[ext_resource type="PackedScene" uid="uid://feo50gb6lvne" path="res://scenes/album/cg_viewer.tscn" id="2_b33m4"]
+
+[node name="AlbumScreen" type="Control" unique_id=1037144580]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qs7uk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=88822686]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=1817583118]
+custom_minimum_size = Vector2(1920, 80)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer/Header" unique_id=1035269081]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Atrás"
+
+[node name="HeaderLabel" type="RichTextLabel" parent="VBoxContainer/Header" unique_id=2042705963]
+clip_contents = false
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Álbum"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CGsCount" type="RichTextLabel" parent="VBoxContainer/Header" unique_id=435455665]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1411903578]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=1667264067]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CgViewer" parent="." unique_id=1328507022 instance=ExtResource("2_b33m4")]
+visible = false
+layout_mode = 1

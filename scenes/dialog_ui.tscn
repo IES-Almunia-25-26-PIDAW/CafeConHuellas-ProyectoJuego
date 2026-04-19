@@ -8,12 +8,12 @@ content_margin_left = 40.0
 content_margin_top = 30.0
 content_margin_right = 40.0
 content_margin_bottom = 30.0
-bg_color = Color(0.36078432, 0.29411766, 0.24705882, 0.8627451)
+bg_color = Color(0.87, 0.79344, 0.73080003, 0.9019608)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0.2, 0.14573334, 0.112, 0.9019608)
+border_color = Color(0.31, 0.21891166, 0.1767, 0.9019608)
 corner_detail = 18
 
 [sub_resource type="Theme" id="Theme_xh3aw"]
@@ -27,9 +27,15 @@ RichTextLabel/font_sizes/normal_font_size = 26
 [sub_resource type="Theme" id="Theme_n58gf"]
 default_font_size = 0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjvli"]
+bg_color = Color(0.31, 0.21891166, 0.1767, 0.9019608)
+
+[sub_resource type="Theme" id="Theme_edwrk"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_yjvli")
+
 [sub_resource type="LabelSettings" id="LabelSettings_yjvli"]
 font_size = 30
-font_color = Color(0.9019608, 0.88235295, 0.8352941, 1)
+font_color = Color(0.9160109, 0.8629231, 0.8233717, 1)
 
 [node name="DialogUI" type="Control" unique_id=1131618186]
 layout_mode = 3
@@ -86,7 +92,7 @@ theme = SubResource("Theme_xh3aw")
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_n58gf")
-theme_override_colors/default_color = Color(0.9, 0.8832, 0.837, 1)
+theme_override_colors/default_color = Color(0.31, 0.22113335, 0.1767, 1)
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
@@ -109,6 +115,7 @@ offset_right = -250.0
 offset_bottom = -316.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_edwrk")
 
 [node name="SpeakerName" type="Label" parent="SpeakerBox" unique_id=1268933512]
 unique_name_in_owner = true

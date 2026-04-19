@@ -1,16 +1,21 @@
-extends Control
+[gd_scene format=3 uid="uid://cuanxti6rnk04"]
+
+[ext_resource type="Texture2D" uid="uid://bmm4sao7657f3" path="res://assets/images/cafedefault.png" id="2_m1k6x"]
+
+[sub_resource type="GDScript" id="GDScript_uhqty"]
+script/source = "extends Control
 
 # AlbumScreen: Pantalla del álbum donde se muestran todas las ilustraciones/cgs del juego
 # Muestra el contenido de las desbloqueadas y una silueta para las bloqueadas
 
 # Estructura esperada en DataLoader (cgs.json o similar):
 #   {
-#     "cg_jasmine_01": {
-#       "title":       "Una tarde en el café",
-#       "character":   "jasmine",
-#       "description": "...",
-#       "texture":     "res://assets/cgs/cg_jasmine_01.png",
-#       "thumbnail":   "res://assets/cgs/thumbs/cg_jasmine_01_thumb.png"
+#     \"cg_jasmine_01\": {
+#       \"title\":       \"Una tarde en el café\",
+#       \"character\":   \"jasmine\",
+#       \"description\": \"...\",
+#       \"texture\":     \"res://assets/cgs/cg_jasmine_01.png\",
+#       \"thumbnail\":   \"res://assets/cgs/thumbs/cg_jasmine_01_thumb.png\"
 #     },
 #     ...
 #   }
@@ -21,8 +26,10 @@ extends Control
 
 # Función ready
 func _ready() -> void:
+	SceneManager.transition_in()
+	
 	if grid_container == null:
-		push_error("AlbumScreen: grid_container no asignado en el inspector.")
+		push_error(\"AlbumScreen: grid_container no asignado en el inspector.\")
 		return
 	_populate_grid()
 
@@ -50,8 +57,8 @@ func _create_card(cg_id: String, data: Dictionary, is_unlocked: bool) -> PanelCo
 	texture_rect.custom_minimum_size = Vector2(160, 120)
 
 	if is_unlocked:
-		var thumb_path: String = data.get("thumbnail", data.get("texture", ""))
-		var tex: Texture2D = load(thumb_path) if thumb_path != "" else null
+		var thumb_path: String = data.get(\"thumbnail\", data.get(\"texture\", \"\"))
+		var tex: Texture2D = load(thumb_path) if thumb_path != \"\" else null
 		if tex:
 			texture_rect.texture = tex
 	else:
@@ -61,7 +68,7 @@ func _create_card(cg_id: String, data: Dictionary, is_unlocked: bool) -> PanelCo
 
 	# Título (solo si está desbloqueada)
 	var label := Label.new()
-	label.text            = data.get("title", "???") if is_unlocked else "???"
+	label.text            = data.get(\"title\", \"???\") if is_unlocked else \"???\"
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.autowrap_mode   = TextServer.AUTOWRAP_WORD
 	vbox.add_child(label)
@@ -83,3 +90,27 @@ func _show_fullscreen(cg_id: String, data: Dictionary) -> void:
 	# Por ejemplo, si tienes un autoload UIManager:
 	# UIManager.show_cg_viewer(cg_id)
 	pass
+"
+
+[node name="AlbumScreen" type="Node2D" unique_id=636467587]
+
+[node name="AlbumControl" type="Control" parent="." unique_id=1056914686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = SubResource("GDScript_uhqty")
+
+[node name="GridContainer" type="GridContainer" parent="AlbumControl" unique_id=524297827]
+layout_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=155870930]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1403539346]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_m1k6x")

@@ -1,0 +1,10 @@
+{
+  "cg_ejemplo": {
+	"title": "Ejemplo",
+	"character": "jasmine",
+	"description": "Descripción de ejemplo de la ilustración.",
+	"texture": "res://assets/cgs/cg_ejemplo.png",
+	"thumbnail": "res://assets/cgs/thumbs/cg_ejemplo_thumb.png",
+	"sort_order": 1
+  },
+}

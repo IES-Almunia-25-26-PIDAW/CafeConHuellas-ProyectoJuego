@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://feo50gb6lvne"]
+
+[ext_resource type="Script" uid="uid://6x2eu3qyw3xd" path="res://scripts/ui/cg_viewer.gd" id="1_t12rw"]
+[ext_resource type="Texture2D" uid="uid://6lmlib41od4" path="res://assets/images/mainmenu.png" id="2_uanhq"]
+
+[sub_resource type="Theme" id="Theme_qfih0"]
+
+[node name="CgViewer" type="Control" unique_id=1328507022]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t12rw")
+
+[node name="BlackOverlay" type="ColorRect" parent="." unique_id=518283146]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CGImage" type="TextureRect" parent="." unique_id=1216010056]
+layout_mode = 1
+texture = ExtResource("2_uanhq")
+
+[node name="ImageInfo" type="VBoxContainer" parent="." unique_id=842160410]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 1920.0
+grow_vertical = 0
+theme = SubResource("Theme_qfih0")
+
+[node name="ImageTitle" type="RichTextLabel" parent="ImageInfo" unique_id=1387957311]
+custom_minimum_size = Vector2(800, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Image Title"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ImageDescription" type="RichTextLabel" parent="ImageInfo" unique_id=1818815822]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Image Description
+Image Desc
+a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="ImageInfo" unique_id=876765348]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Cerrar
+"
+
+[node name="CloseButton" type="Button" parent="ImageInfo/CloseButton" unique_id=198383586]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Cerrar
+"
+
+[node name="CloseButton" type="Button" parent="ImageInfo/CloseButton/CloseButton" unique_id=1195190512]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Cerrar
+"
