@@ -11,7 +11,7 @@ extends Control
 const AlbumCard: PackedScene = preload("res://scenes/album/album_card.tscn")
 
 # Contador para el título del álbum (cuantas CGs hay desbloqueadas / total)
-@export var cgs_count_label: RichTextLabel
+@onready var cgs_count_label: RichTextLabel = %CGsCount
 
 # Escena a cargar cuando se le da al backbutton
 var scene_to_load: String = ""
@@ -43,6 +43,8 @@ func _populate() -> void:
 	for cg_id in sorted_ids:
 		var cg_data: Dictionary = all_cgs[cg_id]
 		var is_unlocked: bool = GlobalSave.has_image(cg_id)
+		# Para probar
+		#var is_unlocked: bool = true
 		
 		if is_unlocked:
 			unlocked_count += 1
@@ -62,7 +64,7 @@ func _populate() -> void:
 func _on_card_pressed(cg_id: String, cg_data: Dictionary) -> void:
 	cg_viewer.show_cg(cg_id, cg_data)
 
-# Se llama cuando el CgViewer se cierra TODO: pro ahora nada, pero se puede tener logica a futuro como animaciones
+# Se llama cuando el CgViewer se cierra, se puede agregar lógica de animaciones
 func _on_viewer_closed() -> void:
 	pass
 

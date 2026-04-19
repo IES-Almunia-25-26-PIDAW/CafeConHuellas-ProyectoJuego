@@ -6,15 +6,20 @@ extends Control
 # Señal que se emite cuando el viewer se cierra
 signal viewer_closed
 
-@export var cg_texture: TextureRect
-@export var cg_title: RichTextLabel
-@export var cg_description: RichTextLabel
+@onready var cg_texture: TextureRect = %CGImage
+@onready var cg_title: RichTextLabel = %ImageTitle
+@onready var cg_description: RichTextLabel = %ImageDescription
 @onready var close_button: Button = %CloseButton
 
 # Oculta al principio el visor
 func _ready() -> void:
 	visible = false
 	close_button.pressed.connect(_on_close)
+	
+	# Filtros del mouse para que permita hacer click en el botón de cerrar y cerrar la vista
+	cg_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	cg_title.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	cg_description.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 # Muestra el visor con los datos de una ilustración concreta, se llama desde AlbumScreen al hacer click en una tarjeta
 func show_cg(cg_id: String, cg_data: Dictionary) -> void:

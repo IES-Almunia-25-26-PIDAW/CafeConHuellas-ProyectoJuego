@@ -1,10 +1,18 @@
 {
-  "cg_ejemplo": {
-	"title": "Ejemplo",
-	"character": "jasmine",
-	"description": "Descripción de ejemplo de la ilustración.",
-	"texture": "res://assets/cgs/cg_ejemplo.png",
-	"thumbnail": "res://assets/cgs/thumbs/cg_ejemplo_thumb.png",
-	"sort_order": 1
-  },
+	"cg_ejemplo": {
+		"title": "Ejemplo",
+		"character": "jasmine",
+		"description": "Descripción de ejemplo de la ilustración.",
+		"texture": "res://assets/cgs/cg_ejemplo.png",
+		"thumbnail": "res://assets/cgs/thumbs/cg_ejemplo_thumb.png",
+		"sort_order": 1
+	  },
+	"cg_ejemplo2": {
+		"title": "Ejemplo2",
+		"character": "jasmine",
+		"description": "Descripción de ejemplo2 de la ilustración.",
+		"texture": "res://assets/cgs/cg_ejemplo2.png",
+		"thumbnail": "res://assets/cgs/thumbs/cg_ejemplo2_thumb.png",
+		"sort_order": 1
+	  },
 }

@@ -12,18 +12,18 @@ const CHARACTER_DETAILS : Dictionary = {
 	Name.HUNTER: {
 		"name": "Hunter",
 		"sprite_frames": null,
-		"gender": "placeholder"
+		"char_color": Color("4f382de6")
 	},
 	Name.JASMINE: {
 		"name": "Jasmine",
 		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
-		"gender": "female",
 		# Bus de audio con los efectos propios de Jasmine
 		"voice_bus": "VoiceJasmine",
 		# Ruta al archivo de voz del personaje
 		"voice": "res://assets/audio/voices/voice_base.ogg",
 		# Tono de voz, más alto = más agudo
-		"voice_pitch": 2
+		"voice_pitch": 2,
+		"char_color": Color("a8587ce6")
 	}
 }
 

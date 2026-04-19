@@ -8,16 +8,19 @@ signal card_pressed(cg_id: String, cg_data: Dictionary)
 
 @onready var thumbnail_rect: TextureRect = %Thumbnail
 @onready var title_label: RichTextLabel = %TitleLabel
-@onready var lock_overlay: TextureRect = %LockOverlay
-
-# Textura del candado TODO: agregarle en la escena la textura de candado de verdad
-@export var locked_texture: Texture2D
+@onready var lock_overlay: ColorRect = %LockBlackOverlay
 
 # Datos internos de la tarjeta
 var _cg_id: String = ""
 var _cg_data: Dictionary = {}
 var _is_unlocked: bool = false
 
+func _ready():
+	# Filtros del mouse para que permita hacer click en la card y propagar la signal a abrir la card presionada
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	thumbnail_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	lock_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	title_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 # Configura la tarjeta con los datos de una CG
 func setup(cg_id: String, cg_data: Dictionary, is_unlocked: bool) -> void:
@@ -29,6 +32,8 @@ func setup(cg_id: String, cg_data: Dictionary, is_unlocked: bool) -> void:
 		_setup_unlocked(_cg_data)
 	else:
 		_setup_locked()
+		# Para probar
+		#_setup_unlocked(_cg_data)
 
 # Configuración de la tarjeta si la CG está desbloqueada
 func _setup_unlocked(data: Dictionary) -> void:
@@ -46,7 +51,6 @@ func _setup_unlocked(data: Dictionary) -> void:
 
 # Configuración de la tarjeta si la CG está bloqueada
 func _setup_locked() -> void:
-	thumbnail_rect.texture = locked_texture
 	title_label.text = "???"
 	lock_overlay.visible = true
 

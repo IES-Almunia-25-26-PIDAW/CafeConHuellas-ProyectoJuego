@@ -14,12 +14,14 @@ script = ExtResource("1_qs7uk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=88822686]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+alignment = 1
 
 [node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=1817583118]
-custom_minimum_size = Vector2(1920, 80)
+custom_minimum_size = Vector2(1800, 80)
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="BackButton" type="Button" parent="VBoxContainer/Header" unique_id=1035269081]
 unique_name_in_owner = true
@@ -42,18 +44,33 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CGsCount" type="RichTextLabel" parent="VBoxContainer/Header" unique_id=435455665]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+text = "0 / 0"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1411903578]
+custom_minimum_size = Vector2(1800, 800)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+mouse_filter = 2
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=1667264067]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 800)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 size_flags_vertical = 3
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 60
+columns = 4
 
 [node name="CgViewer" parent="." unique_id=1328507022 instance=ExtResource("2_b33m4")]
 unique_name_in_owner = true
 visible = false
+z_index = 1
 layout_mode = 1

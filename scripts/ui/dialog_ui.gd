@@ -9,6 +9,7 @@ signal choice_selected
 const ChoiceButtonScene = preload("res://scenes/player_choice.tscn")
 
 @onready var dialog_line = %DialogLine
+@onready var speaker_box = %SpeakerBox
 @onready var speaker_name = %SpeakerName
 @onready var choice_list = %ChoiceList
 @onready var voice_player = $VoicePlayer # Nodo de audio que reproduce la voz del personaje
@@ -54,6 +55,11 @@ func _process(delta: float) -> void:
 func change_line(character_name: Character.Name, line: String):
 	current_character_details = Character.CHARACTER_DETAILS[character_name]
 	speaker_name.text = current_character_details["name"]
+	
+	# Color del speakerbox según el color del personaje (marrón/color de hunter por defecto)
+	var char_color: Color = current_character_details.get("char_color", Color("4f382de6"))
+	_apply_speaker_color(char_color)
+	
 	# Carga la voz del personaje si tiene una definida
 	# Si no tiene voz (como Hunter), current_voice será null y no sonará nada
 	var voice_path: String = current_character_details.get("voice", "")
@@ -67,6 +73,7 @@ func change_line(character_name: Character.Name, line: String):
 	# Si no tiene bus definido usa "Voices" por defecto
 	current_bus = current_character_details.get("voice_bus", "Voices")
 	voice_player.bus = current_bus
+	
 	current_visible_characters = 0
 	dialog_line.text = line
 	dialog_line.visible_characters = 0
@@ -111,3 +118,9 @@ func _try_play_voice(current_char: String) -> void:
 func _on_choice_button_pressed(anchor: String):
 	choice_selected.emit(anchor)
 	choice_list.hide()
+
+func _apply_speaker_color(color: Color) -> void:
+	# Colorea el fondo del panel del nombre
+	var stylebox := speaker_box.get_theme_stylebox("panel").duplicate() as StyleBoxFlat
+	stylebox.bg_color = color
+	speaker_box.add_theme_stylebox_override("panel", stylebox)
