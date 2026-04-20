@@ -1,0 +1,112 @@
+{
+  "coffee_grounds": {
+	"id": "coffee_grounds",
+	"display_name": "Café molido",
+	"icon": "res://assets/images/ingredients/coffee_grounds.png"
+  },
+  "hot_water": {
+	"id": "hot_water",
+	"display_name": "Agua caliente",
+	"icon": "res://assets/images/ingredients/hot_water.png"
+  },
+  "milk": {
+	"id": "milk",
+	"display_name": "Leche entera",
+	"icon": "res://assets/images/ingredients/milk.png"
+  },
+  "cinnamon": {
+	"id": "cinnamon",
+	"display_name": "Canela en polvo",
+	"icon": "res://assets/images/ingredients/cinnamon.png"
+  },
+  "ice": {
+	"id": "ice",
+	"display_name": "Hielo",
+	"icon": "res://assets/images/ingredients/ice.png"
+  },
+  "cocoa_powder": {
+	"id": "cocoa_powder",
+	"display_name": "Cacao en polvo",
+	"icon": "res://assets/images/ingredients/cocoa_powder.png"
+  },
+  "sugar": {
+	"id": "sugar",
+	"display_name": "Azúcar",
+	"icon": "res://assets/images/ingredients/sugar.png"
+  },
+  "hazelnut_syrup": {
+	"id": "hazelnut_syrup",
+	"display_name": "Sirope de avellana",
+	"icon": "res://assets/images/ingredients/hazelnut_syrup.png"
+  },
+  "strawberry": {
+	"id": "strawberry",
+	"display_name": "Fresas",
+	"icon": "res://assets/images/ingredients/strawberry.png"
+  },
+  "honey": {
+	"id": "honey",
+	"display_name": "Miel",
+	"icon": "res://assets/images/ingredients/honey.png"
+  },
+  "mango": {
+	"id": "mango",
+	"display_name": "Mango",
+	"icon": "res://assets/images/ingredients/mango.png"
+  },
+  "pineapple": {
+	"id": "pineapple",
+	"display_name": "Piña",
+	"icon": "res://assets/images/ingredients/pineapple.png"
+  },
+  "coconut_milk": {
+	"id": "coconut_milk",
+	"display_name": "Leche de coco",
+	"icon": "res://assets/images/ingredients/coconut_milk.png"
+  },
+  "spinach": {
+	"id": "spinach",
+	"display_name": "Espinacas frescas",
+	"icon": "res://assets/images/ingredients/spinach.png"
+  },
+  "banana": {
+	"id": "banana",
+	"display_name": "Plátano",
+	"icon": "res://assets/images/ingredients/banana.png"
+  },
+  "green_apple": {
+	"id": "green_apple",
+	"display_name": "Manzana verde",
+	"icon": "res://assets/images/ingredients/green_apple.png"
+  },
+  "cold_water": {
+	"id": "cold_water",
+	"display_name": "Agua fría",
+	"icon": "res://assets/images/ingredients/cold_water.png"
+  },
+  "peach": {
+	"id": "peach",
+	"display_name": "Melocotón",
+	"icon": "res://assets/images/ingredients/peach.png"
+  },
+  "orange_juice": {
+	"id": "orange_juice",
+	"display_name": "Zumo de naranja",
+	"icon": "res://assets/images/ingredients/orange_juice.png"
+  },
+  "natural_yogurt": {
+	"id": "natural_yogurt",
+	"display_name": "Yogur natural",
+	"icon": "res://assets/images/ingredients/natural_yogurt.png"
+  },
+  "blueberry": {
+	"id": "blueberry",
+	"display_name": "Arándanos",
+	"icon": "res://assets/images/ingredients/blueberry.png"
+  },
+  "raspberry": {
+	"id": "raspberry",
+	"display_name": "Frambuesas",
+	"icon": "res://assets/images/ingredients/raspberry.png"
+  }
+}

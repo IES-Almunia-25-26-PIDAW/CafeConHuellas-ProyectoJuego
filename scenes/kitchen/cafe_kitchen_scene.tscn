@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bssssakvqkfda"]
+
+[ext_resource type="Texture2D" uid="uid://bg736sjqmvhdb" path="res://assets/images/kitchencafe.png" id="1_dsvs2"]
+[ext_resource type="Script" uid="uid://cf03f7s7527a4" path="res://scripts/kitchen/cafe_kitchen_scene.gd" id="1_hollr"]
+[ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="2_hollr"]
+[ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="3_no3pg"]
+[ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="4_ghovp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hollr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no3pg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghovp"]
+
+[node name="CafeKitchenScene" type="Node2D" unique_id=367916718]
+script = ExtResource("1_hollr")
+
+[node name="BackgroundCanvas" type="CanvasLayer" parent="." unique_id=1691733927]
+layer = -1
+
+[node name="CafeKitchenBack" type="TextureRect" parent="BackgroundCanvas" unique_id=315323575]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dsvs2")
+
+[node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=789967462]
+layer = 10
+
+[node name="PauseButton" parent="PauseCanvas" unique_id=950623637 node_paths=PackedStringArray("button_visual") instance=ExtResource("2_hollr")]
+pause_menu_scene = ExtResource("3_no3pg")
+button_visual = NodePath("PauseTexture")
+
+[node name="PauseTexture" type="TextureRect" parent="PauseCanvas/PauseButton" unique_id=1238611171]
+custom_minimum_size = Vector2(60, 60)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 80.0
+texture = ExtResource("4_ghovp")
+
+[node name="InteractionCanvas" type="CanvasLayer" parent="." unique_id=881406319]
+layer = 0
+
+[node name="CoffeeMachineArea" type="Area2D" parent="InteractionCanvas" unique_id=621069620]
+
+[node name="CoffeeMachineSprite" type="Sprite2D" parent="InteractionCanvas/CoffeeMachineArea" unique_id=752821055]
+
+[node name="CoffeeMachineShape" type="CollisionShape2D" parent="InteractionCanvas/CoffeeMachineArea" unique_id=913894440]
+shape = SubResource("RectangleShape2D_hollr")
+
+[node name="BlenderArea" type="Area2D" parent="InteractionCanvas" unique_id=1611732045]
+
+[node name="BlenderSprite" type="Sprite2D" parent="InteractionCanvas/BlenderArea" unique_id=378454789]
+
+[node name="BlenderShape" type="CollisionShape2D" parent="InteractionCanvas/BlenderArea" unique_id=43092121]
+shape = SubResource("RectangleShape2D_no3pg")
+
+[node name="PastryShelf" type="Node2D" parent="InteractionCanvas" unique_id=1109240949]
+
+[node name="CakeAppleArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=707361472]
+
+[node name="CakeAppleSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CakeAppleArea" unique_id=553762239]
+
+[node name="CakeAppleShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CakeAppleArea" unique_id=17784693]
+shape = SubResource("RectangleShape2D_ghovp")
+
+[node name="CakeCarrotArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=1810014590]
+
+[node name="CakeCarrotSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CakeCarrotArea" unique_id=607742985]
+
+[node name="CakeCarrotShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CakeCarrotArea" unique_id=1369531468]
+shape = SubResource("RectangleShape2D_ghovp")
+
+[node name="CakeLemonArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=848655586]
+
+[node name="CakeLemonSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CakeLemonArea" unique_id=1338003919]
+
+[node name="CakeLemonShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CakeLemonArea" unique_id=1217924853]
+shape = SubResource("RectangleShape2D_ghovp")
+
+[node name="CakeCheeseArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=954099881]
+
+[node name="CakeCheeseSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CakeCheeseArea" unique_id=427958399]
+
+[node name="CakeCheeseShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CakeCheeseArea" unique_id=1887556349]
+shape = SubResource("RectangleShape2D_ghovp")
+
+[node name="CookieButterArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=1887526935]
+
+[node name="CookieButterSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CookieButterArea" unique_id=1584159674]
+
+[node name="CookieButterShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CookieButterArea" unique_id=802000952]
+shape = SubResource("RectangleShape2D_ghovp")
+
+[node name="CookieChocolateArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=1439265368]
+
+[node name="CookieChocolateSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CookieChocolateArea" unique_id=813976243]
+
+[node name="CookieChocolateShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CookieChocolateArea" unique_id=1376872910]
+shape = SubResource("RectangleShape2D_ghovp")
+
+[node name="CookieOatHoneyArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=1134790849]
+
+[node name="CookieOatHoneySprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CookieOatHoneyArea" unique_id=559176791]
+
+[node name="CookieOatHoneyShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CookieOatHoneyArea" unique_id=865610249]
+shape = SubResource("RectangleShape2D_ghovp")
+
+[node name="UICanvas" type="CanvasLayer" parent="." unique_id=975904834]
+layer = 5
+
+[node name="OrderTicket" type="Control" parent="UICanvas" unique_id=1032781358]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TicketPanel" type="PanelContainer" parent="UICanvas/OrderTicket" unique_id=312628175]
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 62.0
+
+[node name="TicketContent" type="VBoxContainer" parent="UICanvas/OrderTicket/TicketPanel" unique_id=97750873]
+layout_mode = 2
+
+[node name="RecipeName" type="Label" parent="UICanvas/OrderTicket/TicketPanel/TicketContent" unique_id=1495700886]
+layout_mode = 2
+
+[node name="IngredientsList" type="VBoxContainer" parent="UICanvas/OrderTicket/TicketPanel/TicketContent" unique_id=757458180]
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="UICanvas/OrderTicket/TicketPanel/TicketContent" unique_id=171396023]
+layout_mode = 2
+text = "¡LISTO!"

@@ -1,1 +1,192 @@
-null
+{
+  "coffee": {
+    "id": "coffee",
+    "display_name": "Café Solo",
+    "category": "cafe",
+    "interaction_type": "machine",
+    "description": "Pequeño, intenso y sin adornos. El clásico de siempre.",
+    "ingredients": ["coffee_grounds", "hot_water"],
+    "how_to_make": "Pon el café en la máquina y extrae el espresso directo en una taza pequeña. Listo.",
+    "recipe_image": "res://assets/images/recipes/coffee.png"
+  },
+  "coffee_milk": {
+    "id": "coffee_milk",
+    "display_name": "Café con Leche",
+    "category": "cafe",
+    "interaction_type": "machine",
+    "description": "Suave y reconfortante. Para los que necesitan algo más que un sorbo para empezar el día.",
+    "ingredients": ["coffee_grounds", "milk"],
+    "how_to_make": "Prepara el espresso en una taza grande. Calienta la leche hasta que humee y viértela encima despacio.",
+    "recipe_image": "res://assets/images/recipes/coffee_milk.png"
+  },
+  "cappuccino": {
+    "id": "cappuccino",
+    "display_name": "Capuchino",
+    "category": "cafe",
+    "interaction_type": "machine",
+    "description": "Espuma suave, toque de canela y muchas ganas de quedarse sentado un rato más.",
+    "ingredients": ["coffee_grounds", "milk", "cinnamon"],
+    "how_to_make": "Prepara el espresso. Espuma la leche hasta que doble su volumen y viértela sobre el café. Espolvorea un poco de canela por encima.",
+    "recipe_image": "res://assets/images/recipes/cappuccino.png"
+  },
+  "iced_coffee": {
+    "id": "iced_coffee",
+    "display_name": "Café con Hielo",
+    "category": "cafe",
+    "interaction_type": "machine",
+    "description": "Para los que necesitan el café pero no el calor. Fresquito y directo.",
+    "ingredients": ["coffee_grounds", "milk", "ice"],
+    "how_to_make": "Prepara el espresso y déjalo enfriar un momento. Llena un vaso de hielo, vierte el café encima y añade un buen chorro de leche fría. Remueve y listo.",
+    "recipe_image": "res://assets/images/recipes/iced_coffee.png"
+  },
+  "chocolate_coffee": {
+    "id": "chocolate_coffee",
+    "display_name": "Café con Chocolate",
+    "category": "cafe",
+    "interaction_type": "machine",
+    "description": "Mitad café, mitad capricho. Para los días que lo necesitas.",
+    "ingredients": ["coffee_grounds", "milk", "cocoa_powder", "sugar"],
+    "how_to_make": "Prepara el espresso. Disuelve el cacao con un poco de azúcar en la leche caliente y mézclalo con el café. Remueve bien antes de servir.",
+    "recipe_image": "res://assets/images/recipes/chocolate_coffee.png"
+  },
+  "hazelnut_coffee": {
+    "id": "hazelnut_coffee",
+    "display_name": "Café de Avellana",
+    "category": "cafe",
+    "interaction_type": "machine",
+    "description": "Dulce, tostado y con ese olor que llega antes que el vaso.",
+    "ingredients": ["coffee_grounds", "milk", "hazelnut_syrup"],
+    "how_to_make": "Prepara el espresso, añade un chorrito de sirope de avellana y la leche caliente. Remueve despacio y sirve.",
+    "recipe_image": "res://assets/images/recipes/hazelnut_coffee.png"
+  },
+  "smoothie_strawberry": {
+    "id": "smoothie_strawberry",
+    "display_name": "Smoothie de Fresa",
+    "category": "smoothie",
+    "interaction_type": "machine",
+    "description": "Rosa, dulce y fresquito. Difícil decirle que no.",
+    "ingredients": ["strawberry", "milk", "honey", "ice"],
+    "how_to_make": "Mete todo en la batidora y tritura hasta que quede suave. Sirve bien frío en un vaso alto.",
+    "recipe_image": "res://assets/images/recipes/smoothie_strawberry.png"
+  },
+  "smoothie_tropical": {
+    "id": "smoothie_tropical",
+    "display_name": "Smoothie Tropical",
+    "category": "smoothie",
+    "interaction_type": "machine",
+    "description": "Sabe a verano aunque fuera haga frío.",
+    "ingredients": ["mango", "pineapple", "coconut_milk", "ice"],
+    "how_to_make": "Trocea la fruta y ponla en la batidora junto con la leche de coco y el hielo. Tritura hasta que quede cremoso y sirve enseguida.",
+    "recipe_image": "res://assets/images/recipes/smoothie_tropical.png"
+  },
+  "smoothie_green": {
+    "id": "smoothie_green",
+    "display_name": "Smoothie Verde",
+    "category": "smoothie",
+    "interaction_type": "machine",
+    "description": "El que nadie pide hasta que lo prueba. Tiene mejor pinta de lo que parece.",
+    "ingredients": ["spinach", "banana", "green_apple", "cold_water"],
+    "how_to_make": "Trocea la fruta y métela en la batidora con las espinacas y el agua. Tritura bien hasta que no quede ningún trozo y sirve frío.",
+    "recipe_image": "res://assets/images/recipes/smoothie_green.png"
+  },
+  "smoothie_banana_cinnamon": {
+    "id": "smoothie_banana_cinnamon",
+    "display_name": "Smoothie de Plátano y Canela",
+    "category": "smoothie",
+    "interaction_type": "machine",
+    "description": "Cremoso, dulce y con ese toque que no sabes identificar pero te gusta.",
+    "ingredients": ["banana", "milk", "cinnamon", "honey", "ice"],
+    "how_to_make": "Mete todo en la batidora y tritura hasta que quede bien cremoso. Sirve frío con un toque de canela por encima.",
+    "recipe_image": "res://assets/images/recipes/smoothie_banana_cinnamon.png"
+  },
+  "smoothie_peach": {
+    "id": "smoothie_peach",
+    "display_name": "Smoothie de Melocotón",
+    "category": "smoothie",
+    "interaction_type": "machine",
+    "description": "De esos que saben exactamente a lo que esperas. Sin sorpresas, solo bueno.",
+    "ingredients": ["peach", "orange_juice", "natural_yogurt", "ice"],
+    "how_to_make": "Trocea el melocotón y ponlo en la batidora con el zumo, el yogur y el hielo. Tritura hasta que quede suave y sirve frío.",
+    "recipe_image": "res://assets/images/recipes/smoothie_peach.png"
+  },
+  "smoothie_berries": {
+    "id": "smoothie_berries",
+    "display_name": "Smoothie de Frutos Rojos",
+    "category": "smoothie",
+    "interaction_type": "machine",
+    "description": "Intenso y un poco ácido. De los que manchan y merece la pena.",
+    "ingredients": ["strawberry", "blueberry", "raspberry", "milk", "honey"],
+    "how_to_make": "Mete toda la fruta en la batidora con la leche y la miel. Tritura bien y sirve frío en un vaso alto.",
+    "recipe_image": "res://assets/images/recipes/smoothie_berries.png"
+  },
+  "cake_apple": {
+    "id": "cake_apple",
+    "display_name": "Tarta de Manzana",
+    "category": "pastry",
+    "interaction_type": "direct_click",
+    "description": "Huele a hogar y a tardes tranquilas. De esas recetas que no fallan nunca.",
+    "ingredients": ["apple", "shortcrust", "sugar", "cinnamon", "butter"],
+    "how_to_make": "Corta las manzanas en láminas y mézclalas con el azúcar y la canela. Extiende la masa en el molde, rellena con las manzanas y añade trocitos de mantequilla por encima. Hornea hasta que esté doradita.",
+    "recipe_image": "res://assets/images/recipes/cake_apple.png"
+  },
+  "cake_carrot": {
+    "id": "cake_carrot",
+    "display_name": "Tarta de Zanahoria",
+    "category": "pastry",
+    "interaction_type": "direct_click",
+    "description": "Húmeda y especiada. Perfecta con un café solo.",
+    "ingredients": ["grated_carrot", "flour", "eggs", "sugar", "sunflower_oil", "cinnamon", "nutmeg"],
+    "how_to_make": "Mezcla los huevos con el azúcar y el aceite. Añade la harina con las especias y por último la zanahoria rallada. Vierte en el molde y hornea hasta que al pincharla con un palillo salga limpio.",
+    "recipe_image": "res://assets/images/recipes/cake_carrot.png"
+  },
+  "cake_lemon": {
+    "id": "cake_lemon",
+    "display_name": "Tarta de Limón",
+    "category": "pastry",
+    "interaction_type": "direct_click",
+    "description": "Ácida, fresca y despertadora. No apta para los que prefieren lo dulce.",
+    "ingredients": ["lemon", "eggs", "sugar", "butter", "biscuits"],
+    "how_to_make": "Machaca las galletas y mézclalas con mantequilla derretida para hacer la base. Aparte, calienta el zumo de limón con los huevos, el azúcar y la mantequilla removiendo hasta que espese. Vierte sobre la base y deja enfriar.",
+    "recipe_image": "res://assets/images/recipes/cake_lemon.png"
+  },
+  "cake_cheese": {
+    "id": "cake_cheese",
+    "display_name": "Tarta de Queso",
+    "category": "pastry",
+    "interaction_type": "direct_click",
+    "description": "Extremadamente cremosa, casi fundente en el centro y con ese característico tostado por fuera.",
+    "ingredients": ["cream_cheese", "heavy_cream", "eggs", "sugar", "cornstarch", "biscuits", "strawberry_jam"],
+    "how_to_make": "Mezcla todos los ingredientes en un bol grande hasta que no queden grumos. Pon la base de galletas en un molde forrado con papel de horno, vierte la mezcla y hornea a 200°C unos 40 minutos. Debe quedar dorada por arriba y temblorosa en el centro. Al enfriar, añade una capa de mermelada de fresa.",
+    "recipe_image": "res://assets/images/recipes/cake_cheese.png"
+  },
+  "cookie_butter": {
+    "id": "cookie_butter",
+    "display_name": "Galletas de Mantequilla",
+    "category": "pastry",
+    "interaction_type": "direct_click",
+    "description": "Sencillas, doraditas y perfectas. Las que siempre se acaban antes de que nadie se dé cuenta.",
+    "ingredients": ["flour", "butter", "powdered_sugar", "eggs", "vanilla"],
+    "how_to_make": "Mezcla la mantequilla con el azúcar, añade el huevo y la vainilla, e incorpora la harina hasta formar una masa. Deja reposar en la nevera, estira, corta con el molde que quieras y hornea hasta que los bordes estén dorados.",
+    "recipe_image": "res://assets/images/recipes/cookie_butter.png"
+  },
+  "cookie_chocolate": {
+    "id": "cookie_chocolate",
+    "display_name": "Galletas de Chocolate",
+    "category": "pastry",
+    "interaction_type": "direct_click",
+    "description": "Con tropezones de chocolate. No hay quien se resista.",
+    "ingredients": ["flour", "butter", "brown_sugar", "eggs", "chocolate_chips", "cocoa_powder"],
+    "how_to_make": "Mezcla la mantequilla con el azúcar, añade el huevo, la harina y el cacao. Incorpora las pepitas de chocolate. Forma bolitas, aplánalas un poco y hornea hasta que estén hechas por dentro pero blanditas por fuera.",
+    "recipe_image": "res://assets/images/recipes/cookie_chocolate.png"
+  },
+  "cookie_oat_honey": {
+    "id": "cookie_oat_honey",
+    "display_name": "Galletas de Avena y Miel",
+    "category": "pastry",
+    "interaction_type": "direct_click",
+    "description": "Reconfortantes. De esas que saben a casa.",
+    "ingredients": ["oats", "flour", "honey", "butter", "eggs"],
+    "how_to_make": "Derrite la mantequilla con la miel. Mézclalo con la avena, la harina y el huevo hasta tener una masa. Forma bolitas, aplánalas y hornea hasta que los bordes estén doraditos.",
+    "recipe_image": "res://assets/images/recipes/cookie_oat_honey.png"
+  }
+}

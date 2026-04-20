@@ -15,6 +15,7 @@ const PATHS: Dictionary = {
 	"clues": DATA_DIR + "clues.json",
 	"emails": DATA_DIR + "emails.json",
 	"recipes": DATA_DIR + "recipes.json",
+	"ingredients": DATA_DIR + "ingredients.json",
 	"cgs": DATA_DIR + "cgs.json",
 }
 
@@ -24,6 +25,7 @@ var _characters: Dictionary = {}
 var _clues: Dictionary = {}
 var _emails: Dictionary = {}
 var _recipes: Dictionary = {}
+var _ingredients: Dictionary = {}
 var _cgs: Dictionary = {}
 
 
@@ -39,6 +41,7 @@ func _load_all() -> void:
 	_clues = _load_file(PATHS["clues"])
 	_emails = _load_file(PATHS["emails"])
 	_recipes = _load_file(PATHS["recipes"])
+	_ingredients = _load_file(PATHS["ingredients"])
 	_cgs = _load_file(PATHS["cgs"])
 
 # Abre y parsea un archivo JSON, devolviendo un diccionario con los datos obtenidos
@@ -103,6 +106,14 @@ func get_recipe(id: String) -> Dictionary:
 
 func get_all_recipes() -> Dictionary:
 	return _recipes.duplicate(true)
+
+# --- Ingredientes ---
+
+func get_ingredient(id: String) -> Dictionary:
+	return _get_entry(_ingredients, id, "ingredient")
+
+func get_all_ingredients() -> Dictionary:
+	return _ingredients.duplicate(true)
 
 # --- CGs ---
 
