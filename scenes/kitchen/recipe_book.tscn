@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bo88x1qy4anad"]
+
+[ext_resource type="Script" uid="uid://debvxc146nc1a" path="res://scripts/kitchen/recipe_book.gd" id="1_vw1fa"]
+[ext_resource type="Texture2D" uid="uid://dw3y3hoshjbo7" path="res://assets/images/test kitchen/libro_test.png" id="2_v7bvx"]
+
+[node name="RecipeBook" type="Control" unique_id=451810637]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vw1fa")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=513882740]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.53333336)
+
+[node name="BookBackground" type="TextureRect" parent="." unique_id=388026050]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -158.0
+offset_right = 237.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v7bvx")
+
+[node name="CategoryTabs" type="HBoxContainer" parent="." unique_id=1971507867]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.93
+offset_top = -320.0
+offset_right = 118.07001
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BtnCoffee" type="Button" parent="CategoryTabs" unique_id=1695634058]
+layout_mode = 2
+text = "Café"
+
+[node name="BtnSmoothie" type="Button" parent="CategoryTabs" unique_id=1095957691]
+layout_mode = 2
+text = "Smoothie"
+
+[node name="BtnCake" type="Button" parent="CategoryTabs" unique_id=233217524]
+layout_mode = 2
+text = "Tartas"
+
+[node name="BtnCookie" type="Button" parent="CategoryTabs" unique_id=557290235]
+layout_mode = 2
+text = "Galletas"
+
+[node name="BookContent" type="HBoxContainer" parent="." unique_id=1596854918]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftPage" type="VBoxContainer" parent="BookContent" unique_id=906551236]
+layout_mode = 2
+
+[node name="RecipeImage" type="TextureRect" parent="BookContent/LeftPage" unique_id=2016222806]
+layout_mode = 2
+
+[node name="RightPage" type="VBoxContainer" parent="BookContent" unique_id=1589079864]
+layout_mode = 2
+
+[node name="RecipeNameLabel" type="Label" parent="BookContent/RightPage" unique_id=1398372398]
+layout_mode = 2
+
+[node name="RecipeDescLabel" type="Label" parent="BookContent/RightPage" unique_id=1490890018]
+layout_mode = 2
+
+[node name="RecipeIngredientsLabel" type="Label" parent="BookContent/RightPage" unique_id=1473436875]
+layout_mode = 2
+
+[node name="RecipeHowToLabel" type="Label" parent="BookContent/RightPage" unique_id=615095251]
+layout_mode = 2
+
+[node name="Navigation" type="HBoxContainer" parent="." unique_id=909280342]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BtnPrev" type="Button" parent="Navigation" unique_id=1031756201]
+layout_mode = 2
+
+[node name="PageIndicator" type="Label" parent="Navigation" unique_id=1086985648]
+layout_mode = 2
+text = "1/6"
+
+[node name="BtnNext" type="Button" parent="Navigation" unique_id=1308984235]
+layout_mode = 2

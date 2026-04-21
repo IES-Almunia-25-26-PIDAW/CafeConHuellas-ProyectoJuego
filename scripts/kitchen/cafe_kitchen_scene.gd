@@ -7,7 +7,7 @@ extends Node2D
 
 @onready var recipe_name: Label = $UICanvas/OrderTicket/TicketPanel/TicketContent/RecipeName
 @onready var ingredients_list: VBoxContainer = $UICanvas/OrderTicket/TicketPanel/TicketContent/IngredientsList
-@onready var confirm_button: Button = $UICanvas/OrderTicket/TicketPanel/TicketContent/ConfirmButton
+
 
 @onready var coffee_machine_area: Area2D = $InteractionCanvas/CoffeeMachineArea
 @onready var blender_area: Area2D = $InteractionCanvas/BlenderArea
@@ -15,14 +15,24 @@ extends Node2D
 @onready var pastry_shelf: Node2D = $InteractionCanvas/PastryShelf
 @onready var milkshake_shelf: Node2D = $InteractionCanvas/MilkshakeShelf
 
+# Cartel que se ilumina cuando la orden está completa
+@onready var order_ready_sign: Area2D = $InteractionCanvas/OrderReadySign
+
 @onready var sfx_correct: AudioStreamPlayer = $SFXCorrect
 @onready var sfx_wrong: AudioStreamPlayer = $SFXWrong
+
+# Popup de ingredientes, está en la escena oculto y se muestra cuando hace falta
+@onready var ingredient_popup = $UICanvas/IngredientPopup
+
+# Recetario, está en la escena oculto y se muestra cuando el jugador clica el libro
+@onready var recipe_book = $UICanvas/RecipeBook
 
 # ===== INICIALIZACIÓN =====
 
 func _ready() -> void:
-	# Ocultamos el botón de confirmar hasta que la orden esté completa
-	confirm_button.visible = false
+	# El cartel empieza oscuro y desactivado hasta que la orden esté completa
+	order_ready_sign.monitoring = false
+	order_ready_sign.modulate = Color(0.5, 0.5, 0.5, 0.7)
 
 	# TODO: BORRAR ESTO, solo es para probar
 	GameState.current_order_recipe_id = "cappuccino"
@@ -37,19 +47,22 @@ func _ready() -> void:
 	coffee_machine_area.input_event.connect(_on_coffee_machine_clicked)
 	blender_area.input_event.connect(_on_blender_clicked)
 
-	# Conectamos el botón de confirmar
-	confirm_button.pressed.connect(_on_confirm_pressed)
+	# Conectamos el clic del cartel de orden lista
+	order_ready_sign.input_event.connect(_on_order_ready_sign_clicked)
+	
+	# Conectamos el clic del libro del recetario
+	$InteractionCanvas/RecipeBookArea.input_event.connect(_on_recipe_book_clicked)
 
 	# Iniciamos la lógica de la orden
 	KitchenManager.start_order()
 
 	# Conectamos los clics de cada tarta y galleta del estante
 	for area in pastry_shelf.get_children():
-		area.input_event.connect(_on_pastry_clicked.bind(area.name))
+		area.input_event.connect(_on_shelf_item_clicked.bind(area.name))
 
 	# Conectamos los clics de cada batido y leche
 	for area in milkshake_shelf.get_children():
-		area.input_event.connect(_on_pastry_clicked.bind(area.name))
+		area.input_event.connect(_on_shelf_item_clicked.bind(area.name))
 
 
 	# Dibujamos el ticket con la receta activa
@@ -89,10 +102,12 @@ func _setup_ticket() -> void:
 
 # Marca el checkbox de un ingrediente como completado
 func _mark_ingredient(ingredient_id: String) -> void:
-	var checkbox := ingredients_list.find_child("Check_" + ingredient_id, true, false)
-	if checkbox:
-		# Por ahora cambia la modulate a verde, cuando haya arte se cambia por una textura que haga nuestra pedazo de artista
-		checkbox.modulate = Color.GREEN
+	for row in ingredients_list.get_children():
+		var checkbox := row.find_child("Check_" + ingredient_id, true, false)
+		if checkbox:
+			# Por ahora cambia la modulate a verde, cuando haya arte se cambia por una textura que haga nuestra pedazo de artista
+			checkbox.modulate = Color.GREEN
+			return
 
 
 # ===== SEÑALES DE KITCHENMANAGER =====
@@ -106,10 +121,7 @@ func _on_ingredient_correct(ingredient_id: String) -> void:
 # Busca el botón del ingrediente en el popup y lo desactiva visualmente
 # Se llama solo cuando el ingrediente es correcto, nunca para los incorrectos
 func _disable_popup_button(ingredient_id: String) -> void:
-	var popup := $UICanvas.find_child("IngredientPopup", true, false)
-	if popup == null:
-		return
-	var btn: Button = popup.ingredients_grid.find_child("Btn_" + ingredient_id, true, false)
+	var btn: Button = ingredient_popup.ingredients_grid.find_child("Btn_" + ingredient_id, true, false)
 	if btn:
 		btn.disabled = true
 		btn.modulate = Color(0.5, 0.5, 0.5, 0.7)
@@ -125,8 +137,9 @@ func _on_ingredient_already_added(_ingredient_id: String) -> void:
 	pass
 
 func _on_order_completed() -> void:
-	# Todos los ingredientes están añadidos, mostramos el botón de confirmar
-	confirm_button.visible = true
+	# Todos los ingredientes están añadidos, iluminamos el cartel y lo activamos
+	order_ready_sign.monitoring = true
+	order_ready_sign.modulate = Color.WHITE
 
 
 # ===== INTERACCIONES =====
@@ -145,7 +158,7 @@ func _on_blender_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) ->
 
 
 # Detecta qué tarta o galleta ha clicado el jugador y lo pasa al KitchenManager
-func _on_pastry_clicked(_viewport: Node, event: InputEvent, _shape_idx: int, area_name: String) -> void:
+func _on_shelf_item_clicked(_viewport: Node, event: InputEvent, _shape_idx: int, area_name: String) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		get_viewport().set_input_as_handled()
 		# Convertimos el nombre del nodo al ID de la receta
@@ -171,31 +184,28 @@ func _area_name_to_recipe_id(area_name: String) -> String:
 	return map.get(area_name, "")
 
 
-# Instancia el popup y lo configura con los ingredientes de la receta activa
+# Muestra el popup con los ingredientes disponibles
 func _open_ingredient_popup(title: String) -> void:
-	# Si ya hay un popup abierto no abrimos otro
-	if $UICanvas.find_child("IngredientPopup", true, false) != null:
+	# Si ya está visible no hacemos nada
+	if ingredient_popup.visible:
 		return
 
 	var recipe := KitchenManager.get_current_recipe()
 	if recipe.is_empty():
 		return
 
-	var popup_scene := preload("res://scenes/kitchen/ingredient_popup.tscn")
-	var popup := popup_scene.instantiate()
-
-	# Lo añadimos al UICanvas para que quede por encima de todo
-	$UICanvas.add_child(popup)
-	# Lo centramos en pantalla
-	popup.set_anchors_preset(Control.PRESET_CENTER)
-
 	# Lo configuramos con el título y todos los ingredientes disponibles
 	var all_ingredients := DataLoader.get_all_ingredients()
-	popup.setup(title, all_ingredients.keys())
+	ingredient_popup.setup(title, all_ingredients.keys())
 
-	# Conectamos sus señales
-	popup.ingredient_selected.connect(_on_popup_ingredient_selected)
-	popup.popup_closed.connect(_on_popup_closed)
+	# Conectamos sus señales si no están conectadas ya
+	if not ingredient_popup.ingredient_selected.is_connected(_on_popup_ingredient_selected):
+		ingredient_popup.ingredient_selected.connect(_on_popup_ingredient_selected)
+	if not ingredient_popup.popup_closed.is_connected(_on_popup_closed):
+		ingredient_popup.popup_closed.connect(_on_popup_closed)
+
+	# Mostramos el popup
+	ingredient_popup.show()
 
 # Recibe el ingrediente seleccionado en el popup y se lo pasa al KitchenManager
 func _on_popup_ingredient_selected(ingredient_id: String) -> void:
@@ -209,8 +219,21 @@ func _on_popup_closed() -> void:
 	pass
 
 
-func _on_confirm_pressed() -> void:
-	# La orden está completa, limpiamos el estado y volvemos al mostrador
-	KitchenManager.finish_order()
-	# Transición de vuelta a la escena del mostrador
-	get_tree().change_scene_to_file("res://scenes/cafe_client_zone.tscn")
+# Abre o cierra el recetario cuando el jugador clica el libro
+func _on_recipe_book_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		get_viewport().set_input_as_handled()
+		recipe_book.show()
+
+
+# Se llama cuando el jugador clica el cartel de orden lista
+func _on_order_ready_sign_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		# Si la orden no está completa, ignoramos el clic
+		if not order_ready_sign.monitoring:
+			return
+		get_viewport().set_input_as_handled()
+		# La orden está completa, limpiamos el estado y volvemos al mostrador con fade
+		KitchenManager.finish_order()
+		# Transición de vuelta a la escena del mostrador usando el autoload TransitionManager
+		TransitionManager.change_scene("res://scenes/cafe_client_zone.tscn")

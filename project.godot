@@ -29,6 +29,7 @@ SceneManager="*uid://d0bdocf4qxrle"
 SettingsManager="*uid://dyp2fg8p6317x"
 MusicManager="*uid://cqrmua6tiu2yt"
 KitchenManager="*uid://bquperehyaper"
+TransitionManager="*uid://vtfte4dbffvx"
 
 [display]
 

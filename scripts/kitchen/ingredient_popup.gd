@@ -63,9 +63,17 @@ func setup(title: String, ingredient_ids: Array) -> void:
 
 # ===== INTERACCIONES =====
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		# Si el clic no está dentro del PopupPanel, cerramos el popup
+		if not $PopupPanel.get_rect().has_point(get_local_mouse_position()):
+			popup_closed.emit()
+			hide()
+
+
 func _on_ingredient_pressed(ingredient_id: String) -> void:
 	ingredient_selected.emit(ingredient_id)
 
 func _on_close_pressed() -> void:
 	popup_closed.emit()
-	queue_free()
+	hide()

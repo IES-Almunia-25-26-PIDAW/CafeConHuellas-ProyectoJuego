@@ -2,7 +2,7 @@
   "coffee": {
 	"id": "coffee",
 	"display_name": "Café Solo",
-	"category": "cafe",
+	"category": "coffee",
 	"interaction_type": "machine",
 	"description": "Pequeño, intenso y sin adornos. El clásico de siempre.",
 	"ingredients": ["coffee_grounds", "hot_water"],
@@ -12,7 +12,7 @@
   "coffee_milk": {
 	"id": "coffee_milk",
 	"display_name": "Café con Leche",
-	"category": "cafe",
+	"category": "coffee",
 	"interaction_type": "machine",
 	"description": "Suave y reconfortante. Para los que necesitan algo más que un sorbo para empezar el día.",
 	"ingredients": ["coffee_grounds", "milk"],
@@ -22,7 +22,7 @@
   "cappuccino": {
 	"id": "cappuccino",
 	"display_name": "Capuchino",
-	"category": "cafe",
+	"category": "coffee",
 	"interaction_type": "machine",
 	"description": "Espuma suave, toque de canela y muchas ganas de quedarse sentado un rato más.",
 	"ingredients": ["coffee_grounds", "milk", "cinnamon"],
@@ -32,7 +32,7 @@
   "iced_coffee": {
 	"id": "iced_coffee",
 	"display_name": "Café con Hielo",
-	"category": "cafe",
+	"category": "coffee",
 	"interaction_type": "machine",
 	"description": "Para los que necesitan el café pero no el calor. Fresquito y directo.",
 	"ingredients": ["coffee_grounds", "milk", "ice"],
@@ -42,7 +42,7 @@
   "chocolate_coffee": {
 	"id": "chocolate_coffee",
 	"display_name": "Café con Chocolate",
-	"category": "cafe",
+	"category": "coffee",
 	"interaction_type": "machine",
 	"description": "Mitad café, mitad capricho. Para los días que lo necesitas.",
 	"ingredients": ["coffee_grounds", "milk", "cocoa_powder", "sugar"],
@@ -52,7 +52,7 @@
   "hazelnut_coffee": {
 	"id": "hazelnut_coffee",
 	"display_name": "Café de Avellana",
-	"category": "cafe",
+	"category": "coffee",
 	"interaction_type": "machine",
 	"description": "Dulce, tostado y con ese olor que llega antes que el vaso.",
 	"ingredients": ["coffee_grounds", "milk", "hazelnut_syrup"],
