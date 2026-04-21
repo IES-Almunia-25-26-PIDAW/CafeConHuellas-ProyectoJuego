@@ -55,8 +55,8 @@ var received_emails_status: Dictionary = {}
 # Recetas actuales que tiene el jugador
 var recipes_unlocked: Array[String] = []
 
-# Receta que el cliente ha pedido actualmente (se limpia al completar la orden)
-var current_order_recipe_id: String = ""
+# Lista de recetas que el cliente ha pedido actualmente (máximo 4, se limpia al completar la orden)
+var current_order_recipe_ids: Array[String] = []
 
 
 # ====== VALORES POR DEFECTO Y RESET DE SAVEFILE ======

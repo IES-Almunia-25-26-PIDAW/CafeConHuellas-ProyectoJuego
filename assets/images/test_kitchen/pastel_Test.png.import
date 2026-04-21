@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn461ehdbb11e"
-path="res://.godot/imported/pastel_Test.png-c4c671b84c76e29043c2f02d99648fec.ctex"
+path="res://.godot/imported/pastel_Test.png-df6ae0b17e5443424814c897458b40bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test kitchen/pastel_Test.png"
-dest_files=["res://.godot/imported/pastel_Test.png-c4c671b84c76e29043c2f02d99648fec.ctex"]
+source_file="res://assets/images/test_kitchen/pastel_Test.png"
+dest_files=["res://.godot/imported/pastel_Test.png-df6ae0b17e5443424814c897458b40bc.ctex"]
 
 [params]
 

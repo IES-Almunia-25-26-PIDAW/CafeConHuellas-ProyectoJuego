@@ -16,20 +16,13 @@ signal popup_closed
 
 @onready var popup_title: Label = $PopupPanel/PopupContent/PopupTitle
 @onready var ingredients_grid: GridContainer = $PopupPanel/PopupContent/IngredientsGrid
-@onready var close_button: Button = $PopupPanel/PopupContent/CloseButton
-
-
-# ===== INICIALIZACIÓN =====
-
-func _ready() -> void:
-	close_button.pressed.connect(_on_close_pressed)
 
 
 # ===== PUBLIC API =====
 
 # Configura y muestra el popup con los ingredientes de la receta activa.
 # Se llama desde cafe_kitchen_scene.gd cuando el jugador clica la cafetera o la batidora.
-func setup(title: String, ingredient_ids: Array) -> void:
+func setup(title: String, ingredient_ids: Array, already_added: Array = []) -> void:
 	popup_title.text = title
 
 	# Limpiamos la cuadrícula por si el popup se reutiliza
@@ -42,15 +35,17 @@ func setup(title: String, ingredient_ids: Array) -> void:
 		if ingredient.is_empty():
 			continue
 
+		# Cuando tengamos las fotos de los ingredientes, se cambia a TextureButton.new() y a "icon"
 		var btn := Button.new()
 		btn.name = "Btn_" + ingredient_id
 		btn.text = ingredient["display_name"]
 
 		# Si el ingrediente ya fue añadido, desactivamos el botón visualmente
-		if KitchenManager.is_ingredient_added(ingredient_id):
+		if already_added.has(ingredient_id):
 			btn.disabled = true
 			btn.modulate = Color(0.5, 0.5, 0.5, 0.7)
 
+		#PENDIENTE: TODO cambiaremos los botones por TextureButton
 		# Cuando tengamos los dibujos listos en res://assets/images/ingredients/,
 		# (añadir también un texture_hover para el efecto hover), pondríamos algo como:
 		# var texture = load(ingredient["icon"])
@@ -73,7 +68,3 @@ func _input(event: InputEvent) -> void:
 
 func _on_ingredient_pressed(ingredient_id: String) -> void:
 	ingredient_selected.emit(ingredient_id)
-
-func _on_close_pressed() -> void:
-	popup_closed.emit()
-	hide()

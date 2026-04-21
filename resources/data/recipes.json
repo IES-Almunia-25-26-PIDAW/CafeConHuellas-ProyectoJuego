@@ -127,7 +127,7 @@
 	"description": "Huele a hogar y a tardes tranquilas. De esas recetas que no fallan nunca.",
 	"ingredients": ["apple", "shortcrust", "sugar", "cinnamon", "butter"],
 	"how_to_make": "Corta las manzanas en láminas y mézclalas con el azúcar y la canela. Extiende la masa en el molde, rellena con las manzanas y añade trocitos de mantequilla por encima. Hornea hasta que esté doradita.",
-	"recipe_image": "res://assets/images/recipes/cake_apple.png"
+	"recipe_image": "res://assets/images/test_kitchen/pastel_Test.png"
   },
   "cake_carrot": {
 	"id": "cake_carrot",
@@ -167,7 +167,7 @@
 	"description": "Sencillas, doraditas y perfectas. Las que siempre se acaban antes de que nadie se dé cuenta.",
 	"ingredients": ["flour", "butter", "powdered_sugar", "eggs", "vanilla"],
 	"how_to_make": "Mezcla la mantequilla con el azúcar, añade el huevo y la vainilla, e incorpora la harina hasta formar una masa. Deja reposar en la nevera, estira, corta con el molde que quieras y hornea hasta que los bordes estén dorados.",
-	"recipe_image": "res://assets/images/recipes/cookie_butter.png"
+	"recipe_image": "res://assets/images/test_kitchen/galleta_test.png"
   },
   "cookie_chocolate": {
 	"id": "cookie_chocolate",

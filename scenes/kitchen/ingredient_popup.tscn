@@ -40,7 +40,3 @@ layout_mode = 2
 [node name="IngredientsGrid" type="GridContainer" parent="PopupPanel/PopupContent" unique_id=1506795472]
 layout_mode = 2
 columns = 3
-
-[node name="CloseButton" type="Button" parent="PopupPanel/PopupContent" unique_id=181246629]
-layout_mode = 2
-text = "Cerrar"

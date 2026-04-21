@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8y027h3feuo8"
-path="res://.godot/imported/cafetera_test.png-286b3bca1b3475f328fc91765404321e.ctex"
+uid="uid://cy47nokhof7uo"
+path="res://.godot/imported/ticket_test.png-49995d5de56bba9ea30c3e9ceae37930.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test kitchen/cafetera_test.png"
-dest_files=["res://.godot/imported/cafetera_test.png-286b3bca1b3475f328fc91765404321e.ctex"]
+source_file="res://assets/images/test_kitchen/ticket_test.png"
+dest_files=["res://.godot/imported/ticket_test.png-49995d5de56bba9ea30c3e9ceae37930.ctex"]
 
 [params]
 

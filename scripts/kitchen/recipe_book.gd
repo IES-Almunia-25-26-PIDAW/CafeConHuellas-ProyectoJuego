@@ -17,9 +17,9 @@ extends Control
 @onready var recipe_ingredients_label: Label = $BookContent/RightPage/RecipeIngredientsLabel
 @onready var recipe_how_to_label: Label = $BookContent/RightPage/RecipeHowToLabel
 
-@onready var btn_prev: Button = $Navigation/BtnPrev
-@onready var btn_next: Button = $Navigation/BtnNext
-@onready var page_indicator: Label = $Navigation/PageIndicator
+@onready var btn_prev: Button = $BtnPrev
+@onready var btn_next: Button = $BtnNext
+
 
 
 # ===== ESTADO INTERNO =====
@@ -121,8 +121,6 @@ func _show_current_recipe() -> void:
 	# Preparación
 	recipe_how_to_label.text = "Preparación:\n" + recipe.get("how_to_make", "")
 
-	# Indicador de página
-	page_indicator.text = str(_current_index + 1) + "/" + str(recipes.size())
 
 	# Actualizamos los botones de navegación
 	btn_prev.disabled = _current_index == 0
@@ -131,10 +129,18 @@ func _show_current_recipe() -> void:
 
 # ===== INTERACCIONES =====
 
+# Actualiza visualmente qué pestaña está activa
+func _update_tab_visuals(active_category: String) -> void:
+	btn_coffee.modulate = Color.WHITE if active_category == "coffee" else Color(0.6, 0.6, 0.6, 1.0)
+	btn_smoothie.modulate = Color.WHITE if active_category == "smoothie" else Color(0.6, 0.6, 0.6, 1.0)
+	btn_cake.modulate = Color.WHITE if active_category == "pastry_cake" else Color(0.6, 0.6, 0.6, 1.0)
+	btn_cookie.modulate = Color.WHITE if active_category == "pastry_cookie" else Color(0.6, 0.6, 0.6, 1.0)
+	
 # Cambia la categoría activa y resetea el índice
 func _on_category_pressed(category: String) -> void:
 	_current_category = category
 	_current_index = 0
+	_update_tab_visuals(category)
 	_show_current_recipe()
 
 func _on_prev_pressed() -> void:

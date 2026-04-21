@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tfkvp5ld3vxu"
-path="res://.godot/imported/leche_Test.png-b2eca4ab7cc658ac65b6d2d4105cb0e2.ctex"
+uid="uid://djl205rjxve4r"
+path="res://.godot/imported/batidora_Test.png-cb673d7f10a126e71cf41398cedf73ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test kitchen/leche_Test.png"
-dest_files=["res://.godot/imported/leche_Test.png-b2eca4ab7cc658ac65b6d2d4105cb0e2.ctex"]
+source_file="res://assets/images/test_kitchen/batidora_Test.png"
+dest_files=["res://.godot/imported/batidora_Test.png-cb673d7f10a126e71cf41398cedf73ca.ctex"]
 
 [params]
 

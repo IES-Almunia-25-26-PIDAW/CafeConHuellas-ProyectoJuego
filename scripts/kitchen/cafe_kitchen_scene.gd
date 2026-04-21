@@ -5,9 +5,7 @@ extends Node2D
 
 # ===== REFERENCIAS A NODOS =====
 
-@onready var recipe_name: Label = $UICanvas/OrderTicket/TicketPanel/TicketContent/RecipeName
 @onready var ingredients_list: VBoxContainer = $UICanvas/OrderTicket/TicketPanel/TicketContent/IngredientsList
-
 
 @onready var coffee_machine_area: Area2D = $InteractionCanvas/CoffeeMachineArea
 @onready var blender_area: Area2D = $InteractionCanvas/BlenderArea
@@ -27,20 +25,26 @@ extends Node2D
 # Recetario, está en la escena oculto y se muestra cuando el jugador clica el libro
 @onready var recipe_book = $UICanvas/RecipeBook
 
+
 # ===== INICIALIZACIÓN =====
+
+# Categoría activa del popup abierto actualmente
+var _current_popup_category: String = ""
 
 func _ready() -> void:
 	# El cartel empieza oscuro y desactivado hasta que la orden esté completa
 	order_ready_sign.monitoring = false
 	order_ready_sign.modulate = Color(0.5, 0.5, 0.5, 0.7)
 
+	# PENDIENTE - esto es solo para las pruebas
 	# TODO: BORRAR ESTO, solo es para probar
-	GameState.current_order_recipe_id = "cappuccino"
+	GameState.current_order_recipe_ids = ["cappuccino", "smoothie_strawberry", "cake_apple", "cookie_butter"]
 
 	# Conectamos las señales del KitchenManager
 	KitchenManager.ingredient_correct.connect(_on_ingredient_correct)
 	KitchenManager.ingredient_wrong.connect(_on_ingredient_wrong)
 	KitchenManager.ingredient_already_added.connect(_on_ingredient_already_added)
+	KitchenManager.recipe_completed.connect(_on_recipe_completed)
 	KitchenManager.order_completed.connect(_on_order_completed)
 
 	# Conectamos los clics de la cafetera y la batidora
@@ -49,7 +53,7 @@ func _ready() -> void:
 
 	# Conectamos el clic del cartel de orden lista
 	order_ready_sign.input_event.connect(_on_order_ready_sign_clicked)
-	
+
 	# Conectamos el clic del libro del recetario
 	$InteractionCanvas/RecipeBookArea.input_event.connect(_on_recipe_book_clicked)
 
@@ -64,57 +68,60 @@ func _ready() -> void:
 	for area in milkshake_shelf.get_children():
 		area.input_event.connect(_on_shelf_item_clicked.bind(area.name))
 
-
-	# Dibujamos el ticket con la receta activa
+	# Dibujamos el ticket con las recetas del pedido
 	_setup_ticket()
 
 
 # ===== UI =====
 
-# Rellena el ticket con el nombre de la receta y la lista de ingredientes
+# Rellena el ticket con todos los items del pedido
 func _setup_ticket() -> void:
-	var recipe := KitchenManager.get_current_recipe()
-	if recipe.is_empty():
+	var recipes := KitchenManager.get_current_recipes()
+	if recipes.is_empty():
 		return
 
-	# Ponemos el nombre de la receta en el título del ticket
-	recipe_name.text = recipe["display_name"]
+	# Limpiamos el ticket por si hubiera contenido anterior
+	for child in ingredients_list.get_children():
+		child.queue_free()
 
-	# Creamos una fila por cada ingrediente con su nombre y un checkbox
-	for ingredient_id in recipe["ingredients"]:
-		var ingredient := DataLoader.get_ingredient(ingredient_id)
-		if ingredient.is_empty():
-			continue
+	# Creamos una fila por cada receta del pedido
+	for recipe_id in recipes:
+		var recipe: Dictionary = recipes[recipe_id]
 
 		var row := HBoxContainer.new()
+		row.name = "Row_" + recipe_id
+
 		var checkbox := TextureRect.new()
-		var label := Label.new()
-
-		checkbox.name = "Check_" + ingredient_id
+		checkbox.name = "Check_" + recipe_id
 		checkbox.custom_minimum_size = Vector2(24, 24)
+		checkbox.size = Vector2(24, 24)
+		checkbox.texture = load("res://assets/images/test_kitchen/check_test.png")
+		checkbox.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		checkbox.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		checkbox.modulate = Color(0.1, 0.1, 0.1, 1.0)
 
-		label.text = ingredient["display_name"]
+		var label := Label.new()
+		label.text = recipe.get("display_name", "")
 
-		row.add_child(checkbox)
 		row.add_child(label)
+		row.add_child(checkbox)
 		ingredients_list.add_child(row)
 
 
-# Marca el checkbox de un ingrediente como completado
-func _mark_ingredient(ingredient_id: String) -> void:
+# Marca el check de una receta completada en el ticket
+func _mark_recipe_completed(recipe_id: String) -> void:
 	for row in ingredients_list.get_children():
-		var checkbox := row.find_child("Check_" + ingredient_id, true, false)
+		var checkbox := row.find_child("Check_" + recipe_id, true, false)
 		if checkbox:
-			# Por ahora cambia la modulate a verde, cuando haya arte se cambia por una textura que haga nuestra pedazo de artista
-			checkbox.modulate = Color.GREEN
+			# Volvemos el modulate a blanco para que se vea la imagen original
+			checkbox.modulate = Color.WHITE
 			return
 
 
 # ===== SEÑALES DE KITCHENMANAGER =====
 
-func _on_ingredient_correct(ingredient_id: String) -> void:
-	# Marca el checkbox en el ticket y desactiva el botón en el popup
-	_mark_ingredient(ingredient_id)
+func _on_ingredient_correct(ingredient_id: String, _recipe_id: String) -> void:
+	# Un ingrediente correcto, reproducimos el sonido de acierto
 	_disable_popup_button(ingredient_id)
 	sfx_correct.play()
 
@@ -127,17 +134,25 @@ func _disable_popup_button(ingredient_id: String) -> void:
 		btn.modulate = Color(0.5, 0.5, 0.5, 0.7)
 
 func _on_ingredient_wrong(_ingredient_id: String) -> void:
-	# El ingrediente no pertenece a la receta
+	# El ingrediente no pertenece a ninguna receta del pedido
 	sfx_wrong.play()
 
+#PENDIENTE
 func _on_ingredient_already_added(_ingredient_id: String) -> void:
 	# El jugador ha intentado añadir un ingrediente que ya estaba en la lista
 	# El botón ya estará desactivado visualmente así que no hace falta hacer nada más
 	# TODO: parpadeo visual en el checkbox ya marcado
 	pass
 
+#PENDIENTE
+func _on_recipe_completed(recipe_id: String) -> void:
+	# Una receta del pedido está completa, marcamos su check en el ticket
+	# TODO: cambiar por sonido específico de receta completada cuando tengamos los sonidos definitivos
+	_mark_recipe_completed(recipe_id)
+	sfx_correct.play()
+
 func _on_order_completed() -> void:
-	# Todos los ingredientes están añadidos, iluminamos el cartel y lo activamos
+	# Todos los items del pedido están completos, iluminamos el cartel
 	order_ready_sign.monitoring = true
 	order_ready_sign.modulate = Color.WHITE
 
@@ -145,26 +160,45 @@ func _on_order_completed() -> void:
 # ===== INTERACCIONES =====
 
 # Abre el popup de ingredientes cuando el jugador clica la cafetera
+# Solo funciona si hay alguna receta de café en el pedido
 func _on_coffee_machine_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var recipes := KitchenManager.get_current_recipes()
+		var has_coffee := false
+		for recipe_id in recipes:
+			if recipes[recipe_id].get("category", "") == "coffee" and not KitchenManager.is_recipe_completed(recipe_id):
+				has_coffee = true
+				break
+		if not has_coffee:
+			sfx_wrong.play()
+			return
 		get_viewport().set_input_as_handled()
-		_open_ingredient_popup("¿Qué le añades al café?")
+		_open_ingredient_popup("¿Qué le añades al café?", "coffee")
 
 # Abre el popup de ingredientes cuando el jugador clica la batidora
+# Solo funciona si hay alguna receta de smoothie en el pedido
 func _on_blender_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var recipes := KitchenManager.get_current_recipes()
+		var has_smoothie := false
+		for recipe_id in recipes:
+			if recipes[recipe_id].get("category", "") == "smoothie" and not KitchenManager.is_recipe_completed(recipe_id):
+				has_smoothie = true
+				break
+		if not has_smoothie:
+			sfx_wrong.play()
+			return
 		get_viewport().set_input_as_handled()
-		_open_ingredient_popup("¿Qué le añades al smoothie?")
+		_open_ingredient_popup("¿Qué le añades al smoothie?", "smoothie")
 
-
-# Detecta qué tarta o galleta ha clicado el jugador y lo pasa al KitchenManager
+# Detecta qué elemento del estante ha clicado el jugador y lo pasa al KitchenManager
 func _on_shelf_item_clicked(_viewport: Node, event: InputEvent, _shape_idx: int, area_name: String) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		get_viewport().set_input_as_handled()
 		# Convertimos el nombre del nodo al ID de la receta
 		# Ej: "CakeAppleArea" --> "cake_apple"
 		var recipe_id := _area_name_to_recipe_id(area_name)
-		KitchenManager.try_add_ingredient(recipe_id)
+		KitchenManager.try_complete_direct_recipe(recipe_id)
 
 # Convierte el nombre del nodo Area2D al ID del ingrediente correspondiente
 func _area_name_to_recipe_id(area_name: String) -> String:
@@ -184,19 +218,28 @@ func _area_name_to_recipe_id(area_name: String) -> String:
 	return map.get(area_name, "")
 
 
-# Muestra el popup con los ingredientes disponibles
-func _open_ingredient_popup(title: String) -> void:
+# Muestra el popup con solo los ingredientes de la categoría activa
+func _open_ingredient_popup(title: String, category: String) -> void:
+	_current_popup_category = category
+
 	# Si ya está visible no hacemos nada
 	if ingredient_popup.visible:
 		return
 
-	var recipe := KitchenManager.get_current_recipe()
-	if recipe.is_empty():
-		return
+	# Recopilamos todos los ingredientes posibles de la categoría desde el DataLoader
+	var all_recipes := DataLoader.get_all_recipes()
+	var category_ingredients: Array = []
+	for recipe_id in all_recipes:
+		if all_recipes[recipe_id].get("category", "") == category:
+			for ingredient_id in all_recipes[recipe_id].get("ingredients", []):
+				if not category_ingredients.has(ingredient_id):
+					category_ingredients.append(ingredient_id)
 
-	# Lo configuramos con el título y todos los ingredientes disponibles
-	var all_ingredients := DataLoader.get_all_ingredients()
-	ingredient_popup.setup(title, all_ingredients.keys())
+	# Obtenemos los ingredientes ya añadidos en esta categoría para marcarlos en el popup
+	var already_added := KitchenManager.get_added_ingredients_for_category(category)
+
+	# Configuramos el popup con los ingredientes de la categoría
+	ingredient_popup.setup(title, category_ingredients, already_added)
 
 	# Conectamos sus señales si no están conectadas ya
 	if not ingredient_popup.ingredient_selected.is_connected(_on_popup_ingredient_selected):
@@ -207,24 +250,21 @@ func _open_ingredient_popup(title: String) -> void:
 	# Mostramos el popup
 	ingredient_popup.show()
 
-# Recibe el ingrediente seleccionado en el popup y se lo pasa al KitchenManager
+
+# Recibe el ingrediente seleccionado en el popup y se lo pasa al KitchenManager con la categoría activa
 func _on_popup_ingredient_selected(ingredient_id: String) -> void:
-	KitchenManager.try_add_ingredient(ingredient_id)
+	KitchenManager.try_add_ingredient(ingredient_id, _current_popup_category)
 
 # Se llama cuando el jugador cierra el popup manualmente
-# Aunque esté vacía es por si en el futuro queremos hacer algo cuando el jugador cierre el popup, 
-# por ejemplo reproducir un sonido de cierre, o una animación
-# el popup ya se destruye solo con el queue_free() que tiene en su propio script
+# Aunque esté vacía es por si en el futuro queremos hacer algo cuando el jugador cierre el popup
 func _on_popup_closed() -> void:
 	pass
 
-
-# Abre o cierra el recetario cuando el jugador clica el libro
+# Abre el recetario cuando el jugador clica el libro
 func _on_recipe_book_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		get_viewport().set_input_as_handled()
 		recipe_book.show()
-
 
 # Se llama cuando el jugador clica el cartel de orden lista
 func _on_order_ready_sign_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

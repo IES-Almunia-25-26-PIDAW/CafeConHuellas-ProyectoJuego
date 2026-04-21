@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq5hrpailddhd"
-path="res://.godot/imported/batido_test.png-a291e027a9c5613ae737551826d48a90.ctex"
+uid="uid://becb3d6xuwslm"
+path="res://.godot/imported/check_test.png-444f5f5a77fcdcd1a1c758406b8077dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test kitchen/batido_test.png"
-dest_files=["res://.godot/imported/batido_test.png-a291e027a9c5613ae737551826d48a90.ctex"]
+source_file="res://assets/images/test_kitchen/check_test.png"
+dest_files=["res://.godot/imported/check_test.png-444f5f5a77fcdcd1a1c758406b8077dc.ctex"]
 
 [params]
 

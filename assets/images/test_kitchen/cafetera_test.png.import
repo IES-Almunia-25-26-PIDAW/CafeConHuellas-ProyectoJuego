@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deu8ghor2siai"
-path="res://.godot/imported/galleta_test.png-4d8c99e340bafc511073e806f9ff5784.ctex"
+uid="uid://8y027h3feuo8"
+path="res://.godot/imported/cafetera_test.png-57f8ee70b88ae5d20c3eab0933947f0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test kitchen/galleta_test.png"
-dest_files=["res://.godot/imported/galleta_test.png-4d8c99e340bafc511073e806f9ff5784.ctex"]
+source_file="res://assets/images/test_kitchen/cafetera_test.png"
+dest_files=["res://.godot/imported/cafetera_test.png-57f8ee70b88ae5d20c3eab0933947f0c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djl205rjxve4r"
-path="res://.godot/imported/batidora_Test.png-76d2f77cfeaedcc97e4f783aff5aa0a9.ctex"
+uid="uid://o3jlq3jo0bsl"
+path="res://.godot/imported/cartel_salida_gato_alien_test.png-3af7ddbcec3c87b8063eaf8568a5eee9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test kitchen/batidora_Test.png"
-dest_files=["res://.godot/imported/batidora_Test.png-76d2f77cfeaedcc97e4f783aff5aa0a9.ctex"]
+source_file="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png"
+dest_files=["res://.godot/imported/cartel_salida_gato_alien_test.png-3af7ddbcec3c87b8063eaf8568a5eee9.ctex"]
 
 [params]
 

@@ -1,84 +1,158 @@
 extends Node
 
 # KitchenManager: Gestiona toda la lógica de la escena de cocina.
-# Sabe qué receta hay que preparar, qué ingredientes se han añadido,
-# y avisa al resto de la escena cuando la orden está completa.
+# Soporta pedidos con múltiples recetas (máximo 4).
+# El jugador puede preparar los items en el orden que quiera.
 
 # ===== SEÑALES =====
 
-# Se emite cuando el jugador añade un ingrediente correcto
-signal ingredient_correct(ingredient_id: String)
-# Se emite cuando el jugador añade un ingrediente que no pertenece a la receta
+# Se emite cuando el jugador añade un ingrediente correcto a cualquier receta del pedido
+signal ingredient_correct(ingredient_id: String, recipe_id: String)
+# Se emite cuando el jugador añade un ingrediente que no pertenece a ninguna receta pendiente
 signal ingredient_wrong(ingredient_id: String)
 # Se emite cuando el jugador intenta añadir un ingrediente que ya añadió antes
 signal ingredient_already_added(ingredient_id: String)
-# Se emite cuando todos los ingredientes de la orden están completos
+# Se emite cuando una receta individual del pedido se completa
+signal recipe_completed(recipe_id: String)
+# Se emite cuando TODOS los items del pedido están completos
 signal order_completed
 
 
 # ===== ESTADO INTERNO =====
 
-# Datos completos de la receta que hay que preparar (viene de DataLoader)
-var _current_recipe: Dictionary = {}
-# Lista de ingredientes que el jugador todavía tiene que añadir
-var _remaining_ingredients: Array[String] = []
-# Lista de ingredientes que el jugador ya ha añadido correctamente
-var _added_ingredients: Array[String] = []
+# Datos completos de cada receta del pedido, indexados por recipe_id
+var _recipes: Dictionary = {}
+# Ingredientes pendientes por receta: { recipe_id: [ingredient_ids] }
+var _remaining_ingredients: Dictionary = {}
+# Ingredientes ya añadidos por receta: { recipe_id: [ingredient_ids] }
+var _added_ingredients: Dictionary = {}
+# Recetas ya completadas
+var _completed_recipes: Array[String] = []
 
 
 # ===== PUBLIC API =====
 
-# Inicia la lógica de la cocina con la receta pedida por el cliente.
+# Inicia la lógica de la cocina con las recetas pedidas por el cliente.
 # Se llama desde la escena de cocina en su _ready().
 func start_order() -> void:
-	var recipe_id := GameState.current_order_recipe_id
+	var recipe_ids := GameState.current_order_recipe_ids
 
 	# Comprobación de seguridad: si no hay orden activa, avisamos y salimos
-	if recipe_id.is_empty():
-		push_error("KitchenManager: start_order() llamado sin current_order_recipe_id en GameState.")
+	if recipe_ids.is_empty():
+		push_error("KitchenManager: start_order() llamado sin current_order_recipe_ids en GameState.")
 		return
 
-	# Cargamos los datos completos de la receta desde DataLoader
-	_current_recipe = DataLoader.get_recipe(recipe_id)
-	if _current_recipe.is_empty():
-		push_error("KitchenManager: La receta '%s' no existe en DataLoader." % recipe_id)
-		return
-
-	# Copiamos los ingredientes necesarios a la lista de pendientes
-	_remaining_ingredients.assign(_current_recipe["ingredients"])
-	# Limpiamos la lista de ya añadidos por si hubiera basura de una orden anterior
+	# Limpiamos el estado anterior
+	_recipes.clear()
+	_remaining_ingredients.clear()
 	_added_ingredients.clear()
+	_completed_recipes.clear()
+
+	# Cargamos cada receta del pedido
+	for recipe_id in recipe_ids:
+		var recipe := DataLoader.get_recipe(recipe_id)
+		if recipe.is_empty():
+			push_error("KitchenManager: La receta '%s' no existe en DataLoader." % recipe_id)
+			continue
+
+		_recipes[recipe_id] = recipe
+		_remaining_ingredients[recipe_id] = recipe["ingredients"].duplicate()
+		_added_ingredients[recipe_id] = []
 
 
-# El jugador ha hecho clic en un ingrediente. Comprobamos si es correcto.
-func try_add_ingredient(ingredient_id: String) -> void:
-	if _added_ingredients.has(ingredient_id):
-		# El jugador ha repetido un ingrediente que ya añadió, lo ignoramos sin penalizar
-		ingredient_already_added.emit(ingredient_id)
-	elif _remaining_ingredients.has(ingredient_id):
-		_remaining_ingredients.erase(ingredient_id)
-		_added_ingredients.append(ingredient_id)
-		ingredient_correct.emit(ingredient_id)
+# El jugador ha hecho clic en un ingrediente o producto.
+# Comprueba solo contra las recetas de la categoría indicada.
+func try_add_ingredient(ingredient_id: String, category: String = "") -> void:
+	# Comprobamos si ya fue añadido en una receta de la misma categoría
+	for recipe_id in _added_ingredients:
+		if category != "" and _recipes[recipe_id].get("category", "") != category:
+			continue
+		if _added_ingredients[recipe_id].has(ingredient_id):
+			ingredient_already_added.emit(ingredient_id)
+			return
 
-		# Si ya no quedan ingredientes pendientes, la orden está completa
-		if _remaining_ingredients.is_empty():
-			order_completed.emit()
-	else:
-		ingredient_wrong.emit(ingredient_id)
+	# Buscamos en qué receta pendiente encaja este ingrediente
+	# Si se especifica categoría, solo buscamos en recetas de esa categoría
+	for recipe_id in _remaining_ingredients:
+		if _completed_recipes.has(recipe_id):
+			continue
+		if category != "" and _recipes[recipe_id].get("category", "") != category:
+			continue
+		if _remaining_ingredients[recipe_id].has(ingredient_id):
+			_remaining_ingredients[recipe_id].erase(ingredient_id)
+			_added_ingredients[recipe_id].append(ingredient_id)
+			ingredient_correct.emit(ingredient_id, recipe_id)
+
+			# Comprobamos si esta receta está completa
+			if _remaining_ingredients[recipe_id].is_empty():
+				_completed_recipes.append(recipe_id)
+				recipe_completed.emit(recipe_id)
+
+				# Comprobamos si el pedido entero está completo
+				if _completed_recipes.size() == _recipes.size():
+					order_completed.emit()
+			return
+
+	# Si no encaja en ninguna receta pendiente, es incorrecto
+	ingredient_wrong.emit(ingredient_id)
 
 
-# Devuelve los datos de la receta activa (para que la UI pueda mostrar el ticket) (Devuelve una copia para que nadie pueda modificar los datos por accidente)
-func get_current_recipe() -> Dictionary:
-	return _current_recipe.duplicate()
+# Devuelve los datos de todas las recetas del pedido activo para que la UI pueda mostrar el ticket
+# Devuelve una copia para que nadie pueda modificar los datos por accidente
+func get_current_recipes() -> Dictionary:
+	return _recipes.duplicate()
 
-# Devuelve true si el ingrediente ya fue añadido correctamente
+
+# Devuelve true si el ingrediente ya fue añadido en cualquier receta
 func is_ingredient_added(ingredient_id: String) -> bool:
-	return _added_ingredients.has(ingredient_id)
+	for recipe_id in _added_ingredients:
+		if _added_ingredients[recipe_id].has(ingredient_id):
+			return true
+	return false
+
+# Devuelve los ingredientes ya añadidos en recetas de una categoría específica
+func get_added_ingredients_for_category(category: String) -> Array:
+	var result: Array = []
+	for recipe_id in _added_ingredients:
+		if _recipes[recipe_id].get("category", "") != category:
+			continue
+		for ingredient_id in _added_ingredients[recipe_id]:
+			if not result.has(ingredient_id):
+				result.append(ingredient_id)
+	return result
 
 
-# Limpia el estado al terminar (se llama al completar la orden antes de cambiar de escena)
+# Devuelve true si una receta específica ya está completada
+func is_recipe_completed(recipe_id: String) -> bool:
+	return _completed_recipes.has(recipe_id)
+
+# Intenta completar directamente una receta de tipo direct_click (repostería, batidos)
+# Se llama cuando el jugador clica directamente en el producto
+func try_complete_direct_recipe(recipe_id: String) -> void:
+	# Comprobamos si esta receta está en el pedido
+	if not _recipes.has(recipe_id):
+		ingredient_wrong.emit(recipe_id)
+		return
+
+	# Comprobamos si ya está completada
+	if _completed_recipes.has(recipe_id):
+		ingredient_already_added.emit(recipe_id)
+		return
+
+	# La completamos directamente
+	_completed_recipes.append(recipe_id)
+	_remaining_ingredients[recipe_id].clear()
+	recipe_completed.emit(recipe_id)
+
+	# Comprobamos si el pedido entero está completo
+	if _completed_recipes.size() == _recipes.size():
+		order_completed.emit()
+
+
+# Limpia el estado al terminar
 func finish_order() -> void:
-	GameState.current_order_recipe_id = ""
-	_current_recipe = {}
-	_remaining_ingredients = []
-	_added_ingredients = []
+	GameState.current_order_recipe_ids.clear()
+	_recipes.clear()
+	_remaining_ingredients.clear()
+	_added_ingredients.clear()
+	_completed_recipes.clear()
