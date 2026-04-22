@@ -5,7 +5,7 @@ extends Node2D
 
 # ===== REFERENCIAS A NODOS =====
 
-@onready var ingredients_list: VBoxContainer = $UICanvas/OrderTicket/TicketPanel/TicketContent/IngredientsList
+@onready var order_items_list: VBoxContainer = $UICanvas/OrderTicket/TicketPanel/TicketContent/OrderItemsList
 
 @onready var coffee_machine_area: Area2D = $InteractionCanvas/CoffeeMachineArea
 @onready var blender_area: Area2D = $InteractionCanvas/BlenderArea
@@ -81,7 +81,7 @@ func _setup_ticket() -> void:
 		return
 
 	# Limpiamos el ticket por si hubiera contenido anterior
-	for child in ingredients_list.get_children():
+	for child in order_items_list.get_children():
 		child.queue_free()
 
 	# Creamos una fila por cada receta del pedido
@@ -105,12 +105,12 @@ func _setup_ticket() -> void:
 
 		row.add_child(label)
 		row.add_child(checkbox)
-		ingredients_list.add_child(row)
+		order_items_list.add_child(row)
 
 
 # Marca el check de una receta completada en el ticket
 func _mark_recipe_completed(recipe_id: String) -> void:
-	for row in ingredients_list.get_children():
+	for row in order_items_list.get_children():
 		var checkbox := row.find_child("Check_" + recipe_id, true, false)
 		if checkbox:
 			# Volvemos el modulate a blanco para que se vea la imagen original

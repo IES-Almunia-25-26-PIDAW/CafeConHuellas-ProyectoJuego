@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="3_no3pg"]
 [ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="4_ghovp"]
 [ext_resource type="AudioStream" uid="uid://coracnoonfc1f" path="res://assets/audio/sfx/sfx_correct.ogg" id="6_ghovp"]
+[ext_resource type="Script" uid="uid://3rxwp84ibauq" path="res://scripts/ui/clickable_area.gd" id="6_sfe4c"]
 [ext_resource type="Texture2D" uid="uid://8y027h3feuo8" path="res://assets/images/test_kitchen/cafetera_test.png" id="6_yblet"]
 [ext_resource type="Texture2D" uid="uid://djl205rjxve4r" path="res://assets/images/test_kitchen/batidora_Test.png" id="7_7qlqh"]
 [ext_resource type="AudioStream" uid="uid://cspy2e5w5qr23" path="res://assets/audio/sfx/sfx_wrong.ogg" id="7_y37jc"]
@@ -71,6 +72,7 @@ texture = ExtResource("4_ghovp")
 layer = 0
 
 [node name="CoffeeMachineArea" type="Area2D" parent="InteractionCanvas" unique_id=621069620]
+script = ExtResource("6_sfe4c")
 
 [node name="CoffeeMachineSprite" type="Sprite2D" parent="InteractionCanvas/CoffeeMachineArea" unique_id=752821055]
 position = Vector2(149, 532)
