@@ -16,7 +16,7 @@ var current_tween: Tween
 var is_crossfading: bool = false
 
 # Ruta base donde se encuentran los archivos de música
-const MUSIC_PATH := "res://assets/music/"
+const MUSIC_PATH := "res://assets/audio/music/"
 # Duración en segundos de los fades
 const FADE_TIME := 0.5
 

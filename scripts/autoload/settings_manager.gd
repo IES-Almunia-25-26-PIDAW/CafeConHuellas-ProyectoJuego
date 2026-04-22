@@ -11,13 +11,16 @@ const SECTION: String = "audio"
 # Valores por defecto (rango 0.0 - 1.0)
 const DEFAULT_MUSIC_VOLUME: float = 0.8
 const DEFAULT_VOICE_VOLUME: float = 1.0
+const DEFAULT_SFX_VOLUME: float = 1.0
 
 # Nombre de los buses en el AudioServer de Godot
 const BUS_MUSIC: String = "Music"
 const BUS_VOICES: String = "Voices"
+const BUS_SFX: String = "SFX"
 
 var music_volume: float = DEFAULT_MUSIC_VOLUME
 var voice_volume: float = DEFAULT_VOICE_VOLUME
+var sfx_volume: float = DEFAULT_SFX_VOLUME
 
 # Carga los settings y los aplica al AudioServer
 func _ready() -> void:
@@ -38,6 +41,10 @@ func set_voice_volume(value: float) -> void:
 	_set_bus_volume(BUS_VOICES, voice_volume)
 	save_settings()
 
+func set_sfx_volume(value: float) -> void:
+	sfx_volume = clampf(value, 0.0, 1.0)
+	_set_bus_volume(BUS_SFX, sfx_volume)
+	save_settings()
 
 # ========= GUARDADO Y CARGADO =========
 
@@ -45,6 +52,7 @@ func save_settings() -> void:
 	var config := ConfigFile.new()
 	config.set_value(SECTION, "music_volume", music_volume)
 	config.set_value(SECTION, "voice_volume", voice_volume)
+	config.set_value(SECTION, "sfx_volume", sfx_volume)
 	
 	var err := config.save(SETTINGS_PATH)
 	if err != OK:
@@ -63,6 +71,7 @@ func load_settings() -> void:
 	
 	music_volume = config.get_value(SECTION, "music_volume", DEFAULT_MUSIC_VOLUME)
 	voice_volume = config.get_value(SECTION, "voice_volume", DEFAULT_VOICE_VOLUME)
+	sfx_volume = config.get_value(SECTION, "sfx_volume", DEFAULT_SFX_VOLUME)
 
 
 # ========= HELPERS =========
@@ -71,6 +80,7 @@ func load_settings() -> void:
 func _apply_to_audio_server() -> void:
 	_set_bus_volume(BUS_MUSIC,  music_volume)
 	_set_bus_volume(BUS_VOICES, voice_volume)
+	_set_bus_volume(BUS_SFX, sfx_volume)
 
 # Convierte los valores 0.0-1.0 a dB y los aplica al bus indicado (0 es el máximo y -80 silencio)
 func _set_bus_volume(bus_name: String, linear_value: float) -> void:

@@ -68,7 +68,7 @@ offset_bottom = 80.0
 texture = ExtResource("4_ghovp")
 
 [node name="InteractionCanvas" type="CanvasLayer" parent="." unique_id=881406319]
-layer = 0
+layer = 4
 
 [node name="CoffeeMachineArea" type="Area2D" parent="InteractionCanvas" unique_id=621069620]
 
@@ -320,6 +320,8 @@ grow_vertical = 2
 
 [node name="SFXCorrect" type="AudioStreamPlayer" parent="." unique_id=1058965141]
 stream = ExtResource("6_ghovp")
+bus = &"SFX"
 
 [node name="SFXWrong" type="AudioStreamPlayer" parent="." unique_id=1543175520]
 stream = ExtResource("7_y37jc")
+bus = &"SFX"
