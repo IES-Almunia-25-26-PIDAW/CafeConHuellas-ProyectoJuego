@@ -12,8 +12,6 @@ var transition_time: float = 0.5
 func _ready() -> void:
 	# Configura el cursor personalizado al arrancar el juego
 	_setup_custom_cursor()
-	# Asigna el cursor de hover automáticamente a cualquier botón que entre al árbol
-	get_tree().node_added.connect(_on_node_added)
 	transition_layer = CanvasLayer.new()
 	transition_layer.layer = 100 # Hace que esté arriba de todos los elementos
 	transition_rect = ColorRect.new()
@@ -103,29 +101,8 @@ func _slide_in():
 func change_scene(path: String):
 	get_tree().change_scene_to_file(path)
 
-# Reemplaza el cursor del sistema por los cursores personalizados del juego
-# CURSOR_ARROW es el cursor normal (cuando mueves el ratón por la pantalla)
-# CURSOR_POINTING_HAND es el cursor de hover (cuando pasas por encima de un botón o área interactiva)
-# CURSOR_IBEAM es el cursor para campos de texto donde el jugador escribe
-# Vector2(0, 0) indica que el punto de clic está en la esquina superior izquierda del PNG
+# Configura el cursor personalizado del juego
+# Vector2(0, 0) indica que el punto del clic está en la esquina superior izquierda del PNG
 func _setup_custom_cursor() -> void:
-	var arrow: Texture2D = load("res://assets/images/ui/hand_open.png")
-	var pointer: Texture2D = load("res://assets/images/ui/hand_point.png")
-	# Cursor normal
-	Input.set_custom_mouse_cursor(arrow, Input.CURSOR_ARROW, Vector2(0, 0))
-	# Cursores de hover/interacción
-	Input.set_custom_mouse_cursor(pointer, Input.CURSOR_POINTING_HAND, Vector2(0, 0))
-	Input.set_custom_mouse_cursor(pointer, Input.CURSOR_IBEAM, Vector2(0, 0))
-	
-	# Aplica el cursor a los botones que ya existen en el árbol al arrancar
-	for node in get_tree().root.find_children("*", "BaseButton", true, false):
-		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	
-	
-# Asigna automáticamente el cursor de hover a cualquier botón del juego.
-# Se conecta a node_added para capturar botones que se crean dinámicamente
-# durante el juego, como los del popup de ingredientes o los de elección de diálogo.
-# Usa BaseButton para cubrir Button, TextureButton, CheckBox, etc.
-func _on_node_added(node: Node) -> void:
-	if node is BaseButton:
-		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	var cursor: Texture2D = load("res://assets/images/ui/cursor.png")
+	Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(0, 0))

@@ -20,7 +20,7 @@ func _ready() -> void:
 	# El menú funciona mientras el árbol está pausado
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	
-	# Guardar y Cargar deshabilitados -> aun no esta hecha la logica
+	# TODO: Guardar y Cargar deshabilitados -> aun no esta hecha la logica
 	save_btn.disabled = true
 	load_btn.disabled = true
 	
@@ -34,6 +34,13 @@ func _ready() -> void:
 	# Ventanas ocultas por defecto
 	options_window.hide()
 	confirm_window.hide()
+	
+	# Conectamos el sonido de clic a los botones activos del menú de pausa
+	# save_btn y load_btn se descomentarán cuando esté implementada su lógica
+	# save_btn.pressed.connect(UiSoundManager.play_menu_click)
+	# load_btn.pressed.connect(UiSoundManager.play_menu_click)
+	options_btn.pressed.connect(UiSoundManager.play_menu_click)
+	quit_btn.pressed.connect(UiSoundManager.play_menu_click)
 
 # Backdrop:
 func _on_backdrop_input(event: InputEvent) -> void:

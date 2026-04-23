@@ -33,10 +33,17 @@ func _open_menu() -> void:
 	_pause_menu_instance.show()
 	_is_open = true
 	get_tree().paused = true
+	
+	# Sonido al abrir el menú de pausa
+	UiSoundManager.play_menu_click()
 
 func _close_menu() -> void:
 	if _pause_menu_instance:
 		_pause_menu_instance.close()
+		
+	# Sonido al cerrar el menú de pausa
+	# Lo llamamos directamente desde código por eso le ponemos ()
+	UiSoundManager.play_menu_click()
 
 func _on_menu_closed() -> void:
 	_is_open = false

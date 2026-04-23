@@ -29,6 +29,9 @@ func _ready() -> void:
 	sfx_slider.value_changed.connect(_on_sfx_slider_changed)  
 	# Al pulsar el botón de cerrar se llama al método para cerrar la ventana
 	close_btn.pressed.connect(_on_close)
+	
+	# Sonido al cerrar el popup de opciones
+	close_btn.pressed.connect(UiSoundManager.play_menu_click)
 
 # Cuando se cambia el volumen de la música se pasa el nuevo valor al SettingsManager para que se guarde
 func _on_music_slider_changed(value: float) -> void:

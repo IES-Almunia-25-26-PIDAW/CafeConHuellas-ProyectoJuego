@@ -24,6 +24,9 @@ func _ready() -> void:
 	SceneManager.transition_out_completed.connect(_on_transition_out_completed, CONNECT_ONE_SHOT)
 	SceneManager.transition_in()
 	
+	# Sonido al pulsar el botón de volver al menú principal
+	back_button.pressed.connect(UiSoundManager.play_menu_click)
+	
 	_populate()
 
 # Construye el grid con una tarjeta por cada ilustración/cg definida en DataLoader y su estado en GlobalSave

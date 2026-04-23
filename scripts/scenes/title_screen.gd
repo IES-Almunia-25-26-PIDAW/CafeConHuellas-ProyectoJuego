@@ -13,10 +13,18 @@ func _ready():
 	MusicManager.play("pista_test2") # TODO: Cambiar a una canción "menu_theme" o algo asi
 	
 	new_game_button.pressed.connect(_on_new_game_button_pressed)
-	# A tratar luego
+	# TODO: A tratar luego 
 	#continue_button.pressed.connect(_on_continue_button_pressed)
 	album_button.pressed.connect(_on_album_button_pressed)
 	exit_button.pressed.connect(_on_exit_button_pressed)
+	
+	# Conectamos el sonido de clic a los botones activos del menú principal
+	new_game_button.pressed.connect(UiSoundManager.play_menu_click)
+	album_button.pressed.connect(UiSoundManager.play_menu_click)
+	# TODO: Botón de exit comentado porque si queremos que suene tenemos que poner
+	# await get_tree().create_timer(0.2).timeout   en _on_exit_button_pressed
+	# exit_button.pressed.connect(UiSoundManager.play_menu_click)
+
 	
 	# CONNECT_ONE_SHOT solo lo llama una vez y se desconecta después de emitirse
 	SceneManager.transition_out_completed.connect(_on_transition_out_completed, CONNECT_ONE_SHOT)

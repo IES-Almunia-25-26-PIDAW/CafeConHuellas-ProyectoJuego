@@ -13,6 +13,10 @@ func _ready() -> void:
 	# Conecta los botones cuando se les hace click con su método
 	confirm_btn.pressed.connect(_on_confirm)
 	cancel_btn.pressed.connect(_on_cancel)
+	
+	# Sonido al confirmar y cancelar en el popup de salir al menú
+	confirm_btn.pressed.connect(UiSoundManager.play_menu_click)
+	cancel_btn.pressed.connect(UiSoundManager.play_menu_click)
 
 # Configura el mensaje antes de mostrar la ventana
 func setup(message: String) -> void:
