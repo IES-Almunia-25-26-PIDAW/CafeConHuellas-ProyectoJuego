@@ -10,25 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://djl205rjxve4r" path="res://assets/images/test_kitchen/batidora_Test.png" id="7_7qlqh"]
 [ext_resource type="AudioStream" uid="uid://cspy2e5w5qr23" path="res://assets/audio/sfx/sfx_wrong.ogg" id="7_y37jc"]
 [ext_resource type="Texture2D" uid="uid://dn461ehdbb11e" path="res://assets/images/test_kitchen/pastel_Test.png" id="8_3guqh"]
+[ext_resource type="Texture2D" uid="uid://bmjkbhrcja4vb" path="res://assets/images/kitchen_items/recipebook.png" id="8_6xums"]
 [ext_resource type="PackedScene" uid="uid://mmh8nl4y1hy1" path="res://scenes/kitchen/kitchen_item_button.tscn" id="9_2m1ic"]
 [ext_resource type="Texture2D" uid="uid://deu8ghor2siai" path="res://assets/images/test_kitchen/galleta_test.png" id="9_k8dl0"]
+[ext_resource type="Texture2D" uid="uid://b1cu8hq2ngm08" path="res://assets/images/kitchen_items/recipebook_hover.png" id="9_vxhy1"]
 [ext_resource type="Texture2D" uid="uid://bq5hrpailddhd" path="res://assets/images/test_kitchen/batido_test.png" id="10_3guqh"]
 [ext_resource type="Texture2D" uid="uid://tfkvp5ld3vxu" path="res://assets/images/test_kitchen/leche_Test.png" id="11_k8dl0"]
+[ext_resource type="Texture2D" uid="uid://vd2g87lgy84k" path="res://assets/placeholders/pet_placeholder_empty.png" id="11_vxhy1"]
 [ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="12_k8dl0"]
 [ext_resource type="PackedScene" uid="uid://bbp5e10quv6ys" path="res://scenes/kitchen/ingredient_popup.tscn" id="13_81ywk"]
-[ext_resource type="Texture2D" uid="uid://dw3y3hoshjbo7" path="res://assets/images/test_kitchen/libro_test.png" id="13_b5j1f"]
 [ext_resource type="PackedScene" uid="uid://bo88x1qy4anad" path="res://scenes/kitchen/recipe_book.tscn" id="14_1b1dy"]
 [ext_resource type="Texture2D" uid="uid://cy47nokhof7uo" path="res://assets/images/test_kitchen/ticket_test.png" id="14_bmpck"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hollr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_no3pg"]
-size = Vector2(49.60813, 44.76111)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpck"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_81ywk"]
-size = Vector2(42.87729, 33.28632)
 
 [node name="CafeKitchenScene" type="Node2D" unique_id=367916718]
 script = ExtResource("1_hollr")
@@ -62,31 +54,42 @@ texture = ExtResource("4_ghovp")
 [node name="InteractionCanvas" type="CanvasLayer" parent="." unique_id=881406319]
 layer = 4
 
-[node name="CoffeeMachineArea" type="Area2D" parent="InteractionCanvas" unique_id=621069620]
+[node name="CoffeeMachineBtn" type="TextureButton" parent="InteractionCanvas" unique_id=775037982]
 unique_name_in_owner = true
+offset_left = 28.0
+offset_top = 410.0
+offset_right = 540.0
+offset_bottom = 922.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("6_yblet")
 
-[node name="CoffeeMachineSprite" type="Sprite2D" parent="InteractionCanvas/CoffeeMachineArea" unique_id=752821055]
-position = Vector2(149, 532)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_yblet")
-
-[node name="CoffeeMachineShape" type="CollisionShape2D" parent="InteractionCanvas/CoffeeMachineArea" unique_id=913894440]
-position = Vector2(149, 533)
-scale = Vector2(13.235, 13.235)
-shape = SubResource("RectangleShape2D_hollr")
-
-[node name="BlenderArea" type="Area2D" parent="InteractionCanvas" unique_id=1611732045]
+[node name="BlenderBtn" type="TextureButton" parent="InteractionCanvas" unique_id=327049908]
 unique_name_in_owner = true
+offset_left = 343.0
+offset_top = 420.0
+offset_right = 855.0
+offset_bottom = 932.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("7_7qlqh")
 
-[node name="BlenderSprite" type="Sprite2D" parent="InteractionCanvas/BlenderArea" unique_id=378454789]
-position = Vector2(514, 533)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_7qlqh")
+[node name="RecipeBookBtn" type="TextureButton" parent="InteractionCanvas" unique_id=857123394]
+unique_name_in_owner = true
+offset_left = 660.0
+offset_top = -1.0
+offset_right = 877.0
+offset_bottom = 257.0
+texture_normal = ExtResource("8_6xums")
+texture_hover = ExtResource("9_vxhy1")
 
-[node name="BlenderShape" type="CollisionShape2D" parent="InteractionCanvas/BlenderArea" unique_id=43092121]
-position = Vector2(508.04376, 535.5)
-scale = Vector2(5.965, 5.965)
-shape = SubResource("RectangleShape2D_no3pg")
+[node name="OrderReadySignBtn" type="TextureButton" parent="InteractionCanvas" unique_id=793262165]
+unique_name_in_owner = true
+offset_left = 38.999996
+offset_top = 70.99999
+offset_right = 438.0
+offset_bottom = 430.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("12_k8dl0")
+texture_disabled = ExtResource("11_vxhy1")
 
 [node name="PastryShelf" type="Control" parent="InteractionCanvas" unique_id=1475453110]
 unique_name_in_owner = true
@@ -208,33 +211,8 @@ scale = Vector2(0.07, 0.07)
 texture_normal = ExtResource("11_k8dl0")
 recipe_id = "milk_drink"
 
-[node name="OrderReadySign" type="Area2D" parent="InteractionCanvas" unique_id=834508123]
-unique_name_in_owner = true
-
-[node name="OrderReadySignSprite" type="Sprite2D" parent="InteractionCanvas/OrderReadySign" unique_id=964016335]
-position = Vector2(158, 175)
-scale = Vector2(0.68045115, 0.69220054)
-texture = ExtResource("12_k8dl0")
-
-[node name="OrderReadySignShape" type="CollisionShape2D" parent="InteractionCanvas/OrderReadySign" unique_id=191627461]
-position = Vector2(160, 177)
-scale = Vector2(11.285, 11.285)
-shape = SubResource("RectangleShape2D_bmpck")
-
-[node name="RecipeBookArea" type="Area2D" parent="InteractionCanvas" unique_id=113822881]
-unique_name_in_owner = true
-
-[node name="RecipeBookSprite" type="Sprite2D" parent="InteractionCanvas/RecipeBookArea" unique_id=22309005]
-position = Vector2(806, 146)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("13_b5j1f")
-
-[node name="RecipeBookShape" type="CollisionShape2D" parent="InteractionCanvas/RecipeBookArea" unique_id=1475574973]
-position = Vector2(802, 143)
-scale = Vector2(7.09, 7.09)
-shape = SubResource("RectangleShape2D_81ywk")
-
 [node name="UICanvas" type="CanvasLayer" parent="." unique_id=975904834]
+unique_name_in_owner = true
 layer = 5
 
 [node name="OrderTicket" type="Control" parent="UICanvas" unique_id=1032781358]

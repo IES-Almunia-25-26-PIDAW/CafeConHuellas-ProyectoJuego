@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bjfxw63gnuxd8"]
+
+[ext_resource type="Script" uid="uid://icgolk484i5p" path="res://scripts/kitchen/recipe_completed_popup.gd" id="1_p31g1"]
+[ext_resource type="Texture2D" uid="uid://dn461ehdbb11e" path="res://assets/images/test_kitchen/pastel_Test.png" id="2_n34en"]
+
+[node name="RecipeCompletedPopup" type="Control" unique_id=1191124573]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p31g1")
+
+[node name="PopupPanel" type="PanelContainer" parent="." unique_id=317629703]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -129.0
+offset_right = 200.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel" unique_id=1704277096]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RecipeImage" type="TextureRect" parent="PopupPanel/VBoxContainer" unique_id=8567724]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_n34en")
+expand_mode = 5
+
+[node name="RecipeLabel" type="RichTextLabel" parent="PopupPanel/VBoxContainer" unique_id=582707791]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+text = "¡Completado!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

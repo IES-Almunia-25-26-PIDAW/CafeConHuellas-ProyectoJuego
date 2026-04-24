@@ -20,6 +20,8 @@ extends Control
 @onready var btn_prev: Button = %BtnPrev
 @onready var btn_next: Button = %BtnNext
 
+# Sonido de la página
+@onready var sfx_page_turn: AudioStreamPlayer = %SFXPageTurn
 
 
 # ===== ESTADO INTERNO =====
@@ -52,7 +54,7 @@ func _ready() -> void:
 	_load_recipes()
 
 	# Mostramos la primera categoría por defecto
-	_on_category_pressed("coffee")
+	_on_category_pressed("coffee", false)
 
 
 # ===== CARGA DE DATOS =====
@@ -89,22 +91,20 @@ func _load_recipes() -> void:
 # Muestra la receta del índice actual en la categoría actual
 func _show_current_recipe() -> void:
 	var recipes: Array = _recipes_by_category[_current_category]
-
 	if recipes.is_empty():
 		return
 
 	var recipe: Dictionary = recipes[_current_index]
 
 	# Imagen de la receta
-	var texture = load(recipe.get("recipe_image", ""))
-	if texture:
-		recipe_image.texture = texture
+	var image_path: String = recipe.get("recipe_image", "")
+	if image_path != "" and ResourceLoader.exists(image_path):
+		recipe_image.texture = load(image_path)
 	else:
 		recipe_image.texture = null
 
 	# Nombre
 	recipe_name_label.text = recipe.get("display_name", "")
-
 	# Descripción
 	recipe_desc_label.text = recipe.get("description", "")
 
@@ -137,22 +137,26 @@ func _update_tab_visuals(active_category: String) -> void:
 	btn_cookie.modulate = Color.WHITE if active_category == "pastry_cookie" else Color(0.6, 0.6, 0.6, 1.0)
 	
 # Cambia la categoría activa y resetea el índice
-func _on_category_pressed(category: String) -> void:
+func _on_category_pressed(category: String, play_sound: bool = true) -> void:
 	_current_category = category
 	_current_index = 0
 	_update_tab_visuals(category)
 	_show_current_recipe()
+	if play_sound:
+		sfx_page_turn.play()
 
 func _on_prev_pressed() -> void:
 	if _current_index > 0:
 		_current_index -= 1
 		_show_current_recipe()
+		sfx_page_turn.play()
 
 func _on_next_pressed() -> void:
 	var recipes: Array = _recipes_by_category[_current_category]
 	if _current_index < recipes.size() - 1:
 		_current_index += 1
 		_show_current_recipe()
+		sfx_page_turn.play()
 
 # Cierra el recetario al clicar el overlay
 func _on_overlay_clicked(event: InputEvent) -> void:
