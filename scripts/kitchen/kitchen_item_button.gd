@@ -10,14 +10,6 @@ signal item_clicked(recipe_id: String)
 # ID de la receta que representa este item, se asigna en el inspector
 @export var recipe_id: String = ""
 
-# TODO: borrar esto jejsjs
-# Texturas de los estados visuales — asignar en el inspector de cada instancia
-# texture_normal ya existe en TextureButton como propiedad nativa,
-# aquí solo declaramos las adicionales para documentar qué se espera:
-# texture_normal  → apariencia por defecto   (propiedad nativa de TextureButton)
-# texture_hover   → apariencia al pasar el ratón (propiedad nativa de TextureButton)
-# texture_pressed → apariencia al hacer clic    (propiedad nativa de TextureButton)
-# texture_disabled → apariencia desactivado     (propiedad nativa de TextureButton)
 
 func _ready() -> void:
 	pressed.connect(_on_pressed)

@@ -14,8 +14,8 @@ signal popup_closed
 
 # ===== REFERENCIAS A NODOS =====
 
-@onready var popup_title: Label = $PopupPanel/PopupContent/PopupTitle
-@onready var ingredients_grid: GridContainer = $PopupPanel/PopupContent/IngredientsGrid
+@onready var popup_title: RichTextLabel = %PopupTitle
+@onready var ingredients_grid: GridContainer = %IngredientsGrid
 
 
 # ===== PUBLIC API =====

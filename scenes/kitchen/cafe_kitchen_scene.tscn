@@ -25,15 +25,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_no3pg"]
 size = Vector2(49.60813, 44.76111)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghovp"]
-size = Vector2(7.73318, 12.229561)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_81ywk"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1b1dy"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_b5j1f"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81ywk"]
@@ -104,9 +95,9 @@ anchors_preset = 0
 
 [node name="CakeAppleBtn" parent="InteractionCanvas/PastryShelf" unique_id=408575844 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1280.0
+offset_left = 1344.0
 offset_top = 875.0
-offset_right = 3200.0
+offset_right = 3264.0
 offset_bottom = 2795.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("8_3guqh")
@@ -124,161 +115,98 @@ recipe_id = "cake_carrot"
 
 [node name="CakeLemonBtn" parent="InteractionCanvas/PastryShelf" unique_id=1645735397 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1677.0
-offset_top = 870.0
-offset_right = 1717.0
-offset_bottom = 910.0
+offset_left = 1664.0
+offset_top = 645.00006
+offset_right = 3584.0
+offset_bottom = 2565.0
+scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("8_3guqh")
 recipe_id = "cake_lemon"
 
-[node name="KitchenItemButton5" parent="InteractionCanvas/PastryShelf" unique_id=736583009 instance=ExtResource("9_2m1ic")]
+[node name="CakeCheeseBtn" parent="InteractionCanvas/PastryShelf" unique_id=736583009 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1677.0
-offset_top = 870.0
-offset_right = 1717.0
-offset_bottom = 910.0
-
-[node name="KitchenItemButton4" parent="InteractionCanvas/PastryShelf" unique_id=204869927 instance=ExtResource("9_2m1ic")]
-layout_mode = 0
-offset_left = 1677.0
-offset_top = 870.0
-offset_right = 1717.0
-offset_bottom = 910.0
-
-[node name="KitchenItemButton3" parent="InteractionCanvas/PastryShelf" unique_id=117797841 instance=ExtResource("9_2m1ic")]
-layout_mode = 0
-offset_left = 1677.0
-offset_top = 870.0
-offset_right = 1717.0
-offset_bottom = 910.0
-
-[node name="KitchenItemButton2" parent="InteractionCanvas/PastryShelf" unique_id=1107171721 instance=ExtResource("9_2m1ic")]
-layout_mode = 0
-offset_left = 1677.0
-offset_top = 870.0
-offset_right = 1717.0
-offset_bottom = 910.0
-
-[node name="CakeLemonArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=848655586]
-
-[node name="CakeLemonSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CakeLemonArea" unique_id=1338003919]
-position = Vector2(1779.9999, 706.99994)
+offset_left = 1323.0
+offset_top = 640.0
+offset_right = 3243.0
+offset_bottom = 2560.0
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_3guqh")
+texture_normal = ExtResource("8_3guqh")
+recipe_id = "cake_cheese"
 
-[node name="CakeLemonShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CakeLemonArea" unique_id=1217924853]
-position = Vector2(1779.0001, 726)
-rotation = -1.5707964
-scale = Vector2(17.25, 17.25)
-shape = SubResource("RectangleShape2D_ghovp")
-
-[node name="CakeCheeseArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=954099881]
-
-[node name="CakeCheeseSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CakeCheeseArea" unique_id=427958399]
-position = Vector2(1382, 726)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_3guqh")
-
-[node name="CakeCheeseShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CakeCheeseArea" unique_id=1887556349]
-position = Vector2(1382.0001, 743)
-rotation = -1.5428711
-scale = Vector2(17.035, 17.035)
-shape = SubResource("RectangleShape2D_ghovp")
-
-[node name="CookieButterArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=1887526935]
-
-[node name="CookieButterSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CookieButterArea" unique_id=1584159674]
-position = Vector2(1818, 493)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_k8dl0")
-
-[node name="CookieButterShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CookieButterArea" unique_id=802000952]
-position = Vector2(1815.0001, 488)
-rotation = 1.5428711
-scale = Vector2(6.35, 6.35)
-shape = SubResource("CircleShape2D_81ywk")
-
-[node name="CookieChocolateArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=1439265368]
-
-[node name="CookieChocolateSprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CookieChocolateArea" unique_id=813976243]
-position = Vector2(1575, 493)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_k8dl0")
-
-[node name="CookieChocolateShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CookieChocolateArea" unique_id=1376872910]
-position = Vector2(1580, 490)
-rotation = -1.5428711
-scale = Vector2(6.52, 6.52)
-shape = SubResource("CircleShape2D_1b1dy")
-
-[node name="CookieOatHoneyArea" type="Area2D" parent="InteractionCanvas/PastryShelf" unique_id=1134790849]
-
-[node name="CookieOatHoneySprite" type="Sprite2D" parent="InteractionCanvas/PastryShelf/CookieOatHoneyArea" unique_id=559176791]
-position = Vector2(1318, 495)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_k8dl0")
-
-[node name="CookieOatHoneyShape" type="CollisionShape2D" parent="InteractionCanvas/PastryShelf/CookieOatHoneyArea" unique_id=865610249]
-position = Vector2(1318, 495)
-rotation = 1.5271631
-scale = Vector2(6.58, 6.58)
-shape = SubResource("CircleShape2D_b5j1f")
-
-[node name="KitchenItemButton" parent="InteractionCanvas/PastryShelf" unique_id=2048210656 instance=ExtResource("9_2m1ic")]
+[node name="CookieButterBtn" parent="InteractionCanvas/PastryShelf" unique_id=204869927 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
+offset_left = 1463.0001
+offset_top = 390.00006
+offset_right = 1823.0001
+offset_bottom = 750.00006
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("9_k8dl0")
+recipe_id = "cookie_butter"
+
+[node name="CookieChocolateBtn" parent="InteractionCanvas/PastryShelf" unique_id=117797841 instance=ExtResource("9_2m1ic")]
+layout_mode = 0
+offset_left = 1218.0
+offset_top = 393.0
+offset_right = 1578.0
+offset_bottom = 753.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("9_k8dl0")
+recipe_id = "cookie_chocolate"
+
+[node name="CookieOatHoneyBtn" parent="InteractionCanvas/PastryShelf" unique_id=1107171721 instance=ExtResource("9_2m1ic")]
+layout_mode = 0
+offset_left = 1674.0001
+offset_top = 394.00006
+offset_right = 2034.0001
+offset_bottom = 754.00006
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("9_k8dl0")
+recipe_id = "cookie_oat_honey"
 
 [node name="MilkshakeShelf" type="Control" parent="InteractionCanvas" unique_id=1903670096]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 
-[node name="MilkshakeChocolateArea" type="Area2D" parent="InteractionCanvas/MilkshakeShelf" unique_id=466839981]
-
-[node name="MilkshakeChocolateSprite" type="Sprite2D" parent="InteractionCanvas/MilkshakeShelf/MilkshakeChocolateArea" unique_id=1503298586]
-position = Vector2(978, 589)
-scale = Vector2(0.49444443, 0.5)
-texture = ExtResource("10_3guqh")
-
-[node name="MilkshakeChocolateShape" type="CollisionShape2D" parent="InteractionCanvas/MilkshakeShelf/MilkshakeChocolateArea" unique_id=1848633716]
-position = Vector2(979, 589)
-scale = Vector2(12.21, 12.21)
-shape = SubResource("RectangleShape2D_ghovp")
-
-[node name="MilkshakeVanillaArea" type="Area2D" parent="InteractionCanvas/MilkshakeShelf" unique_id=1474274820]
-
-[node name="MilkshakeVanillaSprite" type="Sprite2D" parent="InteractionCanvas/MilkshakeShelf/MilkshakeVanillaArea" unique_id=848660618]
-position = Vector2(859, 584)
+[node name="MilkshakeChocolateBtn" parent="InteractionCanvas/MilkshakeShelf" unique_id=335559832 instance=ExtResource("9_2m1ic")]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 491.0
+offset_right = 1214.0
+offset_bottom = 851.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("10_3guqh")
+texture_normal = ExtResource("10_3guqh")
+recipe_id = "milkshake_chocolate"
 
-[node name="MilkshakeVanillaShape" type="CollisionShape2D" parent="InteractionCanvas/MilkshakeShelf/MilkshakeVanillaArea" unique_id=629506429]
-position = Vector2(866.2379, 586.7309)
-scale = Vector2(11.59, 11.59)
-shape = SubResource("RectangleShape2D_ghovp")
-
-[node name="MilkshakeStrawberryArea" type="Area2D" parent="InteractionCanvas/MilkshakeShelf" unique_id=1933838948]
-
-[node name="MilkshakeStrawberrySprite" type="Sprite2D" parent="InteractionCanvas/MilkshakeShelf/MilkshakeStrawberryArea" unique_id=730856352]
-position = Vector2(746, 585)
+[node name="MilkshakeVanillaBtn" parent="InteractionCanvas/MilkshakeShelf" unique_id=1632852064 instance=ExtResource("9_2m1ic")]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 494.0
+offset_right = 1116.0
+offset_bottom = 854.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("10_3guqh")
+texture_normal = ExtResource("10_3guqh")
+recipe_id = "milkshake_vanilla"
 
-[node name="MilkshakeStrawberryShape" type="CollisionShape2D" parent="InteractionCanvas/MilkshakeShelf/MilkshakeStrawberryArea" unique_id=1365963622]
-position = Vector2(742.011, 589.8336)
-scale = Vector2(13.71, 13.71)
-shape = SubResource("RectangleShape2D_ghovp")
+[node name="MilkshakeStrawberryBtn" parent="InteractionCanvas/MilkshakeShelf" unique_id=1259040133 instance=ExtResource("9_2m1ic")]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 494.0
+offset_right = 1003.0
+offset_bottom = 854.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("10_3guqh")
+recipe_id = "milkshake_strawberry"
 
-[node name="MilkDrinkArea" type="Area2D" parent="InteractionCanvas/MilkshakeShelf" unique_id=724486471]
-
-[node name="MilkDrinkSprite" type="Sprite2D" parent="InteractionCanvas/MilkshakeShelf/MilkDrinkArea" unique_id=514443315]
-position = Vector2(1087, 596)
+[node name="MilkDrinkBtn" parent="InteractionCanvas/MilkshakeShelf" unique_id=150277185 instance=ExtResource("9_2m1ic")]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 496.0
+offset_right = 3472.0
+offset_bottom = 2996.0
 scale = Vector2(0.07, 0.07)
-texture = ExtResource("11_k8dl0")
-
-[node name="MilkDrinkShape" type="CollisionShape2D" parent="InteractionCanvas/MilkshakeShelf/MilkDrinkArea" unique_id=1611648121]
-position = Vector2(1086, 595.5)
-scale = Vector2(12.45, 12.45)
-shape = SubResource("RectangleShape2D_ghovp")
+texture_normal = ExtResource("11_k8dl0")
+recipe_id = "milk_drink"
 
 [node name="OrderReadySign" type="Area2D" parent="InteractionCanvas" unique_id=834508123]
 unique_name_in_owner = true

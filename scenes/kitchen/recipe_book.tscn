@@ -10,6 +10,7 @@ anchors_preset = 0
 script = ExtResource("1_vw1fa")
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=513882740]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,18 +50,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BtnCoffee" type="Button" parent="CategoryTabs" unique_id=1695634058]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Café"
 
 [node name="BtnSmoothie" type="Button" parent="CategoryTabs" unique_id=1095957691]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Smoothie"
 
 [node name="BtnCake" type="Button" parent="CategoryTabs" unique_id=233217524]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Tartas"
 
 [node name="BtnCookie" type="Button" parent="CategoryTabs" unique_id=557290235]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Galletas"
 
@@ -86,6 +91,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="RecipeImage" type="TextureRect" parent="BookContent/LeftPage" unique_id=2016222806]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(280, 360)
 layout_mode = 2
 texture = ExtResource("3_0kgm3")
@@ -97,23 +103,21 @@ custom_minimum_size = Vector2(300, 380)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RecipeNameLabel" type="Label" parent="BookContent/RightPage" unique_id=1398372398]
+[node name="RecipeNameLabel" type="RichTextLabel" parent="BookContent/RightPage" unique_id=1842773307]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Smoothie"
 autowrap_mode = 2
 
-[node name="RecipeDescLabel" type="Label" parent="BookContent/RightPage" unique_id=1490890018]
+[node name="RecipeDescLabel" type="RichTextLabel" parent="BookContent/RightPage" unique_id=37868108]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 13
 text = "Descripcion lalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalala"
 autowrap_mode = 2
 
-[node name="RecipeIngredientsLabel" type="Label" parent="BookContent/RightPage" unique_id=1473436875]
+[node name="RecipeIngredientsLabel" type="RichTextLabel" parent="BookContent/RightPage" unique_id=1655351035]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 13
 text = "Ingredientes:
 - 
 - 
@@ -121,16 +125,16 @@ text = "Ingredientes:
 "
 autowrap_mode = 2
 
-[node name="RecipeHowToLabel" type="Label" parent="BookContent/RightPage" unique_id=615095251]
+[node name="RecipeHowToLabel" type="RichTextLabel" parent="BookContent/RightPage" unique_id=2082189497]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 13
 text = "Como se hace:
 
 Bla bla bla"
 autowrap_mode = 2
 
 [node name="BtnPrev" type="Button" parent="." unique_id=1031756201]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -146,6 +150,7 @@ grow_vertical = 2
 text = "<--"
 
 [node name="BtnNext" type="Button" parent="." unique_id=1308984235]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

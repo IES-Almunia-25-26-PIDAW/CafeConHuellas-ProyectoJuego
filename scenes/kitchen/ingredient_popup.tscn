@@ -34,9 +34,11 @@ grow_vertical = 2
 [node name="PopupContent" type="VBoxContainer" parent="PopupPanel" unique_id=592768569]
 layout_mode = 2
 
-[node name="PopupTitle" type="Label" parent="PopupPanel/PopupContent" unique_id=1101001137]
+[node name="PopupTitle" type="RichTextLabel" parent="PopupPanel/PopupContent" unique_id=243999375]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="IngredientsGrid" type="GridContainer" parent="PopupPanel/PopupContent" unique_id=1506795472]
+unique_name_in_owner = true
 layout_mode = 2
 columns = 3

@@ -5,20 +5,20 @@ extends Control
 
 # ===== REFERENCIAS A NODOS =====
 
-@onready var overlay: ColorRect = $Overlay
-@onready var btn_coffee: Button = $CategoryTabs/BtnCoffee
-@onready var btn_smoothie: Button = $CategoryTabs/BtnSmoothie
-@onready var btn_cake: Button = $CategoryTabs/BtnCake
-@onready var btn_cookie: Button = $CategoryTabs/BtnCookie
+@onready var overlay: ColorRect = %Overlay
+@onready var btn_coffee: Button = %BtnCoffee
+@onready var btn_smoothie: Button = %BtnSmoothie
+@onready var btn_cake: Button = %BtnCake
+@onready var btn_cookie: Button = %BtnCookie
 
-@onready var recipe_image: TextureRect = $BookContent/LeftPage/RecipeImage
-@onready var recipe_name_label: Label = $BookContent/RightPage/RecipeNameLabel
-@onready var recipe_desc_label: Label = $BookContent/RightPage/RecipeDescLabel
-@onready var recipe_ingredients_label: Label = $BookContent/RightPage/RecipeIngredientsLabel
-@onready var recipe_how_to_label: Label = $BookContent/RightPage/RecipeHowToLabel
+@onready var recipe_image: TextureRect = %RecipeImage
+@onready var recipe_name_label: RichTextLabel  = %RecipeNameLabel
+@onready var recipe_desc_label: RichTextLabel  = %RecipeDescLabel
+@onready var recipe_ingredients_label: RichTextLabel  = %RecipeIngredientsLabel
+@onready var recipe_how_to_label: RichTextLabel = %RecipeHowToLabel
 
-@onready var btn_prev: Button = $BtnPrev
-@onready var btn_next: Button = $BtnNext
+@onready var btn_prev: Button = %BtnPrev
+@onready var btn_next: Button = %BtnNext
 
 
 
