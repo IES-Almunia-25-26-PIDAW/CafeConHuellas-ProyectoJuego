@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bssssakvqkfda"]
 
 [ext_resource type="Script" uid="uid://cf03f7s7527a4" path="res://scripts/kitchen/cafe_kitchen_scene.gd" id="1_hollr"]
-[ext_resource type="Texture2D" uid="uid://c3djecl04edx8" path="res://assets/images/CafeKitchenBack_test.png" id="2_b5j1f"]
+[ext_resource type="Texture2D" uid="uid://c1cy2pqy8g8g0" path="res://assets/images/backgrounds/kitchencafe.png" id="2_bmpck"]
 [ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="2_hollr"]
 [ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="3_no3pg"]
 [ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="4_ghovp"]
@@ -50,7 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_b5j1f")
+texture = ExtResource("2_bmpck")
 
 [node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=789967462]
 layer = 10
