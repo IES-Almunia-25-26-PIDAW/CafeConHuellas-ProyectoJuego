@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://mmh8nl4y1hy1"]
+
+[ext_resource type="Script" uid="uid://bldnl427evrmq" path="res://scripts/kitchen/kitchen_item_button.gd" id="1_wenjm"]
+
+[node name="KitchenItemButton" type="TextureButton" unique_id=408575844]
+visibility_layer = 16
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wenjm")

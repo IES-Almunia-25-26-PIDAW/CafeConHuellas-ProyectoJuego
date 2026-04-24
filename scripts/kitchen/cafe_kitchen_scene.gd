@@ -5,25 +5,27 @@ extends Node2D
 
 # ===== REFERENCIAS A NODOS =====
 
-@onready var order_items_list: VBoxContainer = $UICanvas/OrderTicket/TicketPanel/TicketContent/OrderItemsList
+@onready var order_items_list: VBoxContainer = %OrderItemsList
 
-@onready var coffee_machine_area: Area2D = $InteractionCanvas/CoffeeMachineArea
-@onready var blender_area: Area2D = $InteractionCanvas/BlenderArea
+@onready var coffee_machine_area: Area2D = %CoffeeMachineArea
+@onready var blender_area: Area2D = %BlenderArea
 
-@onready var pastry_shelf: Node2D = $InteractionCanvas/PastryShelf
-@onready var milkshake_shelf: Node2D = $InteractionCanvas/MilkshakeShelf
+@onready var pastry_shelf: Control = %PastryShelf
+@onready var milkshake_shelf: Control = %MilkshakeShelf
 
 # Cartel que se ilumina cuando la orden está completa
-@onready var order_ready_sign: Area2D = $InteractionCanvas/OrderReadySign
+@onready var order_ready_sign: Area2D = %OrderReadySign
 
-@onready var sfx_correct: AudioStreamPlayer = $SFXCorrect
-@onready var sfx_wrong: AudioStreamPlayer = $SFXWrong
+@onready var sfx_correct: AudioStreamPlayer = %SFXCorrect
+@onready var sfx_wrong: AudioStreamPlayer = %SFXWrong
 
 # Popup de ingredientes, está en la escena oculto y se muestra cuando hace falta
-@onready var ingredient_popup = $UICanvas/IngredientPopup
+@onready var ingredient_popup = %IngredientPopup
 
 # Recetario, está en la escena oculto y se muestra cuando el jugador clica el libro
-@onready var recipe_book = $UICanvas/RecipeBook
+@onready var recipe_book = %RecipeBook
+# Area de click del recetario
+@onready var recipe_book_area: Area2D = %RecipeBookArea
 
 
 # ===== INICIALIZACIÓN =====
@@ -35,38 +37,41 @@ func _ready() -> void:
 	# El cartel empieza oscuro y desactivado hasta que la orden esté completa
 	order_ready_sign.monitoring = false
 	order_ready_sign.modulate = Color(0.5, 0.5, 0.5, 0.7)
-
+	
 	# PENDIENTE - esto es solo para las pruebas
 	# TODO: BORRAR ESTO, solo es para probar
 	GameState.current_order_recipe_ids = ["cappuccino", "smoothie_strawberry", "cake_apple", "cookie_butter"]
-
+	
 	# Conectamos las señales del KitchenManager
 	KitchenManager.ingredient_correct.connect(_on_ingredient_correct)
 	KitchenManager.ingredient_wrong.connect(_on_ingredient_wrong)
 	KitchenManager.ingredient_already_added.connect(_on_ingredient_already_added)
 	KitchenManager.recipe_completed.connect(_on_recipe_completed)
 	KitchenManager.order_completed.connect(_on_order_completed)
-
+	
 	# Conectamos los clics de la cafetera y la batidora
 	coffee_machine_area.input_event.connect(_on_coffee_machine_clicked)
 	blender_area.input_event.connect(_on_blender_clicked)
-
+	
 	# Conectamos el clic del cartel de orden lista
 	order_ready_sign.input_event.connect(_on_order_ready_sign_clicked)
-
+	
 	# Conectamos el clic del libro del recetario
-	$InteractionCanvas/RecipeBookArea.input_event.connect(_on_recipe_book_clicked)
+	recipe_book_area.input_event.connect(_on_recipe_book_clicked)
+	
+	# Conectamos los KitchenItems de ambos estantes, cada item sabe su propio recipe_id
+	for item in pastry_shelf.get_children():
+		var kitchen_item := item as KitchenItem
+		if kitchen_item:
+			kitchen_item.item_clicked.connect(_on_shelf_item_clicked)
+			
+	for item in milkshake_shelf.get_children():
+		var kitchen_item := item as KitchenItem
+		if kitchen_item:
+			kitchen_item.item_clicked.connect(_on_shelf_item_clicked)
 
 	# Iniciamos la lógica de la orden
 	KitchenManager.start_order()
-
-	# Conectamos los clics de cada tarta y galleta del estante
-	for area in pastry_shelf.get_children():
-		area.input_event.connect(_on_shelf_item_clicked.bind(area.name))
-
-	# Conectamos los clics de cada batido y leche
-	for area in milkshake_shelf.get_children():
-		area.input_event.connect(_on_shelf_item_clicked.bind(area.name))
 
 	# Dibujamos el ticket con las recetas del pedido
 	_setup_ticket()
@@ -191,37 +196,14 @@ func _on_blender_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) ->
 		get_viewport().set_input_as_handled()
 		_open_ingredient_popup("¿Qué le añades al smoothie?", "smoothie")
 
-# Detecta qué elemento del estante ha clicado el jugador y lo pasa al KitchenManager
-func _on_shelf_item_clicked(_viewport: Node, event: InputEvent, _shape_idx: int, area_name: String) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		get_viewport().set_input_as_handled()
-		# Convertimos el nombre del nodo al ID de la receta
-		# Ej: "CakeAppleArea" --> "cake_apple"
-		var recipe_id := _area_name_to_recipe_id(area_name)
-		KitchenManager.try_complete_direct_recipe(recipe_id)
-
-# Convierte el nombre del nodo Area2D al ID del ingrediente correspondiente
-func _area_name_to_recipe_id(area_name: String) -> String:
-	var map := {
-		"CakeAppleArea": "cake_apple",
-		"CakeCarrotArea": "cake_carrot",
-		"CakeLemonArea": "cake_lemon",
-		"CakeCheeseArea": "cake_cheese",
-		"CookieButterArea": "cookie_butter",
-		"CookieChocolateArea": "cookie_chocolate",
-		"CookieOatHoneyArea": "cookie_oat_honey",
-		"MilkshakeChocolateArea": "milkshake_chocolate",
-		"MilkshakeVanillaArea": "milkshake_vanilla",
-		"MilkshakeStrawberryArea": "milkshake_strawberry",
-		"MilkDrinkArea": "milk_drink"
-	}
-	return map.get(area_name, "")
-
+# Recibe el recipe_id del item clickado
+func _on_shelf_item_clicked(recipe_id: String) -> void:
+	KitchenManager.try_complete_direct_recipe(recipe_id)
 
 # Muestra el popup con solo los ingredientes de la categoría activa
 func _open_ingredient_popup(title: String, category: String) -> void:
 	_current_popup_category = category
-
+	
 	# Si ya está visible no hacemos nada
 	if ingredient_popup.visible:
 		return
