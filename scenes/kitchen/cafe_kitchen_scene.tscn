@@ -16,11 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://b1cu8hq2ngm08" path="res://assets/images/kitchen_items/recipebook_hover.png" id="9_vxhy1"]
 [ext_resource type="Texture2D" uid="uid://bq5hrpailddhd" path="res://assets/images/test_kitchen/batido_test.png" id="10_3guqh"]
 [ext_resource type="Texture2D" uid="uid://tfkvp5ld3vxu" path="res://assets/images/test_kitchen/leche_Test.png" id="11_k8dl0"]
-[ext_resource type="Texture2D" uid="uid://vd2g87lgy84k" path="res://assets/placeholders/pet_placeholder_empty.png" id="11_vxhy1"]
 [ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="12_k8dl0"]
 [ext_resource type="PackedScene" uid="uid://bbp5e10quv6ys" path="res://scenes/kitchen/ingredient_popup.tscn" id="13_81ywk"]
 [ext_resource type="PackedScene" uid="uid://bo88x1qy4anad" path="res://scenes/kitchen/recipe_book.tscn" id="14_1b1dy"]
 [ext_resource type="Texture2D" uid="uid://cy47nokhof7uo" path="res://assets/images/test_kitchen/ticket_test.png" id="14_bmpck"]
+[ext_resource type="AudioStream" uid="uid://dype1a05msvd1" path="res://assets/audio/music/pista_test1.ogg" id="21_vxhy1"]
 
 [node name="CafeKitchenScene" type="Node2D" unique_id=367916718]
 script = ExtResource("1_hollr")
@@ -89,7 +89,6 @@ offset_right = 438.0
 offset_bottom = 430.0
 scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("12_k8dl0")
-texture_disabled = ExtResource("11_vxhy1")
 
 [node name="PastryShelf" type="Control" parent="InteractionCanvas" unique_id=1475453110]
 unique_name_in_owner = true
@@ -280,4 +279,10 @@ bus = &"SFX"
 [node name="SFXWrong" type="AudioStreamPlayer" parent="." unique_id=1543175520]
 unique_name_in_owner = true
 stream = ExtResource("7_y37jc")
+bus = &"SFX"
+
+[node name="AmbientSound" type="AudioStreamPlayer" parent="." unique_id=671205950]
+unique_name_in_owner = true
+stream = ExtResource("21_vxhy1")
+autoplay = true
 bus = &"SFX"

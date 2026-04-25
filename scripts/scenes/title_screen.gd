@@ -10,7 +10,7 @@ var scene_to_load: String = ""
 
 func _ready():
 	SceneManager.transition_in()
-	MusicManager.play("pista_test2") # TODO: Cambiar a una canción "menu_theme" o algo asi
+	MusicManager.play("cinematic_calm") # TODO: Cambiar a una canción "menu_theme" o algo asi
 	
 	new_game_button.pressed.connect(_on_new_game_button_pressed)
 	# TODO: A tratar luego 

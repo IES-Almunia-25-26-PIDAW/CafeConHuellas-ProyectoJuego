@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://debvxc146nc1a" path="res://scripts/kitchen/recipe_book.gd" id="1_vw1fa"]
 [ext_resource type="Texture2D" uid="uid://dw3y3hoshjbo7" path="res://assets/images/test_kitchen/libro_test.png" id="2_v7bvx"]
 [ext_resource type="Texture2D" uid="uid://bq5hrpailddhd" path="res://assets/images/test_kitchen/batido_test.png" id="3_0kgm3"]
-[ext_resource type="AudioStream" uid="uid://coracnoonfc1f" path="res://assets/audio/sfx/sfx_correct.ogg" id="4_kjhcw"]
+[ext_resource type="AudioStream" uid="uid://dwbnn0ctqyjfx" path="res://assets/audio/music/FlippingPages.ogg" id="4_kjhcw"]
 
 [node name="RecipeBook" type="Control" unique_id=451810637]
 layout_mode = 3
@@ -107,6 +107,7 @@ size_flags_horizontal = 3
 [node name="RecipeNameLabel" type="RichTextLabel" parent="BookContent/RightPage" unique_id=1842773307]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Smoothie"
 fit_content = true
 autowrap_mode = 2
@@ -114,6 +115,7 @@ autowrap_mode = 2
 [node name="RecipeDescLabel" type="RichTextLabel" parent="BookContent/RightPage" unique_id=37868108]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Descripcion lalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalala"
 fit_content = true
 autowrap_mode = 2
@@ -121,6 +123,7 @@ autowrap_mode = 2
 [node name="RecipeIngredientsLabel" type="RichTextLabel" parent="BookContent/RightPage" unique_id=1655351035]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Ingredientes:
 - 
 - 
@@ -132,6 +135,7 @@ autowrap_mode = 2
 [node name="RecipeHowToLabel" type="RichTextLabel" parent="BookContent/RightPage" unique_id=2082189497]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Como se hace:
 
 Bla bla bla"
