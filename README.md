@@ -14,7 +14,7 @@ Para ejecutar este proyecto solo necesitas instalar **una única herramienta**: 
 
 | Campo | Valor |
 |---|---|
-| **Versión requerida** | Godot 4 — `4.6.1` |
+| **Versión requerida** | Godot 4 — `4.6.1` o superior (la web oficial ofrece actualmente `4.6.2`, ambas son compatibles) |
 | **Descarga oficial** | https://godotengine.org/download/windows/ |
 | **Tipo de descarga** | Versión **estándar** (sin ".NET") |
 
@@ -25,11 +25,11 @@ Para ejecutar este proyecto solo necesitas instalar **una única herramienta**: 
 1. Ve a https://godotengine.org/download/windows/
 2. Descarga la versión **estándar** (sin ".NET"). El archivo tendrá un nombre similar a:
    ```
-   Godot_v4.6.1-stable_win64.zip
+   Godot_v4.6.x-stable_win64.zip
    ```
 3. Extrae el `.zip`. Obtendrás **dos archivos**:
-   - `Godot_v4.6.1-stable_win64.exe` ← **este es el que hay que ejecutar**
-   - `Godot_v4.6.1-stable_win64_console.exe` ← versión con consola de depuración, no es necesaria
+   - `Godot_v4.6.x-stable_win64.exe` ← **este es el que hay que ejecutar**
+   - `Godot_v4.6.x-stable_win64_console.exe` ← versión con consola de depuración, no es necesaria
 4. **No requiere instalación.** Ejecuta directamente el primero.
 
 > 💡 Godot es una aplicación portable: no se instala en el sistema, no toca el registro de Windows y se puede borrar simplemente eliminando el ejecutable.
@@ -58,7 +58,7 @@ Esto creará una carpeta con todos los archivos del proyecto. Dentro encontrará
 
 ### Paso 2 — Abrir Godot
 
-Ejecuta el archivo `Godot_v4.6.1-stable_win64.exe` que descargaste antes. Se abrirá el **Gestor de Proyectos** de Godot, que es la pantalla desde la que se gestionan todos los proyectos:
+Ejecuta el archivo `Godot_v4.6.x-stable_win64.exe` que descargaste antes. Se abrirá el **Gestor de Proyectos** de Godot, que es la pantalla desde la que se gestionan todos los proyectos:
 
 ```
 ┌──────────────────────────────────────────────┐
