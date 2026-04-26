@@ -62,9 +62,9 @@ Ejecuta el archivo `Godot_v4.6.x-stable_win64.exe` que descargaste antes. Se abr
 
 ```
 ┌──────────────────────────────────────────────┐
-│   GODOT — GESTOR DE PROYECTOS                │
+│   GODOT ENGINE — ADMINISTRADOR DE PROYECTOS  │
 │                                              │
-│   [ Nuevo ]  [ Importar ]  [ Escanear ]      │
+│   [ Crear ]  [ Importar ]  [ Escanear ]      │
 │                                              │
 │   (aquí aparecerán los proyectos recientes)  │
 └──────────────────────────────────────────────┘
