@@ -1,6 +1,6 @@
 # Cafe con Huellas — README
 
-> ⚠️ **Proyecto en desarrollo activo.** Las mecánicas principales están implementadas y son funcionales, pero gran parte de los assets (imágenes, sonidos, sprites) son temporales y serán reemplazados por los definitivos antes de la entrega final. Algunas funcionalidades menores también están aún en construcción.
+> ⚠️ **Proyecto en desarrollo activo.** Varías de las mecánicas principales están implementadas y son funcionales, pero gran parte de los assets (imágenes, sonidos, sprites) son temporales y serán reemplazados por los definitivos antes de la entrega final. Algunas funcionalidades menores también están aún en construcción.
 
 ---
 
@@ -133,7 +133,7 @@ Si alguno aparece **marcado en rojo** o directamente no está en la lista, sigue
 
 Con el proyecto abierto en el editor:
 
-1. Pulsa **`F5`** en el teclado (o haz clic en el botón **▶** en la esquina superior derecha del editor)
+1. Pulsa **`F5`** en el teclado (o haz clic en el botón **▶** en la esquina superior derecha del editor).
 2. Si Godot te pregunta cuál es la escena principal, selecciona o escribe:
    ```
    res://scenes/title_screen.tscn
@@ -151,7 +151,7 @@ Al pulsar **"Nuevo Juego"** comenzará una secuencia de diálogo de prueba. Ver�
 > la música y el contenido de los diálogos son assets de prueba. El aspecto y la historia
 > definitivos están en desarrollo. 
 
-Para **cerrar el juego**, cierra esa ventana. El editor de Godot seguirá abierto.
+Para **cerrar el juego** pulsa **`F8`** y cierra esa ventana. El editor de Godot seguirá abierto.
 
 
 ---
