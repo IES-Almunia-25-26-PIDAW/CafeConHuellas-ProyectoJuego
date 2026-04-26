@@ -1,6 +1,6 @@
 # Cafe con Huellas — README
 
-> ⚠️ **Proyecto en desarrollo activo.** Varías de las mecánicas principales están implementadas y son funcionales, pero gran parte de los assets (imágenes, sonidos, sprites) son temporales y serán reemplazados por los definitivos antes de la entrega final. Algunas funcionalidades menores también están aún en construcción.
+> ⚠️ **Proyecto en desarrollo activo.** Varias de las mecánicas principales están implementadas y son funcionales, pero gran parte de los assets (imágenes, sonidos, sprites) son temporales y serán reemplazados por los definitivos antes de la entrega final. Algunas funcionalidades menores también están aún en construcción.
 
 ---
 
@@ -140,7 +140,7 @@ Con el proyecto abierto en el editor:
    ```
    y confirma.
 3. Se abrirá una nueva ventana con el juego en marcha, mostrando el **menú principal** con las opciones: *Nuevo Juego, Continuar, Álbum y Salir.*
-
+   
 Al pulsar **"Nuevo Juego"** comenzará una secuencia de diálogo de prueba. Verás:
 - Un fondo de escena (imagen temporal, no definitiva)
 - Un personaje con animaciones básicas
@@ -149,9 +149,15 @@ Al pulsar **"Nuevo Juego"** comenzará una secuencia de diálogo de prueba. Ver�
 
 > ⚠️ **Casi todo lo que se ve en esta fase es provisional:** los fondos,
 > la música y el contenido de los diálogos son assets de prueba. El aspecto y la historia
-> definitivos están en desarrollo. 
+> definitivos están en desarrollo.
 
-Para **cerrar el juego** pulsa **`F8`** y cierra esa ventana. El editor de Godot seguirá abierto.
+Durante el juego encontrarás un **botón de pausa** en la esquina superior izquierda de la pantalla. Al hacer clic en él se abrirá el menú de pausa con las siguientes opciones:
+- **Opciones** — permite ajustar el volumen de música, voces y sonido por separado
+- **Salir al menú** — vuelve a la pantalla de título (pedirá confirmación antes)
+
+> ⚠️ Los botones **Guardar** y **Cargar** aparecen en el menú pero están actualmente desactivados — su lógica está pendiente de conectar a la interfaz.
+
+Para **cerrar el juego** pulsa **`F8`** o cierra directamente la ventana. El editor de Godot seguirá abierto.
 
 
 ---
