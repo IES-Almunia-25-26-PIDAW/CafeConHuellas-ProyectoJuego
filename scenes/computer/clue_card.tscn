@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dh5q5jpvk3xoy"]
+
+[node name="ClueCard" type="PanelContainer" unique_id=88569072]
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://2e8s6d52dd28"]
+
+[ext_resource type="PackedScene" uid="uid://ciu43lqci5x7e" path="res://scenes/computer/result_popup.tscn" id="1_dmj4n"]
+[ext_resource type="Script" uid="uid://2r1hqfows20u" path="res://scripts/computer/mail_viewer.gd" id="1_j12qk"]
+
+[node name="MailViewer" type="Control" unique_id=1233305360]
+custom_minimum_size = Vector2(700, 450)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j12qk")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1285510825]
+custom_minimum_size = Vector2(700, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -225.0
+offset_right = 350.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=834845284]
+custom_minimum_size = Vector2(670, 430)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="SenderLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1052753907]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(670, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Remitente: Nombre"
+vertical_alignment = 1
+
+[node name="SubjectLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=861019313]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(670, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Asunto: Texto"
+vertical_alignment = 1
+
+[node name="BodyLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=945840450]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(670, 210)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Texto del mensaje"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=310046443]
+custom_minimum_size = Vector2(670, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="BtnAccept" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=518155778]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Aceptar adopción"
+
+[node name="BtnDecline" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=221534280]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Rechazar"
+
+[node name="ResultPopup" parent="." unique_id=290507829 instance=ExtResource("1_dmj4n")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -225.0
+offset_right = 350.0
+offset_bottom = 225.0

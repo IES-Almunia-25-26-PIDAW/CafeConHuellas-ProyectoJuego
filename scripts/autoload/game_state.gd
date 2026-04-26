@@ -52,9 +52,6 @@ var animals_adopted_bad: Array[String] = []
 # Estados: not_read, read, accepted_good, accepted_bad, declined 
 var received_emails_status: Dictionary = {}
 
-# Recetas actuales que tiene el jugador
-var recipes_unlocked: Array[String] = []
-
 # Lista de recetas que el cliente ha pedido actualmente (máximo 4, se limpia al completar la orden)
 var current_order_recipe_ids: Array[String] = []
 
@@ -77,8 +74,6 @@ const DEFAULTS: Dictionary = {
 	"route_ronald": false,
 	"route_nilam": false,
 	"route_secretgirl": false,
-	# TODO: POR AHORA ESTÁ VACÍO HASTA QUE HAYA RECETAS!!! se agregaran las por defecto :P estos son ej:
-	"recipes_unlocked": ["coffee", "tea"]
 }
 
 # Función que resetea todos los valores a los por defecto para empezar una nueva savefile
@@ -109,8 +104,6 @@ func reset() -> void:
 	animals_adopted_good = []
 	animals_adopted_bad = []
 	received_emails_status = {}
-	
-	recipes_unlocked = DEFAULTS["recipes_unlocked"].duplicate()
 
 
 # ====== FUNCIONES DICT ======
@@ -147,8 +140,6 @@ func to_dict() -> Dictionary:
 		"animals_adopted_good": animals_adopted_good.duplicate(),
 		"animals_adopted_bad": animals_adopted_bad.duplicate(),
 		"received_emails_status": received_emails_status.duplicate(),
-		
-		"recipes_unlocked": recipes_unlocked.duplicate()
 	}
 
 # Carga los datos en el juego (del diccionario a variables que mete en el juego)
@@ -179,5 +170,3 @@ func from_dict(data: Dictionary) -> void:
 	animals_adopted_good = data.get("animals_adopted_good", [])
 	animals_adopted_bad = data.get("animals_adopted_bad", [])
 	received_emails_status = data.get("received_emails_status", {})
-	
-	recipes_unlocked = data.get("recipes_unlocked", DEFAULTS["recipes_unlocked"])

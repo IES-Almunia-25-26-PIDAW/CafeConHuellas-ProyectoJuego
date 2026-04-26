@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://j5wdu1qhoq7j"]
+
+[ext_resource type="Texture2D" uid="uid://cwdesq07vwmmu" path="res://assets/images/backgrounds/computer.png" id="1_3ty2s"]
+[ext_resource type="Script" uid="uid://cd4hmwsnhk2h4" path="res://scripts/computer/computer_scene.gd" id="1_yp1bn"]
+[ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="2_cbmld"]
+[ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="3_imhm7"]
+[ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="4_su0m0"]
+[ext_resource type="Texture2D" uid="uid://b6txhorh3ljk" path="res://assets/images/ui/shutdownbutton_on.png" id="5_su0m0"]
+[ext_resource type="PackedScene" uid="uid://qf3picgq2mep" path="res://scenes/computer/pets_tab.tscn" id="6_cqilf"]
+[ext_resource type="Texture2D" uid="uid://m5bo81y1f8ia" path="res://assets/images/ui/shutdownbutton_off.png" id="6_yp1bn"]
+[ext_resource type="PackedScene" uid="uid://c6ulqr4t8046c" path="res://scenes/computer/mail_tab.tscn" id="7_jhspf"]
+[ext_resource type="PackedScene" uid="uid://b1mt1bewl6sb1" path="res://scenes/computer/clues_tab.tscn" id="8_5whe8"]
+
+[sub_resource type="Gradient" id="Gradient_cqilf"]
+offsets = PackedFloat32Array(0, 0.061797753, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_amwmv"]
+gradient = SubResource("Gradient_cqilf")
+
+[node name="ComputerScene" type="Node2D" unique_id=420657901]
+script = ExtResource("1_yp1bn")
+
+[node name="BackgroundCanvas" type="CanvasLayer" parent="." unique_id=1482300334]
+layer = -1
+
+[node name="ComputerBackground" type="TextureRect" parent="BackgroundCanvas" unique_id=1440754192]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3ty2s")
+
+[node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=297655016]
+layer = 10
+
+[node name="PauseButton" parent="PauseCanvas" unique_id=950623637 node_paths=PackedStringArray("button_visual") instance=ExtResource("2_cbmld")]
+pause_menu_scene = ExtResource("3_imhm7")
+button_visual = NodePath("PauseTexture")
+
+[node name="PauseTexture" type="TextureRect" parent="PauseCanvas/PauseButton" unique_id=1079527932]
+custom_minimum_size = Vector2(60, 60)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 80.0
+texture = ExtResource("4_su0m0")
+
+[node name="UiCanvas" type="CanvasLayer" parent="." unique_id=683565626]
+
+[node name="AppControl" type="Control" parent="UiCanvas" unique_id=711883229]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -388.0
+offset_right = 550.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UiCanvas/AppControl" unique_id=1675337773]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_amwmv")
+expand_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UiCanvas/AppControl" unique_id=1516708655]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 318.0
+offset_bottom = 60.0
+
+[node name="PetsBtn" type="Button" parent="UiCanvas/AppControl/HBoxContainer" unique_id=1878881967]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Mascotas"
+
+[node name="MailBtn" type="Button" parent="UiCanvas/AppControl/HBoxContainer" unique_id=121310173]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Correos"
+
+[node name="CluesBtn" type="Button" parent="UiCanvas/AppControl/HBoxContainer" unique_id=618326818]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Pistas"
+
+[node name="PetsTab" parent="UiCanvas/AppControl" unique_id=1240543251 instance=ExtResource("6_cqilf")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = 1090.0
+offset_bottom = 590.0
+
+[node name="MailTab" parent="UiCanvas/AppControl" unique_id=455218834 instance=ExtResource("7_jhspf")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = 1090.0
+offset_bottom = 590.0
+
+[node name="CluesTab" parent="UiCanvas/AppControl" unique_id=37308765 instance=ExtResource("8_5whe8")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = 1090.0
+offset_bottom = 590.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="ShutdownButton" type="TextureButton" parent="UiCanvas/AppControl" unique_id=1270378552]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 629.0
+offset_top = 390.5
+offset_right = 680.0
+offset_bottom = 437.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_su0m0")
+texture_disabled = ExtResource("6_yp1bn")

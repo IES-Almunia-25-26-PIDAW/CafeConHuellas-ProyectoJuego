@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cwn34dipxie33"]
+
+[ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="1_5ygtt"]
+[ext_resource type="Script" uid="uid://c2xkevaprca6a" path="res://scripts/computer/pet_card.gd" id="1_v76la"]
+[ext_resource type="Texture2D" uid="uid://becb3d6xuwslm" path="res://assets/images/test_kitchen/check_test.png" id="2_kxrvv"]
+[ext_resource type="Texture2D" uid="uid://bmj2ovehoybh8" path="res://assets/placeholders/pet_placeholder_cat.png" id="2_p12x6"]
+[ext_resource type="Texture2D" uid="uid://tb6uk6snb657" path="res://assets/placeholders/pet_placeholder_dog.png" id="3_upx1o"]
+[ext_resource type="Texture2D" uid="uid://1y1eq2j6k8ne" path="res://assets/placeholders/icon_hunger.png" id="3_v76la"]
+[ext_resource type="Texture2D" uid="uid://ddrkvsof3s34q" path="res://assets/placeholders/icon_play.png" id="4_naifq"]
+[ext_resource type="Texture2D" uid="uid://cfp7yw6hboucb" path="res://assets/placeholders/icon_love.png" id="5_p12x6"]
+[ext_resource type="PackedScene" uid="uid://7v23rs7ymdbf" path="res://scenes/computer/action_popup.tscn" id="7_naifq"]
+
+[node name="PetCard" type="PanelContainer" unique_id=1449129996]
+custom_minimum_size = Vector2(250, 240)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_v76la")
+icon_male = ExtResource("2_p12x6")
+icon_female = ExtResource("3_upx1o")
+
+[node name="AllContainer" type="VBoxContainer" parent="." unique_id=1030140538]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="PetPhoto" type="TextureRect" parent="AllContainer" unique_id=1430354274]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_5ygtt")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DataContainer" type="HBoxContainer" parent="AllContainer" unique_id=385713667]
+layout_mode = 2
+
+[node name="PetName" type="RichTextLabel" parent="AllContainer/DataContainer" unique_id=1033156968]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+text = "Nombre"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GenderIcon" type="TextureRect" parent="AllContainer/DataContainer" unique_id=896993884]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+texture = ExtResource("2_kxrvv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="AllContainer" unique_id=406911460]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="BtnFood" type="TextureButton" parent="AllContainer/ButtonsContainer" unique_id=1456626049]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_v76la")
+stretch_mode = 5
+
+[node name="BtnBath" type="TextureButton" parent="AllContainer/ButtonsContainer" unique_id=1644864411]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_naifq")
+stretch_mode = 5
+
+[node name="BtnLove" type="TextureButton" parent="AllContainer/ButtonsContainer" unique_id=693566863]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+texture_normal = ExtResource("5_p12x6")
+stretch_mode = 5
+
+[node name="ActionPopup" parent="." unique_id=1285974780 instance=ExtResource("7_naifq")]
+unique_name_in_owner = true
+layout_mode = 2

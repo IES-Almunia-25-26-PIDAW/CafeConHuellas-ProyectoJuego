@@ -1,1 +1,16 @@
-null
+{
+  "clue_01": {
+	"id": "clue_01",
+	"title": "Ejemplo 1",
+	"description": "Ejemplo de la primera pista",
+	"day_found": 1,
+	"related_character": "alcalde"
+  },
+  "clue_02": {
+	"id": "clue_02",
+	"title": "Ejemplo 2",
+	"description": "Ejemplo de la segunda pista",
+	"day_found": 2,
+	"related_character": ""
+  }
+}

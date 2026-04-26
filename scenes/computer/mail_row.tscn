@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bsjvjyhlx42rg"]
+
+[ext_resource type="Script" uid="uid://cyk3scujtxnvn" path="res://scripts/computer/mail_row.gd" id="1_0xfwa"]
+[ext_resource type="Texture2D" uid="uid://m5bo81y1f8ia" path="res://assets/images/ui/shutdownbutton_off.png" id="1_pk8cq"]
+[ext_resource type="Texture2D" uid="uid://b6txhorh3ljk" path="res://assets/images/ui/shutdownbutton_on.png" id="2_cbeit"]
+
+[node name="MailRow" type="PanelContainer" unique_id=1289001639]
+custom_minimum_size = Vector2(1000, 80)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -40.0
+offset_right = 500.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xfwa")
+icon_unread = ExtResource("2_cbeit")
+icon_read = ExtResource("1_pk8cq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1976450075]
+custom_minimum_size = Vector2(960, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="StatusIcon" type="TextureRect" parent="HBoxContainer" unique_id=1480210107]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_pk8cq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1292963934]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="SubjectLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1903088651]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Asunto del correo"
+vertical_alignment = 1
+
+[node name="SenderLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1655829291]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "Remitente del correo"
+vertical_alignment = 1

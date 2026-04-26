@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c6ulqr4t8046c"]
+
+[ext_resource type="Script" uid="uid://cc1uhhstrqmk5" path="res://scripts/computer/mail_tab.gd" id="1_shu4s"]
+[ext_resource type="PackedScene" uid="uid://2e8s6d52dd28" path="res://scenes/computer/mail_viewer.tscn" id="2_dujjo"]
+
+[node name="MailTab" type="Control" unique_id=455218834]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1080.0
+offset_bottom = 520.0
+script = ExtResource("1_shu4s")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1028896257]
+custom_minimum_size = Vector2(1080, 520)
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 520.0
+
+[node name="EmptyLabel" type="RichTextLabel" parent="PanelContainer" unique_id=1690004386]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+text = "¡No hay ningún correo entrante!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MailList" type="VBoxContainer" parent="PanelContainer" unique_id=899501748]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="MailViewer" parent="." unique_id=1233305360 instance=ExtResource("2_dujjo")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1080.0
+offset_bottom = 520.0

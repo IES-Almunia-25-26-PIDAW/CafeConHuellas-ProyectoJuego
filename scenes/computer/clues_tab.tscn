@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b1mt1bewl6sb1"]
+
+[ext_resource type="Script" uid="uid://dd1abo1d204tf" path="res://scripts/computer/clues_tab.gd" id="1_scbxp"]
+[ext_resource type="PackedScene" uid="uid://cgf0nequ35lex" path="res://scenes/computer/character_detail.tscn" id="2_7nw83"]
+
+[node name="CluesTab" type="Control" unique_id=37308765]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -260.0
+offset_right = 540.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_scbxp")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=41816771]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColumnsContainer" type="HBoxContainer" parent="." unique_id=538349285]
+custom_minimum_size = Vector2(1050, 500)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 1065.0
+offset_bottom = 510.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="CharactersContainer" type="VBoxContainer" parent="ColumnsContainer" unique_id=1615980616]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="CharactersTitle" type="RichTextLabel" parent="ColumnsContainer/CharactersContainer" unique_id=278971867]
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Personas conocidas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharactersGrid" type="GridContainer" parent="ColumnsContainer/CharactersContainer" unique_id=1131038326]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="CluesContainer" type="VBoxContainer" parent="ColumnsContainer" unique_id=936669535]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="CluesTitle" type="RichTextLabel" parent="ColumnsContainer/CluesContainer" unique_id=1365605513]
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Pistas obtenidas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CluesGrid" type="VBoxContainer" parent="ColumnsContainer/CluesContainer" unique_id=1126779463]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterDetail" parent="." unique_id=7960279 instance=ExtResource("2_7nw83")]
+unique_name_in_owner = true
+layout_mode = 0
