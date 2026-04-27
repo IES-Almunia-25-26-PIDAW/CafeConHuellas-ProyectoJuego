@@ -54,7 +54,7 @@ custom_minimum_size = Vector2(700, 50)
 layout_mode = 2
 size_flags_vertical = 4
 max_value = 1.0
-step = 0.1
+step = 0.01
 
 [node name="MusicValueLabel" type="RichTextLabel" parent="VBoxContainer/MusicContainer" unique_id=1597353117]
 unique_name_in_owner = true
@@ -83,7 +83,7 @@ custom_minimum_size = Vector2(700, 50)
 layout_mode = 2
 size_flags_vertical = 4
 max_value = 1.0
-step = 0.1
+step = 0.01
 
 [node name="VoicesValueLabel" type="RichTextLabel" parent="VBoxContainer/VoicesContainer" unique_id=1167994849]
 unique_name_in_owner = true
@@ -111,7 +111,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 50)
 layout_mode = 2
 max_value = 1.0
-step = 0.1
+step = 0.01
 
 [node name="SFXValueLabel" type="RichTextLabel" parent="VBoxContainer/SFXContainer" unique_id=1866632461]
 unique_name_in_owner = true

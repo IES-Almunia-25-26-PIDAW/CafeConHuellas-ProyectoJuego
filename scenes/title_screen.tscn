@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://boyeq0poi2bkp" path="res://scripts/scenes/title_screen.gd" id="1_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://6lmlib41od4" path="res://assets/images/mainmenu.png" id="2_s4lrb"]
 [ext_resource type="Theme" uid="uid://deq5aplf33ikn" path="res://assets/themes/title_button_theme.tres" id="3_s4lrb"]
+[ext_resource type="PackedScene" uid="uid://ccdewhg87d5qe" path="res://scenes/menus/options_window.tscn" id="4_mgrm8"]
 
 [node name="TitleScreen" type="Node2D" unique_id=352405336]
 script = ExtResource("1_sa3yf")
@@ -45,11 +46,11 @@ vertical_alignment = 1
 [node name="Buttons" type="VBoxContainer" parent="ContentLayer/CenterContainer/VBoxContainer" unique_id=210397982]
 custom_minimum_size = Vector2(0, 600)
 layout_mode = 2
-theme_override_constants/separation = 35
+theme_override_constants/separation = 30
 
 [node name="NewGameButton" type="Button" parent="ContentLayer/CenterContainer/VBoxContainer/Buttons" unique_id=108482108]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(430, 140)
+custom_minimum_size = Vector2(430, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_s4lrb")
@@ -57,15 +58,23 @@ text = "Nuevo Juego"
 
 [node name="ContinueButton" type="Button" parent="ContentLayer/CenterContainer/VBoxContainer/Buttons" unique_id=732091337]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(430, 140)
+custom_minimum_size = Vector2(430, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_s4lrb")
 text = "Continuar"
 
+[node name="SettingsButton" type="Button" parent="ContentLayer/CenterContainer/VBoxContainer/Buttons" unique_id=1689476072]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(430, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_s4lrb")
+text = "Opciones"
+
 [node name="AlbumButton" type="Button" parent="ContentLayer/CenterContainer/VBoxContainer/Buttons" unique_id=281939784]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(430, 140)
+custom_minimum_size = Vector2(430, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_s4lrb")
@@ -73,8 +82,12 @@ text = "Album"
 
 [node name="ExitButton" type="Button" parent="ContentLayer/CenterContainer/VBoxContainer/Buttons" unique_id=1441462778]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(430, 140)
+custom_minimum_size = Vector2(430, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_s4lrb")
 text = "Salir"
+
+[node name="OptionsWindow" parent="ContentLayer" unique_id=13526063 instance=ExtResource("4_mgrm8")]
+unique_name_in_owner = true
+visible = false

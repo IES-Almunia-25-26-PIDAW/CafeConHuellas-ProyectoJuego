@@ -12,11 +12,17 @@ const ClueCard: PackedScene = preload("res://scenes/computer/clue_card.tscn")
 
 func _ready() -> void:
 	character_details.hide()
+
+func populate() -> void:
 	_populate_characters()
 	_populate_clues()
 
 # Agrega los personajes conocidos al grid
 func _populate_characters() -> void:
+	# DEBUG
+	print("CluesTab: characters_met = ", GameState.characters_met)
+	print("CluesTab: clues_found = ", GameState.clues_found)
+	
 	for child in character_grid.get_children():
 		child.queue_free()
 	

@@ -28,11 +28,19 @@ var _recipes: Dictionary = {}
 var _ingredients: Dictionary = {}
 var _cgs: Dictionary = {}
 
+# Asegura de que los datos estén cargados y listos
+var _loaded: bool = false
 
 # ===== INICIALIZACIÓN =====
 
 func _ready() -> void:
 	_load_all()
+	_loaded = true
+
+func ensure_loaded() -> void:
+	if not _loaded:
+		_load_all()
+		_loaded = true
 
 # Carga todos los archivos, se llama una vez al inicio del juego
 func _load_all() -> void:
@@ -43,6 +51,15 @@ func _load_all() -> void:
 	_recipes = _load_file(PATHS["recipes"])
 	_ingredients = _load_file(PATHS["ingredients"])
 	_cgs = _load_file(PATHS["cgs"])
+	
+	# DEBUG:
+	print("DataLoader: animals cargados: ", _animals.size())
+	print("DataLoader: characters cargados: ", _characters.size())
+	print("DataLoader: clues cargados: ", _clues.size())
+	print("DataLoader: emails cargados: ", _emails.size())
+	print("DataLoader: recipes cargados: ", _recipes.size())
+	print("DataLoader: ingredients cargados: ", _ingredients.size())
+	print("DataLoader: cgs cargados: ", _cgs.size())
 
 # Abre y parsea un archivo JSON, devolviendo un diccionario con los datos obtenidos
 func _load_file(path: String) -> Dictionary:
@@ -70,57 +87,71 @@ func _load_file(path: String) -> Dictionary:
 # --- Animales ---
 
 func get_animal(id: String) -> Dictionary:
+	ensure_loaded()
 	return _get_entry(_animals, id, "animal")
 
 func get_all_animals() -> Dictionary:
+	ensure_loaded()
 	return _animals.duplicate(true)
 
 # --- Personajes ---
 
 func get_character(id: String) -> Dictionary:
+	ensure_loaded()
 	return _get_entry(_characters, id, "character")
 
 func get_all_characters() -> Dictionary:
+	ensure_loaded()
 	return _characters.duplicate(true)
 
 # --- Pistas ---
 
 func get_clue(id: String) -> Dictionary:
+	ensure_loaded()
 	return _get_entry(_clues, id, "clue")
 
 func get_all_clues() -> Dictionary:
+	ensure_loaded()
 	return _clues.duplicate(true)
 
 # --- Emails ---
 
 func get_email(id: String) -> Dictionary:
+	ensure_loaded()
 	return _get_entry(_emails, id, "email")
 
 func get_all_emails() -> Dictionary:
+	ensure_loaded()
 	return _emails.duplicate(true)
 
 # --- Recetas ---
 
 func get_recipe(id: String) -> Dictionary:
+	ensure_loaded()
 	return _get_entry(_recipes, id, "recipe")
 
 func get_all_recipes() -> Dictionary:
+	ensure_loaded()
 	return _recipes.duplicate(true)
 
 # --- Ingredientes ---
 
 func get_ingredient(id: String) -> Dictionary:
+	ensure_loaded()
 	return _get_entry(_ingredients, id, "ingredient")
 
 func get_all_ingredients() -> Dictionary:
+	ensure_loaded()
 	return _ingredients.duplicate(true)
 
 # --- CGs ---
 
 func get_cg(id: String) -> Dictionary:
+	ensure_loaded()
 	return _get_entry(_cgs, id, "cg")
 
 func get_all_cgs() -> Dictionary:
+	ensure_loaded()
 	return _cgs.duplicate(true)
 
 

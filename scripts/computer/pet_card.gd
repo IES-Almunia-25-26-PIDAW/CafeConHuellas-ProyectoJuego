@@ -27,7 +27,7 @@ func setup(animal_id: String, data: Dictionary) -> void:
 	_animal_id = animal_id
 	
 	# Foto
-	var photo_path: String = data.get("photo", "")
+	var photo_path: String = data.get("image_path", "")
 	if photo_path != "" and ResourceLoader.exists(photo_path):
 		photo_pet.texture = load(photo_path)
 	

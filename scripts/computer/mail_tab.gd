@@ -3,6 +3,8 @@ extends Control
 # MailTab: Tab del correo donde se pueden ver los correos diarios que tratan sobre las mascotas del jugador
 # Al hacer click en un correo se abre MailViewer para visualizarlo y tomar una decisión
 
+signal adoption_processed
+
 const MailRow: PackedScene = preload("res://scenes/computer/mail_row.tscn")
 
 @onready var mail_list:   VBoxContainer = %MailList
@@ -58,8 +60,17 @@ func _on_row_clicked(email_id: String, email: Dictionary) -> void:
 	# Se escucha la decisión
 	if not mail_viewer.decision_made.is_connected(_on_decision_made):
 		mail_viewer.decision_made.connect(_on_decision_made)
+	
+	# Para el cierre sin decisión
+	if not mail_viewer.viewer_closed.is_connected(_on_viewer_closed):
+		mail_viewer.viewer_closed.connect(_on_viewer_closed)
 
 # Cuando se haga una decisión, se esconde la ventana de MailViewer y se refresca para actualizar los cambios
 func _on_decision_made(_email_id: String, _accepted: bool) -> void:
 	mail_viewer.hide()
 	refresh()  # Actualizamos la lista tras la decisión
+	adoption_processed.emit()
+
+# Al cerrar sin decidir solo refrescamos el icono de leído
+func _on_viewer_closed() -> void:
+	refresh()

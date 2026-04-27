@@ -4,9 +4,11 @@ extends PanelContainer
 
 signal row_clicked
 
-@onready var sender_label: RichTextLabel = %StatusIcon
+@onready var sender_label: RichTextLabel = %SenderLabel
 @onready var subject_label: RichTextLabel = %SubjectLabel
-@onready var status_icon: TextureRect = %SenderLabel
+@onready var status_icon: TextureRect = %StatusIcon
+
+@onready var click_area: Button = %ClickArea
 
 # Texturas del status
 @export var icon_unread: Texture2D
@@ -26,16 +28,18 @@ func setup(email_id: String, email: Dictionary) -> void:
 	# Estado visual de leído o no leído
 	var status: String = GameState.received_emails_status.get(email_id, "not_read")
 	_update_status_icon(status)
+	
+	click_area.pressed.connect(_on_clicked)
 
 # Actualiza el icono del status dependiendo de si el email ha sido leido o no
 func _update_status_icon(status: String) -> void:
-	if status == "not_read":
+	if status_icon == null:
+		return
+	if status == "not_read" and icon_unread:
 		status_icon.texture = icon_unread
-	else:
+	elif icon_read:
 		status_icon.texture = icon_read
 
-func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		# Marcamos el email como leído y mandamos la señal de que se ha hecho click en este email
-		_update_status_icon("read")
-		row_clicked.emit()
+func _on_clicked() -> void:
+	_update_status_icon("read")
+	row_clicked.emit()

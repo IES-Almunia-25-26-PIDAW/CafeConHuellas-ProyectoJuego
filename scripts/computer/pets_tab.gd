@@ -12,9 +12,13 @@ const PetCard: PackedScene = preload("res://scenes/computer/pet_card.tscn")
 
 # Rellenamos el grid con las mascotas que tenemos
 func _ready() -> void:
-	_populate()
+	#populate()
+	pass
 
-func _populate() -> void:
+func populate() -> void:
+	# DEBUG:
+	print("PetsTab populate, animals: ", GameState.animals_athome)
+	
 	for child in cards_container.get_children():
 		child.queue_free()
 	
@@ -23,7 +27,7 @@ func _populate() -> void:
 		if animal_data.is_empty():
 			continue
 		
-		var card: Control = PetCard.instanciate()
+		var card: Control = PetCard.instantiate()
 		cards_container.add_child(card)
 		card.setup(animal_id, animal_data)
 		card.need_fulfilled.connect(_on_need_fulfilled)
@@ -36,6 +40,11 @@ func _on_need_fulfilled() -> void:
 
 # Revisa que todas las mascotas estén felices
 func _check_all_happy() -> void:
+	# Si no hay mascotas en casa, el botón se activa directamente
+	if GameState.animals_athome.is_empty():
+		all_pets_happy.emit()
+		return
+	
 	for card in cards_container.get_children():
 		if not card.is_happy():
 			return

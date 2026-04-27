@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cgf0nequ35lex"]
 
+[ext_resource type="Script" uid="uid://db5lknirvk0g6" path="res://scripts/computer/character_detail.gd" id="1_5mmad"]
+[ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="1_me2rm"]
+
 [node name="CharacterDetail" type="PanelContainer" unique_id=7960279]
+custom_minimum_size = Vector2(500, 420)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -12,3 +16,88 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5mmad")
+
+[node name="CloseButton" type="Button" parent="." unique_id=388893065]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=360902727]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LeftContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=203447698]
+custom_minimum_size = Vector2(220, 380)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="CharIcon" type="TextureRect" parent="HBoxContainer/LeftContainer" unique_id=908596212]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_me2rm")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="NameLabel" type="RichTextLabel" parent="HBoxContainer/LeftContainer" unique_id=407525325]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+text = "Nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescLabel" type="RichTextLabel" parent="HBoxContainer/LeftContainer" unique_id=1734981897]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Descripción del personaje"
+horizontal_alignment = 1
+
+[node name="RightContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=730050519]
+custom_minimum_size = Vector2(220, 380)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AgeLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=480775859]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+text = "Edad: x"
+
+[node name="OccupationLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=570113969]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+text = "Ocupación: x"
+
+[node name="PersonalityLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=627084354]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "Personalidad: x"
+
+[node name="LikesLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=1860000707]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "Le gusta: x"
+
+[node name="DislikesLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=694753220]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "No le gusta: x"

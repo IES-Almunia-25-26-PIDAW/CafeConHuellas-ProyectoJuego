@@ -4,13 +4,15 @@
 	"title": "Ejemplo 1",
 	"description": "Ejemplo de la primera pista",
 	"day_found": 1,
-	"related_character": "alcalde"
+	"related_character": "alcalde",
+	"icon": "res://assets/images/test_kitchen/check_test.png"
   },
   "clue_02": {
 	"id": "clue_02",
 	"title": "Ejemplo 2",
 	"description": "Ejemplo de la segunda pista",
 	"day_found": 2,
-	"related_character": ""
+	"related_character": "",
+	"icon": "res://assets/images/test_kitchen/check_test.png"
   }
 }

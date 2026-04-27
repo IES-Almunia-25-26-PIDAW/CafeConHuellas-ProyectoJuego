@@ -20,6 +20,9 @@ signal computer_shutdown
 
 
 func _ready() -> void:
+	# TODO: BORRAR, para datos de prueba
+	_setup_test_data()
+	
 	SceneManager.transition_in()
 	
 	# Conexión de los botones con sus métodos
@@ -33,9 +36,35 @@ func _ready() -> void:
 	
 	# Conexión de la señal del tab de mascotas para saber cuando están atendidas
 	pets_tab.all_pets_happy.connect(_on_all_pets_happy)
+	# Cuando se realice una adopción se recibe la señal y se vuelve a instanciar el array de mascotas
+	mail_tab.adoption_processed.connect(func(): pets_tab.populate())
 	
-	# Abrimos en el tab de mascotas por defecto
+	# Instanciar datos
+	pets_tab.populate()
+	clues_tab.populate()
+	
+	# Tab por defecto
 	_on_tab_pressed("pets")
+
+	
+# TODO: BORRAR, de prueba
+func _setup_test_data() -> void:
+	# Dos mascotas en casa
+	GameState.animals_athome = ["nube", "mochi"]
+	
+	# Dos correos recibidos hoy (day = 1), sin leer
+	GameState.day = 1
+	GameState.received_emails_status = {
+		"email_nube": "not_read",
+		"email_mochi": "not_read"
+	}
+	
+	# Dos personajes conocidos — los IDs deben coincidir con los del JSON
+	GameState.characters_met = ["alcalde", "jasmine"]
+	
+	# Dos pistas encontradas — los IDs deben coincidir con los del JSON
+	GameState.clues_found = ["clue_01", "clue_02"]
+	
 
 func _on_tab_pressed(tab: String) -> void:
 	pets_tab.visible = tab == "pets"

@@ -81,4 +81,9 @@ size_flags_vertical = 3
 
 [node name="CharacterDetail" parent="." unique_id=7960279 instance=ExtResource("2_7nw83")]
 unique_name_in_owner = true
-layout_mode = 0
+visible = false
+layout_mode = 1
+offset_left = -250.0
+offset_top = -210.0
+offset_right = 250.0
+offset_bottom = 210.0

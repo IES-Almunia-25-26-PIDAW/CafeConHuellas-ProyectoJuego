@@ -1,5 +1,61 @@
 [gd_scene format=3 uid="uid://dh5q5jpvk3xoy"]
 
+[ext_resource type="Script" uid="uid://bksbfm82i167y" path="res://scripts/computer/clue_card.gd" id="1_jtlae"]
+[ext_resource type="Texture2D" uid="uid://becb3d6xuwslm" path="res://assets/images/test_kitchen/check_test.png" id="1_xkqtj"]
+[ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="2_fx6cj"]
+
 [node name="ClueCard" type="PanelContainer" unique_id=88569072]
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(490, 120)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jtlae")
+default_icon = ExtResource("2_fx6cj")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1537588871]
+custom_minimum_size = Vector2(470, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ClueIcon" type="TextureRect" parent="PanelContainer" unique_id=255550603]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("1_xkqtj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=365074272]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=495564994]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "Nombre de la pista"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1940974964]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1954701399]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Descripción de la pista"
+scroll_active = false
