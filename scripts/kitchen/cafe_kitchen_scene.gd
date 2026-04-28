@@ -228,6 +228,7 @@ func _on_recipe_book_pressed() -> void:
 func _on_order_ready_sign_pressed() -> void:
 	# Si llega aquí, la orden ya está completa (ya que el cartel está en disabled por defecto)
 	KitchenManager.finish_order()
+	var return_file: String = "res://resources/story/" + GameState.chapter_id + ".json"
 	TransitionManager.change_scene("res://scenes/cafe_client_zone.tscn")
 
 # Muestra el popup con solo los ingredientes de la categoría activa

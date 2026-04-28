@@ -23,6 +23,17 @@ const CURRENT_VERSION: int = 1
 # Datos en memoria
 var _images_unlocked: Array[String] = []
 var _endings_unlocked: Dictionary = {} # Se almacenan con el nombre del ending y true/false
+# Desbloquea interacciones especiales con Hannah y otros personajes
+var hannah_unlocked: bool = false
+
+# Finales que cuentan para desbloquear a Hannah, los cuales son todos menos el suyo
+const HANNAH_REQUIRED_ENDINGS: Array[String] = [
+	"ending_bad",
+	"ending_hunter",
+	"ending_jasmine",
+	"ending_ronald",
+	"ending_nilam"
+]
 
 
 # ===== INICIALIZACIÓN =====
@@ -48,6 +59,8 @@ func unlock_ending(ending_id: String) -> void:
 	_endings_unlocked[ending_id] = true
 	_save()
 	ending_unlocked.emit(ending_id)
+	# Comprobar si hannah se desbloquea tras ese final
+	_check_hannah_unlock()
 
 
 # ===== PUBLIC API - CONSULTAS =====
@@ -66,6 +79,21 @@ func get_all_images() -> Array[String]:
 func get_unlocked_endings() -> Dictionary:
 	return _endings_unlocked.duplicate()
 
+# Comprueba si hannah se ha desbloqueado
+func _check_hannah_unlock() -> void:
+	# Comprueba primero si ya estaba desbloqueada, si es así no hace nada
+	if hannah_unlocked:
+		return 
+	
+	var completed_count: int = 0
+	for ending_id in HANNAH_REQUIRED_ENDINGS:
+		if _endings_unlocked.get(ending_id, false):
+			completed_count += 1
+	
+	if completed_count >= 5:
+		hannah_unlocked = true
+		_save()
+
 
 # ===== GUARDADO Y CARGADO DE LOS DATOS =====
 
@@ -73,14 +101,14 @@ func _save() -> void:
 	var data: Dictionary = {
 		"save_version": CURRENT_VERSION,
 		"images_unlocked": _images_unlocked.duplicate(),
-		"endings_unlocked": _endings_unlocked.duplicate()
+		"endings_unlocked": _endings_unlocked.duplicate(),
+		"hannah_unlocked": hannah_unlocked
 	}
 	
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file == null:
 		push_error("GlobalSave: No se pudo abrir el archivo para escritura: " + error_string(FileAccess.get_open_error()))
 		return
-	
 	file.store_string(JSON.stringify(data, "  "))
 
 
@@ -111,6 +139,10 @@ func _load() -> void:
 	var endings = data.get("endings_unlocked", {})
 	if endings is Dictionary:
 		_endings_unlocked = endings.duplicate()
+		
+	# Cargar si hannah está desbloqueada, comprobándolo
+	hannah_unlocked = data.get("hannah_unlocked", false) 
+	_check_hannah_unlock()
 
 
 # ===== MIGRACIÓN =====

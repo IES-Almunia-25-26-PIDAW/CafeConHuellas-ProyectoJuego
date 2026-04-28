@@ -142,5 +142,17 @@
 		"dislikes": "El ruido, que le interrumpan, que la biblioteca siga cerrada",
 		"icon": "",
 		"has_friendship_route": true
+	},
+	"hannah": {
+		"id": 13,
+		"name": "Hannah",
+		"occupation": "bibliotecario",
+		"age": "21-23",
+		"description": "es un copy paste de arriba",
+		"personality": "Callado en general, habla sin parar de lo que le apasiona",
+		"likes": "Historia local, archivos viejos, café solo, los gatos de la cafetería",
+		"dislikes": "El ruido, que le interrumpan, que la biblioteca siga cerrada",
+		"icon": "",
+		"has_friendship_route": true
 	}
 }

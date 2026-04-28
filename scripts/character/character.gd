@@ -3,12 +3,20 @@ extends Node
 
 # Nombres de los personajes
 enum Name {
+	NARRATOR,
 	HUNTER,
 	JASMINE
 }
 
 # Información de los personajes
 const CHARACTER_DETAILS : Dictionary = {
+	Name.NARRATOR: {
+		"name": "",
+		"char_color": Color(0,0,0,0),
+		"voice": "",
+		"voice_pitch": 1.0,
+		"voice_bus": "Voices"
+	},
 	Name.HUNTER: {
 		"name": "Hunter",
 		"sprite_frames": null,

@@ -14,7 +14,7 @@ var cafe_name: String = "PawCafé"
 # Número del día en el que se encuentra la historia
 var day: int = 1
 # Archivo JSON por el cual va la historia actualmente
-var chapter_id: String = "chapter_1"
+var chapter_id: String = "story"
 # Línea actual en la que se encuentra la historia
 var dialogue_index: int = 0
 
@@ -32,7 +32,7 @@ var relationship_ronald: int = 0
 # Puntuación de la relación actual con Nilam
 var relationship_nilam: int = 0
 # Puntuación de la relación actual con lachicasecretamuejej
-var relationship_secretgirl: int = 0
+var relationship_hannah: int = 0
 
 # Si se encuentra en la ruta Jasmine
 var route_jasmine: bool = false
@@ -41,7 +41,7 @@ var route_ronald: bool = false
 # Si se encuentra en la ruta Nilam
 var route_nilam: bool = false
 # Si se encuentra en la ruta lachicasecretamuejej
-var route_secretgirl: bool = false
+var route_hannah: bool = false
 
 # Animales actuales que tiene el jugador
 var animals_athome: Array[String] = []
@@ -69,11 +69,11 @@ const DEFAULTS: Dictionary = {
 	"relationship_jasmine": 0,
 	"relationship_ronald": 0,
 	"relationship_nilam": 0,
-	"relationship_secretgirl": 0,
+	"relationship_hannah": 0,
 	"route_jasmine": false,
 	"route_ronald": false,
 	"route_nilam": false,
-	"route_secretgirl": false,
+	"route_hannah": false,
 }
 
 # Función que resetea todos los valores a los por defecto para empezar una nueva savefile
@@ -93,12 +93,12 @@ func reset() -> void:
 	relationship_jasmine = DEFAULTS["relationship_jasmine"]
 	relationship_ronald = DEFAULTS["relationship_ronald"]
 	relationship_nilam = DEFAULTS["relationship_nilam"]
-	relationship_secretgirl = DEFAULTS["relationship_secretgirl"]
+	relationship_hannah = DEFAULTS["relationship_hannah"]
 
 	route_jasmine = DEFAULTS["route_jasmine"]
 	route_ronald = DEFAULTS["route_ronald"]
 	route_nilam = DEFAULTS["route_nilam"]
-	route_secretgirl = DEFAULTS["route_secretgirl"]
+	route_hannah = DEFAULTS["route_hannah"]
 	
 	animals_athome = []
 	animals_adopted_good = []
@@ -129,12 +129,12 @@ func to_dict() -> Dictionary:
 		"relationship_jasmine": relationship_jasmine,
 		"relationship_ronald": relationship_ronald,
 		"relationship_nilam": relationship_nilam,
-		"relationship_secretgirl": relationship_secretgirl,
+		"relationship_hannah": relationship_hannah,
 
 		"route_jasmine": route_jasmine,
 		"route_ronald": route_ronald,
 		"route_nilam": route_nilam,
-		"route_secretgirl": route_secretgirl,
+		"route_hannah": route_hannah,
 		
 		"animals_athome": animals_athome.duplicate(),
 		"animals_adopted_good": animals_adopted_good.duplicate(),
@@ -159,12 +159,12 @@ func from_dict(data: Dictionary) -> void:
 	relationship_jasmine = data.get("relationship_jasmine", DEFAULTS["relationship_jasmine"])
 	relationship_ronald = data.get("relationship_ronald", DEFAULTS["relationship_ronald"])
 	relationship_nilam = data.get("relationship_nilam", DEFAULTS["relationship_nilam"])
-	relationship_secretgirl = data.get("relationship_secretgirl", DEFAULTS["relationship_secretgirl"])
+	relationship_hannah = data.get("relationship_hannah", DEFAULTS["relationship_hannah"])
 
 	route_jasmine = data.get("route_jasmine", DEFAULTS["route_jasmine"])
 	route_ronald = data.get("route_ronald", DEFAULTS["route_ronald"])
 	route_nilam = data.get("route_nilam", DEFAULTS["route_nilam"])
-	route_secretgirl = data.get("route_secretgirl", DEFAULTS["route_secretgirl"])
+	route_hannah = data.get("route_hannah", DEFAULTS["route_hannah"])
 	
 	animals_athome = data.get("animals_athome", [])
 	animals_adopted_good = data.get("animals_adopted_good", [])

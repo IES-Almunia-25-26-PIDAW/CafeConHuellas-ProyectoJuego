@@ -54,7 +54,18 @@ func _process(delta: float) -> void:
 
 func change_line(character_name: Character.Name, line: String):
 	current_character_details = Character.CHARACTER_DETAILS[character_name]
-	speaker_name.text = current_character_details["name"]
+	
+	# Si es el narrador, ocultar speaker box completamente
+	var is_narrator: bool = character_name == Character.Name.NARRATOR
+	speaker_box.visible = not is_narrator
+	
+	# El nombre solo se muestra si no es narrador
+	if not is_narrator:
+		# Si es Hunter. usar el nombre del jugador
+		if character_name == Character.Name.HUNTER:
+			speaker_name.text = GameState.player_name
+		else:
+			speaker_name.text = current_character_details["name"]
 	
 	# Color del speakerbox según el color del personaje (marrón/color de hunter por defecto)
 	var char_color: Color = current_character_details.get("char_color", Color("4f382de6"))

@@ -9,6 +9,10 @@ var transition_layer: CanvasLayer
 var transition_rect: ColorRect
 var transition_time: float = 0.5
 
+# Para la transición de vídeos
+var pending_video_next_scene: String = ""
+var pending_video_show_day: bool = true
+
 func _ready() -> void:
 	# Configura el cursor personalizado al arrancar el juego
 	_setup_custom_cursor()

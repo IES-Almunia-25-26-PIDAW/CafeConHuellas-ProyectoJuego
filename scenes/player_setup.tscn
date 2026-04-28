@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://bbbpihrrso0a2"]
+
+[ext_resource type="Script" uid="uid://0lrnh775bpv8" path="res://scripts/scenes/player_setup.gd" id="1_412kp"]
+
+[node name="PlayerSetup" type="Control" unique_id=786083172]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_412kp")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1981702259]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=2008171586]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FullContent" type="VBoxContainer" parent="." unique_id=1630650362]
+custom_minimum_size = Vector2(1000, 920)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HeaderContainer" type="HBoxContainer" parent="FullContent" unique_id=64824218]
+custom_minimum_size = Vector2(900, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="StartLabel" type="RichTextLabel" parent="FullContent/HeaderContainer" unique_id=1568121248]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "Querid"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="PronounsChoice" type="VBoxContainer" parent="FullContent/HeaderContainer" unique_id=1621046547]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnMale" type="Button" parent="FullContent/HeaderContainer/PronounsChoice" unique_id=1147761516]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "o"
+
+[node name="BtnFemale" type="Button" parent="FullContent/HeaderContainer/PronounsChoice" unique_id=1881398685]
+unique_name_in_owner = true
+layout_mode = 2
+text = "a"
+
+[node name="BtnNonbinary" type="Button" parent="FullContent/HeaderContainer/PronounsChoice" unique_id=2055104652]
+unique_name_in_owner = true
+layout_mode = 2
+text = "e"
+
+[node name="VSeparator" type="VSeparator" parent="FullContent/HeaderContainer" unique_id=1860233634]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NameInput" type="LineEdit" parent="FullContent/HeaderContainer" unique_id=1972730436]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 0
+placeholder_text = "Hunter"
+alignment = 1
+max_length = 10
+
+[node name="EndLabel" type="RichTextLabel" parent="FullContent/HeaderContainer" unique_id=221022402]
+custom_minimum_size = Vector2(20, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = ":"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Paragraph1" type="RichTextLabel" parent="FullContent" unique_id=2089966525]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Permíteme ser el primero en darte la bienvenida oficial a nuestro pequeño pueblo, Aínsa. Aunque no seamos muchos vecinos aquí, te aseguro que no te vas a aburrir."
+vertical_alignment = 1
+
+[node name="CafeQuestionContainer" type="HBoxContainer" parent="FullContent" unique_id=2095552753]
+layout_mode = 2
+
+[node name="CafeLabel1" type="RichTextLabel" parent="FullContent/CafeQuestionContainer" unique_id=997961790]
+custom_minimum_size = Vector2(410, 50)
+layout_mode = 2
+text = "¡Por fin vas a traer a este pueblecillo tu cafetería!"
+vertical_alignment = 1
+
+[node name="CafeInput" type="LineEdit" parent="FullContent/CafeQuestionContainer" unique_id=637575761]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 0
+placeholder_text = "PawCafé"
+alignment = 1
+max_length = 14
+
+[node name="VSeparator" type="VSeparator" parent="FullContent/CafeQuestionContainer" unique_id=1418098557]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CafeLabel2" type="RichTextLabel" parent="FullContent/CafeQuestionContainer" unique_id=1592671260]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "se llamaba, ¿verdad?"
+vertical_alignment = 1
+
+[node name="Paragraph2" type="RichTextLabel" parent="FullContent" unique_id=1084844557]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "De todas formas, su apertura es una noticia que ha alegrado mucho a nuestra comunidad, ¡estoy seguro de que se convertirá en mi nuevo lugar favorito para tomarme un cafelito!"
+vertical_alignment = 1
+
+[node name="Paragraph3" type="RichTextLabel" parent="FullContent" unique_id=2015443987]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Esperamos que este nuevo comienzo te sea todo un éxito y te sientas como en casa. Cualquier cosa puedes encontrarme en el ayuntamiento, ¡no te olvides de traerme un dulcecito o algo!"
+vertical_alignment = 1
+
+[node name="EndLabel" type="RichTextLabel" parent="FullContent" unique_id=724301275]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Atentamente, el Alcalde de Aínsa."
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="FullContent" unique_id=800425086]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Continuar"

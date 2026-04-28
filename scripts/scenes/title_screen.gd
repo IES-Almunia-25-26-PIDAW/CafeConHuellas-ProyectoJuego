@@ -37,7 +37,7 @@ func _ready():
 
 func _on_new_game_button_pressed():
 	MusicManager.stop()
-	scene_to_load = "res://scenes/cafe_client_zone.tscn"
+	scene_to_load = "res://scenes/player_setup.tscn"
 	SceneManager.transition_out()
 
 

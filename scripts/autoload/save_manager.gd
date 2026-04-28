@@ -139,8 +139,8 @@ func _load_json(slot: int) -> bool:
 	if data.has("relationship_nilam"):
 		data["relationship_nilam"] = int(data["relationship_nilam"])
 
-	if data.has("relationship_secretgirl"):
-		data["relationship_secretgirl"] = int(data["relationship_secretgirl"])	
+	if data.has("relationship_hannah"):
+		data["relationship_hannah"] = int(data["relationship_hannah"])	
 
 	# Si la savefile es de una versión antigua, se debe actualizar antes de aplicarse
 	if data.get("save_version", 1) < CURRENT_SAVE_VERSION:
