@@ -6,17 +6,96 @@
 [ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="3_imhm7"]
 [ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="4_su0m0"]
 [ext_resource type="Texture2D" uid="uid://b6txhorh3ljk" path="res://assets/images/ui/shutdownbutton_on.png" id="5_su0m0"]
+[ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="6_5whe8"]
 [ext_resource type="PackedScene" uid="uid://qf3picgq2mep" path="res://scenes/computer/pets_tab.tscn" id="6_cqilf"]
 [ext_resource type="Texture2D" uid="uid://m5bo81y1f8ia" path="res://assets/images/ui/shutdownbutton_off.png" id="6_yp1bn"]
 [ext_resource type="PackedScene" uid="uid://c6ulqr4t8046c" path="res://scenes/computer/mail_tab.tscn" id="7_jhspf"]
 [ext_resource type="PackedScene" uid="uid://b1mt1bewl6sb1" path="res://scenes/computer/clues_tab.tscn" id="8_5whe8"]
 
-[sub_resource type="Gradient" id="Gradient_cqilf"]
-offsets = PackedFloat32Array(0, 0.061797753, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhspf"]
+bg_color = Color(0.55, 0.75, 0.95, 0.18)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5, 0.75, 0.98, 0.85)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_amwmv"]
-gradient = SubResource("Gradient_cqilf")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5whe8"]
+bg_color = Color(0.36, 0.6, 0.88, 1)
+border_width_bottom = 1
+border_color = Color(0.25, 0.45, 0.7, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l5ow"]
+bg_color = Color(0.55, 0.72, 0.9, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.55, 0.78, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yalfm"]
+bg_color = Color(0.82, 0.22, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.15, 0.1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fusee"]
+bg_color = Color(0.72, 0.85, 0.96, 1)
+border_width_bottom = 1
+border_color = Color(0.45, 0.68, 0.88, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8xhc"]
+bg_color = Color(0.78, 0.89, 0.97, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.5, 0.72, 0.88, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk217"]
+bg_color = Color(0.96, 0.98, 1, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_color = Color(0.3, 0.55, 0.8, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38k52"]
+bg_color = Color(0.88, 0.94, 0.99, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.5, 0.72, 0.88, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufi57"]
+bg_color = Color(0.93, 0.96, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2hpe"]
+bg_color = Color(0.65, 0.8, 0.94, 1)
+border_width_top = 1
+border_color = Color(0.45, 0.65, 0.85, 1)
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="ComputerScene" type="Node2D" unique_id=420657901]
 script = ExtResource("1_yp1bn")
@@ -57,49 +136,205 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -550.0
+offset_left = -541.105
 offset_top = -388.0
-offset_right = 550.0
+offset_right = 538.20996
 offset_bottom = 212.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="UiCanvas/AppControl" unique_id=1675337773]
+[node name="Win7Window" type="Panel" parent="UiCanvas/AppControl" unique_id=2084533065]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1.1298828
+offset_bottom = -11.575012
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_amwmv")
-expand_mode = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhspf")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UiCanvas/AppControl" unique_id=1516708655]
+[node name="TitleBarPanel" type="Panel" parent="UiCanvas/AppControl/Win7Window" unique_id=335434174]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1075.0
+offset_bottom = 37.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5whe8")
+
+[node name="TitleLbl" type="Label" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel" unique_id=142641178]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 10.0
-offset_right = 318.0
-offset_bottom = 60.0
+offset_top = 5.0
+offset_right = 800.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 13
+text = "PawCafe"
 
-[node name="PetsBtn" type="Button" parent="UiCanvas/AppControl/HBoxContainer" unique_id=1878881967]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 50)
+[node name="WinButtons" type="HBoxContainer" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel" unique_id=651770588]
+layout_mode = 0
+offset_left = 994.0
+offset_top = 3.0
+offset_right = 1069.0
+offset_bottom = 31.0
+theme_override_constants/separation = 3
+
+[node name="MinBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel/WinButtons" unique_id=623410360]
+custom_minimum_size = Vector2(22, 20)
 layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l5ow")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7l5ow")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7l5ow")
+text = "—"
+
+[node name="MaxBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel/WinButtons" unique_id=1596163991]
+custom_minimum_size = Vector2(22, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l5ow")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7l5ow")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7l5ow")
+text = "□"
+
+[node name="CloseBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel/WinButtons" unique_id=559484510]
+custom_minimum_size = Vector2(22, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_yalfm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yalfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yalfm")
+text = "✕"
+
+[node name="TabsBarPanel" type="Panel" parent="UiCanvas/AppControl/Win7Window" unique_id=1673738353]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 37.0
+offset_right = 1075.0
+offset_bottom = 73.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fusee")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UiCanvas/AppControl/Win7Window/TabsBarPanel" unique_id=1734877982]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 420.0
+offset_bottom = 34.0
+theme_override_constants/separation = 3
+
+[node name="PetsBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TabsBarPanel/HBoxContainer" unique_id=914171158]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 26)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.101960786, 0.2784314, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8xhc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kk217")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38k52")
 text = "Mascotas"
 
-[node name="MailBtn" type="Button" parent="UiCanvas/AppControl/HBoxContainer" unique_id=121310173]
+[node name="MailBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TabsBarPanel/HBoxContainer" unique_id=1567909018]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(100, 26)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.101960786, 0.2784314, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8xhc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kk217")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38k52")
 text = "Correos"
 
-[node name="CluesBtn" type="Button" parent="UiCanvas/AppControl/HBoxContainer" unique_id=618326818]
+[node name="CluesBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TabsBarPanel/HBoxContainer" unique_id=187502048]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(100, 26)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.101960786, 0.2784314, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8xhc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kk217")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38k52")
 text = "Pistas"
 
-[node name="PetsTab" parent="UiCanvas/AppControl" unique_id=1240543251 instance=ExtResource("6_cqilf")]
+[node name="ContentAreaPanel" type="Panel" parent="UiCanvas/AppControl/Win7Window" unique_id=184280094]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 73.0
+offset_right = 1075.0
+offset_bottom = 549.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ufi57")
+
+[node name="PetsTab" parent="UiCanvas/AppControl/Win7Window/ContentAreaPanel" unique_id=1240543251 instance=ExtResource("6_cqilf")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1072.0
+offset_bottom = 476.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="MailTab" parent="UiCanvas/AppControl/Win7Window/ContentAreaPanel" unique_id=455218834 instance=ExtResource("7_jhspf")]
+visible = false
+layout_mode = 0
+offset_right = 1072.0
+offset_bottom = 476.0
+
+[node name="CluesTab" parent="UiCanvas/AppControl/Win7Window/ContentAreaPanel" unique_id=37308765 instance=ExtResource("8_5whe8")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1072.0
+offset_bottom = 476.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="StatusBar" type="Panel" parent="UiCanvas/AppControl/Win7Window" unique_id=172696207]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 549.0
+offset_right = 1075.0
+offset_bottom = 585.255
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2hpe")
+
+[node name="StatusLabel" type="Label" parent="UiCanvas/AppControl/Win7Window/StatusBar" unique_id=382045588]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 7.32
+offset_right = 700.0
+offset_bottom = 31.32
+theme_override_colors/font_color = Color(0.1, 0.28, 0.5, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 11
+text = "2 mascotas en casa  ·  Día 1"
+
+[node name="PetsTab" parent="UiCanvas/AppControl" unique_id=2074032106 instance=ExtResource("6_cqilf")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -115,7 +350,7 @@ offset_bottom = 590.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="MailTab" parent="UiCanvas/AppControl" unique_id=455218834 instance=ExtResource("7_jhspf")]
+[node name="MailTab" parent="UiCanvas/AppControl" unique_id=140793242 instance=ExtResource("7_jhspf")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -124,7 +359,7 @@ offset_top = 70.0
 offset_right = 1090.0
 offset_bottom = 590.0
 
-[node name="CluesTab" parent="UiCanvas/AppControl" unique_id=37308765 instance=ExtResource("8_5whe8")]
+[node name="CluesTab" parent="UiCanvas/AppControl" unique_id=1542946685 instance=ExtResource("8_5whe8")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0

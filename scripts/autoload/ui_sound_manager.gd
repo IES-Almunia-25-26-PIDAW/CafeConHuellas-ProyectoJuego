@@ -6,7 +6,7 @@ extends Node
 
 # Ruta al sonido de clic del menú
 # TODO: hay que modificarla para cuando tengamos el sonido real elegido
-const MENU_CLICK: AudioStream = preload("res://assets/audio/sfx/ui/click_menu.ogg")
+const MENU_CLICK: AudioStream = preload("res://assets/audio/sfx/ui/click_menu2.ogg")
 
 var _player: AudioStreamPlayer
 

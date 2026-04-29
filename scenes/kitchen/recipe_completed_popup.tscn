@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://icgolk484i5p" path="res://scripts/kitchen/recipe_completed_popup.gd" id="1_p31g1"]
 [ext_resource type="Texture2D" uid="uid://dn461ehdbb11e" path="res://assets/images/test_kitchen/pastel_Test.png" id="2_n34en"]
+[ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="3_xegwl"]
 
 [node name="RecipeCompletedPopup" type="Control" unique_id=1191124573]
 layout_mode = 3
@@ -42,6 +43,7 @@ expand_mode = 5
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_xegwl")
 text = "¡Completado!"
 fit_content = true
 horizontal_alignment = 1

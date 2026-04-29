@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d0d4a32nx5fsy"]
 
+[ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="1_40y2d"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edwrk"]
 bg_color = Color(0.43681613, 0.3168574, 0.26132932, 0.9019608)
 corner_radius_top_left = 15
@@ -33,4 +35,5 @@ Button/styles/pressed = SubResource("StyleBoxFlat_avaca")
 [node name="Button" type="Button" unique_id=1336306988]
 custom_minimum_size = Vector2(500, 50)
 theme = SubResource("Theme_yjvli")
+theme_override_fonts/font = ExtResource("1_40y2d")
 text = "This is a choice."

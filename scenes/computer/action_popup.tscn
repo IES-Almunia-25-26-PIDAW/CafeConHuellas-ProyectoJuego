@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bj7wjkujga66x" path="res://scripts/computer/action_popup.gd" id="1_iva1b"]
 [ext_resource type="SpriteFrames" uid="uid://u2kasffg4rdv" path="res://assets/sprites/jasmine/jasmine_sprites.tres" id="1_w71p0"]
+[ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="3_psm1r"]
 
 [node name="ActionPopup" type="Control" unique_id=1285974780]
 layout_mode = 3
@@ -44,6 +45,7 @@ custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_fonts/normal_font = ExtResource("3_psm1r")
 text = "Mensaje de la acción"
 horizontal_alignment = 1
 vertical_alignment = 1
