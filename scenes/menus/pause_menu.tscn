@@ -2,7 +2,41 @@
 
 [ext_resource type="PackedScene" uid="uid://ccdewhg87d5qe" path="res://scenes/menus/options_window.tscn" id="1_7unhi"]
 [ext_resource type="Script" uid="uid://dpjb20uku1nn0" path="res://scripts/menus/pause_menu.gd" id="1_gsnt3"]
+[ext_resource type="Theme" uid="uid://deq5aplf33ikn" path="res://assets/themes/title_button_theme.tres" id="2_2wrho"]
+[ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="2_eyfc8"]
 [ext_resource type="PackedScene" uid="uid://cplcewrlrnw35" path="res://scenes/menus/confirm_window.tscn" id="2_gsnt3"]
+[ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="4_xiui8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wrho"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.9607843, 0.92941177, 0.8784314, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 12
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyfc8"]
+content_margin_left = 20.0
+content_margin_top = 0.0
+content_margin_right = 20.0
+content_margin_bottom = 0.0
+bg_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+expand_margin_left = 100.0
+expand_margin_top = 3.0
+expand_margin_right = 100.0
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1208517921]
 layer = 10
@@ -14,7 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.19607843)
+color = Color(0, 0, 0, 0.36862746)
 
 [node name="BackdropControl" type="Control" parent="." unique_id=2085962686]
 unique_name_in_owner = true
@@ -22,31 +56,55 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 76.0
+offset_right = 9.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="BackdropControl" unique_id=637526816]
-custom_minimum_size = Vector2(600, 600)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
+offset_left = -211.39
+offset_top = -240.5
+offset_right = 211.39
+offset_bottom = 240.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2wrho")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BackdropControl/PanelContainer" unique_id=247087734]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(374.78, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
+
+[node name="PausaLbl" type="RichTextLabel" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=1951175621]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_constants/table_h_separation = 3
+theme_override_constants/table_v_separation = 3
+theme_override_fonts/normal_font = ExtResource("2_eyfc8")
+theme_override_font_sizes/normal_font_size = 50
+text = "Pausa"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=1686037852]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxFlat_eyfc8")
 
 [node name="SaveButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=575084988]
 unique_name_in_owner = true
@@ -54,6 +112,10 @@ custom_minimum_size = Vector2(240, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("2_2wrho")
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("4_xiui8")
+theme_override_font_sizes/font_size = 30
 text = "Guardar"
 
 [node name="LoadButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=1909809238]
@@ -62,6 +124,9 @@ custom_minimum_size = Vector2(240, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("2_2wrho")
+theme_override_fonts/font = ExtResource("4_xiui8")
+theme_override_font_sizes/font_size = 30
 text = "Cargar"
 
 [node name="OptionsButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=2037121701]
@@ -70,6 +135,9 @@ custom_minimum_size = Vector2(240, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("2_2wrho")
+theme_override_fonts/font = ExtResource("4_xiui8")
+theme_override_font_sizes/font_size = 30
 text = "Opciones"
 
 [node name="QuitButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=764992750]
@@ -78,7 +146,22 @@ custom_minimum_size = Vector2(240, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("2_2wrho")
+theme_override_fonts/font = ExtResource("4_xiui8")
+theme_override_font_sizes/font_size = 30
 text = "Salir al Menú"
+
+[node name="CerrarLbl" type="RichTextLabel" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=1593201143]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.68266255, 0.5260484, 0.4482867, 1)
+theme_override_colors/table_border = Color(0, 0, 0, 0)
+theme_override_fonts/normal_font = ExtResource("2_eyfc8")
+theme_override_font_sizes/normal_font_size = 20
+text = "(Haz clic fuera para cerrar)"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
 
 [node name="OptionsWindow" parent="BackdropControl/PanelContainer" unique_id=13526063 instance=ExtResource("1_7unhi")]
 unique_name_in_owner = true

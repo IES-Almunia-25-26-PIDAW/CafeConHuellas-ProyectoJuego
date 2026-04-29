@@ -1,23 +1,90 @@
 [gd_scene format=3 uid="uid://ccdewhg87d5qe"]
 
 [ext_resource type="Script" uid="uid://ci44fray23kic" path="res://scripts/menus/options_window.gd" id="1_sodr0"]
+[ext_resource type="FontFile" uid="uid://kmb7gfn44fgk" path="res://assets/fonts/Fredoka-Medium.ttf" id="2_pbl7f"]
+[ext_resource type="Theme" uid="uid://deq5aplf33ikn" path="res://assets/themes/title_button_theme.tres" id="3_pbl7f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q03g6"]
+bg_color = Color(0.9607843, 0.92941177, 0.8784314, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 12
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n02ye"]
+content_margin_left = 20.0
+content_margin_top = 0.0
+content_margin_right = 20.0
+content_margin_bottom = 0.0
+bg_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+expand_margin_left = 2.0
+expand_margin_top = 3.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpqfk"]
+bg_color = Color(0.83137256, 0.7529412, 0.6901961, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbl7f"]
+bg_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l71l8"]
+bg_color = Color(0.5411765, 0.3764706, 0.3137255, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh5cm"]
+bg_color = Color(0.87058824, 0.8156863, 0.76862746, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="OptionsWindow" type="PanelContainer" unique_id=13526063]
-clip_contents = true
-custom_minimum_size = Vector2(1000, 600)
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -300.0
-offset_right = 500.0
-offset_bottom = 300.0
+offset_left = -434.95502
+offset_top = -242.04001
+offset_right = 450.3396
+offset_bottom = 275.615
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_q03g6")
 script = ExtResource("1_sodr0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=817427972]
@@ -27,17 +94,24 @@ alignment = 1
 [node name="OptionsTitle" type="RichTextLabel" parent="VBoxContainer" unique_id=655851172]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_fonts/normal_font = ExtResource("2_pbl7f")
+theme_override_font_sizes/normal_font_size = 34
 text = "OPCIONES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OptionsSeparator" type="HSeparator" parent="VBoxContainer" unique_id=441249339]
-custom_minimum_size = Vector2(0, 50)
+[node name="OptionsSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1345177097]
 layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxFlat_n02ye")
 
 [node name="MusicSectionLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1089207648]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_fonts/normal_font = ExtResource("2_pbl7f")
+theme_override_font_sizes/normal_font_size = 25
 text = "Música"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -53,6 +127,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 50)
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_qpqfk")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_pbl7f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_l71l8")
 max_value = 1.0
 step = 0.01
 
@@ -60,6 +137,8 @@ step = 0.01
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 50)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_fonts/normal_font = ExtResource("2_pbl7f")
 text = "0 %"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -67,6 +146,9 @@ vertical_alignment = 1
 [node name="VoicesSectionLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=740148609]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_fonts/normal_font = ExtResource("2_pbl7f")
+theme_override_font_sizes/normal_font_size = 25
 text = "Voces"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -77,11 +159,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="VoicesSlider" type="HSlider" parent="VBoxContainer/VoicesContainer" unique_id=97525735]
+[node name="VoicesSlider" type="HSlider" parent="VBoxContainer/VoicesContainer" unique_id=1352640000]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 50)
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_qpqfk")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_pbl7f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_l71l8")
 max_value = 1.0
 step = 0.01
 
@@ -89,6 +174,8 @@ step = 0.01
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 50)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_fonts/normal_font = ExtResource("2_pbl7f")
 text = "0 %"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -96,6 +183,9 @@ vertical_alignment = 1
 [node name="SFXSectionLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=2128949185]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_fonts/normal_font = ExtResource("2_pbl7f")
+theme_override_font_sizes/normal_font_size = 25
 text = "Sonido"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -106,10 +196,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="SFXSlider" type="HSlider" parent="VBoxContainer/SFXContainer" unique_id=1263273829]
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer/SFXContainer" unique_id=2070570342]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 50)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_qpqfk")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_pbl7f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_l71l8")
 max_value = 1.0
 step = 0.01
 
@@ -117,18 +211,24 @@ step = 0.01
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 50)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_fonts/normal_font = ExtResource("2_pbl7f")
 text = "0 %"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonSeparator" type="HSeparator" parent="VBoxContainer" unique_id=341059130]
-custom_minimum_size = Vector2(0, 50)
+[node name="ButtonSeparator" type="HSeparator" parent="VBoxContainer" unique_id=646510451]
 layout_mode = 2
+theme_override_constants/separation = 30
+theme_override_styles/separator = SubResource("StyleBoxFlat_n02ye")
 
 [node name="CloseButton" type="Button" parent="VBoxContainer" unique_id=1425636139]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(130, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_pbl7f")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_dh5cm")
 text = "Cerrar"
