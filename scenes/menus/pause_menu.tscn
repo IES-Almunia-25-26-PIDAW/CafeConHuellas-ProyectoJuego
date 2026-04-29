@@ -23,6 +23,7 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 corner_detail = 12
+shadow_color = Color(0.47843137, 0.34509805, 0.23921569, 0.3137255)
 shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyfc8"]
@@ -37,6 +38,150 @@ corner_radius_bottom_right = 20
 expand_margin_left = 100.0
 expand_margin_top = 3.0
 expand_margin_right = 100.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xiui8"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqhbq"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgi6y"]
+bg_color = Color(0.9160109, 0.8629231, 0.8233717, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqjbd"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opdvj"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf6lc"]
+bg_color = Color(0.9160109, 0.8629231, 0.8233717, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7gms"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oey0u"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy5ew"]
+bg_color = Color(0.9160109, 0.8629231, 0.8233717, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5beu"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ty7ml"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1onjl"]
+bg_color = Color(0.9160109, 0.8629231, 0.8233717, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1208517921]
 layer = 10
@@ -56,10 +201,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 76.0
-offset_right = 9.0
-offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -87,6 +228,7 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="PausaLbl" type="RichTextLabel" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=1951175621]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
@@ -116,6 +258,9 @@ theme = ExtResource("2_2wrho")
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("4_xiui8")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_xiui8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gqhbq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dgi6y")
 text = "Guardar"
 
 [node name="LoadButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=1909809238]
@@ -127,6 +272,9 @@ size_flags_vertical = 4
 theme = ExtResource("2_2wrho")
 theme_override_fonts/font = ExtResource("4_xiui8")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqjbd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_opdvj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pf6lc")
 text = "Cargar"
 
 [node name="OptionsButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=2037121701]
@@ -138,6 +286,9 @@ size_flags_vertical = 4
 theme = ExtResource("2_2wrho")
 theme_override_fonts/font = ExtResource("4_xiui8")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7gms")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oey0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sy5ew")
 text = "Opciones"
 
 [node name="QuitButton" type="Button" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=764992750]
@@ -149,6 +300,9 @@ size_flags_vertical = 4
 theme = ExtResource("2_2wrho")
 theme_override_fonts/font = ExtResource("4_xiui8")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_w5beu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ty7ml")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1onjl")
 text = "Salir al Menú"
 
 [node name="CerrarLbl" type="RichTextLabel" parent="BackdropControl/PanelContainer/VBoxContainer" unique_id=1593201143]
@@ -163,12 +317,10 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="OptionsWindow" parent="BackdropControl/PanelContainer" unique_id=13526063 instance=ExtResource("1_7unhi")]
+[node name="OptionsWindow" parent="." unique_id=13526063 instance=ExtResource("1_7unhi")]
 unique_name_in_owner = true
 visible = false
-layout_mode = 2
 
-[node name="ConfirmWindow" parent="BackdropControl/PanelContainer" unique_id=614904631 instance=ExtResource("2_gsnt3")]
+[node name="ConfirmWindow" parent="." unique_id=614904631 instance=ExtResource("2_gsnt3")]
 unique_name_in_owner = true
 visible = false
-layout_mode = 2

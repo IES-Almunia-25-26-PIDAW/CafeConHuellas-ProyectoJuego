@@ -16,6 +16,7 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 corner_detail = 12
+shadow_color = Color(0.47843137, 0.34509805, 0.23921569, 0.3137255)
 shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n02ye"]
@@ -59,27 +60,51 @@ expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh5cm"]
-bg_color = Color(0.87058824, 0.8156863, 0.76862746, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erobd"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7i8r"]
+bg_color = Color(0.9160109, 0.8629231, 0.8233717, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="OptionsWindow" type="PanelContainer" unique_id=13526063]
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -434.95502
-offset_top = -242.04001
-offset_right = 450.3396
-offset_bottom = 275.615
+offset_left = -442.64752
+offset_top = -260.0
+offset_right = 442.64752
+offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -121,6 +146,7 @@ custom_minimum_size = Vector2(800, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+alignment = 1
 
 [node name="MusicSlider" type="HSlider" parent="VBoxContainer/MusicContainer" unique_id=1179504132]
 unique_name_in_owner = true
@@ -158,6 +184,7 @@ custom_minimum_size = Vector2(800, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+alignment = 1
 
 [node name="VoicesSlider" type="HSlider" parent="VBoxContainer/VoicesContainer" unique_id=1352640000]
 unique_name_in_owner = true
@@ -195,6 +222,7 @@ custom_minimum_size = Vector2(800, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+alignment = 1
 
 [node name="SFXSlider" type="HSlider" parent="VBoxContainer/SFXContainer" unique_id=2070570342]
 unique_name_in_owner = true
@@ -229,6 +257,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_pbl7f")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_dh5cm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_erobd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b7i8r")
 text = "Cerrar"

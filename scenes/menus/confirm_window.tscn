@@ -16,6 +16,7 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 corner_detail = 12
+shadow_color = Color(0.47843137, 0.34509805, 0.23921569, 0.3137255)
 shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul1db"]
@@ -31,6 +32,78 @@ expand_margin_left = 2.0
 expand_margin_top = 3.0
 expand_margin_right = 2.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htryl"]
+bg_color = Color(0.8149151, 0.84855527, 0.8425424, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.36536065, 0.4138301, 0.4145053, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odtcn"]
+bg_color = Color(0.816, 0.85, 0.84603333, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.49019608, 0.56078434, 0.56078434, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_voaue"]
+bg_color = Color(0.8717573, 0.90774393, 0.9032456, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4892125, 0.5591886, 0.5591886, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgmxv"]
+bg_color = Color(0.82224923, 0.7041864, 0.68690884, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4013523, 0.29659158, 0.2904191, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtuut"]
+bg_color = Color(0.84, 0.75768, 0.7392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.57254905, 0.45882353, 0.44705883, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydk24"]
+bg_color = Color(0.89459085, 0.803265, 0.78264296, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5723417, 0.4569033, 0.4480234, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="ConfirmWindow" type="PanelContainer" unique_id=614904631]
 custom_minimum_size = Vector2(500, 200)
 anchors_preset = 8
@@ -38,9 +111,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -250.0
 offset_top = -113.5
-offset_right = 20.0
+offset_right = 250.0
 offset_bottom = 113.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -92,7 +165,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_odtcn")
+theme_override_colors/font_color = Color(0.3647059, 0.41568628, 0.41568628, 1)
+theme_override_colors/font_pressed_color = Color(0.49019608, 0.56078434, 0.56078434, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0.56078434, 0.56078434, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_htryl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_odtcn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_voaue")
 text = "Confirmar"
 
 [node name="CancelButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=2026550218]
@@ -102,5 +181,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_odtcn")
+theme_override_colors/font_color = Color(0.4, 0.29803923, 0.2901961, 1)
+theme_override_colors/font_pressed_color = Color(0.57254905, 0.45882353, 0.44705883, 1)
+theme_override_colors/font_hover_color = Color(0.57254905, 0.45882353, 0.44705883, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_dgmxv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtuut")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydk24")
 text = "Cancelar"
