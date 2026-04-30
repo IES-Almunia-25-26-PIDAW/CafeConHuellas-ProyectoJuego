@@ -58,6 +58,11 @@ func setup(animal_id: String, data: Dictionary) -> void:
 	btn_food.pressed.connect(_on_btn_pressed.bind("food"))
 	btn_bath.pressed.connect(_on_btn_pressed.bind("bath"))
 	btn_love.pressed.connect(_on_btn_pressed.bind("love"))
+	
+	# Sonido de clic para los botones de necesidades de la mascota
+	btn_food.pressed.connect(UiSoundManager.play_pc_click)
+	btn_bath.pressed.connect(UiSoundManager.play_pc_click)
+	btn_love.pressed.connect(UiSoundManager.play_pc_click)
 
 # Manejar el estado de los botones para activarlos o desactivarlos
 func _update_buttons() -> void:

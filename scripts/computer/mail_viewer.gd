@@ -24,6 +24,11 @@ func _ready() -> void:
 	btn_accept.pressed.connect(_on_accept)
 	btn_decline.pressed.connect(_on_decline)
 	btn_close.pressed.connect(_on_close) 
+	
+	# Sonido de clic para los botones de decisión y cierre
+	btn_accept.pressed.connect(UiSoundManager.play_pc_click)
+	btn_decline.pressed.connect(UiSoundManager.play_pc_click)
+	btn_close.pressed.connect(UiSoundManager.play_pc_click)
 
 func show_email(email_id: String, email: Dictionary) -> void:
 	_current_email_id = email_id

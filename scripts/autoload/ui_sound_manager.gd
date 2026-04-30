@@ -1,12 +1,15 @@
 extends Node
 
-# UiSoundManager: Autoload global que gestiona los SFX de la interfaz de usuario (Menu inicio y menu de configuración)
+# UiSoundManager: Autoload global que gestiona los SFX de la interfaz de usuario
 # Sigue el mismo patrón que MusicManager y SettingsManager.
-# Uso desde cualquier script: UiSoundManager.play_menu_click()
+# Uso desde cualquier script: UiSoundManager.play_menu_click() / UiSoundManager.play_pc_click()
 
 # Ruta al sonido de clic del menú
 # TODO: hay que modificarla para cuando tengamos el sonido real elegido
 const MENU_CLICK: AudioStream = preload("res://assets/audio/sfx/ui/click_menu2.ogg")
+
+# Ruta al sonido de clic exclusivo de la escena del PC
+const PC_CLICK: AudioStream = preload("res://assets/audio/sfx/ui/click_pc1.ogg")
 
 var _player: AudioStreamPlayer
 
@@ -24,6 +27,21 @@ func play_menu_click() -> void:
 	# si el jugador hace clic rápido en varios botones, los sonidos no se cortan entre sí
 	var temp_player := AudioStreamPlayer.new()
 	temp_player.stream = MENU_CLICK
+	temp_player.bus = "SFX"
+	add_child(temp_player)
+	temp_player.play()
+	# Cuando el sonido termina, el nodo se elimina automáticamente para no acumular memoria
+	temp_player.finished.connect(temp_player.queue_free)
+
+
+# Reproduce el sonido de clic exclusivo de la escena del PC y sus subscenas.
+# Se llama desde computer_scene.gd, pets_tab.gd, mail_tab.gd y action_popup.gd al conectar los botones.
+# Centralizado aquí para que si se cambia el sonido solo haya que modificarlo en un sitio.
+func play_pc_click() -> void:
+	# Creamos un player temporal para permitir polifonía:
+	# si el jugador hace clic rápido en varios botones, los sonidos no se cortan entre sí
+	var temp_player := AudioStreamPlayer.new()
+	temp_player.stream = PC_CLICK
 	temp_player.bus = "SFX"
 	add_child(temp_player)
 	temp_player.play()

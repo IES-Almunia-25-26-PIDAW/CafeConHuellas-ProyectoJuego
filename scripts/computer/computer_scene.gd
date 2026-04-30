@@ -18,6 +18,7 @@ signal computer_shutdown
 @onready var cafe_lbl: Label = %CafeLbl
 @onready var status_lbl: Label = %StatusLabel
 
+
 # La escena a la que volver al apagar el ordenador
 @export var next_scene: String = "res://scenes/cafe_client_zone.tscn"
 
@@ -37,6 +38,13 @@ func _ready() -> void:
 	mail_btn.pressed.connect(_on_tab_pressed.bind("mail"))
 	clues_btn.pressed.connect(_on_tab_pressed.bind("clues"))
 	shutdown_btn.pressed.connect(_on_shutdown_pressed)
+	
+	
+	# Sonido de clic para los botones de navegación de tabs y apagado
+	pets_btn.pressed.connect(UiSoundManager.play_pc_click)
+	mail_btn.pressed.connect(UiSoundManager.play_pc_click)
+	clues_btn.pressed.connect(UiSoundManager.play_pc_click)
+	shutdown_btn.pressed.connect(UiSoundManager.play_pc_click)
 	
 	# Labels iniciales
 	_update_status_labels()

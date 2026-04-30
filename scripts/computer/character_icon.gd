@@ -27,4 +27,6 @@ func setup(char_id: String, char_data: Dictionary) -> void:
 # Función que se realiza cuando se hace click
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		# Sonido al hacer click en el icono de un personaje
+		UiSoundManager.play_pc_click()
 		icon_clicked.emit()

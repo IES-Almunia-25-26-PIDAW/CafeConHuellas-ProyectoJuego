@@ -3,6 +3,32 @@
 [ext_resource type="Script" uid="uid://cyk3scujtxnvn" path="res://scripts/computer/mail_row.gd" id="1_0xfwa"]
 [ext_resource type="Texture2D" uid="uid://m5bo81y1f8ia" path="res://assets/images/ui/shutdownbutton_off.png" id="1_pk8cq"]
 [ext_resource type="Texture2D" uid="uid://b6txhorh3ljk" path="res://assets/images/ui/shutdownbutton_on.png" id="2_cbeit"]
+[ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="4_4vtew"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_appl6"]
+content_margin_left = 12.0
+content_margin_top = 0.0
+content_margin_right = 12.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72156864, 0.8509804, 0.9607843, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gli4"]
+content_margin_left = 12.0
+content_margin_top = 0.0
+content_margin_right = 12.0
+content_margin_bottom = 0.0
+bg_color = Color(0.82, 0.91, 0.98, 1)
+border_width_bottom = 1
+border_color = Color(0.5, 0.72, 0.88, 1)
 
 [node name="MailRow" type="PanelContainer" unique_id=1289001639]
 custom_minimum_size = Vector2(1000, 80)
@@ -17,18 +43,19 @@ offset_right = 500.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_appl6")
 script = ExtResource("1_0xfwa")
 icon_unread = ExtResource("2_cbeit")
 icon_read = ExtResource("1_pk8cq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1976450075]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=13684868]
 custom_minimum_size = Vector2(960, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 25
 
-[node name="StatusIcon" type="TextureRect" parent="HBoxContainer" unique_id=1480210107]
+[node name="StatusIcon" type="TextureRect" parent="HBoxContainer" unique_id=1888199402]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -38,29 +65,36 @@ texture = ExtResource("1_pk8cq")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1292963934]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=808524539]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_constants/separation = 0
 
-[node name="SubjectLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1903088651]
+[node name="SubjectLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1176344331]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.05, 0.18, 0.38, 1)
+theme_override_fonts/normal_font = ExtResource("4_4vtew")
+theme_override_font_sizes/normal_font_size = 14
 text = "Asunto del correo"
 vertical_alignment = 1
 
-[node name="SenderLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1655829291]
+[node name="SenderLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1788364550]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.28, 0.48, 0.7, 1)
+theme_override_fonts/normal_font = ExtResource("4_4vtew")
 theme_override_font_sizes/normal_font_size = 12
 text = "Remitente del correo"
 vertical_alignment = 1
 
-[node name="ClickArea" type="Button" parent="." unique_id=501182642]
+[node name="ClickArea" type="Button" parent="." unique_id=576114820]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7gli4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7gli4")
 flat = true

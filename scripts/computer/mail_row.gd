@@ -42,4 +42,6 @@ func _update_status_icon(status: String) -> void:
 
 func _on_clicked() -> void:
 	_update_status_icon("read")
+	# Sonido al abrir un correo
+	UiSoundManager.play_pc_click()
 	row_clicked.emit()

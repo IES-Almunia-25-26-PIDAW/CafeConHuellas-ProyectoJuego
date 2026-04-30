@@ -12,6 +12,9 @@ var _tween: Tween
 func _ready() -> void:
 	visible = false
 	btn_continue.pressed.connect(_on_continue)
+	
+	# Sonido al continuar tras el resultado de la adopción
+	btn_continue.pressed.connect(UiSoundManager.play_pc_click)
 
 func show_result(is_good: bool) -> void:
 	if is_good:

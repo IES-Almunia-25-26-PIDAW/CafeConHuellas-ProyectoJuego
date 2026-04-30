@@ -3,6 +3,21 @@
 [ext_resource type="Script" uid="uid://cc1uhhstrqmk5" path="res://scripts/computer/mail_tab.gd" id="1_shu4s"]
 [ext_resource type="PackedScene" uid="uid://2e8s6d52dd28" path="res://scenes/computer/mail_viewer.tscn" id="2_dujjo"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shu4s"]
+bg_color = Color(0.93, 0.96, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dujjo"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 0.85, 0.96, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="MailTab" type="Control" unique_id=455218834]
 custom_minimum_size = Vector2(1072, 476)
 layout_mode = 3
@@ -11,26 +26,54 @@ offset_right = 1072.0
 offset_bottom = 476.0
 script = ExtResource("1_shu4s")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1028896257]
+[node name="BgPanel" type="Panel" parent="." unique_id=1434696837]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_shu4s")
 
-[node name="EmptyLabel" type="RichTextLabel" parent="PanelContainer" unique_id=1690004386]
+[node name="EmptyLabel" type="RichTextLabel" parent="." unique_id=736981233]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(500, 100)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.28, 0.48, 0.7, 1)
 text = "¡No hay ningún correo entrante!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MailList" type="VBoxContainer" parent="PanelContainer" unique_id=899501748]
+[node name="ListPanel" type="Panel" parent="." unique_id=599867616]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1058.995
+offset_bottom = 457.2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dujjo")
+
+[node name="MailList" type="VBoxContainer" parent="ListPanel" unique_id=1619457117]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.709961
+offset_bottom = -2.3600159
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MailViewer" parent="." unique_id=1233305360 instance=ExtResource("2_dujjo")]
 unique_name_in_owner = true

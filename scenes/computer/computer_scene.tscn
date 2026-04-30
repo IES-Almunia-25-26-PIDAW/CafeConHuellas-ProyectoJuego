@@ -290,6 +290,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ufi57")
 
 [node name="PetsTab" parent="UiCanvas/AppControl/Win7Window/ContentAreaPanel" unique_id=1240543251 instance=ExtResource("6_cqilf")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -305,7 +306,6 @@ grow_vertical = 1
 
 [node name="MailTab" parent="UiCanvas/AppControl/Win7Window/ContentAreaPanel" unique_id=455218834 instance=ExtResource("7_jhspf")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
 
 [node name="CluesTab" parent="UiCanvas/AppControl/Win7Window/ContentAreaPanel" unique_id=37308765 instance=ExtResource("8_5whe8")]
