@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bbp5e10quv6ys" path="res://scenes/kitchen/ingredient_popup.tscn" id="13_81ywk"]
 [ext_resource type="PackedScene" uid="uid://bo88x1qy4anad" path="res://scenes/kitchen/recipe_book.tscn" id="14_1b1dy"]
 [ext_resource type="Texture2D" uid="uid://cy47nokhof7uo" path="res://assets/images/test_kitchen/ticket_test.png" id="14_bmpck"]
-[ext_resource type="AudioStream" uid="uid://dype1a05msvd1" path="res://assets/audio/music/pista_test1.ogg" id="21_vxhy1"]
+[ext_resource type="AudioStream" uid="uid://5yuh1bmqsa30" path="res://assets/audio/music/Cute Bossa Nova.ogg" id="21_vxhy1"]
 
 [node name="CafeKitchenScene" type="Node2D" unique_id=367916718]
 script = ExtResource("1_hollr")
