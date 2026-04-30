@@ -3,7 +3,7 @@ extends Control
 # MailTab: Tab del correo donde se pueden ver los correos diarios que tratan sobre las mascotas del jugador
 # Al hacer click en un correo se abre MailViewer para visualizarlo y tomar una decisión
 
-signal adoption_processed
+signal adoption_processed(animal_id: String)
 
 const MailRow: PackedScene = preload("res://scenes/computer/mail_row.tscn")
 
@@ -66,10 +66,15 @@ func _on_row_clicked(email_id: String, email: Dictionary) -> void:
 		mail_viewer.viewer_closed.connect(_on_viewer_closed)
 
 # Cuando se haga una decisión, se esconde la ventana de MailViewer y se refresca para actualizar los cambios
-func _on_decision_made(_email_id: String, _accepted: bool) -> void:
+func _on_decision_made(email_id: String, accepted: bool) -> void:
 	mail_viewer.hide()
 	refresh()  # Actualizamos la lista tras la decisión
-	adoption_processed.emit()
+	# Emitimos el ID del animal adoptado
+	if accepted:
+		var email: Dictionary = DataLoader.get_all_emails().get(email_id, {})
+		var animal_id: String = email.get("animal_id", "")
+		if animal_id != "":
+			adoption_processed.emit(animal_id)
 
 # Al cerrar sin decidir solo refrescamos el icono de leído
 func _on_viewer_closed() -> void:

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cwn34dipxie33" path="res://scenes/computer/pet_card.tscn" id="2_gv60t"]
 
 [node name="PetsTab" type="Control" unique_id=1240543251]
-custom_minimum_size = Vector2(1080, 520)
+custom_minimum_size = Vector2(1072, 476)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -13,17 +13,20 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -540.0
 offset_top = -260.0
-offset_right = 540.0
-offset_bottom = 260.0
+offset_right = 532.0
+offset_bottom = 216.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gc7yc")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1279255800]
-custom_minimum_size = Vector2(1080, 520)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(1072, 476)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CardsContainer" type="GridContainer" parent="." unique_id=739480008]
 unique_name_in_owner = true

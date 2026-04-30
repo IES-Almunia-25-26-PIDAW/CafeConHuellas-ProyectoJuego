@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cgf0nequ35lex" path="res://scenes/computer/character_detail.tscn" id="2_7nw83"]
 
 [node name="CluesTab" type="Control" unique_id=37308765]
+custom_minimum_size = Vector2(1072, 476)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -12,8 +13,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -540.0
 offset_top = -260.0
-offset_right = 540.0
-offset_bottom = 260.0
+offset_right = 532.0
+offset_bottom = 216.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_scbxp")
@@ -27,12 +28,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColumnsContainer" type="HBoxContainer" parent="." unique_id=538349285]
-custom_minimum_size = Vector2(1050, 500)
+custom_minimum_size = Vector2(1050, 450)
 layout_mode = 0
 offset_left = 15.0
 offset_top = 10.0
 offset_right = 1065.0
-offset_bottom = 510.0
+offset_bottom = 460.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 15

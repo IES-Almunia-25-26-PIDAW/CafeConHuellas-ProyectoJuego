@@ -5,6 +5,8 @@ extends Control
 
 # Emite esta señal cuando todas las mascotas tienen sus necesidades cubiertas
 signal all_pets_happy
+# Señal que conecta la señal de pet_card y su acción
+signal show_action_popup(need: String)
 
 const PetCard: PackedScene = preload("res://scenes/computer/pet_card.tscn")
 
@@ -31,6 +33,11 @@ func populate() -> void:
 		cards_container.add_child(card)
 		card.setup(animal_id, animal_data)
 		card.need_fulfilled.connect(_on_need_fulfilled)
+		
+		# Conecta la señal del popup
+		card.action_requested.connect(func(need: String):
+			show_action_popup.emit(need)
+		)
 	
 	_check_all_happy()
 
@@ -50,3 +57,11 @@ func _check_all_happy() -> void:
 			return
 	# Cuando todas estén felices, se emite la señal
 	all_pets_happy.emit()
+
+# Elimina la card de una mascota que ha sido adoptada
+func remove_pet_card(animal_id: String) -> void:
+	for card in cards_container.get_children():
+		if card.get_animal_id() == animal_id:
+			card.queue_free()
+			break
+	_check_all_happy()

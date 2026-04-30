@@ -4,17 +4,20 @@
 [ext_resource type="PackedScene" uid="uid://2e8s6d52dd28" path="res://scenes/computer/mail_viewer.tscn" id="2_dujjo"]
 
 [node name="MailTab" type="Control" unique_id=455218834]
+custom_minimum_size = Vector2(1072, 476)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1080.0
-offset_bottom = 520.0
+offset_right = 1072.0
+offset_bottom = 476.0
 script = ExtResource("1_shu4s")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1028896257]
-custom_minimum_size = Vector2(1080, 520)
-layout_mode = 0
-offset_right = 1080.0
-offset_bottom = 520.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="EmptyLabel" type="RichTextLabel" parent="PanelContainer" unique_id=1690004386]
 unique_name_in_owner = true

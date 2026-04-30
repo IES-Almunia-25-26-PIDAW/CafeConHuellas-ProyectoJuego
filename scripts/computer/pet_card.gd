@@ -11,7 +11,9 @@ signal need_fulfilled
 @onready var btn_food: TextureButton = %BtnFood
 @onready var btn_bath: TextureButton = %BtnBath
 @onready var btn_love: TextureButton = %BtnLove
-@onready var action_popup: Control = %ActionPopup
+
+# Señal para cuando se realice una acción sobre una mascota
+signal action_requested(need: String)
 
 # Texturas de género
 @export var icon_male: Texture2D
@@ -22,6 +24,9 @@ var _needs: Dictionary = {"food": false, "bath": false, "love": false}
 var _fulfilled: Dictionary = {"food": false, "bath": false, "love": false}
 var _animal_id: String = ""
 
+# Obtiene el ID de un animal
+func get_animal_id() -> String:
+	return _animal_id
 
 func setup(animal_id: String, data: Dictionary) -> void:
 	_animal_id = animal_id
@@ -67,7 +72,7 @@ func _on_btn_pressed(need: String) -> void:
 	
 	_fulfilled[need] = true
 	_update_buttons()
-	action_popup.play_action(need)
+	action_requested.emit(need)
 	need_fulfilled.emit()
 
 # Devuelve true si todas las necesidades de la mascota están cubiertas
