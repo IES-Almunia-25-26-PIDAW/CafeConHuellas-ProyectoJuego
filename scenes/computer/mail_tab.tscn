@@ -60,29 +60,30 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
-offset_right = 1058.995
+offset_right = 1055.285
 offset_bottom = 457.2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dujjo")
 
 [node name="MailList" type="VBoxContainer" parent="ListPanel" unique_id=1619457117]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(1039.285, 438.84)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -3.709961
 offset_bottom = -2.3600159
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = -1
 
 [node name="MailViewer" parent="." unique_id=1233305360 instance=ExtResource("2_dujjo")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
+offset_top = 56.0
 offset_right = 1080.0
-offset_bottom = 520.0
+offset_bottom = 576.0
 grow_horizontal = 1
 grow_vertical = 1

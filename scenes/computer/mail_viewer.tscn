@@ -35,6 +35,18 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emtnm"]
+bg_color = Color(0.84705883, 0.32941177, 0.2627451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6509804, 0.14901961, 0.101960786, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyagx"]
 content_margin_left = 12.0
 content_margin_top = 8.0
@@ -59,8 +71,8 @@ content_margin_bottom = 8.0
 bg_color = Color(0.65, 0.8, 0.94, 1)
 border_width_top = 1
 border_color = Color(0.45, 0.65, 0.85, 1)
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jadfj"]
 bg_color = Color(0.22, 0.62, 0.32, 1)
@@ -69,6 +81,18 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.15, 0.45, 0.22, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipfvh"]
+bg_color = Color(0.37157658, 0.6972954, 0.45509428, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.14901961, 0.4509804, 0.21960784, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -86,8 +110,19 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rh47"]
+bg_color = Color(0.84855527, 0.3302008, 0.26244205, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6509804, 0.14901961, 0.101960786, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="MailViewer" type="Control" unique_id=1233305360]
-custom_minimum_size = Vector2(700, 450)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,9 +139,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -350.0
-offset_top = -276.395
+offset_top = -305.39502
 offset_right = 350.0
-offset_bottom = 194.54504
+offset_bottom = 144.60498
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j12qk")
@@ -127,24 +162,25 @@ offset_right = 582.755
 offset_bottom = 26.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_37mo3")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "Correo recibido"
+vertical_alignment = 1
 
 [node name="BtnClose" type="Button" parent="Win7Panel/TitleBar" unique_id=422206100]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(22, 20)
+custom_minimum_size = Vector2(27, 20)
 layout_mode = 0
-offset_left = 669.0
-offset_top = 3.0
+offset_left = 664.0
+offset_top = 2.394989
 offset_right = 691.0
-offset_bottom = 27.0
+offset_bottom = 28.394989
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_37mo3")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_gp3if")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gp3if")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gp3if")
-text = "✕"
+theme_override_styles/hover = SubResource("StyleBoxFlat_emtnm")
+text = "×"
 
 [node name="MailHeader" type="Panel" parent="Win7Panel" unique_id=417863163]
 layout_mode = 0
@@ -173,7 +209,7 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.05, 0.18, 0.38, 1)
 theme_override_fonts/normal_font = ExtResource("2_37mo3")
-theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/normal_font_size = 14
 text = "De: Nombre del remitente"
 scroll_active = false
 vertical_alignment = 1
@@ -184,7 +220,7 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.28, 0.48, 0.7, 1)
 theme_override_fonts/normal_font = ExtResource("2_37mo3")
-theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/normal_font_size = 15
 text = "Asunto: Texto del asunto"
 scroll_active = false
 vertical_alignment = 1
@@ -194,7 +230,7 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = 113.0
 offset_right = 697.0
-offset_bottom = 393.0
+offset_bottom = 373.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_h5i6g")
 
 [node name="BodyLabel" type="RichTextLabel" parent="Win7Panel/ContentArea" unique_id=898463907]
@@ -211,15 +247,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.1, 0.25, 0.45, 1)
 theme_override_fonts/normal_font = ExtResource("2_37mo3")
-theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/normal_font_size = 14
 text = "Texto del mensaje"
 
 [node name="Footer" type="Panel" parent="Win7Panel" unique_id=1522676520]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 393.0
+offset_top = 373.39502
 offset_right = 697.0
-offset_bottom = 467.845
+offset_bottom = 448.24002
 theme_override_styles/panel = SubResource("StyleBoxFlat_ckxl1")
 
 [node name="ButtonsRow" type="HBoxContainer" parent="Win7Panel/Footer" unique_id=183033386]
@@ -244,22 +280,22 @@ custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_37mo3")
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_jadfj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jadfj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jadfj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ipfvh")
 text = "Aceptar adopción"
 
 [node name="BtnDecline" type="Button" parent="Win7Panel/Footer/ButtonsRow" unique_id=1670637793]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 40)
+custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_37mo3")
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_2md17")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2md17")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2md17")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6rh47")
 text = "Rechazar"
 
 [node name="ResultPopup" parent="." unique_id=290507829 instance=ExtResource("1_dmj4n")]
@@ -275,3 +311,5 @@ offset_left = -350.0
 offset_top = -256.355
 offset_right = 350.00024
 offset_bottom = 193.64587
+grow_horizontal = 1
+grow_vertical = 1
