@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://86q8dag03xs7"
+path="res://.godot/imported/07 HoliznaCC0 - Beginning 6.ogg-2bcb69ba95044b4b06feb4903e5c112f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/07 HoliznaCC0 - Beginning 6.ogg"
+dest_files=["res://.godot/imported/07 HoliznaCC0 - Beginning 6.ogg-2bcb69ba95044b4b06feb4903e5c112f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

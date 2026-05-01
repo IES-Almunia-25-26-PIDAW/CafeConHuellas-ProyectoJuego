@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5yuh1bmqsa30"
+path="res://.godot/imported/Cute Bossa Nova.ogg-85ee2578629e3cd5e07a17b76c41f7ea.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Cute Bossa Nova.ogg"
+dest_files=["res://.godot/imported/Cute Bossa Nova.ogg-85ee2578629e3cd5e07a17b76c41f7ea.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
