@@ -78,6 +78,7 @@ theme_override_constants/separation = -1
 
 [node name="MailViewer" parent="." unique_id=1233305360 instance=ExtResource("2_dujjo")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0

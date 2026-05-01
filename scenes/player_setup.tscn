@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bbbpihrrso0a2"]
 
 [ext_resource type="Script" uid="uid://0lrnh775bpv8" path="res://scripts/scenes/player_setup.gd" id="1_412kp"]
+[ext_resource type="FontFile" uid="uid://chivh8jm7c75d" path="res://assets/fonts/PatrickHand-Regular.ttf" id="2_3iesa"]
 [ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="2_ksabq"]
 [ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="3_3iesa"]
 
@@ -48,7 +49,7 @@ size_flags_vertical = 4
 [node name="StartLabel" type="RichTextLabel" parent="FullContent/HeaderContainer" unique_id=1568121248]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_ksabq")
+theme_override_fonts/normal_font = ExtResource("2_3iesa")
 text = "Querid"
 scroll_active = false
 vertical_alignment = 1
@@ -61,19 +62,19 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ksabq")
+theme_override_fonts/font = ExtResource("2_3iesa")
 text = "o"
 
 [node name="BtnFemale" type="Button" parent="FullContent/HeaderContainer/PronounsChoice" unique_id=1881398685]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ksabq")
+theme_override_fonts/font = ExtResource("2_3iesa")
 text = "a"
 
 [node name="BtnNonbinary" type="Button" parent="FullContent/HeaderContainer/PronounsChoice" unique_id=2055104652]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ksabq")
+theme_override_fonts/font = ExtResource("2_3iesa")
 text = "e"
 
 [node name="VSeparator" type="VSeparator" parent="FullContent/HeaderContainer" unique_id=1860233634]
@@ -89,7 +90,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("2_ksabq")
+theme_override_fonts/font = ExtResource("2_3iesa")
 placeholder_text = "Hunter"
 alignment = 1
 max_length = 10
@@ -107,7 +108,7 @@ vertical_alignment = 1
 [node name="Paragraph1" type="RichTextLabel" parent="FullContent" unique_id=2089966525]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_ksabq")
+theme_override_fonts/normal_font = ExtResource("2_3iesa")
 text = "Permíteme ser el primero en darte la bienvenida oficial a nuestro pequeño pueblo, Aínsa. Aunque no seamos muchos vecinos aquí, te aseguro que no te vas a aburrir."
 vertical_alignment = 1
 
@@ -117,7 +118,7 @@ layout_mode = 2
 [node name="CafeLabel1" type="RichTextLabel" parent="FullContent/CafeQuestionContainer" unique_id=997961790]
 custom_minimum_size = Vector2(410, 50)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_ksabq")
+theme_override_fonts/normal_font = ExtResource("2_3iesa")
 text = "¡Por fin vas a traer a este pueblecillo tu cafetería!"
 vertical_alignment = 1
 
@@ -128,7 +129,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("2_ksabq")
+theme_override_fonts/font = ExtResource("2_3iesa")
 placeholder_text = "PawCafé"
 alignment = 1
 max_length = 14
@@ -142,28 +143,28 @@ size_flags_vertical = 4
 [node name="CafeLabel2" type="RichTextLabel" parent="FullContent/CafeQuestionContainer" unique_id=1592671260]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_ksabq")
+theme_override_fonts/normal_font = ExtResource("2_3iesa")
 text = "se llamaba, ¿verdad?"
 vertical_alignment = 1
 
 [node name="Paragraph2" type="RichTextLabel" parent="FullContent" unique_id=1084844557]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_ksabq")
+theme_override_fonts/normal_font = ExtResource("2_3iesa")
 text = "De todas formas, su apertura es una noticia que ha alegrado mucho a nuestra comunidad, ¡estoy seguro de que se convertirá en mi nuevo lugar favorito para tomarme un cafelito!"
 vertical_alignment = 1
 
 [node name="Paragraph3" type="RichTextLabel" parent="FullContent" unique_id=2015443987]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_ksabq")
+theme_override_fonts/normal_font = ExtResource("2_3iesa")
 text = "Esperamos que este nuevo comienzo te sea todo un éxito y te sientas como en casa. Cualquier cosa puedes encontrarme en el ayuntamiento, ¡no te olvides de traerme un dulcecito o algo!"
 vertical_alignment = 1
 
 [node name="EndLabel" type="RichTextLabel" parent="FullContent" unique_id=724301275]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_ksabq")
+theme_override_fonts/normal_font = ExtResource("2_3iesa")
 text = "Atentamente, el Alcalde de Aínsa."
 vertical_alignment = 1
 

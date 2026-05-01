@@ -2,7 +2,25 @@
 
 [ext_resource type="Script" uid="uid://icgolk484i5p" path="res://scripts/kitchen/recipe_completed_popup.gd" id="1_p31g1"]
 [ext_resource type="Texture2D" uid="uid://dn461ehdbb11e" path="res://assets/images/test_kitchen/pastel_Test.png" id="2_n34en"]
-[ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="3_xegwl"]
+[ext_resource type="FontFile" uid="uid://kmb7gfn44fgk" path="res://assets/fonts/Fredoka-Medium.ttf" id="3_xegwl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cphmf"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+bg_color = Color(0.9882353, 0.93333334, 0.9490196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.38039216, 0.21568628, 0.24705882, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.6251925, 0.2781701, 0.4050002, 0.4509804)
+shadow_size = 6
 
 [node name="RecipeCompletedPopup" type="Control" unique_id=1191124573]
 layout_mode = 3
@@ -27,6 +45,7 @@ offset_right = 150.0
 offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cphmf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel" unique_id=1704277096]
 layout_mode = 2
@@ -43,6 +62,7 @@ expand_mode = 5
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.38039216, 0.21568628, 0.24705882, 1)
 theme_override_fonts/normal_font = ExtResource("3_xegwl")
 text = "¡Completado!"
 fit_content = true
