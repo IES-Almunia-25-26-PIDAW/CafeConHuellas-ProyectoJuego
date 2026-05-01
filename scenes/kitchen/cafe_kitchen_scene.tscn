@@ -285,4 +285,4 @@ bus = &"SFX"
 unique_name_in_owner = true
 stream = ExtResource("21_vxhy1")
 autoplay = true
-bus = &"SFX"
+bus = &"Music"

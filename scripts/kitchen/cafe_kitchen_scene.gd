@@ -136,10 +136,10 @@ func _on_ingredient_correct(ingredient_id: String, _recipe_id: String) -> void:
 # Busca el botón del ingrediente en el popup y lo desactiva visualmente
 # Se llama solo cuando el ingrediente es correcto, nunca para los incorrectos
 func _disable_popup_button(ingredient_id: String) -> void:
-	var btn: Button = ingredient_popup.ingredients_grid.find_child("Btn_" + ingredient_id, true, false)
+	var btn: TextureButton = ingredient_popup.find_child("Btn_" + ingredient_id, true, false)
 	if btn:
 		btn.disabled = true
-		btn.modulate = Color(0.5, 0.5, 0.5, 0.7)
+		btn.modulate = Color(0.743, 0.743, 0.743, 0.702)
 
 func _on_ingredient_wrong(_ingredient_id: String) -> void:
 	# El ingrediente no pertenece a ninguna receta del pedido
@@ -238,7 +238,7 @@ func _open_ingredient_popup(title: String, category: String) -> void:
 	# Si ya está visible no hacemos nada
 	if ingredient_popup.visible:
 		return
-
+	
 	# Recopilamos todos los ingredientes posibles de la categoría desde el DataLoader
 	var all_recipes := DataLoader.get_all_recipes()
 	var category_ingredients: Array = []
@@ -247,13 +247,13 @@ func _open_ingredient_popup(title: String, category: String) -> void:
 			for ingredient_id in all_recipes[recipe_id].get("ingredients", []):
 				if not category_ingredients.has(ingredient_id):
 					category_ingredients.append(ingredient_id)
-
+	
 	# Obtenemos los ingredientes ya añadidos en esta categoría para marcarlos en el popup
 	var already_added := KitchenManager.get_added_ingredients_for_category(category)
-
+	
 	# Configuramos el popup con los ingredientes de la categoría
 	ingredient_popup.setup(title, category_ingredients, already_added)
-
+	
 	# Conectamos sus señales si no están conectadas ya
 	if not ingredient_popup.ingredient_selected.is_connected(_on_popup_ingredient_selected):
 		ingredient_popup.ingredient_selected.connect(_on_popup_ingredient_selected)

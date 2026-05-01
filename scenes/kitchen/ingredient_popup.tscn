@@ -7,15 +7,6 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_70ydu")
 
-[node name="Overlay" type="ColorRect" parent="." unique_id=1125720806]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.53333336)
-
 [node name="PopupPanel" type="PanelContainer" parent="." unique_id=1651692535]
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
@@ -36,9 +27,13 @@ layout_mode = 2
 
 [node name="PopupTitle" type="RichTextLabel" parent="PopupPanel/PopupContent" unique_id=243999375]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "¡Selecciona tus ingredientes!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="IngredientsGrid" type="GridContainer" parent="PopupPanel/PopupContent" unique_id=1506795472]
+[node name="IngredientsContainer" type="VBoxContainer" parent="PopupPanel/PopupContent" unique_id=1709775572]
 unique_name_in_owner = true
 layout_mode = 2
-columns = 3
