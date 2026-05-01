@@ -2,6 +2,26 @@
 
 [ext_resource type="Script" uid="uid://b2gxxbbpduvo3" path="res://scripts/computer/character_icon.gd" id="1_ox4fd"]
 [ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="1_s4jba"]
+[ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="3_nseyp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b682"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.878, 0.941, 0.988, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color(0.502, 0.749, 0.98, 0.85)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 10
+shadow_color = Color(0.502, 0.749, 0.98, 0.2)
+shadow_size = 4
 
 [node name="CharacterIcon" type="PanelContainer" unique_id=1123964867]
 custom_minimum_size = Vector2(80, 80)
@@ -16,13 +36,30 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8b682")
 script = ExtResource("1_ox4fd")
 default_icon = ExtResource("1_s4jba")
 
-[node name="Icon" type="TextureRect" parent="." unique_id=451691599]
+[node name="VBox" type="VBoxContainer" parent="." unique_id=488210963]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Icon" type="TextureRect" parent="VBox" unique_id=1598237925]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("1_s4jba")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="NameLabel" type="RichTextLabel" parent="VBox" unique_id=1714000387]
+custom_minimum_size = Vector2(90, 18)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.18, 0.38, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("3_nseyp")
+theme_override_font_sizes/normal_font_size = 10
+text = "Nombre"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

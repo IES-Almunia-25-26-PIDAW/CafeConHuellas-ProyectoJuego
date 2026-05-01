@@ -1,0 +1,364 @@
+[gd_scene format=3 uid="uid://j5wdu1qhoq7j"]
+
+[ext_resource type="Texture2D" uid="uid://cwdesq07vwmmu" path="res://assets/images/backgrounds/computer.png" id="1_3ty2s"]
+[ext_resource type="Script" uid="uid://cd4hmwsnhk2h4" path="res://scripts/computer/computer_scene.gd" id="1_yp1bn"]
+[ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="2_cbmld"]
+[ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="3_imhm7"]
+[ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="4_su0m0"]
+[ext_resource type="Texture2D" uid="uid://b6txhorh3ljk" path="res://assets/images/ui/shutdownbutton_on.png" id="5_su0m0"]
+[ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="6_5whe8"]
+[ext_resource type="PackedScene" uid="uid://qf3picgq2mep" path="res://scenes/computer/pets_tab.tscn" id="6_cqilf"]
+[ext_resource type="Texture2D" uid="uid://m5bo81y1f8ia" path="res://assets/images/ui/shutdownbutton_off.png" id="6_yp1bn"]
+[ext_resource type="PackedScene" uid="uid://c6ulqr4t8046c" path="res://scenes/computer/mail_tab.tscn" id="7_jhspf"]
+[ext_resource type="PackedScene" uid="uid://b1mt1bewl6sb1" path="res://scenes/computer/clues_tab.tscn" id="8_5whe8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhspf"]
+bg_color = Color(0.55, 0.75, 0.95, 0.18)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5, 0.75, 0.98, 0.85)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5whe8"]
+bg_color = Color(0.36, 0.6, 0.88, 1)
+border_width_bottom = 1
+border_color = Color(0.25, 0.45, 0.7, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l5ow"]
+bg_color = Color(0.55, 0.72, 0.9, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.55, 0.78, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yalfm"]
+bg_color = Color(0.82, 0.22, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.15, 0.1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fusee"]
+bg_color = Color(0.72, 0.85, 0.96, 1)
+border_width_bottom = 1
+border_color = Color(0.45, 0.68, 0.88, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8xhc"]
+bg_color = Color(0.78, 0.89, 0.97, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.5, 0.72, 0.88, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk217"]
+bg_color = Color(0.96, 0.98, 1, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_color = Color(0.3, 0.55, 0.8, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38k52"]
+bg_color = Color(0.88, 0.94, 0.99, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.5, 0.72, 0.88, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufi57"]
+bg_color = Color(0.93, 0.96, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2hpe"]
+bg_color = Color(0.65, 0.8, 0.94, 1)
+border_width_top = 1
+border_color = Color(0.45, 0.65, 0.85, 1)
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="ComputerScene" type="Node2D" unique_id=420657901]
+script = ExtResource("1_yp1bn")
+
+[node name="BackgroundCanvas" type="CanvasLayer" parent="." unique_id=1482300334]
+layer = -1
+
+[node name="ComputerBackground" type="TextureRect" parent="BackgroundCanvas" unique_id=1440754192]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3ty2s")
+
+[node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=297655016]
+layer = 10
+
+[node name="PauseButton" parent="PauseCanvas" unique_id=950623637 node_paths=PackedStringArray("button_visual") instance=ExtResource("2_cbmld")]
+pause_menu_scene = ExtResource("3_imhm7")
+button_visual = NodePath("PauseTexture")
+
+[node name="PauseTexture" type="TextureRect" parent="PauseCanvas/PauseButton" unique_id=1079527932]
+custom_minimum_size = Vector2(60, 60)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 80.0
+texture = ExtResource("4_su0m0")
+
+[node name="UiCanvas" type="CanvasLayer" parent="." unique_id=683565626]
+
+[node name="AppControl" type="Control" parent="UiCanvas" unique_id=711883229]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -541.105
+offset_top = -388.0
+offset_right = 538.20996
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Win7Window" type="Panel" parent="UiCanvas/AppControl" unique_id=2084533065]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.1298828
+offset_bottom = -11.575012
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhspf")
+
+[node name="TitleBarPanel" type="Panel" parent="UiCanvas/AppControl/Win7Window" unique_id=335434174]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1075.0
+offset_bottom = 37.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5whe8")
+
+[node name="CafeLbl" type="Label" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel" unique_id=142641178]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 800.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 16
+text = "PawCafe App"
+vertical_alignment = 1
+
+[node name="WinButtons" type="HBoxContainer" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel" unique_id=651770588]
+layout_mode = 0
+offset_left = 994.0
+offset_top = 3.0
+offset_right = 1069.0
+offset_bottom = 31.0
+theme_override_constants/separation = 3
+
+[node name="MinBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel/WinButtons" unique_id=623410360]
+custom_minimum_size = Vector2(22, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l5ow")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7l5ow")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7l5ow")
+text = "—"
+autowrap_trim_flags = 192
+
+[node name="MaxBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel/WinButtons" unique_id=1596163991]
+custom_minimum_size = Vector2(22, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l5ow")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7l5ow")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7l5ow")
+text = " ☐ "
+
+[node name="CloseBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TitleBarPanel/WinButtons" unique_id=559484510]
+custom_minimum_size = Vector2(22, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_yalfm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yalfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yalfm")
+text = "×"
+
+[node name="TabsBarPanel" type="Panel" parent="UiCanvas/AppControl/Win7Window" unique_id=1673738353]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 37.0
+offset_right = 1075.0
+offset_bottom = 73.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fusee")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UiCanvas/AppControl/Win7Window/TabsBarPanel" unique_id=1734877982]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 420.0
+offset_bottom = 34.0
+theme_override_constants/separation = 3
+
+[node name="PetsBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TabsBarPanel/HBoxContainer" unique_id=914171158]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 26)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.101960786, 0.2784314, 0.5019608, 1)
+theme_override_colors/font_pressed_color = Color(0.22300681, 0.39163217, 0.60522425, 1)
+theme_override_colors/font_hover_color = Color(0.22352941, 0.39215687, 0.6039216, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8xhc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kk217")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38k52")
+text = "Mascotas"
+
+[node name="MailBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TabsBarPanel/HBoxContainer" unique_id=1567909018]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 26)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.101960786, 0.2784314, 0.5019608, 1)
+theme_override_colors/font_pressed_color = Color(0.22352941, 0.39215687, 0.6039216, 1)
+theme_override_colors/font_hover_color = Color(0.22352941, 0.39215687, 0.6039216, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8xhc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kk217")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38k52")
+text = "Correos"
+
+[node name="CluesBtn" type="Button" parent="UiCanvas/AppControl/Win7Window/TabsBarPanel/HBoxContainer" unique_id=187502048]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 26)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.101960786, 0.2784314, 0.5019608, 1)
+theme_override_colors/font_pressed_color = Color(0.22352941, 0.39215687, 0.6039216, 1)
+theme_override_colors/font_hover_color = Color(0.22352941, 0.39215687, 0.6039216, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8xhc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kk217")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38k52")
+text = "Pistas"
+
+[node name="ContentAreaPanel" type="Panel" parent="UiCanvas/AppControl/Win7Window" unique_id=184280094]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 73.0
+offset_right = 1075.0
+offset_bottom = 549.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ufi57")
+
+[node name="PetsTab" parent="UiCanvas/AppControl/Win7Window/ContentAreaPanel" unique_id=1240543251 instance=ExtResource("6_cqilf")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1072.0
+offset_bottom = 476.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="MailTab" parent="UiCanvas/AppControl/Win7Window/ContentAreaPanel" unique_id=455218834 instance=ExtResource("7_jhspf")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+
+[node name="CluesTab" parent="UiCanvas/AppControl/Win7Window/ContentAreaPanel" unique_id=37308765 instance=ExtResource("8_5whe8")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1072.0
+offset_bottom = 476.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="StatusBar" type="Panel" parent="UiCanvas/AppControl/Win7Window" unique_id=172696207]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 549.0
+offset_right = 1075.0
+offset_bottom = 585.255
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2hpe")
+
+[node name="StatusLabel" type="Label" parent="UiCanvas/AppControl/Win7Window/StatusBar" unique_id=382045588]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 6.3199997
+offset_right = 700.0
+offset_bottom = 30.32
+theme_override_colors/font_color = Color(0.1, 0.28, 0.5, 1)
+theme_override_fonts/font = ExtResource("6_5whe8")
+theme_override_font_sizes/font_size = 12
+text = "Día X  •  X mascota/s en casa"
+vertical_alignment = 1
+
+[node name="ShutdownButton" type="TextureButton" parent="UiCanvas/AppControl" unique_id=1270378552]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 629.0
+offset_top = 390.5
+offset_right = 680.0
+offset_bottom = 437.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_su0m0")
+texture_disabled = ExtResource("6_yp1bn")

@@ -3,59 +3,116 @@
 [ext_resource type="Script" uid="uid://bksbfm82i167y" path="res://scripts/computer/clue_card.gd" id="1_jtlae"]
 [ext_resource type="Texture2D" uid="uid://becb3d6xuwslm" path="res://assets/images/test_kitchen/check_test.png" id="1_xkqtj"]
 [ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="2_fx6cj"]
+[ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="4_8d67p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d67p"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 12.0
+bg_color = Color(0.9490196, 0.972549, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.18039216, 0.38039216, 0.6, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+corner_detail = 10
+shadow_color = Color(0.502, 0.749, 0.98, 0.2)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihal8"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.651, 0.8, 0.941, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.502, 0.749, 0.98, 0.85)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1tng"]
+bg_color = Color(0.502, 0.749, 0.98, 0.35)
 
 [node name="ClueCard" type="PanelContainer" unique_id=88569072]
-custom_minimum_size = Vector2(490, 120)
+custom_minimum_size = Vector2(490, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -565.0
+offset_top = -226.0
+offset_right = -75.0
+offset_bottom = -134.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8d67p")
 script = ExtResource("1_jtlae")
 default_icon = ExtResource("2_fx6cj")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1537588871]
-custom_minimum_size = Vector2(470, 110)
+[node name="ContentRow" type="HBoxContainer" parent="." unique_id=590105136]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+theme_override_constants/separation = 12
 
-[node name="ClueIcon" type="TextureRect" parent="PanelContainer" unique_id=255550603]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
+[node name="IconWrapper" type="PanelContainer" parent="ContentRow" unique_id=689771502]
+custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ihal8")
+
+[node name="ClueIcon" type="TextureRect" parent="ContentRow/IconWrapper" unique_id=131368207]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_xkqtj")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=365074272]
-custom_minimum_size = Vector2(400, 0)
+[node name="TextContainer" type="VBoxContainer" parent="ContentRow" unique_id=1956499582]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_constants/separation = 5
 
-[node name="TitleLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=495564994]
+[node name="TitleLabel" type="RichTextLabel" parent="ContentRow/TextContainer" unique_id=765694883]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
-text = "Nombre de la pista"
+theme_override_colors/default_color = Color(0.18, 0.38, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("4_8d67p")
+theme_override_fonts/bold_font = ExtResource("4_8d67p")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[b]Nombre de la pista[/b]"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1940974964]
+[node name="Divider" type="Panel" parent="ContentRow/TextContainer" unique_id=636334716]
+custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_y1tng")
 
-[node name="DescriptionLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1954701399]
+[node name="DescriptionLabel" type="RichTextLabel" parent="ContentRow/TextContainer" unique_id=330213909]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 34)
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.28, 0.45, 0.65, 1)
+theme_override_fonts/normal_font = ExtResource("4_8d67p")
+theme_override_font_sizes/normal_font_size = 11
 text = "Descripción de la pista"
 scroll_active = false

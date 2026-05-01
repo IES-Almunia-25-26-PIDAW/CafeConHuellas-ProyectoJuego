@@ -20,8 +20,6 @@ extends Node2D
 @onready var sfx_correct: AudioStreamPlayer = %SFXCorrect
 @onready var sfx_wrong: AudioStreamPlayer = %SFXWrong
 
-@onready var ambient_sound: AudioStreamPlayer = %AmbientSound
-
 # Popup de ingredientes, está en la escena oculto y se muestra cuando hace falta
 @onready var ingredient_popup = %IngredientPopup
 # Recetario, está en la escena oculto y se muestra cuando el jugador clica el libro
@@ -39,6 +37,7 @@ const RecipeCompletedPopup: PackedScene = preload("res://scenes/kitchen/recipe_c
 var _current_popup_category: String = ""
 
 func _ready() -> void:
+	MusicManager.play("cute_bossa_nova") 
 	# OrderReadySignBtn empieza oscuro y desactivado hasta que la orden esté completa
 	order_ready_sign.disabled = true
 	# Lo oscurecemos manualmente con modulate

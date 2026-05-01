@@ -4,6 +4,18 @@
 [ext_resource type="SpriteFrames" uid="uid://u2kasffg4rdv" path="res://assets/sprites/jasmine/jasmine_sprites.tres" id="1_w71p0"]
 [ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="3_psm1r"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psm1r"]
+bg_color = Color(0.949768, 0.97208005, 0.9999998, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08115394, 0.42340195, 0.68481714, 0.8509804)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="ActionPopup" type="Control" unique_id=1285974780]
 layout_mode = 3
 anchors_preset = 8
@@ -32,6 +44,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_psm1r")
 
 [node name="ActionSprite" type="AnimatedSprite2D" parent="PopupPanel" unique_id=985261356]
 unique_name_in_owner = true
@@ -47,6 +60,7 @@ custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_colors/default_color = Color(0.050980393, 0.18039216, 0.38039216, 1)
 theme_override_fonts/normal_font = ExtResource("3_psm1r")
 text = "Mensaje de la acción"
 horizontal_alignment = 1

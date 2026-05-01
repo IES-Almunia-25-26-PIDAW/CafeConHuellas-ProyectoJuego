@@ -7,7 +7,83 @@
 [ext_resource type="Texture2D" uid="uid://tb6uk6snb657" path="res://assets/placeholders/pet_placeholder_dog.png" id="3_upx1o"]
 [ext_resource type="Texture2D" uid="uid://1y1eq2j6k8ne" path="res://assets/placeholders/icon_hunger.png" id="3_v76la"]
 [ext_resource type="Texture2D" uid="uid://ddrkvsof3s34q" path="res://assets/placeholders/icon_play.png" id="4_naifq"]
+[ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="4_p12x6"]
 [ext_resource type="Texture2D" uid="uid://cfp7yw6hboucb" path="res://assets/placeholders/icon_love.png" id="5_p12x6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr2iw"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.992, 0.965, 0.933, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 6
+border_color = Color(0.5019608, 0.7490196, 0.98039216, 0.8509804)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 12
+shadow_color = Color(0.5019608, 0.7490196, 0.98039216, 0.3019608)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p12x6"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.36078432, 0.6, 0.8784314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5019608, 0.7490196, 0.98039216, 0.8509804)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upx1o"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.25)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmoaa"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.8784314, 0.9411765, 0.9882353, 1)
+border_width_left = 2
+border_width_right = 2
+border_color = Color(0.5019608, 0.7490196, 0.98039216, 0.8509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pnpv"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6509804, 0.8, 0.9411765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5019608, 0.7490196, 0.98039216, 0.8509804)
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+corner_detail = 12
 
 [node name="PetCard" type="PanelContainer" unique_id=1449129996]
 custom_minimum_size = Vector2(250, 240)
@@ -16,74 +92,93 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -120.0
-offset_right = 125.0
-offset_bottom = 120.0
+offset_left = -126.0
+offset_top = -155.5
+offset_right = 183.59497
+offset_bottom = 142.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fr2iw")
 script = ExtResource("1_v76la")
 icon_male = ExtResource("2_p12x6")
 icon_female = ExtResource("3_upx1o")
 
-[node name="AllContainer" type="VBoxContainer" parent="." unique_id=1030140538]
+[node name="AllContainer" type="VBoxContainer" parent="." unique_id=731590316]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 15
+theme_override_constants/separation = 0
 
-[node name="PetPhoto" type="TextureRect" parent="AllContainer" unique_id=1430354274]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 120)
+[node name="CardHeader" type="PanelContainer" parent="AllContainer" unique_id=1096914767]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_p12x6")
+
+[node name="HeaderRow" type="HBoxContainer" parent="AllContainer/CardHeader" unique_id=1250127403]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PetName" type="RichTextLabel" parent="AllContainer/CardHeader/HeaderRow" unique_id=560293812]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("4_p12x6")
+text = "Nube"
+vertical_alignment = 1
+
+[node name="GenderBadge" type="PanelContainer" parent="AllContainer/CardHeader/HeaderRow" unique_id=489248153]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_upx1o")
+
+[node name="GenderIcon" type="TextureRect" parent="AllContainer/CardHeader/HeaderRow/GenderBadge" unique_id=1389770405]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+texture = ExtResource("2_kxrvv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="PhotoPanel" type="PanelContainer" parent="AllContainer" unique_id=2130958605]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bmoaa")
+
+[node name="PetPhoto" type="TextureRect" parent="AllContainer/PhotoPanel" unique_id=1375286210]
+unique_name_in_owner = true
+layout_mode = 2
 texture = ExtResource("1_5ygtt")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="DataContainer" type="HBoxContainer" parent="AllContainer" unique_id=385713667]
+[node name="ActionsPanel" type="PanelContainer" parent="AllContainer" unique_id=1833056703]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pnpv")
 
-[node name="PetName" type="RichTextLabel" parent="AllContainer/DataContainer" unique_id=1033156968]
+[node name="ButtonsContainer" type="HBoxContainer" parent="AllContainer/ActionsPanel" unique_id=140336990]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="BtnFood" type="TextureButton" parent="AllContainer/ActionsPanel/ButtonsContainer" unique_id=357549606]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 25)
-layout_mode = 2
-text = "Nombre"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GenderIcon" type="TextureRect" parent="AllContainer/DataContainer" unique_id=896993884]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 25)
-layout_mode = 2
-texture = ExtResource("2_kxrvv")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="ButtonsContainer" type="HBoxContainer" parent="AllContainer" unique_id=406911460]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-
-[node name="BtnFood" type="TextureButton" parent="AllContainer/ButtonsContainer" unique_id=1456626049]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(67.545, 62.55)
 layout_mode = 2
 texture_normal = ExtResource("3_v76la")
 texture_disabled = ExtResource("2_kxrvv")
 stretch_mode = 5
 
-[node name="BtnBath" type="TextureButton" parent="AllContainer/ButtonsContainer" unique_id=1644864411]
+[node name="BtnBath" type="TextureButton" parent="AllContainer/ActionsPanel/ButtonsContainer" unique_id=871970404]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(67.545, 62.55)
 layout_mode = 2
 texture_normal = ExtResource("4_naifq")
 texture_disabled = ExtResource("2_kxrvv")
 stretch_mode = 5
 
-[node name="BtnLove" type="TextureButton" parent="AllContainer/ButtonsContainer" unique_id=693566863]
+[node name="BtnLove" type="TextureButton" parent="AllContainer/ActionsPanel/ButtonsContainer" unique_id=1170933981]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(67.545, 62.55)
 layout_mode = 2
 texture_normal = ExtResource("5_p12x6")
 texture_disabled = ExtResource("2_kxrvv")

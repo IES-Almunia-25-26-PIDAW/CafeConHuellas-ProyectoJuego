@@ -3,6 +3,21 @@
 [ext_resource type="Script" uid="uid://ckrbdg16qn6nm" path="res://scripts/computer/pets_tab.gd" id="1_gc7yc"]
 [ext_resource type="PackedScene" uid="uid://cwn34dipxie33" path="res://scenes/computer/pet_card.tscn" id="2_gv60t"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv60t"]
+bg_color = Color(0.93, 0.96, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liner"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 0.85, 0.96, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="PetsTab" type="Control" unique_id=1240543251]
 custom_minimum_size = Vector2(1072, 476)
 layout_mode = 3
@@ -19,26 +34,48 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gc7yc")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1279255800]
-custom_minimum_size = Vector2(1072, 476)
+[node name="BgPanel" type="Panel" parent="." unique_id=1961448286]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gv60t")
 
-[node name="CardsContainer" type="GridContainer" parent="." unique_id=739480008]
-unique_name_in_owner = true
+[node name="Panel" type="Panel" parent="BgPanel" unique_id=671153601]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1055.285
+offset_bottom = 457.2
+theme_override_styles/panel = SubResource("StyleBoxFlat_liner")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=168072329]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 73.915
+offset_top = 21.735
+offset_right = -66.73895
+offset_bottom = -24.630005
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/scrollbar_h_separation = 20
+theme_override_constants/scrollbar_v_separation = 15
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="CardsContainer" type="GridContainer" parent="ScrollContainer" unique_id=2112731812]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
 columns = 3
 
-[node name="PetCard" parent="CardsContainer" unique_id=1449129996 instance=ExtResource("2_gv60t")]
+[node name="PetCard" parent="ScrollContainer/CardsContainer" unique_id=1449129996 instance=ExtResource("2_gv60t")]
+custom_minimum_size = Vector2(250, 233.6)
 layout_mode = 2

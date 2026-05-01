@@ -14,5 +14,36 @@
 	"day_found": 2,
 	"related_character": "",
 	"icon": "res://assets/images/test_kitchen/check_test.png"
-  }
+  }, 
+"	pista_animales": {
+		"id": "pista_animales",
+		"title": "Animales desaparecidos",
+		"description": "Varios vecinos han comentado que sus mascotas han desaparecido en los últimos meses sin dejar rastro.",
+		"icon": "res://assets/images/test_kitchen/check_test.png"
+	},
+	"pista_pastor": {
+		"id": "pista_pastor",
+		"title": "El pastor del pueblo",
+		"description": "El pastor parece saber más de lo que dice. Se pone nervioso cuando se menciona a los animales.",
+		"icon": "res://assets/images/test_kitchen/check_test.png"
+	},
+	"pista_ruidos": {
+		"id": "pista_ruidos",
+		"title": "Ruidos nocturnos",
+		"description": "Algunos vecinos han escuchado ruidos extraños cerca de la iglesia por las noches.",
+		"icon": "res://assets/images/test_kitchen/check_test.png"
+	},
+	"pista_jaulas": {
+		"id": "pista_jaulas",
+		"title": "Jaulas en el sótano",
+		"description": "Una fuente anónima menciona haber visto jaulas en el sótano de la iglesia.",
+		"icon": "res://assets/images/test_kitchen/check_test.png"
+	},
+	"pista_secta": {
+		"id": "pista_secta",
+		"title": "Reuniones secretas",
+		"description": "Hay reuniones que se celebran de madrugada a las que solo asisten ciertos vecinos.",
+		"icon": "res://assets/images/test_kitchen/check_test.png"
+	}
+
 }

@@ -2,6 +2,38 @@
 
 [ext_resource type="Script" uid="uid://dd1abo1d204tf" path="res://scripts/computer/clues_tab.gd" id="1_scbxp"]
 [ext_resource type="PackedScene" uid="uid://cgf0nequ35lex" path="res://scenes/computer/character_detail.tscn" id="2_7nw83"]
+[ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="2_uvx84"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aknl6"]
+bg_color = Color(0.93, 0.96, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1c51"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 0.85, 0.96, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro3w3"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.361, 0.6, 0.878, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.502, 0.749, 0.98, 0.85)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="CluesTab" type="Control" unique_id=37308765]
 custom_minimum_size = Vector2(1072, 476)
@@ -19,72 +51,110 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_scbxp")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=41816771]
+[node name="BgPanel" type="Panel" parent="." unique_id=1454295833]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aknl6")
 
-[node name="ColumnsContainer" type="HBoxContainer" parent="." unique_id=538349285]
-custom_minimum_size = Vector2(1050, 450)
+[node name="InnerPanel" type="Panel" parent="BgPanel" unique_id=2108705378]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 10.0
-offset_right = 1065.0
-offset_bottom = 460.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 15
-alignment = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1055.0
+offset_bottom = 457.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1c51")
 
-[node name="CharactersContainer" type="VBoxContainer" parent="ColumnsContainer" unique_id=1615980616]
-custom_minimum_size = Vector2(510, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-alignment = 1
+[node name="ColumnsContainer" type="HBoxContainer" parent="." unique_id=976130420]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 22.0
+offset_right = 1046.0
+offset_bottom = 450.0
+theme_override_constants/separation = 18
 
-[node name="CharactersTitle" type="RichTextLabel" parent="ColumnsContainer/CharactersContainer" unique_id=278971867]
-custom_minimum_size = Vector2(500, 40)
+[node name="CharactersColumn" type="VBoxContainer" parent="ColumnsContainer" unique_id=1201733541]
+custom_minimum_size = Vector2(460, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Personas conocidas"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="CharactersHeader" type="PanelContainer" parent="ColumnsContainer/CharactersColumn" unique_id=2075874689]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ro3w3")
+
+[node name="CharactersTitle" type="RichTextLabel" parent="ColumnsContainer/CharactersColumn/CharactersHeader" unique_id=628232097]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_uvx84")
+theme_override_fonts/bold_font = ExtResource("2_uvx84")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[b]  Personas conocidas[/b]"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CharactersGrid" type="GridContainer" parent="ColumnsContainer/CharactersContainer" unique_id=1131038326]
-unique_name_in_owner = true
+[node name="CharactersScrollContainer" type="ScrollContainer" parent="ColumnsContainer/CharactersColumn" unique_id=133737638]
 layout_mode = 2
 size_flags_vertical = 3
-columns = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="CluesContainer" type="VBoxContainer" parent="ColumnsContainer" unique_id=936669535]
-custom_minimum_size = Vector2(510, 0)
+[node name="CharactersGrid" type="GridContainer" parent="ColumnsContainer/CharactersColumn/CharactersScrollContainer" unique_id=1229175392]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
-alignment = 1
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
 
-[node name="CluesTitle" type="RichTextLabel" parent="ColumnsContainer/CluesContainer" unique_id=1365605513]
-custom_minimum_size = Vector2(500, 40)
+[node name="CluesColumn" type="VBoxContainer" parent="ColumnsContainer" unique_id=462320387]
+custom_minimum_size = Vector2(460, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Pistas obtenidas"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="CluesHeader" type="PanelContainer" parent="ColumnsContainer/CluesColumn" unique_id=2002895667]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ro3w3")
+
+[node name="CluesTitle" type="RichTextLabel" parent="ColumnsContainer/CluesColumn/CluesHeader" unique_id=1934950502]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_uvx84")
+theme_override_fonts/bold_font = ExtResource("2_uvx84")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[b]  Pistas obtenidas[/b]"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CluesGrid" type="VBoxContainer" parent="ColumnsContainer/CluesContainer" unique_id=1126779463]
-unique_name_in_owner = true
+[node name="CluesScrollContainer" type="ScrollContainer" parent="ColumnsContainer/CluesColumn" unique_id=1376809405]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="CluesGrid" type="VBoxContainer" parent="ColumnsContainer/CluesColumn/CluesScrollContainer" unique_id=1528416740]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="CharacterDetail" parent="." unique_id=7960279 instance=ExtResource("2_7nw83")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-offset_left = -250.0
-offset_top = -210.0
-offset_right = 250.0
-offset_bottom = 210.0
+offset_left = -260.0
+offset_top = -223.13
+offset_right = 260.95
+offset_bottom = 224.04498

@@ -16,6 +16,9 @@ extends PanelContainer
 
 func _ready() -> void:
 	close_btn.pressed.connect(hide)
+	
+	# Sonido al cerrar el detalle de un personaje
+	close_btn.pressed.connect(UiSoundManager.play_pc_click)
 
 # Información con la que se va a mostrar el panel
 func show_character(char_id: String, data: Dictionary) -> void:

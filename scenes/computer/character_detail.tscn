@@ -2,6 +2,85 @@
 
 [ext_resource type="Script" uid="uid://db5lknirvk0g6" path="res://scripts/computer/character_detail.gd" id="1_5mmad"]
 [ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="1_me2rm"]
+[ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="2_mnnke"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fr47"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.96, 0.98, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 6
+border_color = Color(0.502, 0.749, 0.98, 0.85)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 12
+shadow_color = Color(0.2, 0.4, 0.7, 0.3)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8nuj2"]
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+bg_color = Color(0.361, 0.6, 0.878, 1)
+border_width_bottom = 2
+border_color = Color(0.502, 0.749, 0.98, 0.85)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa3ul"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(0.82, 0.22, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.15, 0.1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mfbw"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.651, 0.8, 0.941, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.502, 0.749, 0.98, 0.85)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fc0t"]
+content_margin_left = 10.0
+content_margin_top = 6.0
+content_margin_right = 10.0
+content_margin_bottom = 6.0
+bg_color = Color(0.878, 0.941, 0.988, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.502, 0.749, 0.98, 0.5)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="CharacterDetail" type="PanelContainer" unique_id=7960279]
 custom_minimum_size = Vector2(500, 420)
@@ -16,88 +95,170 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4fr47")
 script = ExtResource("1_5mmad")
 
-[node name="CloseButton" type="Button" parent="." unique_id=388893065]
+[node name="MainVBox" type="VBoxContainer" parent="." unique_id=1124246282]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HeaderBar" type="PanelContainer" parent="MainVBox" unique_id=153896626]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8nuj2")
+
+[node name="HeaderRow" type="HBoxContainer" parent="MainVBox/HeaderBar" unique_id=121237851]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderTitle" type="RichTextLabel" parent="MainVBox/HeaderBar/HeaderRow" unique_id=1368061607]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_mnnke")
+theme_override_fonts/bold_font = ExtResource("2_mnnke")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[b]Ficha del personaje[/b]"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="MainVBox/HeaderBar/HeaderRow" unique_id=1187282548]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=360902727]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="LeftContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=203447698]
-custom_minimum_size = Vector2(220, 380)
-layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_constants/separation = 12
+theme_override_fonts/font = ExtResource("2_mnnke")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wa3ul")
+text = "✕"
 
-[node name="CharIcon" type="TextureRect" parent="HBoxContainer/LeftContainer" unique_id=908596212]
+[node name="BodyContainer" type="HBoxContainer" parent="MainVBox" unique_id=398259855]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="LeftColumn" type="VBoxContainer" parent="MainVBox/BodyContainer" unique_id=2098167334]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="PhotoWrapper" type="PanelContainer" parent="MainVBox/BodyContainer/LeftColumn" unique_id=517297591]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_3mfbw")
+
+[node name="CharIcon" type="TextureRect" parent="MainVBox/BodyContainer/LeftColumn/PhotoWrapper" unique_id=1302880013]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 texture = ExtResource("1_me2rm")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="NameLabel" type="RichTextLabel" parent="HBoxContainer/LeftContainer" unique_id=407525325]
+[node name="NameLabel" type="RichTextLabel" parent="MainVBox/BodyContainer/LeftColumn" unique_id=669460007]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 50)
+custom_minimum_size = Vector2(150, 36)
 layout_mode = 2
-text = "Nombre"
+theme_override_colors/default_color = Color(0.18, 0.38, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("2_mnnke")
+theme_override_fonts/bold_font = ExtResource("2_mnnke")
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "[b]Nombre[/b]"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DescLabel" type="RichTextLabel" parent="HBoxContainer/LeftContainer" unique_id=1734981897]
+[node name="DescLabel" type="RichTextLabel" parent="MainVBox/BodyContainer/LeftColumn" unique_id=326633262]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 150)
+custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.28, 0.45, 0.65, 1)
+theme_override_fonts/normal_font = ExtResource("2_mnnke")
+theme_override_font_sizes/normal_font_size = 10
 text = "Descripción del personaje"
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="RightContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=730050519]
-custom_minimum_size = Vector2(220, 380)
+[node name="RightColumn" type="VBoxContainer" parent="MainVBox/BodyContainer" unique_id=483910894]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_constants/separation = 6
 
-[node name="AgeLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=480775859]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 40)
+[node name="AgeRow" type="PanelContainer" parent="MainVBox/BodyContainer/RightColumn" unique_id=1014980705]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6fc0t")
+
+[node name="AgeLabel" type="RichTextLabel" parent="MainVBox/BodyContainer/RightColumn/AgeRow" unique_id=1103345640]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 28)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.18, 0.38, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("2_mnnke")
+theme_override_font_sizes/normal_font_size = 11
 text = "Edad: x"
+scroll_active = false
+vertical_alignment = 1
 
-[node name="OccupationLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=570113969]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 40)
+[node name="OccupationRow" type="PanelContainer" parent="MainVBox/BodyContainer/RightColumn" unique_id=1240652984]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6fc0t")
+
+[node name="OccupationLabel" type="RichTextLabel" parent="MainVBox/BodyContainer/RightColumn/OccupationRow" unique_id=1285696384]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 28)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.18, 0.38, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("2_mnnke")
+theme_override_font_sizes/normal_font_size = 11
 text = "Ocupación: x"
+scroll_active = false
+vertical_alignment = 1
 
-[node name="PersonalityLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=627084354]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 80)
+[node name="PersonalityRow" type="PanelContainer" parent="MainVBox/BodyContainer/RightColumn" unique_id=1329273788]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6fc0t")
+
+[node name="PersonalityLabel" type="RichTextLabel" parent="MainVBox/BodyContainer/RightColumn/PersonalityRow" unique_id=1405888964]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.18, 0.38, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("2_mnnke")
+theme_override_font_sizes/normal_font_size = 11
 text = "Personalidad: x"
+scroll_active = false
 
-[node name="LikesLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=1860000707]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 80)
+[node name="LikesRow" type="PanelContainer" parent="MainVBox/BodyContainer/RightColumn" unique_id=1223779436]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6fc0t")
+
+[node name="LikesLabel" type="RichTextLabel" parent="MainVBox/BodyContainer/RightColumn/LikesRow" unique_id=1532224402]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.18, 0.38, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("2_mnnke")
+theme_override_font_sizes/normal_font_size = 11
 text = "Le gusta: x"
+scroll_active = false
 
-[node name="DislikesLabel" type="RichTextLabel" parent="HBoxContainer/RightContainer" unique_id=694753220]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 80)
+[node name="DislikesRow" type="PanelContainer" parent="MainVBox/BodyContainer/RightColumn" unique_id=1311914322]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6fc0t")
+
+[node name="DislikesLabel" type="RichTextLabel" parent="MainVBox/BodyContainer/RightColumn/DislikesRow" unique_id=594780295]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.18, 0.38, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("2_mnnke")
+theme_override_font_sizes/normal_font_size = 11
 text = "No le gusta: x"
+scroll_active = false

@@ -30,7 +30,7 @@ var _action_popup_instance: Control = null
 func _ready() -> void:
 	# TODO: BORRAR, para datos de prueba
 	_setup_test_data()
-	
+	MusicManager.play("npc_theme_bajo")
 	SceneManager.transition_in()
 	
 	# Conexión de los botones con sus métodos
@@ -80,7 +80,7 @@ func _ready() -> void:
 # TODO: BORRAR, de prueba
 func _setup_test_data() -> void:
 	# Dos mascotas en casa
-	GameState.animals_athome = ["nube", "mochi"]
+	GameState.animals_athome = ["mochi", "luna", "canela", "nube", "mochi", "luna"]
 	
 	# Dos correos recibidos hoy (day = 1), sin leer
 	GameState.day = 1
@@ -93,7 +93,7 @@ func _setup_test_data() -> void:
 	GameState.characters_met = ["alcalde", "jasmine"]
 	
 	# Dos pistas encontradas — los IDs deben coincidir con los del JSON
-	GameState.clues_found = ["clue_01", "clue_02"]
+	GameState.clues_found = ["clue_01", "clue_02", "pista_animales", "pista_pastor","pista_ruidos", "pista_jaulas", "pista_secta"]
 	
 
 func _on_tab_pressed(tab: String) -> void:
