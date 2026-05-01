@@ -83,7 +83,7 @@ func _ready() -> void:
 
 # Rellena el ticket con todos los items del pedido
 func _setup_ticket() -> void:
-	var recipes := KitchenManager.get_current_recipes()
+	var recipes : Dictionary = KitchenManager.get_current_recipes()
 	if recipes.is_empty():
 		return
 	
@@ -173,7 +173,7 @@ func _on_order_completed() -> void:
 
 # Se activa cuando se realiza una receta y muestra el popup
 func _show_recipe_completed_popup(recipe_id: String) -> void:
-	var recipe := DataLoader.get_recipe(recipe_id)
+	var recipe : Dictionary = DataLoader.get_recipe(recipe_id)
 	if recipe.is_empty():
 		return
 	
@@ -190,7 +190,7 @@ func _show_recipe_completed_popup(recipe_id: String) -> void:
 # Abre el popup de ingredientes cuando el jugador clica la cafetera
 # Solo funciona si hay alguna receta de café en el pedido
 func _on_coffee_machine_pressed() -> void:
-	var recipes := KitchenManager.get_current_recipes()
+	var recipes : Dictionary = KitchenManager.get_current_recipes()
 	var has_coffee := false
 	for recipe_id in recipes:
 		if recipes[recipe_id].get("category", "") == "coffee" and not KitchenManager.is_recipe_completed(recipe_id):
@@ -205,7 +205,7 @@ func _on_coffee_machine_pressed() -> void:
 # Abre el popup de ingredientes cuando el jugador clica la batidora
 # Solo funciona si hay alguna receta de smoothie en el pedido
 func _on_blender_pressed() -> void:
-	var recipes := KitchenManager.get_current_recipes()
+	var recipes : Dictionary = KitchenManager.get_current_recipes()
 	var has_smoothie := false
 	for recipe_id in recipes:
 		if recipes[recipe_id].get("category", "") == "smoothie" and not KitchenManager.is_recipe_completed(recipe_id):
@@ -239,7 +239,7 @@ func _open_ingredient_popup(title: String, category: String) -> void:
 		return
 	
 	# Recopilamos todos los ingredientes posibles de la categoría desde el DataLoader
-	var all_recipes := DataLoader.get_all_recipes()
+	var all_recipes : Dictionary = DataLoader.get_all_recipes()
 	var category_ingredients: Array = []
 	for recipe_id in all_recipes:
 		if all_recipes[recipe_id].get("category", "") == category:
@@ -248,7 +248,7 @@ func _open_ingredient_popup(title: String, category: String) -> void:
 					category_ingredients.append(ingredient_id)
 	
 	# Obtenemos los ingredientes ya añadidos en esta categoría para marcarlos en el popup
-	var already_added := KitchenManager.get_added_ingredients_for_category(category)
+	var already_added : Array = KitchenManager.get_added_ingredients_for_category(category)
 	
 	# Configuramos el popup con los ingredientes de la categoría
 	ingredient_popup.setup(title, category_ingredients, already_added)

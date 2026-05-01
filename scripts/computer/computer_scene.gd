@@ -18,6 +18,7 @@ signal computer_shutdown
 @onready var cafe_lbl: Label = %CafeLbl
 @onready var status_lbl: Label = %StatusLabel
 
+@onready var mail_viewer: Control = %MailViewer
 
 # La escena a la que volver al apagar el ordenador
 @export var next_scene: String = "res://scenes/cafe_client_zone.tscn"
@@ -30,6 +31,8 @@ var _action_popup_instance: Control = null
 func _ready() -> void:
 	# TODO: BORRAR, para datos de prueba
 	_setup_test_data()
+	
+	
 	MusicManager.play("npc_theme_bajo")
 	SceneManager.transition_in()
 	
@@ -38,7 +41,8 @@ func _ready() -> void:
 	mail_btn.pressed.connect(_on_tab_pressed.bind("mail"))
 	clues_btn.pressed.connect(_on_tab_pressed.bind("clues"))
 	shutdown_btn.pressed.connect(_on_shutdown_pressed)
-	
+	# El botón de apagar empieza desactivado hasta que todas las mascotas estén atendias
+	shutdown_btn.disabled = true
 	
 	# Sonido de clic para los botones de navegación de tabs y apagado
 	pets_btn.pressed.connect(UiSoundManager.play_pc_click)
@@ -46,32 +50,37 @@ func _ready() -> void:
 	clues_btn.pressed.connect(UiSoundManager.play_pc_click)
 	shutdown_btn.pressed.connect(UiSoundManager.play_pc_click)
 	
-	# Labels iniciales
-	_update_status_labels()
-	
-	# El botón de apagar empieza desactivado hasta que todas las mascotas estén atendias
-	shutdown_btn.disabled = true
-	
+	# -- Mascotas
 	# Conexión de la señal del tab de mascotas para saber cuando están atendidas
 	pets_tab.all_pets_happy.connect(_on_all_pets_happy)
-	# Cuando se realice una adopción se recibe la señal y se vuelve a instanciar el array de mascotas
-	mail_tab.adoption_processed.connect(func(animal_id: String):
-		pets_tab.remove_pet_card(animal_id)
-		_update_status_labels()
-	)
-	
-	# Instanciar el popup
-	_action_popup_instance = ActionPopup.instantiate()
-	$UiCanvas.add_child(_action_popup_instance)
-	
 	# Conectar la señal del popup
 	pets_tab.show_action_popup.connect(func(need: String):
 		_action_popup_instance.play_action(need)
 	)
 	
-	# Instanciar datos
+	# -- Correo
+	# Gestionar adopciones
+	mail_tab.open_mail_requested.connect(_on_open_mail_requested)
+	mail_tab.adoption_processed.connect(func(animal_id: String):
+		pets_tab.remove_pet_card(animal_id)
+		_update_status_labels()
+	)
+	# MailViewer
+	mail_viewer.hide()
+	mail_viewer.decision_made.connect(_on_mail_decision_made)
+	mail_viewer.viewer_closed.connect(func():
+		mail_viewer.hide()
+		mail_tab.refresh()
+	)
+	
+	# Instanciar el ActionPopup
+	_action_popup_instance = ActionPopup.instantiate()
+	$UiCanvas.add_child(_action_popup_instance)
+	
+	# Instanciar datos y labels
 	pets_tab.populate()
 	clues_tab.populate()
+	_update_status_labels()
 	
 	# Tab por defecto
 	_on_tab_pressed("pets")
@@ -94,7 +103,7 @@ func _setup_test_data() -> void:
 	
 	# Dos pistas encontradas — los IDs deben coincidir con los del JSON
 	GameState.clues_found = ["clue_01", "clue_02", "pista_animales", "pista_pastor","pista_ruidos", "pista_jaulas", "pista_secta"]
-	
+
 
 func _on_tab_pressed(tab: String) -> void:
 	pets_tab.visible = tab == "pets"
@@ -112,6 +121,22 @@ func _on_tab_pressed(tab: String) -> void:
 # Si se atienden a todas las mascotas se activa el botón de apagar
 func _on_all_pets_happy() -> void:
 	shutdown_btn.disabled = false
+
+# Abre el email seleccionado
+func _on_open_mail_requested(email_id: String, email: Dictionary) -> void:
+	mail_viewer.show_email(email_id, email)
+	mail_viewer.show()
+
+# Se realiza una decisión de adopción
+func _on_mail_decision_made(email_id: String, accepted: bool) -> void:
+	mail_viewer.hide()
+	mail_tab.refresh()
+	if accepted:
+		var email: Dictionary = DataLoader.get_all_emails().get(email_id, {})
+		var animal_id: String = email.get("animal_id", "")
+		if animal_id != "":
+			pets_tab.remove_pet_card(animal_id)
+			_update_status_labels()
 
 # Actualización de los labels según los datos
 func _update_status_labels() -> void:

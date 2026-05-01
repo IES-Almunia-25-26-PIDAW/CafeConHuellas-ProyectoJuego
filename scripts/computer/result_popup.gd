@@ -2,12 +2,15 @@ extends Control
 
 signal result_shown
 
+@onready var backdrop: ColorRect = %Backdrop
+
 @onready var result_label: RichTextLabel = %ResultLabel
 @onready var btn_continue: Button = %BtnContinue
 
 # Para la animación
 const FADE_TIME := 0.3
 var _tween: Tween
+
 
 func _ready() -> void:
 	visible = false
@@ -17,6 +20,8 @@ func _ready() -> void:
 	btn_continue.pressed.connect(UiSoundManager.play_pc_click)
 
 func show_result(is_good: bool) -> void:
+	backdrop.visible = true
+	
 	if is_good:
 		result_label.text = "¡Buena decisión! La mascota ha encontrado un buen hogar."
 	else: 
@@ -30,6 +35,7 @@ func show_result(is_good: bool) -> void:
 	_tween.tween_property(self, "modulate:a", 1.0, FADE_TIME)
 
 func _on_continue() -> void:
+	backdrop.visible = false
 	result_shown.emit()
 	
 	# Animación fade out

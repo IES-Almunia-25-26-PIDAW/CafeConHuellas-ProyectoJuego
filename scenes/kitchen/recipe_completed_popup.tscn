@@ -9,17 +9,17 @@ content_margin_left = 18.0
 content_margin_top = 18.0
 content_margin_right = 18.0
 content_margin_bottom = 18.0
-bg_color = Color(0.9882353, 0.93333334, 0.9490196, 1)
+bg_color = Color(0.96693254, 0.9031633, 0.9088556, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.38039216, 0.21568628, 0.24705882, 1)
+border_color = Color(0.52630603, 0.3600683, 0.38777462, 1)
 corner_radius_top_left = 14
 corner_radius_top_right = 14
 corner_radius_bottom_right = 14
 corner_radius_bottom_left = 14
-shadow_color = Color(0.6251925, 0.2781701, 0.4050002, 0.4509804)
+shadow_color = Color(0.6901961, 0.40784314, 0.41960785, 0.20392157)
 shadow_size = 6
 
 [node name="RecipeCompletedPopup" type="Control" unique_id=1191124573]

@@ -6,6 +6,7 @@ extends Control
 signal decision_made(email_id: String, accepted: bool)
 signal viewer_closed
 
+@onready var backdrop: ColorRect = %Backdrop
 
 @onready var btn_close: Button = %BtnClose
 
@@ -20,6 +21,7 @@ var _current_email_id: String = ""
 var _current_email: Dictionary = {}
 
 
+
 func _ready() -> void:
 	btn_accept.pressed.connect(_on_accept)
 	btn_decline.pressed.connect(_on_decline)
@@ -29,6 +31,8 @@ func _ready() -> void:
 	btn_accept.pressed.connect(UiSoundManager.play_pc_click)
 	btn_decline.pressed.connect(UiSoundManager.play_pc_click)
 	btn_close.pressed.connect(UiSoundManager.play_pc_click)
+	
+	result_popup.result_shown.connect(_on_result_shown)
 
 func show_email(email_id: String, email: Dictionary) -> void:
 	_current_email_id = email_id
@@ -44,15 +48,12 @@ func show_email(email_id: String, email: Dictionary) -> void:
 	if current_status == "not_read":
 		GameState.received_emails_status[email_id] = "read"
 	
-	btn_accept.disabled = false
-	btn_decline.disabled = false
-	
+	# Mostrar backdrop para bloquear todo lo exterior a mailviewer
+	backdrop.visible = true
+	result_popup.hide()
+
 # Cuando se acepta la petición de adopción
 func _on_accept() -> void:
-	btn_accept.disabled = true
-	btn_decline.disabled = true
-	btn_close.disabled = true
-	
 	var animal_id: String = _current_email.get("animal_id", "")
 	var is_good: bool = _current_email.get("is_good_decision", false)
 	
@@ -65,18 +66,21 @@ func _on_accept() -> void:
 		GameState.animals_adopted_bad.append(animal_id)
 		GameState.received_emails_status[_current_email_id] = "accepted_bad"
 	
+	# Ocultar el backdrop del viewer antes de mostrar el resultpopup
+	backdrop.visible = false
 	result_popup.show_result(is_good)
-	await result_popup.result_shown
+
+func _on_result_shown() -> void:
 	decision_made.emit(_current_email_id, true)
 
 # Cuando se rechaza
 func _on_decline() -> void:
-	btn_accept.disabled  = true
-	btn_decline.disabled = true
+	backdrop.visible = false
 	GameState.received_emails_status[_current_email_id] = "declined"
 	decision_made.emit(_current_email_id, false)
 
 # Cierra la vista, dejando el estado con el estado de "read"
 func _on_close() -> void:
+	backdrop.visible = false
 	viewer_closed.emit()
 	hide()

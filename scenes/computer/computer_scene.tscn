@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://m5bo81y1f8ia" path="res://assets/images/ui/shutdownbutton_off.png" id="6_yp1bn"]
 [ext_resource type="PackedScene" uid="uid://c6ulqr4t8046c" path="res://scenes/computer/mail_tab.tscn" id="7_jhspf"]
 [ext_resource type="PackedScene" uid="uid://b1mt1bewl6sb1" path="res://scenes/computer/clues_tab.tscn" id="8_5whe8"]
+[ext_resource type="PackedScene" uid="uid://2e8s6d52dd28" path="res://scenes/computer/mail_viewer.tscn" id="12_7l5ow"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhspf"]
 bg_color = Color(0.55, 0.75, 0.95, 0.18)
@@ -362,3 +363,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("5_su0m0")
 texture_disabled = ExtResource("6_yp1bn")
+
+[node name="MailViewer" parent="UiCanvas" unique_id=1233305360 instance=ExtResource("12_7l5ow")]
+unique_name_in_owner = true
