@@ -2,6 +2,77 @@
 
 [ext_resource type="Script" uid="uid://dkcownc8oj8gk" path="res://scripts/ui/album_screen.gd" id="1_qs7uk"]
 [ext_resource type="PackedScene" uid="uid://feo50gb6lvne" path="res://scenes/album/cg_viewer.tscn" id="2_b33m4"]
+[ext_resource type="Theme" uid="uid://deq5aplf33ikn" path="res://assets/themes/title_button_theme.tres" id="2_nouwk"]
+[ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="3_un7kn"]
+[ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="4_pg3op"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdyl2"]
+content_margin_left = 40.0
+content_margin_top = 30.0
+content_margin_right = 40.0
+content_margin_bottom = 30.0
+bg_color = Color(0.9607843, 0.92941177, 0.8784314, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 12
+shadow_color = Color(0.47843137, 0.34509805, 0.23921569, 0.3137255)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm0f3"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qkrs"]
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wnkp"]
+bg_color = Color(0.9160109, 0.8629231, 0.8233717, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.63186073, 0.47879452, 0.40262502, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kvxx"]
+content_margin_left = 20.0
+content_margin_top = 0.0
+content_margin_right = 20.0
+content_margin_bottom = 0.0
+bg_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+expand_margin_left = 39.0
+expand_margin_top = 3.0
+expand_margin_right = 37.0
 
 [node name="AlbumScreen" type="Control" unique_id=1037144580]
 layout_mode = 3
@@ -12,61 +83,101 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qs7uk")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=88822686]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-alignment = 1
+[node name="ColorRect" type="ColorRect" parent="." unique_id=67441151]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.42745098, 0.30980393, 0.2509804, 0.34509805)
 
-[node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=1817583118]
-custom_minimum_size = Vector2(1800, 80)
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=654410761]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -820.0
+offset_top = -460.0
+offset_right = 820.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rdyl2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=2092469323]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
 
-[node name="BackButton" type="Button" parent="VBoxContainer/Header" unique_id=1035269081]
+[node name="HeaderHBox" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2108677176]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer/HeaderHBox" unique_id=2032876954]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 40)
+custom_minimum_size = Vector2(160, 55)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 4
-text = "Atrás"
+theme = ExtResource("2_nouwk")
+theme_override_fonts/font = ExtResource("3_un7kn")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_mm0f3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3qkrs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7wnkp")
+text = "← Atrás"
 
-[node name="HeaderLabel" type="RichTextLabel" parent="VBoxContainer/Header" unique_id=2042705963]
+[node name="HeaderLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HeaderHBox" unique_id=110102461]
 clip_contents = false
-custom_minimum_size = Vector2(400, 50)
+custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_fonts/normal_font = ExtResource("4_pg3op")
+theme_override_font_sizes/normal_font_size = 50
 text = "Álbum"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CGsCount" type="RichTextLabel" parent="VBoxContainer/Header" unique_id=435455665]
+[node name="CGsCount" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HeaderHBox" unique_id=279890029]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(160, 50)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.68266255, 0.5260484, 0.4482867, 1)
+theme_override_fonts/normal_font = ExtResource("4_pg3op")
+theme_override_font_sizes/normal_font_size = 26
 text = "0 / 0"
 scroll_active = false
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1411903578]
-custom_minimum_size = Vector2(1800, 800)
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1282096382]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxFlat_0kvxx")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer" unique_id=2112719524]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 6
 mouse_filter = 2
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=1667264067]
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/ScrollContainer" unique_id=1709085647]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 800)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
-theme_override_constants/h_separation = 100
-theme_override_constants/v_separation = 60
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
 columns = 4
 
 [node name="CgViewer" parent="." unique_id=1328507022 instance=ExtResource("2_b33m4")]

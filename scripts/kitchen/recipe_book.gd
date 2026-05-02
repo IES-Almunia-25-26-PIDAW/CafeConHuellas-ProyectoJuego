@@ -103,23 +103,25 @@ func _show_current_recipe() -> void:
 	else:
 		recipe_image.texture = null
 
-	# Nombre
-	recipe_name_label.text = recipe.get("display_name", "")
+	# Nombre en negrita con BBCode
+	recipe_name_label.text = "[b]" + recipe.get("display_name", "") + "[/b]"
+	
 	# Descripción
 	recipe_desc_label.text = recipe.get("description", "")
 
-	# Ingredientes
+	# Ingredientes, el título ya está en el nodo RecipeIngredientsTitleLabel del .tscn
 	var ingredient_names: Array = []
 	for ingredient_id in recipe.get("ingredients", []):
 		var ingredient := DataLoader.get_ingredient(ingredient_id)
 		if not ingredient.is_empty():
-			ingredient_names.append(ingredient["display_name"])
+			# Añadimos bullet point delante de cada ingrediente
+			ingredient_names.append("• " + ingredient["display_name"])
 		else:
-			ingredient_names.append(ingredient_id)
-	recipe_ingredients_label.text = "Ingredientes:\n" + "\n".join(ingredient_names)
+			ingredient_names.append("• " + ingredient_id)
+	recipe_ingredients_label.text = "\n".join(ingredient_names)
 
-	# Preparación
-	recipe_how_to_label.text = "Preparación:\n" + recipe.get("how_to_make", "")
+	# Preparación, el título ya está en el nodo RecipeHowToTitleLabel del .tscn
+	recipe_how_to_label.text = recipe.get("how_to_make", "")
 
 
 	# Actualizamos los botones de navegación

@@ -1,5 +1,5 @@
 [
-	{"location": "cafedefault", "music": "02HoliznaCC0QuietVillage3"},
+	{"location": "cafedefault", "music": "Everyday_Life"},
 	
 	{"speaker": "Jasmine", "text": "Hola, soy Jasmine. Esto es un ejemplo de texto.", "expression": "normal"},
 	{"speaker": "Hunter", "text": "Hola, yo soy Hunter. Esto también es un ejemplo de texto.", "show_character": "Jasmine", "expression": "sad"},

@@ -128,5 +128,125 @@
 	"display_name": "Sirope de avellana",
 	"type": "flavor",
 	"icon": "res://assets/images/ingredients/hazelnut_syrup.png"
+  },
+"apple": {
+	"id": "apple",
+	"display_name": "Manzana",
+	"type": "fruit",
+	"icon": ""
+  },
+  "shortcrust": {
+	"id": "shortcrust",
+	"display_name": "Masa quebrada",
+	"type": "base",
+	"icon": ""
+  },
+  "butter": {
+	"id": "butter",
+	"display_name": "Mantequilla",
+	"type": "base",
+	"icon": ""
+  },
+  "lemon": {
+	"id": "lemon",
+	"display_name": "Limón",
+	"type": "fruit",
+	"icon": ""
+  },
+  "eggs": {
+	"id": "eggs",
+	"display_name": "Huevos",
+	"type": "base",
+	"icon": ""
+  },
+  "biscuits": {
+	"id": "biscuits",
+	"display_name": "Galletas trituradas",
+	"type": "base",
+	"icon": ""
+  },
+  "flour": {
+	"id": "flour",
+	"display_name": "Harina",
+	"type": "base",
+	"icon": ""
+  },
+  "vanilla": {
+	"id": "vanilla",
+	"display_name": "Vainilla",
+	"type": "flavor",
+	"icon": ""
+  },
+  "powdered_sugar": {
+	"id": "powdered_sugar",
+	"display_name": "Azúcar glas",
+	"type": "sweetener",
+	"icon": ""
+  },
+  "brown_sugar": {
+	"id": "brown_sugar",
+	"display_name": "Azúcar moreno",
+	"type": "sweetener",
+	"icon": ""
+  },
+  "chocolate_chips": {
+	"id": "chocolate_chips",
+	"display_name": "Pepitas de chocolate",
+	"type": "flavor",
+	"icon": ""
+  },
+  "oats": {
+	"id": "oats",
+	"display_name": "Avena",
+	"type": "base",
+	"icon": ""
+  },
+  "cream_cheese": {
+	"id": "cream_cheese",
+	"display_name": "Queso crema",
+	"type": "base",
+	"icon": ""
+  },
+  "heavy_cream": {
+	"id": "heavy_cream",
+	"display_name": "Nata para montar",
+	"type": "base",
+	"icon": ""
+  },
+  "cornstarch": {
+	"id": "cornstarch",
+	"display_name": "Maicena",
+	"type": "base",
+	"icon": ""
+  },
+  "strawberry_jam": {
+	"id": "strawberry_jam",
+	"display_name": "Mermelada de fresa",
+	"type": "flavor",
+	"icon": ""
+  },
+  "grated_carrot": {
+	"id": "grated_carrot",
+	"display_name": "Zanahoria rallada",
+	"type": "base",
+	"icon": ""
+  },
+  "sunflower_oil": {
+	"id": "sunflower_oil",
+	"display_name": "Aceite de girasol",
+	"type": "base",
+	"icon": ""
+  },
+  "nutmeg": {
+	"id": "nutmeg",
+	"display_name": "Nuez moscada",
+	"type": "flavor",
+	"icon": ""
+  },
+  "orange_juice": {
+	"id": "orange_juice",
+	"display_name": "Zumo de naranja",
+	"type": "base",
+	"icon": ""
   }
 }
