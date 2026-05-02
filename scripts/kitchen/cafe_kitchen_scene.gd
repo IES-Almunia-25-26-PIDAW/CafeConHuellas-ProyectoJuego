@@ -37,6 +37,7 @@ const RecipeCompletedPopup: PackedScene = preload("res://scenes/kitchen/recipe_c
 var _current_popup_category: String = ""
 
 func _ready() -> void:
+	SceneManager.transition_in()
 	MusicManager.play("cute_bossa_nova") 
 	# OrderReadySignBtn empieza oscuro y desactivado hasta que la orden esté completa
 	order_ready_sign.disabled = true

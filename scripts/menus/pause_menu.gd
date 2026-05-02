@@ -10,6 +10,8 @@ signal menu_closed
 @onready var quit_btn: Button = %QuitButton
 @onready var options_window: PanelContainer = %OptionsWindow
 @onready var confirm_window: PanelContainer = %ConfirmWindow
+@onready var slot_picker: PanelContainer = %SlotPickerWindow
+@onready var save_success_window: PanelContainer = %SaveSuccessWindow
 @onready var backdrop: Control = %BackdropControl
 
 # Texto que verá el jugador cuando quiera volver al menú en ConfirmWindow
@@ -20,25 +22,29 @@ func _ready() -> void:
 	# El menú funciona mientras el árbol está pausado
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	
-	# TODO: Guardar y Cargar deshabilitados -> aun no esta hecha la logica
-	save_btn.disabled = true
-	load_btn.disabled = true
-	
+	save_btn.pressed.connect(_on_save_pressed)
+	load_btn.pressed.connect(_on_load_pressed)
 	options_btn.pressed.connect(_on_options_pressed)
 	quit_btn.pressed.connect(_on_quit_pressed)
 	backdrop.gui_input.connect(_on_backdrop_input)
 	
 	options_window.window_closed.connect(_on_options_closed)
 	confirm_window.confirmed.connect(_on_quit_confirmed)
+	
+	slot_picker.slot_picked.connect(_on_slot_picked)
+	slot_picker.window_closed.connect(func() -> void: slot_picker.hide())
+	save_success_window.continue_pressed.connect(_on_save_success_continue)
+	save_success_window.hide()
 
 	# Ventanas ocultas por defecto
 	options_window.hide()
 	confirm_window.hide()
+	slot_picker.hide()
+	save_success_window.hide()
 	
 	# Conectamos el sonido de clic a los botones activos del menú de pausa
-	# save_btn y load_btn se descomentarán cuando esté implementada su lógica
-	# save_btn.pressed.connect(UiSoundManager.play_menu_click)
-	# load_btn.pressed.connect(UiSoundManager.play_menu_click)
+	save_btn.pressed.connect(UiSoundManager.play_menu_click)
+	load_btn.pressed.connect(UiSoundManager.play_menu_click)
 	options_btn.pressed.connect(UiSoundManager.play_menu_click)
 	quit_btn.pressed.connect(UiSoundManager.play_menu_click)
 
@@ -48,6 +54,46 @@ func _on_backdrop_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if not options_window.visible and not confirm_window.visible:
 			close()
+
+# Save:
+func _on_save_pressed() -> void:
+	options_window.hide()
+	confirm_window.hide()
+	slot_picker.open("save")
+
+# Load:
+func _on_load_pressed() -> void:
+	options_window.hide()
+	confirm_window.hide()
+	slot_picker.open("load")
+
+# Save/Load lógica de las slots
+func _on_slot_picked(slot: int, mode: String) -> void:
+	if mode == "save":
+		# Guarda la escena actual para saber donde cargar
+		GameState.current_scene = get_tree().current_scene.scene_file_path
+		SaveManager.save_game(slot)
+		slot_picker.hide()
+		save_success_window.show()
+	elif mode == "load":
+		get_tree().paused = false
+		SaveManager.load_game(slot)
+		MusicManager.stop()
+		
+		# Ocultamos el menú antes de la transición
+		slot_picker.hide()
+		options_window.hide()
+		confirm_window.hide()
+		hide()
+		
+		# Ir a la escena guardada
+		SceneManager.transition_out_completed.connect(
+			func(): SceneManager.change_scene(GameState.current_scene), CONNECT_ONE_SHOT)
+		SceneManager.transition_out()
+
+# Cierra todo el menú de pausa
+func _on_save_success_continue() -> void:
+	close() 
 
 # Options:
 func _on_options_pressed() -> void:

@@ -13,6 +13,8 @@ var cafe_name: String = "PawCafé"
 
 # Número del día en el que se encuentra la historia
 var day: int = 1
+# Escena en la que se encontraba el jugador al guardar
+var current_scene: String = "res://scenes/cafe_client_zone.tscn"
 # Archivo JSON por el cual va la historia actualmente
 var chapter_id: String = "story"
 # Línea actual en la que se encuentra la historia
@@ -64,6 +66,7 @@ const DEFAULTS: Dictionary = {
 	"player_pronouns": 0,
 	"cafe_name": "PawCafé",
 	"day": 1,
+	"current_scene": "res://scenes/cafe_client_zone.tscn",
 	"chapter_id": "chapter_1",
 	"dialogue_index": 0,
 	"relationship_jasmine": 0,
@@ -83,6 +86,7 @@ func reset() -> void:
 	cafe_name = DEFAULTS["cafe_name"]
 
 	day = DEFAULTS["day"]
+	current_scene = DEFAULTS["current_scene"]
 	chapter_id = DEFAULTS["chapter_id"]
 	dialogue_index = DEFAULTS["dialogue_index"]
 
@@ -119,6 +123,7 @@ func to_dict() -> Dictionary:
 		"cafe_name": cafe_name,
 		
 		"day": day,
+		"current_scene": current_scene,
 		"chapter_id": chapter_id,
 		"dialogue_index": dialogue_index,
 		
@@ -149,6 +154,7 @@ func from_dict(data: Dictionary) -> void:
 	cafe_name = data.get("cafe_name", DEFAULTS["cafe_name"])
 
 	day = data.get("day", DEFAULTS["day"])
+	current_scene = data.get("current_scene", DEFAULTS["current_scene"])
 	chapter_id = data.get("chapter_id", DEFAULTS["chapter_id"])
 	dialogue_index = data.get("dialogue_index", DEFAULTS["dialogue_index"])
 
@@ -166,7 +172,7 @@ func from_dict(data: Dictionary) -> void:
 	route_nilam = data.get("route_nilam", DEFAULTS["route_nilam"])
 	route_hannah = data.get("route_hannah", DEFAULTS["route_hannah"])
 	
-	animals_athome = data.get("animals_athome", [])
-	animals_adopted_good = data.get("animals_adopted_good", [])
-	animals_adopted_bad = data.get("animals_adopted_bad", [])
-	received_emails_status = data.get("received_emails_status", {})
+	animals_athome.assign(data.get("animals_athome", []))
+	animals_adopted_good.assign(data.get("animals_adopted_good", []))
+	animals_adopted_bad.assign(data.get("animals_adopted_bad", []))
+	received_emails_status.assign(data.get("received_emails_status", {}))

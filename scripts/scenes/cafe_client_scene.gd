@@ -13,6 +13,9 @@ var dialog_lines : Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Aseguramos que el juego no esté pausado al entrar
+	get_tree().paused = false
+	
 	dialog_file = "res://resources/story/" + GameState.chapter_id + ".json"
 	# Cargamos el diálogo
 	dialog_lines = load_dialog(dialog_file)
@@ -24,9 +27,25 @@ func _ready() -> void:
 	SceneManager.transition_out_completed.connect(_on_transition_out_completed)
 	SceneManager.transition_in_completed.connect(_on_transition_in_completed)
 	
-	# Primera línea de texto
-	dialog_index = 0
+	# Restaurar el índice guardado si venimos de una carga
+	dialog_index = GameState.dialogue_index
+	# Restaurar el fondo y música correctos
+	if dialog_index > 0:
+		_restore_scene_state()
+	
 	SceneManager.transition_in()
+
+# Restaura el estado de la escena, con el índice, fondo y música
+func _restore_scene_state() -> void:
+	# Busca hacia atrás desde el índice actual la última línea con location
+	for i in range(dialog_index, -1, -1):
+		var line: Dictionary = dialog_lines[i]
+		if line.has("location"):
+			var background_file = "res://assets/images/" + line["location"] + ".png"
+			background.texture = load(background_file)
+			if line.has("music"):
+				MusicManager.play(line["music"])
+			return
 
 func _input(event):
 	# No procesar input del diálogo si el juego está pausado
@@ -42,6 +61,7 @@ func _input(event):
 		else:
 			if dialog_index < len(dialog_lines) - 1:
 				dialog_index += 1
+				GameState.dialogue_index = dialog_index
 				process_current_line()
 
 
@@ -316,7 +336,10 @@ func _on_transition_out_completed():
 			dialog_index += 1
 		SceneManager.transition_in(transition_effect)
 	else:
-		print("End")
+		# Si no hay nada más de diálogo, devuelve al menú principal
+		MusicManager.stop()
+		await get_tree().create_timer(1.5).timeout
+		SceneManager.change_scene("res://scenes/title_screen.tscn")
 
 func _on_transition_in_completed():
 	# Comienza a procesar el diálogo

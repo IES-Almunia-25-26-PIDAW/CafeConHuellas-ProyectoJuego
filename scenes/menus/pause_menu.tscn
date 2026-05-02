@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="2_eyfc8"]
 [ext_resource type="PackedScene" uid="uid://cplcewrlrnw35" path="res://scenes/menus/confirm_window.tscn" id="2_gsnt3"]
 [ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="4_xiui8"]
+[ext_resource type="PackedScene" uid="uid://cly351qvobr3u" path="res://scenes/menus/slot_picker_window.tscn" id="7_xiui8"]
+[ext_resource type="PackedScene" uid="uid://cgq4umjsx4st7" path="res://scenes/menus/save_success_window.tscn" id="8_gqhbq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wrho"]
 content_margin_left = 24.0
@@ -322,5 +324,13 @@ unique_name_in_owner = true
 visible = false
 
 [node name="ConfirmWindow" parent="." unique_id=614904631 instance=ExtResource("2_gsnt3")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SlotPickerWindow" parent="." unique_id=121903205 instance=ExtResource("7_xiui8")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SaveSuccessWindow" parent="." unique_id=263589579 instance=ExtResource("8_gqhbq")]
 unique_name_in_owner = true
 visible = false

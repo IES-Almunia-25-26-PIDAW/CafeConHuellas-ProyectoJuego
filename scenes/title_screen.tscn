@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="3_dc4i4"]
 [ext_resource type="Theme" uid="uid://deq5aplf33ikn" path="res://assets/themes/title_button_theme.tres" id="3_s4lrb"]
 [ext_resource type="PackedScene" uid="uid://ccdewhg87d5qe" path="res://scenes/menus/options_window.tscn" id="4_mgrm8"]
+[ext_resource type="PackedScene" uid="uid://cly351qvobr3u" path="res://scenes/menus/slot_picker_window.tscn" id="6_e54dn"]
 
 [node name="TitleScreen" type="Node2D" unique_id=352405336]
 script = ExtResource("1_sa3yf")
@@ -91,5 +92,9 @@ theme = ExtResource("3_s4lrb")
 text = "Salir"
 
 [node name="OptionsWindow" parent="ContentLayer" unique_id=13526063 instance=ExtResource("4_mgrm8")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SlotPickerWindow" parent="ContentLayer" unique_id=121903205 instance=ExtResource("6_e54dn")]
 unique_name_in_owner = true
 visible = false

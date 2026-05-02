@@ -62,6 +62,13 @@ func _populate() -> void:
 	# Actualiza el contador del label
 	if cgs_count_label:
 		cgs_count_label.text = "%d / %d" % [unlocked_count, sorted_ids.size()]
+	
+	# Forzar ancho del grid para que se centre correctamente
+	var columns: int = grid_container.columns
+	var card_width: int = 300   # ancho de cada card
+	var separation: int = grid_container.get_theme_constant("h_separation")
+	var total_width: int = columns * card_width + (columns - 1) * separation
+	grid_container.custom_minimum_size.x = total_width
 
 # Se llama cuando el jugador hace click en una tarjeta desbloqueada
 func _on_card_pressed(cg_id: String, cg_data: Dictionary) -> void:

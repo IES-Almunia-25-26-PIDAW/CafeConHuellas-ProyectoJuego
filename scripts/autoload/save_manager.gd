@@ -48,7 +48,7 @@ func has_save(slot: int) -> bool:
 	return FileAccess.file_exists(_get_path(slot, "json"))
 
 # Obtiene información de una save slot (usada por la UI para mostrar detalles)
-# Devuelve un diccionario con "day", "chapter_id" y "timestamp" o "VACÍO" si no hay guardado
+# Devuelve un diccionario con "day" y "timestamp" o "VACÍO" si no hay guardado
 func get_save_info(slot: int) -> Dictionary:
 	var path := _get_path(slot, "json")
 	if FileAccess.file_exists(path):
@@ -58,7 +58,6 @@ func get_save_info(slot: int) -> Dictionary:
 			if data is Dictionary:
 				return {
 					"day": data.get("day", ""),
-					"chapter_id": data.get("chapter_id", ""),
 					"timestamp": data.get("timestamp", "")
 				}
 	return {}

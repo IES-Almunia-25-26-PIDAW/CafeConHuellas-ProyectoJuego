@@ -9,22 +9,34 @@
 [ext_resource type="Texture2D" uid="uid://c8bhol37cdt20" path="res://assets/images/kitchen_items/coffee_machine.png" id="6_vxhy1"]
 [ext_resource type="Texture2D" uid="uid://bf20ratd5iuov" path="res://assets/images/kitchen_items/coffee_machine_hover.png" id="7_2m1ic"]
 [ext_resource type="AudioStream" uid="uid://cspy2e5w5qr23" path="res://assets/audio/sfx/sfx_wrong.ogg" id="7_y37jc"]
-[ext_resource type="Texture2D" uid="uid://dn461ehdbb11e" path="res://assets/images/test_kitchen/pastel_Test.png" id="8_3guqh"]
 [ext_resource type="Texture2D" uid="uid://bmjkbhrcja4vb" path="res://assets/images/kitchen_items/recipebook.png" id="8_6xums"]
 [ext_resource type="Texture2D" uid="uid://h6aki8n5om3m" path="res://assets/images/kitchen_items/blender.png" id="8_uldgp"]
 [ext_resource type="PackedScene" uid="uid://mmh8nl4y1hy1" path="res://scenes/kitchen/kitchen_item_button.tscn" id="9_2m1ic"]
-[ext_resource type="Texture2D" uid="uid://deu8ghor2siai" path="res://assets/images/test_kitchen/galleta_test.png" id="9_k8dl0"]
 [ext_resource type="Texture2D" uid="uid://dbo6ovytvjkc7" path="res://assets/images/kitchen_items/blender_hover.png" id="9_qabsb"]
 [ext_resource type="Texture2D" uid="uid://b1cu8hq2ngm08" path="res://assets/images/kitchen_items/recipebook_hover.png" id="9_vxhy1"]
 [ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="12_k8dl0"]
 [ext_resource type="PackedScene" uid="uid://bbp5e10quv6ys" path="res://scenes/kitchen/ingredient_popup.tscn" id="13_81ywk"]
 [ext_resource type="PackedScene" uid="uid://bo88x1qy4anad" path="res://scenes/kitchen/recipe_book.tscn" id="14_1b1dy"]
 [ext_resource type="Texture2D" uid="uid://cy47nokhof7uo" path="res://assets/images/test_kitchen/ticket_test.png" id="14_bmpck"]
+[ext_resource type="Texture2D" uid="uid://b6lcysdrt8n38" path="res://assets/images/kitchen_items/cake_apple_item.png" id="14_ktaqo"]
+[ext_resource type="Texture2D" uid="uid://c5eytlr42oshr" path="res://assets/images/kitchen_items/cookie_butter_item.png" id="15_3ynlo"]
+[ext_resource type="Texture2D" uid="uid://bw745hif3pwef" path="res://assets/images/kitchen_items/cake_apple_item_hover.png" id="15_up6ki"]
+[ext_resource type="Texture2D" uid="uid://0svjw0kikaht" path="res://assets/images/kitchen_items/cookie_butter_item_hover.png" id="16_4d6sd"]
 [ext_resource type="Texture2D" uid="uid://bsv1b6nnwdqhp" path="res://assets/images/kitchen_items/milkshake_chocolate.png" id="16_bb5d7"]
+[ext_resource type="Texture2D" uid="uid://c3kaasjflqw0i" path="res://assets/images/kitchen_items/cake_carrot_item.png" id="16_cdkxp"]
+[ext_resource type="Texture2D" uid="uid://bsedbg6jelnhh" path="res://assets/images/kitchen_items/cake_carrot_item_hover.png" id="17_2o377"]
+[ext_resource type="Texture2D" uid="uid://x8g7vf8efgm" path="res://assets/images/kitchen_items/cookie_chocolate_item.png" id="17_ktaqo"]
 [ext_resource type="Texture2D" uid="uid://dan28radbq23y" path="res://assets/images/kitchen_items/milkshake_chocolate_hover.png" id="17_mnsgh"]
 [ext_resource type="Texture2D" uid="uid://roradjb5eyjj" path="res://assets/images/kitchen_items/milkshake_vanilla.png" id="18_hv8m8"]
+[ext_resource type="Texture2D" uid="uid://dgtauj0cjj5o6" path="res://assets/images/kitchen_items/cake_lemon_item.png" id="18_k3dcv"]
+[ext_resource type="Texture2D" uid="uid://m4p7y53rkf8x" path="res://assets/images/kitchen_items/cookie_chocolate_item_hover.png" id="18_up6ki"]
 [ext_resource type="Texture2D" uid="uid://d200y7aycync0" path="res://assets/images/kitchen_items/milkshake_vanilla_hover.png" id="19_3ynlo"]
+[ext_resource type="Texture2D" uid="uid://ckuk0nl4xnrc" path="res://assets/images/kitchen_items/cake_lemon_item_hover.png" id="19_5637v"]
+[ext_resource type="Texture2D" uid="uid://defirhphg5hoy" path="res://assets/images/kitchen_items/cookie_oat_honey_item.png" id="19_r817n"]
 [ext_resource type="Texture2D" uid="uid://086r8b7561gj" path="res://assets/images/kitchen_items/milkshake_strawberry.png" id="20_4d6sd"]
+[ext_resource type="Texture2D" uid="uid://btkihgbnoc2tk" path="res://assets/images/kitchen_items/cookie_oat_honey_item_hover.png" id="20_ys2nh"]
+[ext_resource type="Texture2D" uid="uid://d0dwg452xidif" path="res://assets/images/kitchen_items/cake_cheese_item.png" id="20_ywx1u"]
+[ext_resource type="Texture2D" uid="uid://bg4245j2jfx14" path="res://assets/images/kitchen_items/cake_cheese_item_hover.png" id="21_eobck"]
 [ext_resource type="Texture2D" uid="uid://xcxictdnpan1" path="res://assets/images/kitchen_items/milkshake_strawberry_hover.png" id="21_ktaqo"]
 [ext_resource type="Texture2D" uid="uid://bjsfvexspxh3k" path="res://assets/images/kitchen_items/milk_drink.png" id="22_up6ki"]
 [ext_resource type="Texture2D" uid="uid://dt14fatfie7m5" path="res://assets/images/kitchen_items/milk_drink_hover.png" id="23_r817n"]
@@ -106,72 +118,79 @@ anchors_preset = 0
 
 [node name="CakeAppleBtn" parent="InteractionCanvas/PastryShelf" unique_id=408575844 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1344.0
-offset_top = 875.0
-offset_right = 3264.0
-offset_bottom = 2795.0
-scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("8_3guqh")
+offset_left = 1286.0
+offset_top = 884.0
+offset_right = 1590.0
+offset_bottom = 1085.0
+texture_normal = ExtResource("14_ktaqo")
+texture_hover = ExtResource("15_up6ki")
+stretch_mode = 5
 recipe_id = "cake_apple"
 
 [node name="CakeCarrotBtn" parent="InteractionCanvas/PastryShelf" unique_id=1579094309 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1677.0
-offset_top = 870.0
-offset_right = 3597.0
-offset_bottom = 2790.0
-scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("8_3guqh")
+offset_left = 1286.0
+offset_top = 664.0
+offset_right = 1590.0
+offset_bottom = 865.0
+texture_normal = ExtResource("16_cdkxp")
+texture_hover = ExtResource("17_2o377")
+stretch_mode = 5
 recipe_id = "cake_carrot"
 
 [node name="CakeLemonBtn" parent="InteractionCanvas/PastryShelf" unique_id=1645735397 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1664.0
-offset_top = 645.00006
-offset_right = 3584.0
-offset_bottom = 2565.0
-scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("8_3guqh")
+offset_left = 1603.0
+offset_top = 663.0
+offset_right = 1907.0
+offset_bottom = 864.0
+texture_normal = ExtResource("18_k3dcv")
+texture_hover = ExtResource("19_5637v")
+stretch_mode = 4
 recipe_id = "cake_lemon"
 
 [node name="CakeCheeseBtn" parent="InteractionCanvas/PastryShelf" unique_id=736583009 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1323.0
-offset_top = 640.0
-offset_right = 3243.0
-offset_bottom = 2560.0
-scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("8_3guqh")
+offset_left = 1603.0
+offset_top = 883.0
+offset_right = 1907.0
+offset_bottom = 1084.0
+texture_normal = ExtResource("20_ywx1u")
+texture_hover = ExtResource("21_eobck")
+stretch_mode = 5
 recipe_id = "cake_cheese"
 
 [node name="CookieButterBtn" parent="InteractionCanvas/PastryShelf" unique_id=204869927 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1463.0001
-offset_top = 390.00006
-offset_right = 1823.0001
-offset_bottom = 750.00006
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("9_k8dl0")
+offset_left = 1412.0
+offset_top = 475.0
+offset_right = 1671.0
+offset_bottom = 613.0
+texture_normal = ExtResource("15_3ynlo")
+texture_hover = ExtResource("16_4d6sd")
+stretch_mode = 5
 recipe_id = "cookie_butter"
 
 [node name="CookieChocolateBtn" parent="InteractionCanvas/PastryShelf" unique_id=117797841 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1218.0
-offset_top = 393.0
-offset_right = 1578.0
-offset_bottom = 753.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("9_k8dl0")
+offset_left = 1158.0
+offset_top = 475.0
+offset_right = 1417.0
+offset_bottom = 613.0
+texture_normal = ExtResource("17_ktaqo")
+texture_hover = ExtResource("18_up6ki")
+stretch_mode = 5
 recipe_id = "cookie_chocolate"
 
 [node name="CookieOatHoneyBtn" parent="InteractionCanvas/PastryShelf" unique_id=1107171721 instance=ExtResource("9_2m1ic")]
 layout_mode = 0
-offset_left = 1674.0001
-offset_top = 394.00006
-offset_right = 2034.0001
-offset_bottom = 754.00006
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("9_k8dl0")
+offset_left = 1668.0
+offset_top = 475.0
+offset_right = 1927.0
+offset_bottom = 613.0
+texture_normal = ExtResource("19_r817n")
+texture_hover = ExtResource("20_ys2nh")
+stretch_mode = 5
 recipe_id = "cookie_oat_honey"
 
 [node name="MilkshakeShelf" type="Control" parent="InteractionCanvas" unique_id=1903670096]

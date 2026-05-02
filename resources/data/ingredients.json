@@ -41,6 +41,12 @@
 	"type": "base",
 	"icon": "res://assets/images/ingredients/ice.png"
   },
+  "orange_juice": {
+	"id": "orange_juice",
+	"display_name": "Zumo de naranja",
+	"type": "base",
+	"icon": "res://assets/images/ingredients/orange_juice.png"
+  },
 
   "strawberry": {
 	"id": "strawberry",
@@ -129,6 +135,7 @@
 	"type": "flavor",
 	"icon": "res://assets/images/ingredients/hazelnut_syrup.png"
   },
+
 "apple": {
 	"id": "apple",
 	"display_name": "Manzana",
@@ -243,10 +250,4 @@
 	"type": "flavor",
 	"icon": ""
   },
-  "orange_juice": {
-	"id": "orange_juice",
-	"display_name": "Zumo de naranja",
-	"type": "base",
-	"icon": ""
-  }
 }

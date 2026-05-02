@@ -13,6 +13,22 @@
 		"description": "Descripción de ejemplo2 de la ilustración.",
 		"texture": "res://assets/cgs/cg_ejemplo2.png",
 		"thumbnail": "res://assets/cgs/thumbs/cg_ejemplo2_thumb.png",
-		"sort_order": 1
+		"sort_order": 2
+	  },
+	"cg_ejemplo3": {
+		"title": "Ejemplo3",
+		"character": "jasmine",
+		"description": "Descripción de ejemplo3 de la ilustración.",
+		"texture": "res://assets/cgs/cg_ejemplo3.png",
+		"thumbnail": "res://assets/cgs/thumbs/cg_ejemplo3_thumb.png",
+		"sort_order": 3
+	  },
+	"cg_ejemplo4": {
+		"title": "Ejemplo4",
+		"character": "jasmine",
+		"description": "Descripción de ejemplo4 de la ilustración.",
+		"texture": "res://assets/cgs/cg_ejemplo4.png",
+		"thumbnail": "res://assets/cgs/thumbs/cg_ejemplo4_thumb.png",
+		"sort_order": 4
 	  },
 }

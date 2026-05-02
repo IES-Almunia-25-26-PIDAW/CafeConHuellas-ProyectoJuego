@@ -167,7 +167,7 @@ func setup(title: String, ingredient_ids: Array, already_added: Array = []) -> v
 			btn.ignore_texture_size = true
 			btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 			btn.custom_minimum_size = Vector2(80, 80)
-			btn.tooltip_text = ingredient.get("display_name", ingredient_id)
+			#btn.tooltip_text = ingredient.get("display_name", ingredient_id)
 			
 			# Fondo visual según tipo de sección
 			if use_green:
