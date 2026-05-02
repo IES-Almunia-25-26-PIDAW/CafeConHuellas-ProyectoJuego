@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="12_k8dl0"]
 [ext_resource type="PackedScene" uid="uid://bbp5e10quv6ys" path="res://scenes/kitchen/ingredient_popup.tscn" id="13_81ywk"]
 [ext_resource type="PackedScene" uid="uid://bo88x1qy4anad" path="res://scenes/kitchen/recipe_book.tscn" id="14_1b1dy"]
-[ext_resource type="Texture2D" uid="uid://cy47nokhof7uo" path="res://assets/images/test_kitchen/ticket_test.png" id="14_bmpck"]
 [ext_resource type="Texture2D" uid="uid://b6lcysdrt8n38" path="res://assets/images/kitchen_items/cake_apple_item.png" id="14_ktaqo"]
 [ext_resource type="Texture2D" uid="uid://c5eytlr42oshr" path="res://assets/images/kitchen_items/cookie_butter_item.png" id="15_3ynlo"]
 [ext_resource type="Texture2D" uid="uid://bw745hif3pwef" path="res://assets/images/kitchen_items/cake_apple_item_hover.png" id="15_up6ki"]
@@ -40,6 +39,10 @@
 [ext_resource type="Texture2D" uid="uid://xcxictdnpan1" path="res://assets/images/kitchen_items/milkshake_strawberry_hover.png" id="21_ktaqo"]
 [ext_resource type="Texture2D" uid="uid://bjsfvexspxh3k" path="res://assets/images/kitchen_items/milk_drink.png" id="22_up6ki"]
 [ext_resource type="Texture2D" uid="uid://dt14fatfie7m5" path="res://assets/images/kitchen_items/milk_drink_hover.png" id="23_r817n"]
+[ext_resource type="Texture2D" uid="uid://bbhas4ew8h0q4" path="res://assets/images/kitchen_items/ticket.png" id="36_cdkxp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o377"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="CafeKitchenScene" type="Node2D" unique_id=367916718]
 script = ExtResource("1_hollr")
@@ -262,23 +265,28 @@ grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
+[node name="TicketBackground" type="TextureRect" parent="UICanvas/OrderTicket" unique_id=2079249715]
+layout_mode = 0
+offset_left = -24.61
+offset_top = -22.13501
+offset_right = 279.39
+offset_bottom = 327.865
+mouse_filter = 2
+texture = ExtResource("36_cdkxp")
+stretch_mode = 5
+
 [node name="TicketPanel" type="PanelContainer" parent="UICanvas/OrderTicket" unique_id=312628175]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -104.91101
-offset_bottom = -5.824646
+offset_left = -5.0
+offset_top = -6.0
+offset_right = -135.0
+offset_bottom = -11.824646
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TicketBackground" type="TextureRect" parent="UICanvas/OrderTicket/TicketPanel" unique_id=2079249715]
-visible = false
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("14_bmpck")
-expand_mode = 3
-stretch_mode = 5
+theme_override_styles/panel = SubResource("StyleBoxFlat_2o377")
 
 [node name="TicketContent" type="VBoxContainer" parent="UICanvas/OrderTicket/TicketPanel" unique_id=97750873]
 layout_mode = 2
