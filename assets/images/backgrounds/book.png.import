@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3djecl04edx8"
-path="res://.godot/imported/CafeKitchenBack_test.png-1b0ccbe3819e067929b111d47e10629c.ctex"
+uid="uid://bfxvve0auonef"
+path="res://.godot/imported/book.png-a2a7fd79a8b659c1c5994849441f2c51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/CafeKitchenBack_test.png"
-dest_files=["res://.godot/imported/CafeKitchenBack_test.png-1b0ccbe3819e067929b111d47e10629c.ctex"]
+source_file="res://assets/images/backgrounds/book.png"
+dest_files=["res://.godot/imported/book.png-a2a7fd79a8b659c1c5994849441f2c51.ctex"]
 
 [params]
 

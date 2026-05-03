@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cd4hmwsnhk2h4" path="res://scripts/computer/computer_scene.gd" id="1_yp1bn"]
 [ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="2_cbmld"]
 [ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="3_imhm7"]
-[ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="4_su0m0"]
+[ext_resource type="Texture2D" uid="uid://bfoinbft0rlkt" path="res://assets/images/ui/menu_button.png" id="5_7l5ow"]
 [ext_resource type="Texture2D" uid="uid://b6txhorh3ljk" path="res://assets/images/ui/shutdownbutton_on.png" id="5_su0m0"]
 [ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="6_5whe8"]
 [ext_resource type="PackedScene" uid="uid://qf3picgq2mep" path="res://scenes/computer/pets_tab.tscn" id="6_cqilf"]
@@ -125,7 +125,8 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 70.0
 offset_bottom = 80.0
-texture = ExtResource("4_su0m0")
+texture = ExtResource("5_7l5ow")
+expand_mode = 3
 
 [node name="UiCanvas" type="CanvasLayer" parent="." unique_id=683565626]
 

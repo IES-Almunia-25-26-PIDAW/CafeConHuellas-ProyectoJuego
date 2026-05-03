@@ -102,7 +102,7 @@ func _setup_ticket() -> void:
 		checkbox.name = "Check_" + recipe_id
 		checkbox.custom_minimum_size = Vector2(24, 24)
 		checkbox.size = Vector2(24, 24)
-		checkbox.texture = load("res://assets/images/test_kitchen/check_test.png")
+		checkbox.texture = load("res://assets/images/ui/check_pink.png")
 		checkbox.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		checkbox.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		checkbox.modulate = Color(0.1, 0.1, 0.1, 1.0)

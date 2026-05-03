@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1cy2pqy8g8g0" path="res://assets/images/backgrounds/kitchencafe.png" id="2_bmpck"]
 [ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="2_hollr"]
 [ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="3_no3pg"]
-[ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="4_ghovp"]
+[ext_resource type="Texture2D" uid="uid://bfoinbft0rlkt" path="res://assets/images/ui/menu_button.png" id="5_k3dcv"]
 [ext_resource type="AudioStream" uid="uid://coracnoonfc1f" path="res://assets/audio/sfx/sfx_correct.ogg" id="6_ghovp"]
 [ext_resource type="Texture2D" uid="uid://c8bhol37cdt20" path="res://assets/images/kitchen_items/coffee_machine.png" id="6_vxhy1"]
 [ext_resource type="Texture2D" uid="uid://bf20ratd5iuov" path="res://assets/images/kitchen_items/coffee_machine_hover.png" id="7_2m1ic"]
@@ -73,7 +73,8 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 70.0
 offset_bottom = 80.0
-texture = ExtResource("4_ghovp")
+texture = ExtResource("5_k3dcv")
+expand_mode = 3
 
 [node name="InteractionCanvas" type="CanvasLayer" parent="." unique_id=881406319]
 layer = 4

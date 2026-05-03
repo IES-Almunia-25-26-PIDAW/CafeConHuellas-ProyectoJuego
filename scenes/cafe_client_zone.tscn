@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bmm4sao7657f3" path="res://assets/images/cafedefault.png" id="2_uemky"]
 [ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="5_1ptve"]
 [ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="6_tp2fe"]
-[ext_resource type="Texture2D" uid="uid://bocm5cmab6hhn" path="res://assets/placeholders/menuicon_placeholder.png" id="7_e3vck"]
+[ext_resource type="Texture2D" uid="uid://bfoinbft0rlkt" path="res://assets/images/ui/menu_button.png" id="7_e3vck"]
 
 [node name="CafeClientScene" type="Node2D" unique_id=1225861441]
 script = ExtResource("1_uemky")
@@ -67,3 +67,4 @@ offset_top = 10.0
 offset_right = 70.0
 offset_bottom = 70.0
 texture = ExtResource("7_e3vck")
+expand_mode = 3

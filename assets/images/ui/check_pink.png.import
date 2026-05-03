@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg736sjqmvhdb"
-path="res://.godot/imported/kitchencafe.png-4e6d000023cc07824e9a86b9d8ac2524.ctex"
+uid="uid://erv4njgqwys6"
+path="res://.godot/imported/check_pink.png-a20d113699b3152ff394a45f7bcd90c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/kitchencafe.png"
-dest_files=["res://.godot/imported/kitchencafe.png-4e6d000023cc07824e9a86b9d8ac2524.ctex"]
+source_file="res://assets/images/ui/check_pink.png"
+dest_files=["res://.godot/imported/check_pink.png-a20d113699b3152ff394a45f7bcd90c0.ctex"]
 
 [params]
 

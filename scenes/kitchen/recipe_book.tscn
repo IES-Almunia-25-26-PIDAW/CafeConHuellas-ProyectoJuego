@@ -1,14 +1,115 @@
 [gd_scene format=3 uid="uid://bo88x1qy4anad"]
 
 [ext_resource type="Script" uid="uid://debvxc146nc1a" path="res://scripts/kitchen/recipe_book.gd" id="1_vw1fa"]
-[ext_resource type="Texture2D" uid="uid://dw3y3hoshjbo7" path="res://assets/images/test_kitchen/libro_test.png" id="2_v7bvx"]
+[ext_resource type="Texture2D" uid="uid://bfxvve0auonef" path="res://assets/images/backgrounds/book.png" id="2_gp8t3"]
 [ext_resource type="Texture2D" uid="uid://bq5hrpailddhd" path="res://assets/images/test_kitchen/batido_test.png" id="3_0kgm3"]
 [ext_resource type="FontFile" uid="uid://chivh8jm7c75d" path="res://assets/fonts/PatrickHand-Regular.ttf" id="3_gp8t3"]
 [ext_resource type="AudioStream" uid="uid://b56vrgmd2t71m" path="res://assets/audio/music/FlippingPages.ogg" id="4_kjhcw"]
+[ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="5_tmbcy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oghhd"]
+bg_color = Color(0.6841424, 0.42305812, 0.46145278, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3290106, 0.13204916, 0.16141412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnmo6"]
+bg_color = Color(0.6841424, 0.42305812, 0.46145278, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5058824, 0.27058825, 0.3019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn1m6"]
+bg_color = Color(0.7827901, 0.550984, 0.5861062, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.50657654, 0.2699458, 0.30149654, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdn0g"]
+bg_color = Color(0.56576514, 0.37218085, 0.40444496, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.39477575, 0.19998413, 0.22290081, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33a46"]
+bg_color = Color(0.6841424, 0.42305812, 0.46145278, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3290106, 0.13204916, 0.16141412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmbcy"]
+bg_color = Color(0.68235296, 0.42352942, 0.4627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5058824, 0.27058825, 0.3019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe8du"]
+bg_color = Color(0.78431374, 0.5529412, 0.58431375, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5058824, 0.27058825, 0.3019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i10r5"]
+bg_color = Color(0.5647059, 0.37254903, 0.40392157, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.39607844, 0.2, 0.22352941, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="RecipeBook" type="Control" unique_id=451810637]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_vw1fa")
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=678667605]
@@ -19,7 +120,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.53333336)
+color = Color(0, 0, 0, 0.27450982)
 
 [node name="BookBackground" type="TextureRect" parent="." unique_id=1442032755]
 custom_minimum_size = Vector2(800, 600)
@@ -35,109 +136,162 @@ offset_right = 237.0
 offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_v7bvx")
+texture = ExtResource("2_gp8t3")
+expand_mode = 3
 
-[node name="CategoryTabs" type="HBoxContainer" parent="." unique_id=283667891]
+[node name="BtnCoffee" type="Button" parent="." unique_id=1451984278]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 33)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.93
-offset_top = -320.0
-offset_right = 118.07001
-offset_bottom = -280.0
+offset_left = -301.0
+offset_top = -292.0
+offset_right = -236.0
+offset_bottom = -259.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="BtnCoffee" type="Button" parent="CategoryTabs" unique_id=1451984278]
-unique_name_in_owner = true
-layout_mode = 2
+rotation = -0.017453292
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.105409205, 0.020123022, 0.020123022, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_gp8t3")
+theme_override_font_sizes/font_size = 18
 text = "Café"
+flat = true
 
-[node name="BtnSmoothie" type="Button" parent="CategoryTabs" unique_id=243411810]
+[node name="BtnSmoothie" type="Button" parent="." unique_id=243411810]
 unique_name_in_owner = true
-layout_mode = 2
+custom_minimum_size = Vector2(62, 37)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -295.0
+offset_right = -164.0
+offset_bottom = -258.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.105409205, 0.020123022, 0.020123022, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_gp8t3")
 text = "Smoothie"
+flat = true
 
-[node name="BtnCake" type="Button" parent="CategoryTabs" unique_id=1923532062]
+[node name="BtnCake" type="Button" parent="." unique_id=1923532062]
 unique_name_in_owner = true
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_gp8t3")
-text = "Tartas"
-
-[node name="BtnCookie" type="Button" parent="CategoryTabs" unique_id=341379778]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_gp8t3")
-text = "Galletas"
-
-[node name="BookContent" type="HBoxContainer" parent="." unique_id=758608505]
-custom_minimum_size = Vector2(700.19, 500)
+custom_minimum_size = Vector2(60, 35)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -279.755
-offset_top = -246.41
-offset_right = 459.195
-offset_bottom = 383.33
+offset_left = -151.00018
+offset_top = -292.0
+offset_right = -91.00018
+offset_bottom = -257.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.77, 0.77)
+rotation = 0.05235988
+theme_override_colors/font_outline_color = Color(0.105409205, 0.020123022, 0.020123022, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_gp8t3")
+text = "Tartas"
+flat = true
 
-[node name="LeftPage" type="VBoxContainer" parent="BookContent" unique_id=1153401049]
-custom_minimum_size = Vector2(300, 480)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="RecipeImage" type="TextureRect" parent="BookContent/LeftPage" unique_id=480832935]
+[node name="BtnCookie" type="Button" parent="." unique_id=341379778]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(280, 360)
-layout_mode = 2
+custom_minimum_size = Vector2(60, 34)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.99994
+offset_top = -287.0
+offset_right = -18.999939
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.08726646
+theme_override_colors/font_outline_color = Color(0.105409205, 0.020123022, 0.020123022, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_gp8t3")
+text = "Galletas"
+flat = true
+
+[node name="RecipeImage" type="TextureRect" parent="." unique_id=480832935]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -152.0
+offset_right = -30.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_0kgm3")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RightPageContent" type="VBoxContainer" parent="BookContent" unique_id=599060586]
-layout_mode = 2
+[node name="RightPageContent" type="VBoxContainer" parent="." unique_id=599060586]
+custom_minimum_size = Vector2(320, 470)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -228.0
+offset_right = 343.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 9
 
-[node name="RecipeNameLabel" type="RichTextLabel" parent="BookContent/RightPageContent" unique_id=456551869]
+[node name="RecipeNameLabel" type="RichTextLabel" parent="RightPageContent" unique_id=456551869]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.45, 0.22, 0.28, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_fonts/bold_font = ExtResource("3_gp8t3")
-theme_override_font_sizes/normal_font_size = 42
-theme_override_font_sizes/bold_font_size = 42
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 text = "Smoothie"
 fit_content = true
 autowrap_mode = 2
 
-[node name="RecipeDescLabel" type="RichTextLabel" parent="BookContent/RightPageContent" unique_id=1577638235]
+[node name="RecipeDescLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1577638235]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.25, 0.18, 0.15, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Descripcion lalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalala"
 fit_content = true
 autowrap_mode = 2
 horizontal_alignment = 3
 
-[node name="DividerIngredients" type="HSeparator" parent="BookContent/RightPageContent" unique_id=693518781]
+[node name="DividerIngredients" type="HSeparator" parent="RightPageContent" unique_id=693518781]
 modulate = Color(0.717, 0.495, 0.542, 1)
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 2)
@@ -145,7 +299,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="RecipeIngredientsTitleLabel" type="RichTextLabel" parent="BookContent/RightPageContent" unique_id=281591055]
+[node name="RecipeIngredientsTitleLabel" type="RichTextLabel" parent="RightPageContent" unique_id=281591055]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.599, 0.378, 0.41, 1)
@@ -158,14 +312,14 @@ text = "[b]✦ Ingredientes[/b]"
 fit_content = true
 autowrap_mode = 2
 
-[node name="RecipeIngredientsLabel" type="RichTextLabel" parent="BookContent/RightPageContent" unique_id=1225326047]
+[node name="RecipeIngredientsLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1225326047]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.25, 0.18, 0.15, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
 text = "- 
 - 
@@ -174,7 +328,7 @@ text = "-
 fit_content = true
 autowrap_mode = 2
 
-[node name="DividerHowTo" type="HSeparator" parent="BookContent/RightPageContent" unique_id=1527967176]
+[node name="DividerHowTo" type="HSeparator" parent="RightPageContent" unique_id=1527967176]
 modulate = Color(0.717, 0.495, 0.542, 1)
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 2)
@@ -182,7 +336,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="RecipeHowToTitleLabel" type="RichTextLabel" parent="BookContent/RightPageContent" unique_id=1559997301]
+[node name="RecipeHowToTitleLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1559997301]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.599, 0.378, 0.41, 1)
@@ -195,14 +349,14 @@ text = "[b]✦ Preparación[/b]"
 fit_content = true
 autowrap_mode = 2
 
-[node name="RecipeHowToLabel" type="RichTextLabel" parent="BookContent/RightPageContent" unique_id=1959438031]
+[node name="RecipeHowToLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1959438031]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.25, 0.18, 0.15, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
 text = "Bla bla bla"
 fit_content = true
@@ -217,13 +371,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -382.25
-offset_top = -20.0
-offset_right = -354.25
-offset_bottom = 20.0
+offset_left = -379.25
+offset_top = -10.0
+offset_right = -349.25
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "<--"
+scale = Vector2(1.1, 1.1)
+theme_override_colors/font_color = Color(0.3290106, 0.13204916, 0.16141412, 1)
+theme_override_colors/font_pressed_color = Color(0.5058824, 0.27058825, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(0.5058824, 0.27058825, 0.3019608, 1)
+theme_override_colors/font_disabled_color = Color(0.43529412, 0.23529412, 0.25882354, 1)
+theme_override_fonts/font = ExtResource("5_tmbcy")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_oghhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hnmo6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sn1m6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdn0g")
+text = "<"
 
 [node name="BtnNext" type="Button" parent="." unique_id=668496894]
 unique_name_in_owner = true
@@ -233,13 +398,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 343.53
-offset_top = -20.0
-offset_right = 371.53
-offset_bottom = 20.0
+offset_left = 350.53003
+offset_top = -10.0
+offset_right = 380.53003
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "-->"
+scale = Vector2(1.1, 1.1)
+theme_override_colors/font_color = Color(0.3290106, 0.13204916, 0.16141412, 1)
+theme_override_colors/font_pressed_color = Color(0.5058824, 0.27058825, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(0.5058824, 0.27058825, 0.3019608, 1)
+theme_override_colors/font_disabled_color = Color(0.43529412, 0.23529412, 0.25882354, 1)
+theme_override_fonts/font = ExtResource("5_tmbcy")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_33a46")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tmbcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qe8du")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_i10r5")
+text = ">"
 
 [node name="SFXPageTurn" type="AudioStreamPlayer" parent="." unique_id=257009377]
 unique_name_in_owner = true
