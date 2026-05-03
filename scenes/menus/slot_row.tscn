@@ -1,6 +1,73 @@
 [gd_scene format=3 uid="uid://baotu84gsfiot"]
 
 [ext_resource type="Script" uid="uid://cb2d15l823qes" path="res://scripts/menus/slot_row.gd" id="1_lrac0"]
+[ext_resource type="FontFile" uid="uid://kmb7gfn44fgk" path="res://assets/fonts/Fredoka-Medium.ttf" id="2_5m5wp"]
+[ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="3_ygk42"]
+[ext_resource type="Theme" uid="uid://deq5aplf33ikn" path="res://assets/themes/title_button_theme.tres" id="4_c6qba"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rreuc"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.87058824, 0.7921569, 0.73333335, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5m5wp"]
+bg_color = Color(0.82224923, 0.7041864, 0.68690884, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.4013523, 0.29659158, 0.2904191, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6qba"]
+bg_color = Color(0.84, 0.75768, 0.7392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.57254905, 0.45882353, 0.44705883, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkeur"]
+bg_color = Color(0.89459085, 0.803265, 0.78264296, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5723417, 0.4569033, 0.4480234, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygk42"]
+bg_color = Color(0.75, 0.68, 0.64, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.55, 0.45, 0.4, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="SlotRow" type="PanelContainer" unique_id=539764076]
 custom_minimum_size = Vector2(400, 80)
@@ -15,33 +82,53 @@ offset_right = 170.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rreuc")
 script = ExtResource("1_lrac0")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=66364974]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=767887919]
 layout_mode = 2
+theme_override_constants/separation = 12
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1423888838]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1659799992]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="SlotLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=326135016]
+[node name="SlotLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1007428576]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.42745098, 0.30980393, 0.2509804, 1)
+theme_override_fonts/normal_font = ExtResource("2_5m5wp")
+theme_override_font_sizes/normal_font_size = 20
 text = "Slot X"
 vertical_alignment = 1
 
-[node name="InfoLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1167132629]
+[node name="InfoLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1906972927]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(280, 30)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.6313726, 0.47843137, 0.40392157, 1)
+theme_override_fonts/normal_font = ExtResource("3_ygk42")
+theme_override_font_sizes/normal_font_size = 15
 text = "Día X  •  Fecha"
 vertical_alignment = 1
 
-[node name="ActionButton" type="Button" parent="HBoxContainer" unique_id=2030823820]
+[node name="ActionButton" type="Button" parent="HBoxContainer" unique_id=338085379]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 60)
+custom_minimum_size = Vector2(90.4, 47.63)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("4_c6qba")
+theme_override_colors/font_color = Color(0.4, 0.29803923, 0.2901961, 1)
+theme_override_colors/font_pressed_color = Color(0.57254905, 0.45882353, 0.44705883, 1)
+theme_override_colors/font_hover_color = Color(0.57254905, 0.45882353, 0.44705883, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_5m5wp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c6qba")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jkeur")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ygk42")
 text = "Acción"

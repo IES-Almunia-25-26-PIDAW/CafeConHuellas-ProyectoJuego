@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dw3y3hoshjbo7" path="res://assets/images/test_kitchen/libro_test.png" id="2_v7bvx"]
 [ext_resource type="Texture2D" uid="uid://bq5hrpailddhd" path="res://assets/images/test_kitchen/batido_test.png" id="3_0kgm3"]
 [ext_resource type="FontFile" uid="uid://chivh8jm7c75d" path="res://assets/fonts/PatrickHand-Regular.ttf" id="3_gp8t3"]
-[ext_resource type="AudioStream" uid="uid://dwbnn0ctqyjfx" path="res://assets/audio/music/FlippingPages.ogg" id="4_kjhcw"]
+[ext_resource type="AudioStream" uid="uid://b56vrgmd2t71m" path="res://assets/audio/music/FlippingPages.ogg" id="4_kjhcw"]
 
 [node name="RecipeBook" type="Control" unique_id=451810637]
 layout_mode = 3

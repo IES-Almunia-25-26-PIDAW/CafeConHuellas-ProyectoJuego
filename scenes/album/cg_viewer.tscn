@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://6x2eu3qyw3xd" path="res://scripts/ui/cg_viewer.gd" id="1_t12rw"]
 [ext_resource type="Texture2D" uid="uid://6lmlib41od4" path="res://assets/images/mainmenu.png" id="2_uanhq"]
+[ext_resource type="FontFile" uid="uid://kmb7gfn44fgk" path="res://assets/fonts/Fredoka-Medium.ttf" id="3_qfih0"]
+[ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="4_h8tvk"]
 
 [node name="CgViewer" type="Control" unique_id=1328507022]
 layout_mode = 3
@@ -50,6 +52,7 @@ custom_minimum_size = Vector2(800, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_qfih0")
 theme_override_font_sizes/normal_font_size = 25
 text = "Image Title"
 scroll_active = false
@@ -61,6 +64,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("3_qfih0")
 text = "Image Description
 Image Desc
 a"
@@ -74,5 +78,6 @@ custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_h8tvk")
 text = "Cerrar
 "

@@ -21,6 +21,8 @@ func _ready() -> void:
 		window_closed.emit()
 		hide()
 	)
+	
+	close_button.pressed.connect(UiSoundManager.play_menu_click)
 
 # Configura y muestra la ventana según el modo en el que se haya abierto
 func open(mode: String) -> void:

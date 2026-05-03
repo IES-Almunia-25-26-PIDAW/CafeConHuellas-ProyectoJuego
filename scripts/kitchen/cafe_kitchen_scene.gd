@@ -98,6 +98,7 @@ func _setup_ticket() -> void:
 		
 		var row := HBoxContainer.new()
 		row.name = "Row_" + recipe_id
+		row.add_theme_constant_override("separation", 8)
 		
 		var checkbox := TextureRect.new()
 		checkbox.name = "Check_" + recipe_id
@@ -108,8 +109,14 @@ func _setup_ticket() -> void:
 		checkbox.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		checkbox.modulate = Color(0.1, 0.1, 0.1, 1.0)
 		
-		var label := Label.new()
+		var label := RichTextLabel.new()
 		label.text = recipe.get("display_name", "")
+		label.fit_content = true
+		label.scroll_active = false
+		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		label.add_theme_font_override("normal_font", load("res://assets/fonts/PatrickHand-Regular.ttf"))
+		label.add_theme_font_size_override("normal_font_size", 22)
+		label.add_theme_color_override("default_color", Color(0.42745098, 0.30980393, 0.2509804, 1))
 		
 		row.add_child(label)
 		row.add_child(checkbox)

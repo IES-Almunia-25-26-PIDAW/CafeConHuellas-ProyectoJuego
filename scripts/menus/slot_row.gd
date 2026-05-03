@@ -31,6 +31,8 @@ func setup(slot: int, mode: String) -> void:
 	
 	# Si se hace click sobre el botón, se envía la señal
 	action_button.pressed.connect(func() -> void: slot_selected.emit(_slot))
+	
+	action_button.pressed.connect(UiSoundManager.play_menu_click)
 
 # Formato de fecha "año-mes-día | hora:minutos"
 func _format_timestamp(raw: String) -> String:
