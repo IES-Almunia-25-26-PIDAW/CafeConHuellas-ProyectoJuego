@@ -14,10 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://mmh8nl4y1hy1" path="res://scenes/kitchen/kitchen_item_button.tscn" id="9_2m1ic"]
 [ext_resource type="Texture2D" uid="uid://dbo6ovytvjkc7" path="res://assets/images/kitchen_items/blender_hover.png" id="9_qabsb"]
 [ext_resource type="Texture2D" uid="uid://b1cu8hq2ngm08" path="res://assets/images/kitchen_items/recipebook_hover.png" id="9_vxhy1"]
-[ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="12_k8dl0"]
+[ext_resource type="Texture2D" uid="uid://bwcerdug0vp5i" path="res://assets/images/kitchen_items/ordersign_normal.png" id="12_k3dcv"]
 [ext_resource type="PackedScene" uid="uid://bbp5e10quv6ys" path="res://scenes/kitchen/ingredient_popup.tscn" id="13_81ywk"]
+[ext_resource type="Texture2D" uid="uid://b2gps378vaqg8" path="res://assets/images/kitchen_items/ordersign_hover.png" id="13_5637v"]
 [ext_resource type="PackedScene" uid="uid://bo88x1qy4anad" path="res://scenes/kitchen/recipe_book.tscn" id="14_1b1dy"]
 [ext_resource type="Texture2D" uid="uid://b6lcysdrt8n38" path="res://assets/images/kitchen_items/cake_apple_item.png" id="14_ktaqo"]
+[ext_resource type="Texture2D" uid="uid://bxgf4ua81v8m4" path="res://assets/images/kitchen_items/ordersign_disabled.png" id="14_ywx1u"]
 [ext_resource type="Texture2D" uid="uid://c5eytlr42oshr" path="res://assets/images/kitchen_items/cookie_butter_item.png" id="15_3ynlo"]
 [ext_resource type="Texture2D" uid="uid://bw745hif3pwef" path="res://assets/images/kitchen_items/cake_apple_item_hover.png" id="15_up6ki"]
 [ext_resource type="Texture2D" uid="uid://0svjw0kikaht" path="res://assets/images/kitchen_items/cookie_butter_item_hover.png" id="16_4d6sd"]
@@ -107,12 +109,14 @@ texture_hover = ExtResource("9_vxhy1")
 
 [node name="OrderReadySignBtn" type="TextureButton" parent="InteractionCanvas" unique_id=793262165]
 unique_name_in_owner = true
-offset_left = 38.999996
-offset_top = 70.99999
-offset_right = 438.0
-offset_bottom = 430.0
-scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("12_k8dl0")
+offset_left = 82.0
+offset_top = 62.0
+offset_right = 370.0
+offset_bottom = 323.0
+texture_normal = ExtResource("12_k3dcv")
+texture_hover = ExtResource("13_5637v")
+texture_disabled = ExtResource("14_ywx1u")
+stretch_mode = 5
 
 [node name="PastryShelf" type="Control" parent="InteractionCanvas" unique_id=1475453110]
 unique_name_in_owner = true

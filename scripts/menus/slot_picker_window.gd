@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 
 # SlotPickerWindow: Panel que se abre al querer realizar una acción de guardar/cargar y muestra las slots disponibles
 
@@ -8,6 +8,7 @@ signal window_closed
 
 const SlotRow: PackedScene = preload("res://scenes/menus/slot_row.tscn")
 
+@onready var backdrop: ColorRect = %Backdrop
 @onready var title_label: RichTextLabel = %TitleLabel
 @onready var slots_container: VBoxContainer = %SlotsContainer
 @onready var close_button: Button = %CloseButton
@@ -18,6 +19,7 @@ var _mode: String = "save"
 
 func _ready() -> void:
 	close_button.pressed.connect(func() -> void:
+		backdrop.visible = false
 		window_closed.emit()
 		hide()
 	)
@@ -40,8 +42,10 @@ func open(mode: String) -> void:
 		row.setup(i, mode)
 		row.slot_selected.connect(_on_slot_selected)
 	
+	backdrop.visible = true
 	show()
 
 func _on_slot_selected(slot: int) -> void:
 	slot_picked.emit(slot, _mode)
+	backdrop.visible = false
 	hide()

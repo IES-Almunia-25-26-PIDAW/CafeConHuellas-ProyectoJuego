@@ -1,9 +1,10 @@
-extends PanelContainer
+extends Control
 
 # OptionsWindow: Ventana de opciones que guarda los cambios con SettingsManager
 
 signal window_closed
 
+@onready var backdrop: ColorRect = %Backdrop
 @onready var music_slider: HSlider = %MusicSlider
 @onready var voice_slider: HSlider = %VoicesSlider
 @onready var sfx_slider: HSlider = %SFXSlider
@@ -33,6 +34,10 @@ func _ready() -> void:
 	# Sonido al cerrar el popup de opciones
 	close_btn.pressed.connect(UiSoundManager.play_menu_click)
 
+func show_window() -> void:
+	backdrop.visible = true
+	show()
+
 # Cuando se cambia el volumen de la música se pasa el nuevo valor al SettingsManager para que se guarde
 func _on_music_slider_changed(value: float) -> void:
 	SettingsManager.set_music_volume(value)
@@ -54,5 +59,6 @@ func _update_value_label(label: RichTextLabel, value: float) -> void:
 
 # Cierra la ventana
 func _on_close() -> void:
+	backdrop.visible = false
 	window_closed.emit()
 	hide()

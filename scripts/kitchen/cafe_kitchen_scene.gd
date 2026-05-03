@@ -39,10 +39,8 @@ var _current_popup_category: String = ""
 func _ready() -> void:
 	SceneManager.transition_in()
 	MusicManager.play("cute_bossa_nova") 
-	# OrderReadySignBtn empieza oscuro y desactivado hasta que la orden esté completa
+	# OrderReadySignBtn empieza desactivado hasta que la orden esté completa
 	order_ready_sign.disabled = true
-	# Lo oscurecemos manualmente con modulate
-	order_ready_sign.modulate = Color(0.3, 0.3, 0.3, 1.0)
 	
 	# PENDIENTE - esto es solo para las pruebas
 	# TODO: BORRAR ESTO, solo es para probar
@@ -172,7 +170,7 @@ func _on_order_completed() -> void:
 	order_ready_sign.disabled = false
 	# Al desactivar disabled, Godot cambia automáticamente a texture_normal
 	# pero añadimos el tween encima para suavizar la transición
-	order_ready_sign.modulate = Color(0.3, 0.3, 0.3, 1.0)
+	order_ready_sign.modulate = Color(0.9, 0.783, 0.783, 0.012)
 	# Tween es una herramienta de Godot que interpola valores automáticamente en cada frame,
 	# aquí lo usamos para animar el modulate de oscuro a blanco en 0.6s sin tocar _process()
 	var tween = create_tween()

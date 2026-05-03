@@ -8,10 +8,10 @@ signal menu_closed
 @onready var load_btn: Button = %LoadButton
 @onready var options_btn: Button = %OptionsButton
 @onready var quit_btn: Button = %QuitButton
-@onready var options_window: PanelContainer = %OptionsWindow
+@onready var options_window: Control = %OptionsWindow
 @onready var confirm_window: PanelContainer = %ConfirmWindow
-@onready var slot_picker: PanelContainer = %SlotPickerWindow
-@onready var save_success_window: PanelContainer = %SaveSuccessWindow
+@onready var slot_picker: Control = %SlotPickerWindow
+@onready var save_success_window: Control = %SaveSuccessWindow
 @onready var backdrop: Control = %BackdropControl
 
 # Texto que verá el jugador cuando quiera volver al menú en ConfirmWindow
@@ -33,9 +33,9 @@ func _ready() -> void:
 	
 	slot_picker.slot_picked.connect(_on_slot_picked)
 	slot_picker.window_closed.connect(func() -> void: slot_picker.hide())
-	save_success_window.continue_pressed.connect(_on_save_success_continue)
-	save_success_window.hide()
-
+	
+	save_success_window.closed.connect(_on_save_success_continue)
+	
 	# Ventanas ocultas por defecto
 	options_window.hide()
 	confirm_window.hide()
@@ -52,7 +52,7 @@ func _ready() -> void:
 func _on_backdrop_input(event: InputEvent) -> void:
 	# Cierra el menú si el jugador hace clic fuera del panel solo si no hay subventanas abiertas
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if not options_window.visible and not confirm_window.visible:
+		if not options_window.visible and not confirm_window.visible and not slot_picker.visible and not save_success_window.visible:
 			close()
 
 # Save:
@@ -74,7 +74,7 @@ func _on_slot_picked(slot: int, mode: String) -> void:
 		GameState.current_scene = get_tree().current_scene.scene_file_path
 		SaveManager.save_game(slot)
 		slot_picker.hide()
-		save_success_window.show()
+		save_success_window.show_success()
 	elif mode == "load":
 		get_tree().paused = false
 		SaveManager.load_game(slot)
@@ -98,6 +98,7 @@ func _on_save_success_continue() -> void:
 # Options:
 func _on_options_pressed() -> void:
 	confirm_window.hide() # Por si estaba abierto para que no se solapen
+	slot_picker.hide()
 	options_window.show()
 
 func _on_options_closed() -> void:
@@ -106,6 +107,7 @@ func _on_options_closed() -> void:
 # Quit:
 func _on_quit_pressed() -> void:
 	options_window.hide()  # Por si estaba abierto para que no se solapen
+	slot_picker.hide()
 	confirm_window.setup(QUIT_MESSAGE) # Agrega el mensaje al label
 	confirm_window.show()
 
@@ -127,5 +129,7 @@ func _on_transition_out_completed() -> void:
 func close() -> void:
 	options_window.hide()
 	confirm_window.hide()
+	slot_picker.hide()
+	save_success_window.hide()
 	hide()
 	menu_closed.emit()

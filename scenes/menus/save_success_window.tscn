@@ -73,27 +73,47 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[node name="SaveSuccessWindow" type="PanelContainer" unique_id=263589579]
+[node name="SaveSuccessWindow" type="Control" unique_id=864502690]
 custom_minimum_size = Vector2(250, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c6xm5")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=852515076]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1462504070]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -224.0
+offset_top = -108.0
+offset_right = 224.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c6xm5")
-script = ExtResource("1_c6xm5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1865648187]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1865648187]
 layout_mode = 2
 alignment = 1
 
-[node name="MessageLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1948218765]
+[node name="MessageLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1948218765]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -106,12 +126,12 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OptionsSeparator" type="HSeparator" parent="VBoxContainer" unique_id=2118080852]
+[node name="OptionsSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=2118080852]
 layout_mode = 2
 theme_override_constants/separation = 20
 theme_override_styles/separator = SubResource("StyleBoxFlat_h142g")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1401321476]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1401321476]
 custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -119,7 +139,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="ContinueButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=644692659]
+[node name="ContinueButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=644692659]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(159.69, 60)
 layout_mode = 2

@@ -5,8 +5,8 @@ extends Node2D
 @onready var settings_button: Button = %SettingsButton
 @onready var album_button: Button = %AlbumButton
 @onready var exit_button: Button = %ExitButton
-@onready var options_window: PanelContainer = %OptionsWindow
-@onready var slot_picker: PanelContainer = %SlotPickerWindow
+@onready var options_window: Control = %OptionsWindow
+@onready var slot_picker: Control = %SlotPickerWindow
 
 # Variable que indica que escena va a cargar
 var scene_to_load: String = ""
