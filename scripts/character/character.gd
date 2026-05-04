@@ -5,7 +5,9 @@ extends Node
 enum Name {
 	NARRATOR,
 	HUNTER,
-	JASMINE
+	JASMINE,
+	NILAM,
+	RONALD
 }
 
 # Información de los personajes
@@ -32,7 +34,34 @@ const CHARACTER_DETAILS : Dictionary = {
 		# Tono de voz, más alto = más agudo
 		"voice_pitch": 2,
 		"char_color": Color("a8587ce6")
+	},
+	Name.NILAM: {
+		"name": "Nilam",
+		# TODO: asignarle sprite
+		"sprite_frames": null,
+		# Bus con EQ grave y seco
+		"voice_bus": "VoiceNilam",
+		# Ruta al archivo de voz del personaje
+		"voice": "res://assets/audio/voices/voice_base.ogg",
+		# Tono de voz grave y seco
+		"voice_pitch": 0.85,
+		# TODO: asignarle color
+		"char_color": Color(0, 0, 0, 0)
+	}, 
+	Name.RONALD: {
+		"name": "Ronald",
+		# TODO: asignarle sprite
+		"sprite_frames": null,
+		# Bus de audio con los efectos propios de Ronald
+		"voice_bus": "VoiceRonald",
+		# Ruta al archivo de voz del personaje
+		"voice": "res://assets/audio/voices/voice_base.ogg",
+		# Tono de voz de hombre mayor
+		"voice_pitch": 0.92,
+		# TODO: asignarle color
+		"char_color": Color(0, 0, 0, 0)
 	}
+	
 }
 
 
