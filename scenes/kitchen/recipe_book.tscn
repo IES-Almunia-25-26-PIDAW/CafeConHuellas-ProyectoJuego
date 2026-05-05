@@ -247,7 +247,7 @@ texture = ExtResource("3_0kgm3")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RightPageContent" type="VBoxContainer" parent="." unique_id=599060586]
+[node name="RightPageContent" type="Control" parent="." unique_id=1609282750]
 custom_minimum_size = Vector2(320, 470)
 layout_mode = 1
 anchors_preset = 8
@@ -256,19 +256,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 19.474976
-offset_top = -226.64001
+offset_top = -230.155
 offset_right = 353.87976
-offset_bottom = 243.36072
+offset_bottom = 239.84497
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 
 [node name="RecipeNameLabel" type="RichTextLabel" parent="RightPageContent" unique_id=456551869]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 0
+offset_top = -3.06
+offset_right = 334.0
+offset_bottom = 58.079998
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.45, 0.22, 0.28, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_fonts/bold_font = ExtResource("3_gp8t3")
@@ -283,14 +285,17 @@ autowrap_mode = 2
 [node name="RecipeDescLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1577638235]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
+layout_mode = 0
+offset_top = 53.765
+offset_right = 334.0
+offset_bottom = 113.76506
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.25, 0.18, 0.15, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Descripcion lalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalala"
+fit_content = true
 scroll_active = false
 autowrap_mode = 2
 horizontal_alignment = 3
@@ -299,14 +304,19 @@ horizontal_alignment = 3
 modulate = Color(0.717, 0.495, 0.542, 1)
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
+layout_mode = 0
+offset_top = 138.0
+offset_right = 334.0
+offset_bottom = 140.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 2
 
 [node name="RecipeIngredientsTitleLabel" type="RichTextLabel" parent="RightPageContent" unique_id=281591055]
-layout_mode = 2
+layout_mode = 0
+offset_top = 142.91
+offset_right = 334.0
+offset_bottom = 185.91
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.599, 0.378, 0.41, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_fonts/bold_font = ExtResource("3_gp8t3")
@@ -321,9 +331,11 @@ autowrap_mode = 2
 [node name="RecipeIngredientsLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1225326047]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 140)
-layout_mode = 2
+layout_mode = 0
+offset_top = 191.295
+offset_right = 334.0
+offset_bottom = 331.29498
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.25, 0.18, 0.15, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_font_sizes/normal_font_size = 20
@@ -340,14 +352,19 @@ autowrap_mode = 2
 modulate = Color(0.717, 0.495, 0.542, 1)
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
+layout_mode = 0
+offset_top = 335.0
+offset_right = 334.0
+offset_bottom = 337.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 2
 
 [node name="RecipeHowToTitleLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1559997301]
-layout_mode = 2
+layout_mode = 0
+offset_top = 332.085
+offset_right = 334.0
+offset_bottom = 375.085
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.599, 0.378, 0.41, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_fonts/bold_font = ExtResource("3_gp8t3")
@@ -361,9 +378,11 @@ autowrap_mode = 2
 
 [node name="RecipeHowToLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1959438031]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
+offset_top = 382.765
+offset_right = 334.0
+offset_bottom = 410.765
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.25, 0.18, 0.15, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_font_sizes/normal_font_size = 20
