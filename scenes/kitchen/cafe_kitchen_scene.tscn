@@ -5,10 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="2_hollr"]
 [ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="3_no3pg"]
 [ext_resource type="Texture2D" uid="uid://bfoinbft0rlkt" path="res://assets/images/ui/menu_button.png" id="5_k3dcv"]
-[ext_resource type="AudioStream" uid="uid://coracnoonfc1f" path="res://assets/audio/sfx/sfx_correct.ogg" id="6_ghovp"]
 [ext_resource type="Texture2D" uid="uid://c8bhol37cdt20" path="res://assets/images/kitchen_items/coffee_machine.png" id="6_vxhy1"]
 [ext_resource type="Texture2D" uid="uid://bf20ratd5iuov" path="res://assets/images/kitchen_items/coffee_machine_hover.png" id="7_2m1ic"]
-[ext_resource type="AudioStream" uid="uid://cspy2e5w5qr23" path="res://assets/audio/sfx/sfx_wrong.ogg" id="7_y37jc"]
 [ext_resource type="Texture2D" uid="uid://bmjkbhrcja4vb" path="res://assets/images/kitchen_items/recipebook.png" id="8_6xums"]
 [ext_resource type="Texture2D" uid="uid://h6aki8n5om3m" path="res://assets/images/kitchen_items/blender.png" id="8_uldgp"]
 [ext_resource type="PackedScene" uid="uid://mmh8nl4y1hy1" path="res://scenes/kitchen/kitchen_item_button.tscn" id="9_2m1ic"]
@@ -42,6 +40,10 @@
 [ext_resource type="Texture2D" uid="uid://bjsfvexspxh3k" path="res://assets/images/kitchen_items/milk_drink.png" id="22_up6ki"]
 [ext_resource type="Texture2D" uid="uid://dt14fatfie7m5" path="res://assets/images/kitchen_items/milk_drink_hover.png" id="23_r817n"]
 [ext_resource type="Texture2D" uid="uid://bbhas4ew8h0q4" path="res://assets/images/kitchen_items/ticket.png" id="36_cdkxp"]
+[ext_resource type="AudioStream" uid="uid://wrylhltbsb4g" path="res://assets/audio/sfx/kitchen/classic_low_battery_alert2.ogg" id="41_ywx1u"]
+[ext_resource type="AudioStream" uid="uid://b4jwirge0ok3f" path="res://assets/audio/sfx/kitchen/Mobile_game_positive_bell2.ogg" id="42_eobck"]
+[ext_resource type="AudioStream" uid="uid://c7icoys371a2r" path="res://assets/audio/sfx/kitchen/Mobile_game_positive_bell1.ogg" id="43_ykafe"]
+[ext_resource type="AudioStream" uid="uid://e4pxd3vkehl" path="res://assets/audio/sfx/kitchen/notification_bell_digital_ding.ogg" id="44_kr640"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o377"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -320,18 +322,23 @@ grow_vertical = 2
 [node name="RecipeBook" parent="UICanvas" unique_id=451810637 instance=ExtResource("14_1b1dy")]
 unique_name_in_owner = true
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="SFXCorrect" type="AudioStreamPlayer" parent="." unique_id=1058965141]
+[node name="SFXWrong" type="AudioStreamPlayer" parent="." unique_id=1027822204]
 unique_name_in_owner = true
-stream = ExtResource("6_ghovp")
+stream = ExtResource("41_ywx1u")
 bus = &"SFX"
 
-[node name="SFXWrong" type="AudioStreamPlayer" parent="." unique_id=1543175520]
+[node name="SFXCorrect" type="AudioStreamPlayer" parent="." unique_id=1455212763]
 unique_name_in_owner = true
-stream = ExtResource("7_y37jc")
+stream = ExtResource("42_eobck")
+bus = &"SFX"
+
+[node name="SFXRecipeCompleted" type="AudioStreamPlayer" parent="." unique_id=998919296]
+unique_name_in_owner = true
+stream = ExtResource("43_ykafe")
+bus = &"SFX"
+
+[node name="SFXOrderCompleted" type="AudioStreamPlayer" parent="." unique_id=1014462802]
+unique_name_in_owner = true
+stream = ExtResource("44_kr640")
 bus = &"SFX"

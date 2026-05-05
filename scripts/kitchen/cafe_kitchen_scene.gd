@@ -17,8 +17,11 @@ extends Node2D
 @onready var pastry_shelf: Control = %PastryShelf
 @onready var milkshake_shelf: Control = %MilkshakeShelf
 
-@onready var sfx_correct: AudioStreamPlayer = %SFXCorrect
+# Sonidos
 @onready var sfx_wrong: AudioStreamPlayer = %SFXWrong
+@onready var sfx_correct: AudioStreamPlayer = %SFXCorrect
+@onready var sfx_recipe_completed: AudioStreamPlayer = %SFXRecipeCompleted
+@onready var sfx_order_completed: AudioStreamPlayer = %SFXOrderCompleted
 
 # Popup de ingredientes, está en la escena oculto y se muestra cuando hace falta
 @onready var ingredient_popup = %IngredientPopup
@@ -160,12 +163,14 @@ func _on_ingredient_already_added(_ingredient_id: String) -> void:
 #PENDIENTE
 func _on_recipe_completed(recipe_id: String) -> void:
 	# Una receta del pedido está completa, marcamos su check en el ticket
-	# TODO: cambiar por sonido específico de receta completada cuando tengamos los sonidos definitivos
 	_mark_recipe_completed(recipe_id)
-	sfx_correct.play()
+	sfx_recipe_completed.play()
 	_show_recipe_completed_popup(recipe_id)
 
 func _on_order_completed() -> void:
+	# Esperamos a que termine el sonido de receta completada antes de reproducir el de orden completa
+	await sfx_recipe_completed.finished
+	sfx_order_completed.play()
 	# Todos los items del pedido están completos, iluminamos el cartel
 	order_ready_sign.disabled = false
 	# Al desactivar disabled, Godot cambia automáticamente a texture_normal
@@ -203,7 +208,7 @@ func _on_coffee_machine_pressed() -> void:
 			has_coffee = true
 			break
 	if not has_coffee:
-		sfx_wrong.play()
+		
 		return
 	_open_ingredient_popup("¿Qué le añades al café?", "coffee")
 
@@ -218,7 +223,7 @@ func _on_blender_pressed() -> void:
 			has_smoothie = true
 			break
 	if not has_smoothie:
-		sfx_wrong.play()
+		
 		return
 	_open_ingredient_popup("¿Qué le añades al smoothie?", "smoothie")
 

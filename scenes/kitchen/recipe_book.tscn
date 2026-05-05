@@ -255,39 +255,43 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 23.0
-offset_top = -228.0
-offset_right = 343.0
-offset_bottom = 242.0
+offset_left = 19.474976
+offset_top = -226.64001
+offset_right = 353.87976
+offset_bottom = 243.36072
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 9
 
 [node name="RecipeNameLabel" type="RichTextLabel" parent="RightPageContent" unique_id=456551869]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.45, 0.22, 0.28, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_fonts/bold_font = ExtResource("3_gp8t3")
-theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/normal_font_size = 38
+theme_override_font_sizes/bold_font_size = 38
 bbcode_enabled = true
 text = "Smoothie"
 fit_content = true
+scroll_active = false
 autowrap_mode = 2
 
 [node name="RecipeDescLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1577638235]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.25, 0.18, 0.15, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Descripcion lalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalalalalalalalallalala"
-fit_content = true
+scroll_active = false
 autowrap_mode = 2
 horizontal_alignment = 3
 
@@ -297,11 +301,12 @@ self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 10
+theme_override_constants/separation = 2
 
 [node name="RecipeIngredientsTitleLabel" type="RichTextLabel" parent="RightPageContent" unique_id=281591055]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.599, 0.378, 0.41, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_fonts/bold_font = ExtResource("3_gp8t3")
@@ -310,12 +315,15 @@ theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 text = "[b]✦ Ingredientes[/b]"
 fit_content = true
+scroll_active = false
 autowrap_mode = 2
 
 [node name="RecipeIngredientsLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1225326047]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 140)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.25, 0.18, 0.15, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_font_sizes/normal_font_size = 20
@@ -325,7 +333,7 @@ text = "-
 - 
 - 
 "
-fit_content = true
+scroll_active = false
 autowrap_mode = 2
 
 [node name="DividerHowTo" type="HSeparator" parent="RightPageContent" unique_id=1527967176]
@@ -334,25 +342,28 @@ self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 10
+theme_override_constants/separation = 2
 
 [node name="RecipeHowToTitleLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1559997301]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.599, 0.378, 0.41, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_fonts/bold_font = ExtResource("3_gp8t3")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 text = "[b]✦ Preparación[/b]"
 fit_content = true
+scroll_active = false
 autowrap_mode = 2
 
 [node name="RecipeHowToLabel" type="RichTextLabel" parent="RightPageContent" unique_id=1959438031]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.25, 0.18, 0.15, 1)
 theme_override_fonts/normal_font = ExtResource("3_gp8t3")
 theme_override_font_sizes/normal_font_size = 20
@@ -360,6 +371,7 @@ theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
 text = "Bla bla bla"
 fit_content = true
+scroll_active = false
 autowrap_mode = 2
 horizontal_alignment = 3
 

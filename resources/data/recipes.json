@@ -91,7 +91,7 @@
   },
   "smoothie_banana_cinnamon": {
 	"id": "smoothie_banana_cinnamon",
-	"display_name": "Smoothie de Plátano y Canela",
+	"display_name": "Smoothie de Plátano",
 	"category": "smoothie",
 	"interaction_type": "machine",
 	"description": "Parece un postre, pero es un batido. Cremoso, dulce y con ese toque de canela tan especial.",
@@ -111,7 +111,7 @@
   },
   "smoothie_berries": {
 	"id": "smoothie_berries",
-	"display_name": "Smoothie de Frutos Rojos",
+	"display_name": "Smoothie Frutos Rojos",
 	"category": "smoothie",
 	"interaction_type": "machine",
 	"description": "Una explosión de frutos del bosque en tu boca. Es ácido, dulce e increíblemente refrescante.",
