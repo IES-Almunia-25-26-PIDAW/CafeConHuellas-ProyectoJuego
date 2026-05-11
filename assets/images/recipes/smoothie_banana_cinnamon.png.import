@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cogsfxwiilm4h"
-path="res://.godot/imported/galleta_test.png-e96fd98126153a1b4efe71869ddcf34a.ctex"
+uid="uid://b1b0m8jbocyl3"
+path="res://.godot/imported/smoothie_banana_cinnamon.png-36fb82f8c43d3afe974c8a50241035d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/recipes/galleta_test.png"
-dest_files=["res://.godot/imported/galleta_test.png-e96fd98126153a1b4efe71869ddcf34a.ctex"]
+source_file="res://assets/images/recipes/smoothie_banana_cinnamon.png"
+dest_files=["res://.godot/imported/smoothie_banana_cinnamon.png-36fb82f8c43d3afe974c8a50241035d1.ctex"]
 
 [params]
 

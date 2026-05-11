@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://debvxc146nc1a" path="res://scripts/kitchen/recipe_book.gd" id="1_vw1fa"]
 [ext_resource type="Texture2D" uid="uid://bfxvve0auonef" path="res://assets/images/backgrounds/book.png" id="2_gp8t3"]
-[ext_resource type="Texture2D" uid="uid://bq5hrpailddhd" path="res://assets/images/test_kitchen/batido_test.png" id="3_0kgm3"]
 [ext_resource type="FontFile" uid="uid://chivh8jm7c75d" path="res://assets/fonts/PatrickHand-Regular.ttf" id="3_gp8t3"]
 [ext_resource type="AudioStream" uid="uid://b56vrgmd2t71m" path="res://assets/audio/music/FlippingPages.ogg" id="4_kjhcw"]
+[ext_resource type="Texture2D" uid="uid://n8ey5nphwf7w" path="res://assets/images/recipes/smoothie_strawberry.png" id="4_tmbcy"]
 [ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="5_tmbcy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oghhd"]
@@ -238,12 +238,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -330.0
-offset_top = -152.0
+offset_top = -142.0
 offset_right = -30.0
-offset_bottom = 148.0
+offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_0kgm3")
+texture = ExtResource("4_tmbcy")
 expand_mode = 3
 stretch_mode = 5
 
