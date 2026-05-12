@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8y027h3feuo8"
-path="res://.godot/imported/cafetera_test.png-57f8ee70b88ae5d20c3eab0933947f0c.ctex"
+uid="uid://by6f6h8vauri6"
+path="res://.godot/imported/cookie_chocolate.png-d0d445ea45ccf826b85a8c534f4c2cbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test_kitchen/cafetera_test.png"
-dest_files=["res://.godot/imported/cafetera_test.png-57f8ee70b88ae5d20c3eab0933947f0c.ctex"]
+source_file="res://assets/images/recipes/cookie_chocolate.png"
+dest_files=["res://.godot/imported/cookie_chocolate.png-d0d445ea45ccf826b85a8c534f4c2cbb.ctex"]
 
 [params]
 

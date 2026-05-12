@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://becb3d6xuwslm"
-path="res://.godot/imported/check_test.png-444f5f5a77fcdcd1a1c758406b8077dc.ctex"
+uid="uid://cqcosadfmyujk"
+path="res://.godot/imported/cake_lemon.png-e46109fc48452f62d2605488ea5607a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test_kitchen/check_test.png"
-dest_files=["res://.godot/imported/check_test.png-444f5f5a77fcdcd1a1c758406b8077dc.ctex"]
+source_file="res://assets/images/recipes/cake_lemon.png"
+dest_files=["res://.godot/imported/cake_lemon.png-e46109fc48452f62d2605488ea5607a2.ctex"]
 
 [params]
 

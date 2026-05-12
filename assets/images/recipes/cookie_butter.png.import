@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn461ehdbb11e"
-path="res://.godot/imported/pastel_Test.png-df6ae0b17e5443424814c897458b40bc.ctex"
+uid="uid://jf1vlu6x360m"
+path="res://.godot/imported/cookie_butter.png-2fb634e268ed08929b19f3af5feaeef6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test_kitchen/pastel_Test.png"
-dest_files=["res://.godot/imported/pastel_Test.png-df6ae0b17e5443424814c897458b40bc.ctex"]
+source_file="res://assets/images/recipes/cookie_butter.png"
+dest_files=["res://.godot/imported/cookie_butter.png-2fb634e268ed08929b19f3af5feaeef6.ctex"]
 
 [params]
 

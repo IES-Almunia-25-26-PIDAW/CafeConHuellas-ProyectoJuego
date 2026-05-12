@@ -127,7 +127,7 @@
 	"description": "Receta de la abuela. Manzanas tiernas y una masa crujiente que huele a canela recién horneada.",
 	"ingredients": ["apple", "shortcrust", "sugar", "cinnamon", "butter"],
 	"how_to_make": "Cubre el molde con la masa. Coloca las láminas de manzana con mimo, espolvorea azúcar y canela, añade unos toques de mantequilla y hornea hasta que esté dorada.",
-	"recipe_image": "res://assets/images/test_kitchen/pastel_Test.png"
+	"recipe_image": "res://assets/images/recipes/cake_apple.png"
   },
   "cake_carrot": {
 	"id": "cake_carrot",
@@ -167,7 +167,7 @@
 	"description": "Clásicas, crujientes y con ese aroma a vainilla que inunda toda la cafetería.",
 	"ingredients": ["flour", "butter", "powdered_sugar", "eggs", "vanilla"],
 	"how_to_make": "Amasa la mantequilla con el azúcar, el huevo y la vainilla. Añade la harina, corta las galletas con tus formas favoritas y hornéalas hasta que los bordes estén tostados.",
-	"recipe_image": "res://assets/images/test_kitchen/galleta_test.png"
+	"recipe_image": "res://assets/images/recipes/cookie_butter.png"
   },
   "cookie_chocolate": {
 	"id": "cookie_chocolate",

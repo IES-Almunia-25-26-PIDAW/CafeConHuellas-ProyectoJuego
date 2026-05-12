@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o3jlq3jo0bsl"
-path="res://.godot/imported/cartel_salida_gato_alien_test.png-3af7ddbcec3c87b8063eaf8568a5eee9.ctex"
+uid="uid://bcopetkiaco77"
+path="res://.godot/imported/cake_carrot.png-74a1efc0ce2c384311047254cdbefd57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png"
-dest_files=["res://.godot/imported/cartel_salida_gato_alien_test.png-3af7ddbcec3c87b8063eaf8568a5eee9.ctex"]
+source_file="res://assets/images/recipes/cake_carrot.png"
+dest_files=["res://.godot/imported/cake_carrot.png-74a1efc0ce2c384311047254cdbefd57.ctex"]
 
 [params]
 

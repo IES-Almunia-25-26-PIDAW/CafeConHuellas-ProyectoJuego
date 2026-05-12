@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djl205rjxve4r"
-path="res://.godot/imported/batidora_Test.png-cb673d7f10a126e71cf41398cedf73ca.ctex"
+uid="uid://br2fw7r45w4xf"
+path="res://.godot/imported/cake_cheese.png-df3cc9af17b125c8d968dc5bfe0e4753.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test_kitchen/batidora_Test.png"
-dest_files=["res://.godot/imported/batidora_Test.png-cb673d7f10a126e71cf41398cedf73ca.ctex"]
+source_file="res://assets/images/recipes/cake_cheese.png"
+dest_files=["res://.godot/imported/cake_cheese.png-df3cc9af17b125c8d968dc5bfe0e4753.ctex"]
 
 [params]
 

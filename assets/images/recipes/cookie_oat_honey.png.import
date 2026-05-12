@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw3y3hoshjbo7"
-path="res://.godot/imported/libro_test.png-19896d12f9e7e09570ec80e17732a69b.ctex"
+uid="uid://cscu5e8hp1otd"
+path="res://.godot/imported/cookie_oat_honey.png-8cbbe5270a0113001da81bf6a5df97b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/test_kitchen/libro_test.png"
-dest_files=["res://.godot/imported/libro_test.png-19896d12f9e7e09570ec80e17732a69b.ctex"]
+source_file="res://assets/images/recipes/cookie_oat_honey.png"
+dest_files=["res://.godot/imported/cookie_oat_honey.png-8cbbe5270a0113001da81bf6a5df97b5.ctex"]
 
 [params]
 
