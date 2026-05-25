@@ -13,7 +13,7 @@ config_version=5
 config/name="PawCafe"
 run/main_scene="uid://sw578em8eioq"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dsvjme7k1pm03"
 
 [audio]
 

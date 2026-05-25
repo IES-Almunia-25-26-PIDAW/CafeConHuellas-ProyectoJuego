@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjfxw63gnuxd8"]
 
 [ext_resource type="Script" uid="uid://icgolk484i5p" path="res://scripts/kitchen/recipe_completed_popup.gd" id="1_p31g1"]
-[ext_resource type="Texture2D" uid="uid://dn461ehdbb11e" path="res://assets/images/test_kitchen/pastel_Test.png" id="2_n34en"]
+[ext_resource type="Texture2D" uid="uid://n8ey5nphwf7w" path="res://assets/images/recipes/smoothie_strawberry.png" id="2_xegwl"]
 [ext_resource type="FontFile" uid="uid://kmb7gfn44fgk" path="res://assets/fonts/Fredoka-Medium.ttf" id="3_xegwl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cphmf"]
@@ -55,7 +55,7 @@ theme_override_constants/separation = 15
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_n34en")
+texture = ExtResource("2_xegwl")
 expand_mode = 5
 
 [node name="RecipeLabel" type="RichTextLabel" parent="PopupPanel/VBoxContainer" unique_id=582707791]
