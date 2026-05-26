@@ -1,4 +1,8 @@
+## Pantalla principal del juego con opciones de nueva partida, continuar, ajustes, álbum y salir.
+## Desactiva el botón de continuar si no hay ningún guardado disponible.
 extends Node2D
+
+# ===== REFERENCIAS A NODOS =====
 
 @onready var new_game_button: Button = %NewGameButton
 @onready var continue_button: Button = %ContinueButton
@@ -8,9 +12,14 @@ extends Node2D
 @onready var options_window: Control = %OptionsWindow
 @onready var slot_picker: Control = %SlotPickerWindow
 
-# Variable que indica que escena va a cargar
+
+# ===== ESTADO INTERNO =====
+
+# Escena a cargar al completar la transición de salida.
 var scene_to_load: String = ""
 
+
+# ===== CICLO DE VIDA =====
 
 func _ready():
 	SceneManager.transition_in()
@@ -22,25 +31,26 @@ func _ready():
 	album_button.pressed.connect(_on_album_button_pressed)
 	exit_button.pressed.connect(_on_exit_button_pressed)
 	
-	# Conectamos el sonido de clic a los botones activos del menú principal
+	# Conectamos el sonido de clic a los botones activos del menú principal.
 	new_game_button.pressed.connect(UiSoundManager.play_menu_click)
 	continue_button.pressed.connect(UiSoundManager.play_menu_click)
 	settings_button.pressed.connect(UiSoundManager.play_menu_click)
 	album_button.pressed.connect(UiSoundManager.play_menu_click)
-	# Botón de exit comentado porque si queremos que suene tenemos que poner
+	# El botón de salir no tiene sonido porque el juego cierra antes de que se reproduzca.
+	# Si se quiere añadir, usar:
 	# await get_tree().create_timer(0.2).timeout   en _on_exit_button_pressed
 	# exit_button.pressed.connect(UiSoundManager.play_menu_click)
 	
-	# Ventana Options
+	# Ventana Options.
 	options_window.window_closed.connect(_on_options_closed)
 	options_window.hide()
 	
-	# Ventana SlotPicket si hay alguna save
+	# Ventana SlotPicket si hay alguna save.
 	slot_picker.slot_picked.connect(_on_continue_slot_picked)
 	slot_picker.window_closed.connect(func() -> void: slot_picker.hide())
 	slot_picker.hide()
 	
-	# Deshabilitar continuar si no hay ninguna save
+	# Deshabilitar continuar si no hay ninguna save.
 	var has_any_save: bool = false
 	for i in SaveManager.MAX_SLOTS:
 		if SaveManager.has_save(i):
@@ -48,17 +58,23 @@ func _ready():
 			break
 	continue_button.disabled = not has_any_save
 	
-	# CONNECT_ONE_SHOT solo lo llama una vez y se desconecta después de emitirse
+	# CONNECT_ONE_SHOT solo lo llama una vez y se desconecta después de emitirse.
 	SceneManager.transition_out_completed.connect(_on_transition_out_completed, CONNECT_ONE_SHOT)
 
-func _on_new_game_button_pressed():
+
+# ===== INTERACCIONES =====
+
+# Detiene la música y carga la pantalla de configuración de personaje.
+func _on_new_game_button_pressed() -> void:
 	MusicManager.stop()
 	scene_to_load = "res://scenes/player_setup.tscn"
 	SceneManager.transition_out()
-
+	
+# Abre el slot picker en modo cargar.
 func _on_continue_button_pressed() -> void:
 	slot_picker.open("load")
 
+# Carga la partida de la slot seleccionada y va a la escena guardada.
 func _on_continue_slot_picked(slot: int, _mode: String) -> void:
 	var success: bool = SaveManager.load_game(slot)
 	if not success:
@@ -67,18 +83,24 @@ func _on_continue_slot_picked(slot: int, _mode: String) -> void:
 	scene_to_load = GameState.current_scene
 	SceneManager.transition_out()
 
+
+# Abre la ventana de opciones de audio.
 func _on_settings_pressed() -> void:
 	options_window.show()
 
+# Reservado para lógica futura al cerrar las opciones.
 func _on_options_closed() -> void:
 	pass  # Se puede añadir logica aquí
 
-func _on_album_button_pressed():
+# Carga la pantalla del álbum de ilustraciones.
+func _on_album_button_pressed() -> void:
 	scene_to_load = "res://scenes/album/album_screen.tscn"
 	SceneManager.transition_out()
 
-func _on_transition_out_completed():
+# Cambia a la escena almacenada en scene_to_load.
+func _on_transition_out_completed() -> void:
 	SceneManager.change_scene(scene_to_load)
 
-func _on_exit_button_pressed():
+# Cierra el juego.
+func _on_exit_button_pressed() -> void:
 	get_tree().quit()

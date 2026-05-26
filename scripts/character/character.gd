@@ -1,7 +1,16 @@
+## Clase que centraliza toda la información estática de los personajes del juego.
+## Define el enum Name con los IDs de cada personaje y el diccionario CHARACTER_DETAILS
+## con sus propiedades (nombre, color, voz, sprites).
+## [br]
+## Uso: Character.NAME.JASMINE, Character.CHARACTER_DETAILS[Character.Name.JASMINE]
 class_name Character
 extends Node
 
-# Nombres de los personajes
+
+# ===== ENUM DE PERSONAJES =====
+
+## Identificadores únicos de cada personaje.
+## Se usan como claves en CHARACTER_DETAILS y en los archivos de diálogo JSON.
 enum Name {
 	NARRATOR,
 	HUNTER,
@@ -10,7 +19,10 @@ enum Name {
 	RONALD
 }
 
-# Información de los personajes
+# ===== DATOS DE PERSONAJES =====
+
+## Diccionario con las propiedades de cada personaje indexadas por Character.Name.
+## Incluye: nombre, color del cuadro de diálogo, sprites, bus de voz y tono.
 const CHARACTER_DETAILS : Dictionary = {
 	Name.NARRATOR: {
 		"name": "",
@@ -66,7 +78,11 @@ const CHARACTER_DETAILS : Dictionary = {
 
 
 
-# Compara el nombre pasado con el del Enum para saber si existe
+# ===== PUBLIC API =====
+
+## Devuelve el valor del enum Name correspondiente a un string.
+## Devuelve -1 y lanza un error si el nombre no existe.
+## [param string_value] Nombre del personaje (no sensible a mayúsculas).
 static func get_enum_from_string(string_value: String) -> int:
 	var upper_string = string_value.to_upper()
 	if Name.has(upper_string):
@@ -74,12 +90,3 @@ static func get_enum_from_string(string_value: String) -> int:
 	else:
 		push_error("Invalid Character name: " + string_value)
 		return -1
-		
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

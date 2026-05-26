@@ -1,66 +1,83 @@
+## Autoload singleton que almacena el estado completo de la partida activa.
+## Es la única fuente de verdad del progreso del jugador durante la sesión.
+## SaveManager lee y escribe este estado al guardar y cargar partidas.
+## [br]
+## Nota: current_order_recipe_ids no se persiste en el savefile, es estado
+## temporal de la sesión que se limpia al completar cada orden.
 extends Node
 
-# GameState: Se encarga de guardar todas las propiedades necesarias en las savefiles
 
-# ====== DATOS DEL JUGADOR ======
+# ===== DATOS DEL JUGADOR =====
 
 # Nombre del jugador
 var player_name: String = "Hunter"
-# Pronombres del jugador (0 - male, 1 - female, 2 - non-binary)
+# Pronombres del jugador (0 - male, 1 - female, 2 - non-binary).
 var player_pronouns: int = 0
-# Nombre de la cafetería elegido por el jugador
+# Nombre de la cafetería elegido por el jugador.
 var cafe_name: String = "PawCafé"
 
-# Número del día en el que se encuentra la historia
+
+# ===== PROGRESO DE LA HISTORIA =====
+
+# Número del día en el que se encuentra la historia.
 var day: int = 1
-# Escena en la que se encontraba el jugador al guardar
+# Escena en la que se encontraba el jugador al guardar.
 var current_scene: String = "res://scenes/cafe_client_zone.tscn"
-# Archivo JSON por el cual va la historia actualmente
+# Archivo JSON por el cual va la historia actualmente.
 var chapter_id: String = "story"
-# Línea actual en la que se encuentra la historia
+# Línea actual en la que se encuentra la historia.
 var dialogue_index: int = 0
 
-# Personajes conocidos dentro del juego
+# Personajes conocidos dentro del juego.
 var characters_met: Array[String] = []
-# Todas las elecciones tomadas por el jugador
+# Todas las elecciones tomadas por el jugador.
 var choices_made: Array[String] = []
-# Todas las pistas obtenidas por el jugador
+# Todas las pistas obtenidas por el jugador.
 var clues_found: Array[String] = []
 
-# Puntuación de la relación actual con Jasmine
+
+# ===== RELACIONES Y RUTAS =====
+
+# Puntuación de la relación actual con Jasmine.
 var relationship_jasmine: int = 0
-# Puntuación de la relación actual con Ronald
+# Puntuación de la relación actual con Ronald.
 var relationship_ronald: int = 0
-# Puntuación de la relación actual con Nilam
+# Puntuación de la relación actual con Nilam.
 var relationship_nilam: int = 0
-# Puntuación de la relación actual con lachicasecretamuejej
+# Puntuación de la relación actual con Hannah.
 var relationship_hannah: int = 0
 
-# Si se encuentra en la ruta Jasmine
+# Si se encuentra en la ruta Jasmine.
 var route_jasmine: bool = false
-# Si se encuentra en la ruta Ronald
+# Si se encuentra en la ruta Ronald.
 var route_ronald: bool = false
-# Si se encuentra en la ruta Nilam
+# Si se encuentra en la ruta Nilam.
 var route_nilam: bool = false
-# Si se encuentra en la ruta lachicasecretamuejej
+# Si se encuentra en la ruta Hannah.
 var route_hannah: bool = false
 
-# Animales actuales que tiene el jugador
+
+# ===== ANIMALES Y EMAILS =====
+
+# Animales actuales que tiene el jugador.
 var animals_athome: Array[String] = []
-# Animales adoptados después de responder un email (buena o mala decisión para al final agregar una puntuación)
+# Animales adoptados después de responder un email (buena o mala decisión para al final indicar si ha sido buena o mala decisión).
 var animals_adopted_good: Array[String] = []
 var animals_adopted_bad: Array[String] = []
-# Emails de adopción de los animales que se han recibido y su estado actual
-# Estados: not_read, read, accepted_good, accepted_bad, declined 
+# Emails de adopción de los animales que se han recibido y su estado actual.
+# Estados: not_read, read, accepted_good, accepted_bad, declined.
 var received_emails_status: Dictionary = {}
 
-# Lista de recetas que el cliente ha pedido actualmente (máximo 4, se limpia al completar la orden)
+# ===== ESTADO TEMPORAL DE SESIÓN =====
+# Estas variables NO se guardan en el savefile, se limpian entre órdenes.
+
+# Lista de recetas que el cliente ha pedido actualmente (máximo 4, se limpia al completar la orden).
 var current_order_recipe_ids: Array[String] = []
 
 
 # ====== VALORES POR DEFECTO Y RESET DE SAVEFILE ======
 
-# Valores por defecto que se usarán al iniciar un nuevo juego
+# Valores por defecto que se usarán al iniciar un nuevo juego.
 const DEFAULTS: Dictionary = {
 	"player_name": "Hunter",
 	"player_pronouns": 0,
@@ -79,7 +96,7 @@ const DEFAULTS: Dictionary = {
 	"route_hannah": false,
 }
 
-# Función que resetea todos los valores a los por defecto para empezar una nueva savefile
+## Resetea todos los valores a los por defecto para iniciar una nueva partida.
 func reset() -> void:
 	player_name = DEFAULTS["player_name"]
 	player_pronouns = DEFAULTS["player_pronouns"]
@@ -110,9 +127,10 @@ func reset() -> void:
 	received_emails_status = {}
 
 
-# ====== FUNCIONES DICT ======
+# ===== SERIALIZACIÓN =====
 
-# Convierte el estado a datos guardables (diccionario)
+## Convierte el estado actual a un diccionario para guardarlo en disco.
+## Usa duplicate() en los arrays para no compartir referencias con el savefile.
 func to_dict() -> Dictionary:
 	return {
 		"save_version": 1,
@@ -127,7 +145,7 @@ func to_dict() -> Dictionary:
 		"chapter_id": chapter_id,
 		"dialogue_index": dialogue_index,
 		
-		"characters_met": characters_met.duplicate(), # Debe ser duplicate() para no compartir la referencia ni modificar la save sin querer
+		"characters_met": characters_met.duplicate(), # Debe ser duplicate() para no compartir la referencia ni modificar la save sin querer.
 		"choices_made": choices_made.duplicate(),
 		"clues_found": clues_found.duplicate(),
 
@@ -147,7 +165,9 @@ func to_dict() -> Dictionary:
 		"received_emails_status": received_emails_status.duplicate(),
 	}
 
-# Carga los datos en el juego (del diccionario a variables que mete en el juego)
+## Aplica los datos de un diccionario (leído del disco) al estado actual.
+## Usa assign() en los arrays para vaciar y rellenar sin cambiar la referencia.
+## Si una clave no existe en el diccionario, usa el valor por defecto de DEFAULTS.
 func from_dict(data: Dictionary) -> void:
 	player_name = data.get("player_name", DEFAULTS["player_name"])
 	player_pronouns = data.get("player_pronouns", DEFAULTS["player_pronouns"])
@@ -158,8 +178,10 @@ func from_dict(data: Dictionary) -> void:
 	chapter_id = data.get("chapter_id", DEFAULTS["chapter_id"])
 	dialogue_index = data.get("dialogue_index", DEFAULTS["dialogue_index"])
 
-	characters_met.assign(data.get("characters_met", [])) # Assign vacía el array actual y copia los valores del array pasado
-	choices_made.assign(data.get("choices_made", [])) # Si da bugs raros, se puede usar la versión de .duplicate()
+	# assign() vacía el array actual y copia los valores del nuevo.
+	characters_met.assign(data.get("characters_met", []))
+	# Si da problemas con arrays tipados, cambiar a duplicate().
+	choices_made.assign(data.get("choices_made", [])) 
 	clues_found.assign(data.get("clues_found", []))
 
 	relationship_jasmine = data.get("relationship_jasmine", DEFAULTS["relationship_jasmine"])

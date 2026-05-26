@@ -1,12 +1,27 @@
+## UI del sistema de diálogo: muestra el texto del personaje con animación letra a letra,
+## reproduce la voz del personaje sincronizada con el texto, y gestiona las elecciones del jugador.
 extends Control
 
-# Cuando el texto termina de reproducirse, la animación de hablar también
+
+# ===== SEÑALES =====
+
+## Se emite cuando la animación de texto termina de reproducirse.
 signal text_animation_done
-# Señal que indica la elección escogida
+## Se emite cuando el jugador selecciona una opción de diálogo.
 signal choice_selected
 
-# Precargar la elección del jugador
+
+# ===== CONSTANTES =====
+
+# Precargar la elección del jugador.
 const ChoiceButtonScene = preload("res://scenes/player_choice.tscn")
+# Caracteres por segundo de la animación de texto
+const ANIMATION_SPEED : int = 30
+# Caracteres que no disparan sonido de voz (espacios, puntuación)
+const SILENT_CHARS: String = " .,!?-\n"
+
+
+# ===== REFERENCIAS A NODOS =====
 
 @onready var dialog_line = %DialogLine
 @onready var speaker_box = %SpeakerBox
@@ -14,14 +29,14 @@ const ChoiceButtonScene = preload("res://scenes/player_choice.tscn")
 @onready var choice_list = %ChoiceList
 @onready var voice_player = $VoicePlayer # Nodo de audio que reproduce la voz del personaje
 
-const ANIMATION_SPEED : int = 30
 
-# Caracteres que no disparan sonido de voz (espacios, puntuación)
-const SILENT_CHARS: String = " .,!?-\n"
+# ===== ESTADO INTERNO =====
 
 var animate_text : bool = false
 var current_visible_characters : int = 0
 var current_character_details : Dictionary
+
+# Propiedades de voz del personaje activo
 # Stream de audio de la voz del personaje actual
 var current_voice: AudioStream = null
 # Pitch (tono) de la voz del personaje actual
@@ -29,14 +44,16 @@ var current_pitch: float = 1.0
 # Bus de audio del personaje actual
 var current_bus: String = "Voices"
 
-# Called when the node enters the scene tree for the first time.
+
+# ===== CICLO DE VIDA =====
+
 func _ready():
-	# Resetea lo que se muestra en pantalla
+	# Resetea lo que se muestra en pantalla.
 	choice_list.hide()
 	dialog_line.text = ""
 	speaker_name.text = ""
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Anima el texto letra a letra y reproduce la voz sincronizada.
 func _process(delta: float) -> void:
 	if animate_text:
 		if dialog_line.visible_ratio < 1:
@@ -44,7 +61,7 @@ func _process(delta: float) -> void:
 			if dialog_line.visible_characters > current_visible_characters:
 				current_visible_characters = dialog_line.visible_characters
 				var current_char = dialog_line.text[current_visible_characters - 1]
-				# Intenta reproducir el sonido de voz para el carácter actual
+				# Intenta reproducir el sonido de voz para el carácter actual.
 				_try_play_voice(current_char)
 				if current_visible_characters < dialog_line.text.length():
 						var next_char = dialog_line.text[current_visible_characters]
@@ -52,36 +69,43 @@ func _process(delta: float) -> void:
 			animate_text = false
 			text_animation_done.emit()
 
+
+# ===== PUBLIC API =====
+
+## Muestra una nueva línea de diálogo con el personaje y texto indicados.
+## Actualiza el speakerbox, nombre, color y voz según los datos del personaje.
+## [param character_name] ID del personaje (Character.Name).
+## [param line] Texto a mostrar con animación.
 func change_line(character_name: Character.Name, line: String):
 	current_character_details = Character.CHARACTER_DETAILS[character_name]
 	
-	# Si es el narrador, ocultar speaker box completamente
+	# Si es el narrador, ocultar speaker box completamente.
 	var is_narrator: bool = character_name == Character.Name.NARRATOR
 	speaker_box.visible = not is_narrator
 	
-	# El nombre solo se muestra si no es narrador
+	# El nombre solo se muestra si no es narrador.
 	if not is_narrator:
-		# Si es Hunter. usar el nombre del jugador
+		# Si es Hunter. usar el nombre del jugador.
 		if character_name == Character.Name.HUNTER:
 			speaker_name.text = GameState.player_name
 		else:
 			speaker_name.text = current_character_details["name"]
 	
-	# Color del speakerbox según el color del personaje (marrón/color de hunter por defecto)
+	# Color del speakerbox según el color del personaje (marrón/color de hunter por defecto).
 	var char_color: Color = current_character_details.get("char_color", Color("4f382de6"))
 	_apply_speaker_color(char_color)
 	
-	# Carga la voz del personaje si tiene una definida
-	# Si no tiene voz (como Hunter), current_voice será null y no sonará nada
+	# Carga la voz del personaje si tiene una definida.
+	# Si no tiene voz (como Hunter), current_voice será null y no sonará nada.
 	var voice_path: String = current_character_details.get("voice", "")
 	if voice_path != "":
 		current_voice = load(voice_path)
 	else:
 		current_voice = null
-	# Carga el pitch del personaje, si no tiene usa 1.0 como valor por defecto
+	# Carga el pitch del personaje, si no tiene usa 1.0 como valor por defecto.
 	current_pitch = current_character_details.get("voice_pitch", 1.0)
-	# Cambia el bus del VoicePlayer al del personaje actual
-	# Si no tiene bus definido usa "Voices" por defecto
+	# Cambia el bus del VoicePlayer al del personaje actual.
+	# Si no tiene bus definido usa "Voices" por defecto.
 	current_bus = current_character_details.get("voice_bus", "Voices")
 	voice_player.bus = current_bus
 	
@@ -90,48 +114,55 @@ func change_line(character_name: Character.Name, line: String):
 	dialog_line.visible_characters = 0
 	animate_text = true
 
+## Muestra las opciones de elección del jugador.
+## [param choices] Array de diccionarios con "text" y "goto".
 func display_choices(choices: Array):
-	# Limpiar las elecciones existentes
+	# Limpiar las elecciones existentes.
 	for child in choice_list.get_children():
 		child.queue_free()
 		
-	# Creamos un nuevo botón por cada elección
+	# Creamos un nuevo botón por cada elección.
 	for choice in choices:
 		var choice_button = ChoiceButtonScene.instantiate()
 		choice_button.text = choice["text"]
-		# Agregamos la señal al botón
+		# Agregamos la señal al botón.
 		choice_button.pressed.connect(_on_choice_button_pressed.bind(choice["goto"]))
-		# Añadimos el botón al ChoiceList
+		# Añadimos el botón al ChoiceList.
 		choice_list.add_child(choice_button)
 	
-	# Muestra la lista de elecciones
+	# Muestra la lista de elecciones.
 	choice_list.show()
 
+## Salta la animación de texto mostrando todo el texto de golpe.
 func skip_text_animation():
 	dialog_line.visible_ratio = 1
-	animate_text = false  # Para el proceso de animación inmediatamente
-	voice_player.stop()   # Silencia la voz al saltar el texto
+	animate_text = false  # Para el proceso de animación inmediatamente.
+	voice_player.stop()   # Silencia la voz al saltar el texto.
 
-# Reproduce el sonido de voz del personaje actual carácter a carácter
-# Añade una pequeña variación aleatoria al pitch para que no suene robótico
+
+# ===== LÓGICA INTERNA =====
+
+# Reproduce el sonido de voz del personaje actual carácter a carácter.
+# Añade una pequeña variación aleatoria al pitch para que no suene robótico.
 func _try_play_voice(current_char: String) -> void:
-	# No suena en espacios ni puntuación
+	# No suena en espacios ni puntuación.
 	if SILENT_CHARS.contains(current_char):
 		return
-	# Si el personaje no tiene voz asignada no hace nada
+	# Si el personaje no tiene voz asignada no hace nada.
 	if current_voice == null:
 		return
 	voice_player.stream = current_voice
-	# Variación aleatoria de +-0.04 para sonar más natural
+	# Variación aleatoria de +-0.04 para sonar más natural.
 	voice_player.pitch_scale = current_pitch + randf_range(-0.04, 0.04)
 	voice_player.play()
-	
+
+# Emite choice_selected con el anchor de la opción elegida y oculta la lista.
 func _on_choice_button_pressed(anchor: String):
 	choice_selected.emit(anchor)
 	choice_list.hide()
 
+# Colorea el fondo del speakerbox con el color del personaje activo.
 func _apply_speaker_color(color: Color) -> void:
-	# Colorea el fondo del panel del nombre
 	var stylebox := speaker_box.get_theme_stylebox("panel").duplicate() as StyleBoxFlat
 	stylebox.bg_color = color
 	speaker_box.add_theme_stylebox_override("panel", stylebox)

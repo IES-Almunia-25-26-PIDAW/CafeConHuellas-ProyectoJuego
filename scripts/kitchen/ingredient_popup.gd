@@ -1,14 +1,14 @@
+## Popup que muestra los ingredientes disponibles para que el jugador los seleccione.
+## Se usa tanto para la cafetera como para la batidora.
+## Genera un botón por cada ingredient_id recibido, agrupados por tipo con cabeceras de sección.
 extends Control
 
-# ingredient_popup.gd: Muestra los ingredientes disponibles para que el jugador los seleccione.
-# Se usa tanto para la cafetera como para la batidora.
-# Recibe una lista de ingredient_ids y genera un botón por cada uno.
 
 # ===== SEÑALES =====
 
-# Se emite cuando el jugador hace clic en un ingrediente
+## Se emite cuando el jugador hace clic en un ingrediente.
 signal ingredient_selected(ingredient_id: String)
-# Se emite cuando el jugador cierra el popup
+## Se emite cuando el jugador cierra el popup haciendo clic fuera.
 signal popup_closed
 
 
@@ -18,7 +18,10 @@ signal popup_closed
 @onready var ingredients_container: VBoxContainer = %IngredientsContainer
 
 
-# Tipos de ingredientes
+# ===== CONSTANTES =====
+
+# Tipos de ingredientes.
+# Orden en el que se muestran las secciones de ingredientes
 const TYPE_ORDER: Array[String] = ["base", "fruit", "sweetener", "flavor"]
 const TYPE_LABELS: Dictionary = {
 	"base": "────  BASE  ────",
@@ -27,44 +30,33 @@ const TYPE_LABELS: Dictionary = {
 	"flavor": "────  SABORES EXTRA  ────"
 }
 
-# Colores del tema kawaii/cozy café
+# Colores del tema kawaii/cozy café.
 const COLOR_SECTION_BG := Color(0.717, 0.495, 0.542, 1.0)
 const COLOR_SECTION_TEXT    := Color(1.0, 0.932, 0.927, 1.0)
 
-# Fondo del botón normal (beige cálido)
+# Fondo del botón normal (beige cálido).
 const COLOR_BTN_BG          := Color(0.95, 0.75, 0.52, 1.0)
 const COLOR_BTN_BORDER      := Color(0.85, 0.60, 0.33, 1.0)
 # Fondo del botón hover (beige más claro)
 const COLOR_BTN_BG_HOVER    := Color(1.0, 0.84, 0.62, 1.0)
-# Fondo del botón para "flavor" (verde menta)
+# Fondo del botón para "flavor" (verde menta).
 const COLOR_BTN_BG_FLAVOR        := Color(0.55, 0.86, 0.70, 1.0)
 const COLOR_BTN_BORDER_FLAVOR    := Color(0.35, 0.70, 0.50, 1.0)
 const COLOR_BTN_BG_FLAVOR_HOVER  := Color(0.68, 0.93, 0.78, 1.0)
-# Estado desactivado
+# Estado desactivado.
 const COLOR_DISABLED        := Color(0.4, 0.4, 0.4, 0.5)
 
-# Variable para fuente de letra
+
+# ===== ESTADO INTERNO =====
+
+# Variable para fuente de letra.
 var _section_font
 
 
-# ===== ESTILOS HELPERS =====
-
-func _make_btn_style(bg: Color, border: Color) -> StyleBoxFlat:
-	var s := StyleBoxFlat.new()
-	s.bg_color = bg
-	s.border_color = border
-	s.border_width_left = 2
-	s.border_width_top = 2
-	s.border_width_right = 2
-	s.border_width_bottom = 2
-	s.set_corner_radius_all(10)
-	s.content_margin_left = 3.0
-	s.content_margin_top = 3.0
-	s.content_margin_right = 3.0
-	s.content_margin_bottom = 3.0
-	return s
+# ===== CICLO DE VIDA =====
 
 func _ready() -> void:
+	# Estilo del panel principal
 	var panel_style := StyleBoxFlat.new()
 	panel_style.bg_color = Color(0.835, 0.676, 0.689, 0.95)
 	panel_style.set_corner_radius_all(16)
@@ -75,6 +67,7 @@ func _ready() -> void:
 	panel_style.border_color = Color(0.599, 0.378, 0.41, 1.0)
 	$PopupPanel.add_theme_stylebox_override("panel", panel_style)
 	
+	# Estilo de la barra de título
 	var title_style := StyleBoxFlat.new()
 	title_style.bg_color = Color(0.599, 0.378, 0.41, 1.0)
 	title_style.corner_radius_top_left = 14
@@ -93,8 +86,13 @@ func _ready() -> void:
 		%PopupTitle.add_theme_font_override("normal_font", font)
 		%PopupTitle.add_theme_font_size_override("normal_font_size", 25)
 	
+	
 # ===== PUBLIC API =====
 
+## Configura y rellena el popup con los ingredientes de la categoría activa.
+## [param title] Texto a mostrar en la barra superior del popup.
+## [param ingredient_ids] Lista de IDs de ingredientes a mostrar.
+## [param already_added] IDs ya añadidos que se mostrarán desactivados.
 func setup(title: String, ingredient_ids: Array, already_added: Array = []) -> void:
 	popup_title.text = title
 	
@@ -104,7 +102,7 @@ func setup(title: String, ingredient_ids: Array, already_added: Array = []) -> v
 	for child in ingredients_container.get_children():
 		child.queue_free()
 		
-	# Agrupamos ingredientes por tipo
+	# Agrupamos ingredientes por tipo.
 	var by_type: Dictionary = {}
 	for ingredient_id in ingredient_ids:
 		var ingredient : Dictionary = DataLoader.get_ingredient(ingredient_id)
@@ -115,7 +113,7 @@ func setup(title: String, ingredient_ids: Array, already_added: Array = []) -> v
 			by_type[type] = []
 		by_type[type].append(ingredient_id)
 			
-	# Creamos una sección por cada tipo en el orden definido
+	# Creamos una sección por cada tipo en el orden definido.
 	for type in TYPE_ORDER:
 		if not by_type.has(type):
 			continue
@@ -167,9 +165,9 @@ func setup(title: String, ingredient_ids: Array, already_added: Array = []) -> v
 			btn.ignore_texture_size = true
 			btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 			btn.custom_minimum_size = Vector2(80, 80)
-			#btn.tooltip_text = ingredient.get("display_name", ingredient_id)
+			#btn.tooltip_text = ingredient.get("display_name", ingredient_id).
 			
-			# Fondo visual según tipo de sección
+			# Fondo visual según tipo de sección.
 			if use_green:
 				btn.add_theme_stylebox_override("normal",  _make_btn_style(COLOR_BTN_BG_FLAVOR, COLOR_BTN_BORDER_FLAVOR))
 				btn.add_theme_stylebox_override("hover",   _make_btn_style(COLOR_BTN_BG_FLAVOR_HOVER, COLOR_BTN_BORDER_FLAVOR))
@@ -204,12 +202,32 @@ func setup(title: String, ingredient_ids: Array, already_added: Array = []) -> v
 
 # ===== INTERACCIONES =====
 
+# Cierra el popup al hacer clic fuera del panel.
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if not $PopupPanel.get_rect().has_point(get_local_mouse_position()):
 			popup_closed.emit()
 			hide()
 
-
+# Emite la señal con el ingrediente seleccionado.
 func _on_ingredient_pressed(ingredient_id: String) -> void:
 	ingredient_selected.emit(ingredient_id)
+
+
+# ===== ESTILOS HELPERS =====
+
+# Crea un StyleBoxFlat con bordes redondeados para los botones de ingredientes.
+func _make_btn_style(bg: Color, border: Color) -> StyleBoxFlat:
+	var s := StyleBoxFlat.new()
+	s.bg_color = bg
+	s.border_color = border
+	s.border_width_left = 2
+	s.border_width_top = 2
+	s.border_width_right = 2
+	s.border_width_bottom = 2
+	s.set_corner_radius_all(10)
+	s.content_margin_left = 3.0
+	s.content_margin_top = 3.0
+	s.content_margin_right = 3.0
+	s.content_margin_bottom = 3.0
+	return s

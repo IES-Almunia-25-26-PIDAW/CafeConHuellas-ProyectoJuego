@@ -1,22 +1,38 @@
+## Pestaña del PC que muestra las mascotas que el jugador tiene en casa y sus necesidades.
+## El jugador debe atender a todas las mascotas para que se active el botón de apagado.
+## Emite all_pets_happy cuando todas las necesidades están cubiertas.
 extends Control
 
-# PetsTab: Tab de mascotas que el jugador tiene actualmente y sus cuidados
-# Muestra una card por cada mascota que tiene el jugador
 
-# Emite esta señal cuando todas las mascotas tienen sus necesidades cubiertas
+# ===== SEÑALES =====
+
+## Se emite cuando todas las mascotas tienen sus necesidades cubiertas.
 signal all_pets_happy
-# Señal que conecta la señal de pet_card y su acción
+## Se emite cuando una mascota solicita mostrar el popup de acción.
 signal show_action_popup(need: String)
+
+
+# ===== ESCENAS =====
 
 const PetCard: PackedScene = preload("res://scenes/computer/pet_card.tscn")
 
+
+# ===== REFERENCIAS A NODOS =====
+
 @onready var cards_container: GridContainer = %CardsContainer
 
-# Rellenamos el grid con las mascotas que tenemos
+
+# ===== CICLO DE VIDA =====
+
 func _ready() -> void:
 	#populate()
 	pass
 
+
+# ===== PUBLIC API =====
+
+## Limpia y rellena el grid con las mascotas actuales del GameState.
+## Debe llamarse desde computer_scene después de inicializar los datos.
 func populate() -> void:
 	# DEBUG:
 	print("PetsTab populate, animals: ", GameState.animals_athome)
@@ -41,13 +57,27 @@ func populate() -> void:
 	
 	_check_all_happy()
 
-# Se llama cada vez que una mascota tiene una necesidad cubierta
+## Elimina la card de una mascota que ha sido adoptada y comprueba el estado general.
+## [param animal_id] ID de la mascota cuya card debe eliminarse.
+func remove_pet_card(animal_id: String) -> void:
+	for card in cards_container.get_children():
+		if card.get_animal_id() == animal_id:
+			card.queue_free()
+			break
+	_check_all_happy()
+
+
+# ===== LÓGICA INTERNA =====
+
+
+# Se llama cada vez que una mascota tiene una necesidad cubierta.
 func _on_need_fulfilled() -> void:
 	_check_all_happy()
 
-# Revisa que todas las mascotas estén felices
+# Comprueba si todas las mascotas están felices y emite all_pets_happy si es así.
+# Si no hay mascotas en casa, se considera que la condición se cumple directamente.
 func _check_all_happy() -> void:
-	# Si no hay mascotas en casa, el botón se activa directamente
+	# Si no hay mascotas en casa, el botón se activa directamente.
 	if GameState.animals_athome.is_empty():
 		all_pets_happy.emit()
 		return
@@ -55,13 +85,5 @@ func _check_all_happy() -> void:
 	for card in cards_container.get_children():
 		if not card.is_happy():
 			return
-	# Cuando todas estén felices, se emite la señal
+	# Cuando todas estén felices, se emite la señal.
 	all_pets_happy.emit()
-
-# Elimina la card de una mascota que ha sido adoptada
-func remove_pet_card(animal_id: String) -> void:
-	for card in cards_container.get_children():
-		if card.get_animal_id() == animal_id:
-			card.queue_free()
-			break
-	_check_all_happy()

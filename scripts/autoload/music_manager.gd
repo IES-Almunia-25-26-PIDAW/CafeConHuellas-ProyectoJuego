@@ -1,29 +1,39 @@
-# MusicManager - Autoload encargado de reproducir y gestionar la música del juego.
-# Al ser un Autoload, persiste entre cambios de escena y puede ser llamado desde cualquier script.
+## Autoload singleton que gestiona la reproducción de música del juego.
+## Implementa crossfade real entre pistas usando dos AudioStreamPlayer en paralelo.
+## Persiste entre cambios de escena y puede llamarse desde cualquier script.
+## [br]
+## Uso básico:
+##   MusicManager.play("cafe_theme")
+##   MusicManager.stop()
 extends Node
+
+# ===== CONFIGURACIÓN =====
+
+# Ruta base donde se encuentran los archivos de música.
+const MUSIC_PATH := "res://assets/audio/music/"
+# Duración en segundos de los fades.
+const FADE_TIME := 0.5
+
+# ===== ESTADO INTERNO =====
 
 # Dos players para poder hacer crossfade real sin silencio entre pistas.
 # active indica cuál de los dos está sonando en este momento (0 o 1).
 var players: Array[AudioStreamPlayer] = []
 var active: int = 0
 
-# Tween activo guardado para poder cancelarlo si llega una nueva pista
-# antes de que el fade anterior termine.
+# Tween activo guardado para poder cancelarlo si llega una nueva pista antes de que el fade anterior termine.
 var current_tween: Tween
 
 # Indica si hay un crossfade en curso.
 # Se usa para saber el estado exacto de los players si el tween se interrumpe.
 var is_crossfading: bool = false
 
-# Ruta base donde se encuentran los archivos de música
-const MUSIC_PATH := "res://assets/audio/music/"
-# Duración en segundos de los fades
-const FADE_TIME := 0.5
-
 # Nombre de la pista que está sonando actualmente.
 # Se usa para evitar reiniciar una pista que ya está en reproducción.
 var current_track: String = ""
 
+
+# ===== INICIALIZACIÓN =====
 
 func _ready() -> void:
 	# Se crean los dos AudioStreamPlayer y se asignan al bus "Music".
@@ -39,17 +49,20 @@ func _ready() -> void:
 		p.finished.connect(_on_finished.bind(i))
 
 
-# Reproduce una pista de música.
-# track_name: nombre del archivo sin extensión (ej: "cafe_theme")
-# fade: si es true hace un crossfade suave, si es false cambia de golpe
+# ===== PUBLIC API =====
+
+## Reproduce una pista de música por nombre de archivo (sin extensión).
+## Si la pista ya está sonando no hace nada.
+## [param track_name] Nombre del archivo sin extensión (ej: "cafe_theme").
+## [param fade] Si es true hace crossfade suave, si es false cambia de golpe.
 func play(track_name: String, fade: bool = true) -> void:
-	# Si la pista solicitada ya está sonando no se hace nada
+	# Si la pista solicitada ya está sonando no se hace nada.
 	if track_name == current_track:
 		return
 
 	var path = MUSIC_PATH + track_name + ".ogg"
 
-	# Se comprueba que el archivo existe antes de intentar cargarlo
+	# Se comprueba que el archivo existe antes de intentar cargarlo.
 	if not ResourceLoader.exists(path):
 		push_warning("MusicManager: No se encontró la pista: " + path)
 		return
@@ -65,8 +78,8 @@ func play(track_name: String, fade: bool = true) -> void:
 		players[active].play()
 
 
-# Para la música.
-# fade: si es true baja el volumen suavemente antes de parar
+## Para la música.
+## [param fade] Si es true baja el volumen suavemente antes de parar.
 func stop(fade: bool = true) -> void:
 	if fade:
 		var tween = create_tween()
@@ -80,6 +93,8 @@ func stop(fade: bool = true) -> void:
 		current_track = ""
 
 
+# ===== LÓGICA INTERNA =====
+
 # Sube el volumen del player inactivo con la nueva pista mientras baja
 # el volumen del player activo con la pista anterior, simultáneamente.
 func _crossfade(path: String) -> void:
@@ -91,7 +106,7 @@ func _crossfade(path: String) -> void:
 		# y se resetean ambos a un estado limpio y conocido antes de continuar.
 		if is_crossfading:
 			_stop_all()
-			# El player activo vuelve a ser el 0 en estado limpio
+			# El player activo vuelve a ser el 0 en estado limpio.
 			active = 0
 		is_crossfading = false
 
@@ -114,13 +129,13 @@ func _crossfade(path: String) -> void:
 	current_tween.parallel().tween_property(players[active], "volume_db", -40.0, FADE_TIME)
 	current_tween.tween_callback(func():
 		players[active].stop()
-		# El player que antes era inactivo pasa a ser el activo
+		# El player que antes era inactivo pasa a ser el activo.
 		active = next
 		is_crossfading = false
 	)
 
 
-# Para los dos players y resetea su volumen a 0
+# Para los dos players y resetea su volumen a 0.
 func _stop_all() -> void:
 	for p in players:
 		p.stop()

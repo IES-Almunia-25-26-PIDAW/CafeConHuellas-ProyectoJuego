@@ -1,28 +1,44 @@
+## Tarjeta individual del álbum que muestra un CG desbloqueado o un placeholder bloqueado.
+## Se instancia dinámicamente en AlbumScreen para cada CG definido en el JSON.
 extends PanelContainer
 
-# AlbumCard: Tarjeta individual del álbum para mostrar un CG
-# Se instancia muchas veces en la AlbumScreen para mostrar todas las CGs definidas
+# ===== SEÑALES =====
 
-# Señal que se emite cuando se hace click en la tarjeta si está desbloqueada
+## Se emite cuando el jugador hace clic en una tarjeta desbloqueada.
 signal card_pressed(cg_id: String, cg_data: Dictionary)
+
+
+# ===== REFERENCIAS A NODOS =====
 
 @onready var thumbnail_rect: TextureRect = %Thumbnail
 @onready var title_label: RichTextLabel = %TitleLabel
 @onready var lock_overlay: ColorRect = %LockBlackOverlay
 
-# Datos internos de la tarjeta
+
+# ===== ESTADO INTERNO =====
+
+# Datos internos de la tarjeta.
 var _cg_id: String = ""
 var _cg_data: Dictionary = {}
 var _is_unlocked: bool = false
 
+
+# ===== CICLO DE VIDA =====
+
 func _ready():
-	# Filtros del mouse para que permita hacer click en la card y propagar la signal a abrir la card presionada
+	# Filtros del mouse para que permita hacer click en la card y propagar la signal a abrir la card presionada.
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	thumbnail_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	lock_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	title_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-# Configura la tarjeta con los datos de una CG
+
+# ===== PUBLIC API =====
+
+## Configura la tarjeta con los datos del CG indicado.
+## [param cg_id] ID del CG.
+## [param cg_data] Diccionario con los datos del CG (de DataLoader.get_cg()).
+## [param is_unlocked] Si es true muestra la imagen, si no muestra el placeholder bloqueado.
 func setup(cg_id: String, cg_data: Dictionary, is_unlocked: bool) -> void:
 	_cg_id = cg_id
 	_cg_data = cg_data
@@ -35,7 +51,10 @@ func setup(cg_id: String, cg_data: Dictionary, is_unlocked: bool) -> void:
 		# Para probar
 		#_setup_unlocked(_cg_data)
 
-# Configuración de la tarjeta si la CG está desbloqueada
+
+# ===== LÓGICA INTERNA =====
+
+# Carga la thumbnail y muestra el título del CG.
 func _setup_unlocked(data: Dictionary) -> void:
 	# Carga la Thumbnail, si no existe se queda sin textura
 	var thumb_path: String = data.get("thumbnail", "")
@@ -49,12 +68,12 @@ func _setup_unlocked(data: Dictionary) -> void:
 	title_label.text = data.get("title", _cg_id)
 	lock_overlay.visible = false
 
-# Configuración de la tarjeta si la CG está bloqueada
+# Muestra el placeholder de tarjeta bloqueada.
 func _setup_locked() -> void:
 	title_label.text = "???"
 	lock_overlay.visible = true
 
-# Bloquea la interacción si está locked, si está unlocked y se ha hecho click izquierdo se emite la señal
+# Bloquea la interacción si está locked, si está unlocked y se ha hecho click izquierdo se emite la señal.
 func _gui_input(event: InputEvent) -> void:
 	if not _is_unlocked:
 		return
