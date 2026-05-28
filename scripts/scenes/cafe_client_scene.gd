@@ -9,6 +9,8 @@ extends Node2D
 @onready var background = %Background
 @onready var character_sprite = %ClientCharSprite
 @onready var dialog_ui = %DialogUI
+@onready var counter_layer: CanvasLayer = %CounterCanvas
+@onready var sfx_player: AudioStreamPlayer = %SFXPlayer
 
 
 # ===== ESTADO INTERNO =====
@@ -106,9 +108,30 @@ func process_current_line() -> void:
 		# Cambia el fondo.
 		var background_file = "res://assets/images/" + line["location"] + ".png"
 		background.texture = load(background_file)
-		# Si la línea tiene música, la reproducimos.
-		if line.has("music"):
-			MusicManager.play(line["music"])
+		dialog_index += 1
+		process_current_line()
+		return
+	
+	# -- Mostrador a mostrar cuando se encuentra en la cafetería
+	if line.has("counter"):
+		counter_layer.visible = line["counter"] == "yes"
+		dialog_index += 1
+		process_current_line()
+		return
+		
+	# -- Música a reproducir
+	if line.has("music"):
+		MusicManager.play(line["music"])
+		dialog_index += 1
+		process_current_line()
+		return
+	
+	# -- Sonido a reproducir
+	if line.has("sound"):
+		var sound_path: String = "res://assets/audio/sfx/" + line["sound"] + ".ogg"
+		if ResourceLoader.exists(sound_path):
+			sfx_player.stream = load(sound_path)
+			sfx_player.play()
 		dialog_index += 1
 		process_current_line()
 		return

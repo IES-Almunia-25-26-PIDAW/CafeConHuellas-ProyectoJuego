@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cgf0nequ35lex"]
 
 [ext_resource type="Script" uid="uid://db5lknirvk0g6" path="res://scripts/computer/character_detail.gd" id="1_5mmad"]
-[ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="1_me2rm"]
 [ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="2_mnnke"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fr47"]
@@ -182,7 +181,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3mfbw")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-texture = ExtResource("1_me2rm")
 expand_mode = 3
 stretch_mode = 5
 

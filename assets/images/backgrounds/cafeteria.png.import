@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxqscpdrrtjif"
-path="res://.godot/imported/monitor_frame.png-affeb24a45c703a8038270d352699ccc.ctex"
+uid="uid://d8d3wmgn2qpc"
+path="res://.godot/imported/cafeteria.png-c1effa5174956f15ac2dcc075d28a325.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/monitor_frame.png"
-dest_files=["res://.godot/imported/monitor_frame.png-affeb24a45c703a8038270d352699ccc.ctex"]
+source_file="res://assets/images/backgrounds/cafeteria.png"
+dest_files=["res://.godot/imported/cafeteria.png-c1effa5174956f15ac2dcc075d28a325.ctex"]
 
 [params]
 

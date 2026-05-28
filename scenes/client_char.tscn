@@ -9,4 +9,4 @@ script = ExtResource("1_5rvex")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=98979566]
 sprite_frames = ExtResource("1_tbvm5")
-animation = &"2-talk"
+animation = &"2-idle"

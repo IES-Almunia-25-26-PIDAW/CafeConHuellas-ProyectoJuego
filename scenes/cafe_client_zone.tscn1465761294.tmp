@@ -45,11 +45,10 @@ grow_vertical = 0
 unique_name_in_owner = true
 
 [node name="CounterCanvas" type="CanvasLayer" parent="." unique_id=1107169710]
-unique_name_in_owner = true
 layer = 2
-visible = false
 
 [node name="CounterImage" type="TextureRect" parent="CounterCanvas" unique_id=1006692947]
+unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_6m3kl")
@@ -83,6 +82,6 @@ anchor_top = 1.0
 anchor_right = 0.5
 grow_vertical = 0
 
-[node name="SFXPlayer" type="AudioStreamPlayer" parent="UICanvas" unique_id=1311903897]
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="UICanvas" unique_id=1285252140]
 unique_name_in_owner = true
 bus = &"SFX"
