@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://cwn34dipxie33"]
 
-[ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="1_5ygtt"]
 [ext_resource type="Script" uid="uid://c2xkevaprca6a" path="res://scripts/computer/pet_card.gd" id="1_v76la"]
-[ext_resource type="Texture2D" uid="uid://becb3d6xuwslm" path="res://assets/images/test_kitchen/check_test.png" id="2_kxrvv"]
-[ext_resource type="Texture2D" uid="uid://bmj2ovehoybh8" path="res://assets/placeholders/pet_placeholder_cat.png" id="2_p12x6"]
-[ext_resource type="Texture2D" uid="uid://tb6uk6snb657" path="res://assets/placeholders/pet_placeholder_dog.png" id="3_upx1o"]
-[ext_resource type="Texture2D" uid="uid://1y1eq2j6k8ne" path="res://assets/placeholders/icon_hunger.png" id="3_v76la"]
-[ext_resource type="Texture2D" uid="uid://ddrkvsof3s34q" path="res://assets/placeholders/icon_play.png" id="4_naifq"]
+[ext_resource type="Texture2D" uid="uid://dndwrusoq0o8q" path="res://assets/images/computer_items/gender_male.png" id="2_v76la"]
+[ext_resource type="Texture2D" uid="uid://cjlh351u86v8a" path="res://assets/images/computer_items/gender_female.png" id="3_naifq"]
 [ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="4_p12x6"]
-[ext_resource type="Texture2D" uid="uid://cfp7yw6hboucb" path="res://assets/placeholders/icon_love.png" id="5_p12x6"]
+[ext_resource type="Texture2D" uid="uid://dp86o640m02sd" path="res://assets/images/computer_items/icon_food.png" id="5_v76la"]
+[ext_resource type="Texture2D" uid="uid://d1iq0sdcr8plo" path="res://assets/images/computer_items/icon_food_ds.png" id="6_upx1o"]
+[ext_resource type="Texture2D" uid="uid://bfnp7xmpxpdl5" path="res://assets/images/computer_items/icon_bath.png" id="7_naifq"]
+[ext_resource type="Texture2D" uid="uid://xl3ih628cgcv" path="res://assets/images/computer_items/icon_bath_ds.png" id="8_bmoaa"]
+[ext_resource type="Texture2D" uid="uid://db8sgnb44tlys" path="res://assets/images/computer_items/icon_love.png" id="8_p12x6"]
+[ext_resource type="Texture2D" uid="uid://dx3ytruawec51" path="res://assets/images/computer_items/icon_love_ds.png" id="10_0pnpv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr2iw"]
 content_margin_left = 0.0
@@ -43,22 +44,6 @@ border_color = Color(0.5019608, 0.7490196, 0.98039216, 0.8509804)
 corner_radius_top_left = 13
 corner_radius_top_right = 13
 corner_detail = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upx1o"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.25)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 0.4)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmoaa"]
 content_margin_left = 0.0
@@ -100,8 +85,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fr2iw")
 script = ExtResource("1_v76la")
-icon_male = ExtResource("2_p12x6")
-icon_female = ExtResource("3_upx1o")
+icon_male = ExtResource("2_v76la")
+icon_female = ExtResource("3_naifq")
 
 [node name="AllContainer" type="VBoxContainer" parent="." unique_id=731590316]
 layout_mode = 2
@@ -123,17 +108,10 @@ theme_override_fonts/normal_font = ExtResource("4_p12x6")
 text = "Nube"
 vertical_alignment = 1
 
-[node name="GenderBadge" type="PanelContainer" parent="AllContainer/CardHeader/HeaderRow" unique_id=489248153]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_upx1o")
-
-[node name="GenderIcon" type="TextureRect" parent="AllContainer/CardHeader/HeaderRow/GenderBadge" unique_id=1389770405]
+[node name="GenderIcon" type="TextureRect" parent="AllContainer/CardHeader/HeaderRow" unique_id=1389770405]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(22, 22)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
-texture = ExtResource("2_kxrvv")
 expand_mode = 3
 stretch_mode = 5
 
@@ -146,7 +124,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bmoaa")
 [node name="PetPhoto" type="TextureRect" parent="AllContainer/PhotoPanel" unique_id=1375286210]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("1_5ygtt")
 expand_mode = 3
 stretch_mode = 5
 
@@ -157,29 +134,32 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0pnpv")
 [node name="ButtonsContainer" type="HBoxContainer" parent="AllContainer/ActionsPanel" unique_id=140336990]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 32
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="BtnFood" type="TextureButton" parent="AllContainer/ActionsPanel/ButtonsContainer" unique_id=357549606]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(67.545, 62.55)
 layout_mode = 2
-texture_normal = ExtResource("3_v76la")
-texture_disabled = ExtResource("2_kxrvv")
+texture_normal = ExtResource("5_v76la")
+texture_disabled = ExtResource("6_upx1o")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="BtnBath" type="TextureButton" parent="AllContainer/ActionsPanel/ButtonsContainer" unique_id=871970404]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(67.545, 62.55)
 layout_mode = 2
-texture_normal = ExtResource("4_naifq")
-texture_disabled = ExtResource("2_kxrvv")
+texture_normal = ExtResource("7_naifq")
+texture_disabled = ExtResource("8_bmoaa")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="BtnLove" type="TextureButton" parent="AllContainer/ActionsPanel/ButtonsContainer" unique_id=1170933981]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(67.545, 62.55)
 layout_mode = 2
-texture_normal = ExtResource("5_p12x6")
-texture_disabled = ExtResource("2_kxrvv")
+texture_normal = ExtResource("8_p12x6")
+texture_disabled = ExtResource("10_0pnpv")
+ignore_texture_size = true
 stretch_mode = 5

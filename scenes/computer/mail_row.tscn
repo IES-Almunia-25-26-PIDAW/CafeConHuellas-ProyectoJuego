@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bsjvjyhlx42rg"]
 
 [ext_resource type="Script" uid="uid://cyk3scujtxnvn" path="res://scripts/computer/mail_row.gd" id="1_0xfwa"]
-[ext_resource type="Texture2D" uid="uid://m5bo81y1f8ia" path="res://assets/images/ui/shutdownbutton_off.png" id="1_pk8cq"]
-[ext_resource type="Texture2D" uid="uid://b6txhorh3ljk" path="res://assets/images/ui/shutdownbutton_on.png" id="2_cbeit"]
+[ext_resource type="Texture2D" uid="uid://c1w2cba4pqeum" path="res://assets/images/computer_items/email_closed.png" id="2_4vtew"]
+[ext_resource type="Texture2D" uid="uid://bg6jc1iuetjsx" path="res://assets/images/computer_items/email_open.png" id="3_appl6"]
 [ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="4_4vtew"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_appl6"]
@@ -45,8 +45,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_appl6")
 script = ExtResource("1_0xfwa")
-icon_unread = ExtResource("2_cbeit")
-icon_read = ExtResource("1_pk8cq")
+icon_unread = ExtResource("2_4vtew")
+icon_read = ExtResource("3_appl6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=13684868]
 custom_minimum_size = Vector2(960, 80)
@@ -57,11 +57,11 @@ theme_override_constants/separation = 25
 
 [node name="StatusIcon" type="TextureRect" parent="HBoxContainer" unique_id=1888199402]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_pk8cq")
+texture = ExtResource("2_4vtew")
 expand_mode = 3
 stretch_mode = 5
 
