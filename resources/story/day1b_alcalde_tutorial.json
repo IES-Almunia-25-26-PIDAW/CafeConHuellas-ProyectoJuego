@@ -1,0 +1,172 @@
+[
+  {
+	"location": "backgrounds/cafeteria",
+	"music": "Everyday_Life"
+  },
+  {
+	"counter": "yes"
+  },
+  {
+	"scene_action": "tutorial_start"
+  },
+  {
+	"show_character": "Alcalde", 
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "Él se acerca a la barra y le entrega el pedido al alcalde.",
+	  "female": "Ella se acerca a la barra y le entrega el pedido al alcalde.",
+	  "nonbinary": "Elle se acerca a la barra y le entrega el pedido al alcalde."
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Serían 5,20€, señor. Muchas gracias por venir.",
+	"show_character": "Alcalde",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Alcalde",
+	"text": "Quédate el cambio. Y ya sabes que para lo que haga falta, aquí está este viejo.",
+	"expression": "happy2"
+  },
+  {
+	"add_relationship": {
+	  "character": "alcalde",
+	  "amount": 1
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le sonreí. Sí, sobre todo a él voy a buscar cuando necesite algo.[/i]",
+	"show_character": "Alcalde",
+	"expression": "neutral"
+  },
+  {
+	"speaker": "narrator",
+	"text": "Las siguientes dos horas se pasan volando."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Se nota que en el pueblo no hay ni un alma. No sé en qué estaban pensando mis padres cuando decidieron abrir este negocio aquí.[/i]"
+  },
+  {
+	"speaker": "narrator",
+	"text": "De un momento a otro, un niño de unos 8 o 10 años abre la puerta y entra con gran entusiasmo."
+  },
+  {
+	"meet_character": "ovie"
+  },
+  {
+	"show_character": "Ovie",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Ovie",
+	"text": "¡No me lo puedo creer! ¡Por fin una cafetería donde puedo atiborrarme a batidos y cosas ricas!",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]El niño se acerca a la barra y se empina para llegar. Me fijo en el color de sus ojos: tiene heterocromía.[/i]"
+  },
+  {
+	"speaker": "Ovie",
+	"text": "¡Hola! Soy Ovie. ¿Cómo te llamas?",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Hola, mi nombre es {player_name}. Encantado. ¿Quieres probar entonces alguno de los batidos especiales de la casa?",
+	"show_character": "Ovie",
+	"expression": "happy"
+  },
+  {
+	"add_relationship": {
+	  "character": "ovie",
+	  "amount": 1
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "Él le da la carta para que vaya mirando.",
+	  "female": "Ella le da la carta para que vaya mirando.",
+	  "nonbinary": "Elle le da la carta para que vaya mirando."
+	}
+  },
+  {
+	"speaker": "Ovie",
+	"text": "¡Pareces de la edad de mi hermano! No le vendría mal tener un amigo, siempre está solo.",
+	"expression": "neutral"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¿En serio? ¿Cómo se llama? Dile que se pase por aquí y pruebe alguno de mis cafés.",
+	"show_character": "Ovie",
+	"expression": "neutral"
+  },
+  {
+	"speaker": "Ovie",
+	"text": "Se llama Nilam. ¡Se lo diré! ¡Seguro que le gustan!",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Después de un rato viendo la carta, me señala un smoothie de frutos rojos.[/i]"
+  },
+  {
+	"speaker": "Ovie",
+	"text": "Creo que este, nunca los he probado.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Marchando entonces. ¿No quieres ninguna tarta o galleta?",
+	"show_character": "Ovie",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Noto un poco de desánimo en su cara.[/i]"
+  },
+  {
+	"speaker": "Ovie",
+	"text": "No creo que pueda llegarme la cuenta para una galleta. ¡Pero no pasa nada!",
+	"expression": "sad"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me quedo pensando un momento.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¿Qué te parece si por ser mi primer cliente te regalo la galleta?",
+	"show_character": "Ovie",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Ovie",
+	"text": "¡Ala! ¿En serio? ¡Mañana traigo a mi hermano y que te invite a ti a una!",
+	"expression": "happy"
+  },
+  {
+	"add_relationship": {
+	  "character": "ovie",
+	  "amount": 2
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]No pude evitar reírme ante su pequeño pacto.[/i]"
+  },
+  {
+	"start_order": [
+	  "smoothie_berries",
+      "cookie_butter"
+	],
+	"next_scene_after_order": "day1c_ovie_post"
+  }
+]

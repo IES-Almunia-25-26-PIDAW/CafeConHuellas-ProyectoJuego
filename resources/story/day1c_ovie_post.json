@@ -1,0 +1,256 @@
+[
+  {
+	"location": "backgrounds/cafeteria",
+	"music": "Everyday_Life"
+  },
+  {
+	"counter": "yes"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "Él le entrega el pedido a Ovie en una bolsa bonita.",
+	  "female": "Ella le entrega el pedido a Ovie en una bolsa bonita.",
+	  "nonbinary": "Elle le entrega el pedido a Ovie en una bolsa bonita."
+	}
+  },
+	{
+		"speaker": "Ovie", 
+		"text": "Aquí tienes.", 
+		"expression": "happy"
+	},
+	{
+		"speaker": "Hunter", 
+		"text": "[i]Ovie me entrega el dinero del smoothie con una sonrisa.[/i]"
+	},
+  {
+	"speaker": "Ovie",
+	"text": "¡Muchas gracias, {player_name}! Me caes bien.",
+	"expression": "happy"
+  },
+  {
+	"add_relationship": {
+	  "character": "ovie",
+	  "amount": 1
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Antes de irse, me fijo de nuevo en sus ojos.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Por cierto, tus ojos son muy bonitos.",
+	"show_character": "Ovie",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Ovie",
+	"text": "¡Muchas gracias! Aunque en el cole me dicen que son feos, y que parezco más a un alienígena.",
+	"expression": "sad"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Te dicen eso porque eres diferente, y a la gente no le suele gustar eso. Pero tú mismo sabes que no llevan razón y que son muy bonitos.",
+	"show_character": "Ovie",
+	"expression": "sad"
+  },
+  {
+	"speaker": "Ovie",
+	"text": "¡Lo sé! Nil me dice lo mismo. ¡A mí me gustan!",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Me alegro entonces, no les hagas mucho caso a esos niños",
+	"show_character": "Ovie",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Ovie",
+	"text": "¡Mañana nos vemos, {player_name}!",
+	"expression": "happy2"
+  },
+  {
+	"add_relationship": {
+	  "character": "ovie",
+	  "amount": 1
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le sonrió y me despido de él con un gesto de la mano también, veo como se aleja del café contento.[/i]"
+  },
+  {
+	"speaker": "narrator",
+	"text": "La mañana sigue tranquila. Para matar el tiempo, aprovechas para decorar un poco más la cafetería, que al estar recién abierta todavía no está del todo montada."
+  },
+  {
+	"speaker": "narrator",
+	"text": "Una hora después entra una anciana de unos setenta y tantos años."
+  },
+  {
+	"meet_character": "abuela_jasmine"
+  },
+  {
+	"show_character": "Abuela",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Buenos días, ¿qué le gustaría tomar?",
+	"show_character": "Abuela",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Abuela",
+	"text": "Buenas, hijo. ¿Qué tipo de café tienes? No hay muchas más cafeterías en este pueblecito.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "Él le entrega la carta para que pueda verla mejor.",
+	  "female": "Ella le entrega la carta para que pueda verla mejor.",
+	  "nonbinary": "Elle le entrega la carta para que pueda verla mejor."
+	}
+  },
+  {
+	"speaker": "Abuela",
+	"text": "Deme un café solo y un café con chocolate. ¿Cree usted que le gustará a mi nieta? No para de trabajar, quiero llevarle algo para que se endulce un poco.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Claro. Sobre todo si le gustan las cosas con chocolate, y mire el lado bueno, si no le hace mucha gracia puede volver y probar otro",
+	"show_character": "Abuela",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Abuela",
+	"text": "Desde luego. Además, seguro que se llevaría bien con usted. Está deseando hacer amigos nuevos de su edad, y creo que ronda a la suya.",
+	"expression": "happy2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Aquí estaré. Yo tampoco conozco a mucha gente, no me vendría mal caras nuevas.",
+	"show_character": "Abuela",
+	"expression": "happy"
+  },
+  {
+	"add_relationship": {
+	  "character": "abuela_jasmine",
+	  "amount": 1
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]La abuelita me paga los dos cafés y además me da un poco de propina[/i]"
+  },
+  {
+	"speaker": "Abuela",
+	"text": "Para apoyar el negocio. Sé que no es fácil abrir un café en un pueblo tan pequeño y siendo tan joven.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le agradezco y me despido de ella. Parece que he conseguido una clienta nueva.[/i]"
+  },
+  {
+	"speaker": "narrator",
+	"text": "Con el paso de las horas van llegando algunos clientes más, la mayoría por curiosidad ante la novedad de no tener que hacer más el café en casa. Los atiendes con tu mejor sonrisa."
+  },
+  {
+	"scene_action": "time_skip_afternoon"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Al final del día, cierro la cafetería y hago la caja para comprobar que todo cuadra.[/i]"
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/town_street",
+	"music": "evening_theme"
+  },
+  {
+	"counter": "no"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Suspiro al ver que ya está oscureciendo. A pesar de todo, el día no fue tan malo. Eso sí… mañana espero poder ver gente de mi edad.[/i]"
+  },
+  {
+	"speaker": "narrator",
+	"text": "Mientras caminas por la calle, un pequeño gato negro se acerca y se roza con tu pierna."
+  },
+  {
+	"meet_character": "gato_negro"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Ay, hola… ¿Estás perdido?"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]El gato me mira como si me entendiera.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¿Tienes hambre? Supongo que sí… Ven, te daré algo de comida en casa."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le sonrió y le hago un gesto para que me siga, parece que me entiende porque poco a poco me va siguiendo.[/i]"
+  },
+  {
+	"transition": "slide"
+  },
+  {
+	"location": "backgrounds/hunter_house_exterior",
+	"music": "evening_theme"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Preparo un poco de pollo en un plato y lo coloco fuera, junto a un cuenco de agua por si está sediento.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]El gato come y bebe. Una vez que termina, se vuelve a rozar con mi pierna.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "Él se agacha y lo acaricia suavemente.",
+	  "female": "Ella se agacha y lo acaricia suavemente.",
+	  "nonbinary": "Elle se agacha y lo acaricia suavemente."
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Eres adorable. ¿No tienes dueño?"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me mira con sus ojos azules y maúlla. A continuación decide irse.[/]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Bueno… supongo que eso es un sí. Espero que no le moleste que te haya dado de comer…"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "Él se rasca la nuca, se levanta y entra a casa dispuesto a descansar.",
+	  "female": "Ella se rasca la nuca, se levanta y entra a casa dispuesta a descansar.",
+	  "nonbinary": "Elle se rasca la nuca, se levanta y entra a casa dispuesto a descansar."
+	}
+  },
+	{
+	  "next_chapter": "day2a_intro"
+	},
+  {
+	"video_day_end": true
+  }
+]

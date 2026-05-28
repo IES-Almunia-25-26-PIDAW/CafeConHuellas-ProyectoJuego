@@ -90,6 +90,13 @@ func process_current_line() -> void:
 		_play_video_transition("res://scenes/cafe_client_zone.tscn", true)
 		return
 	
+	# -- Guardar el capítulo siguiente para después del ordenador.
+	if line.has("next_chapter"):
+		GameState.chapter_id = line["next_chapter"]
+		dialog_index += 1
+		process_current_line()
+		return
+	
 	# -- Fin del día: Video salida + escena a la que ir.
 	if line.has("video_day_end"):
 		_play_video_transition("res://scenes/computer/computer_scene.tscn", false)

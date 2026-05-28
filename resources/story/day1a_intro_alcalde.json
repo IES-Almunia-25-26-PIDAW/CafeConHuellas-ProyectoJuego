@@ -1,0 +1,228 @@
+[
+  {
+	"location": "backgrounds/hunter_room",
+	"music": "morning_theme"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Un sonoro ruido me despierta. Como un 'ding dong' que despertaría a cualquiera.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Poco a poco recobro la conciencia y caigo en la cuenta: esta no es la habitación que conozco.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]En la mano de Dios. Así llamaban mis abuelos a un lugar como este.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "Él se incorpora y coge la carta que le entregó el alcalde ayer.",
+	  "female": "Ella se incorpora y coge la carta que le entregó el alcalde ayer.",
+	  "nonbinary": "Elle se incorpora y coge la carta que le entregó el alcalde ayer."
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Es la típica carta de bienvenida que cualquiera escribiría para hacerte sentir bien, aunque verdaderamente no sienta las palabras que están escritas.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Todo esto comenzó unas semanas atrás.[/i]"
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/hunter_room",
+	"music": "memory_theme"
+  },
+  {
+	"speaker": "narrator",
+	"text": "15 de marzo de 2016."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Papá, no pienso ir a ese pueblo. Tengo pendiente una carrera y miles de sueños en la ciudad. No quiero ser como vosotros y trabajar en hostelería. Quiero que mi vida tenga un rumbo distinto."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Escucho a mi padre resoplar al otro lado del teléfono.[/i]"
+  },
+  {
+	"speaker": "Padre",
+	"text": "Irás y seguirás el negocio familiar, está decidido. Además es un pueblo precioso y tranquilo, podrás hacer tu propio dinero. Hay veces que para que tu vida tenga sentido tienes que aventurarte un poco."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Pero allí no tendré ninguna oportunidad. Ni siquiera sé si habrá cobertura."
+  },
+  {
+	"speaker": "Padre",
+	"text": "Mira, puedes trabajar unos meses, hasta junio, cuando toque echar la matrícula para la universidad. Luego ya veremos cómo arreglamos todo esto."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me quedé callado. Él también. Y a los pocos segundos volvió a hablar.[/i]"
+  },
+  {
+	"speaker": "Padre",
+	"text": "Además, tal vez sería bueno que el café estuviera orientado a los animales. Sé cuánto te gustan, y pensé que eso podría ayudarte a ilusionarte un poco."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Abrí los ojos. Bueno… ahí ya hablamos de otra cosa.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "De acuerdo, lo intentaré. Pero no prometo un futuro con esto."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Mi padre sonrió tras el teléfono.[/i]"
+  },
+  {
+	"speaker": "Padre",
+	"text": "Sabía que te convencería. Empiezas el 1 de abril."
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/hunter_room",
+	"music": "morning_theme"
+  },
+  {
+	"speaker": "narrator",
+	"text": "2 de abril de 2016. Actualmente."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Y así terminé aquí. Primer día trabajando en hostelería y con una cafetería propia entre las manos.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "Él va al baño y se mira al espejo.",
+	  "female": "Ella va al baño y se mira al espejo.",
+	  "nonbinary": "Elle va al baño y se mira al espejo."
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Lo único destacable que veo son unas enormes ojeras. No es de extrañar: anoche me quedé hasta tarde decorando el local.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]A pesar de que la idea de montar un café con animales fue lo que me convenció de estar aquí, tengo mis dudas. En este pueblo no veo animales por ningún lado. Ni siquiera sé si existen personas jóvenes.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "Él se viste con el uniforme, coge el teléfono, las llaves y la cartera.",
+	  "female": "Ella se viste con el uniforme, coge el teléfono, las llaves y la cartera.",
+	  "nonbinary": "Elle se viste con el uniforme, coge el teléfono, las llaves y la cartera."
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Listo. O eso creo..."
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Salgo dispuesto a empezar el día. Espero que no sea tan malo como me lo estoy imaginando.[/i]"
+  },
+  {
+	"location": "backgrounds/town_street",
+	"music": "town_theme"
+  },
+  {
+	"speaker": "narrator",
+	"text": "Al pasar por las calles del pueblo hay varias personas mayores que saludan. Ni un signo de alguien joven."
+  },
+  {
+	"transition": "slide"
+  },
+  {
+	"location": "backgrounds/cafe_exterior",
+	"music": "cafe_theme"
+  },
+  {
+	"scene_action": "flip_sign_closed_to_open"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Mi primer día. Con ánimos, supongo.[/i]"
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/cafeteria",
+	"music": "Everyday_Life"
+  },
+  {
+	"counter": "yes"
+  },
+  {
+	"speaker": "narrator",
+	"text": "Mientras preparas el café, un señor de mediana edad, algo canoso y con un bigote bien arreglado entra por la puerta."
+  },
+  {
+	"meet_character": "alcalde"
+  },
+  {
+	"show_character": "Alcalde",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Alcalde",
+	"text": "¡Hola! Bienvenido al pueblo, es bueno ver caras nuevas de gente joven.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Buenas… Sí, solo serán por unos meses. Pero supongo que es bueno...",
+	"show_character": "Alcalde",
+	"expression": "neutral"
+  },
+  {
+	"speaker": "Alcalde",
+	"text": "Bueno… nuestro pueblecillo tiene su encanto. A lo mejor acabas echando raíces aquí más tiempo del que piensas.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Alcalde",
+	"text": "O quién sabe, muchacho, igual haces como los chavales de ahora: encuentras una buena moza y haces las maletas.",
+	"expression": "happy2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Intentó hacer una broma. No me causó mucha gracia.[/i]",
+	"show_character": "Alcalde",
+	"expression": "neutral"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Sí, supongo que se irá viendo… ¿Le apetece tomar algo?"
+  },
+  {
+	"speaker": "Alcalde",
+	"text": "Claro hijo, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Otra risa forzada. Asentí y me puse a ello.[/i]",
+	"show_character": "Alcalde",
+	"expression": "neutral"
+  },
+  {
+	"start_order": [
+	  "coffee_milk",
+      "cake_lemon"
+	],
+	"next_scene_after_order": "day1b_alcalde_tutorial"
+  }
+]

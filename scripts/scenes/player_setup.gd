@@ -67,7 +67,7 @@ func _on_start_pressed() -> void:
 	GameState.player_pronouns = _selected_pronouns
 	
 	# Empezar en el capítulo indicado y día.
-	GameState.chapter_id = "story"
+	GameState.chapter_id = "day1a_intro_alcalde"
 	GameState.day = 1
 	
 	# Parámetros de cambiar escena.
