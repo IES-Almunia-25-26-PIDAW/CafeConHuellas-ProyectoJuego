@@ -15,11 +15,7 @@
   },
   {
 	"speaker": "Hunter",
-	"pronouns": {
-	  "male": "Él se acerca a la barra y le entrega el pedido al alcalde.",
-	  "female": "Ella se acerca a la barra y le entrega el pedido al alcalde.",
-	  "nonbinary": "Elle se acerca a la barra y le entrega el pedido al alcalde."
-	}
+	"text": "[i]Me acerco a la barra y le entrego el pedido al alcalde.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -45,16 +41,16 @@
 	"expression": "neutral"
   },
   {
-	"speaker": "narrator",
-	"text": "Las siguientes dos horas se pasan volando."
+	"speaker": "Hunter",
+	"text": "[i]Las siguientes dos horas se me pasan volando.[/i]"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Se nota que en el pueblo no hay ni un alma. No sé en qué estaban pensando mis padres cuando decidieron abrir este negocio aquí.[/i]"
   },
   {
-	"speaker": "narrator",
-	"text": "De un momento a otro, un niño de unos 8 o 10 años abre la puerta y entra con gran entusiasmo."
+	"speaker": "Hunter",
+	"text": "[i]De un momento a otro, un niño de unos 8 o 10 años abre la puerta y entra con gran entusiasmo.[/i]"
   },
   {
 	"meet_character": "ovie"
@@ -79,7 +75,11 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "Hola, mi nombre es {player_name}. Encantado. ¿Quieres probar entonces alguno de los batidos especiales de la casa?",
+	"pronouns": {
+		"male": "Hola, mi nombre es {player_name}. Encantado. ¿Quieres probar entonces alguno de los batidos especiales de la casa?",
+		"female": "Hola, mi nombre es {player_name}. Encantada. ¿Quieres probar entonces alguno de los batidos especiales de la casa?",
+		"nonbinary": "Hola, mi nombre es {player_name}. Encantade. ¿Quieres probar entonces alguno de los batidos especiales de la casa?"
+	},
 	"show_character": "Ovie",
 	"expression": "happy"
   },
@@ -91,15 +91,15 @@
   },
   {
 	"speaker": "Hunter",
-	"pronouns": {
-	  "male": "Él le da la carta para que vaya mirando.",
-	  "female": "Ella le da la carta para que vaya mirando.",
-	  "nonbinary": "Elle le da la carta para que vaya mirando."
-	}
+	"text": "[i]Le doy la carta para que vaya mirando.[/i]"
   },
   {
 	"speaker": "Ovie",
-	"text": "¡Pareces de la edad de mi hermano! No le vendría mal tener un amigo, siempre está solo.",
+	"pronouns": {
+		"male": "¡Pareces de la edad de mi hermano! No le vendría mal tener un amigo, siempre está solo.",
+		"female": "¡Pareces de la edad de mi hermano! No le vendría mal tener una amiga, siempre está solo.",
+		"nonbinary": "¡Pareces de la edad de mi hermano! No le vendría mal tener un amigue, siempre está solo."
+	},
 	"expression": "neutral"
   },
   {

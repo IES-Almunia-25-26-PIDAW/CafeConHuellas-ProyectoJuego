@@ -8,11 +8,7 @@
   },
   {
 	"speaker": "Hunter",
-	"pronouns": {
-	  "male": "Él le entrega el pedido a Ovie en una bolsa bonita.",
-	  "female": "Ella le entrega el pedido a Ovie en una bolsa bonita.",
-	  "nonbinary": "Elle le entrega el pedido a Ovie en una bolsa bonita."
-	}
+	"text": "[i]Le entrego el pedido a Ovie en una bolsa bonita.[/i]"
   },
 	{
 		"speaker": "Ovie", 
@@ -79,15 +75,15 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le sonrió y me despido de él con un gesto de la mano también, veo como se aleja del café contento.[/i]"
+	"text": "[i]Le sonrío y me despido de él con un gesto de la mano también, veo como se aleja del café contento.[/i]"
   },
   {
-	"speaker": "narrator",
-	"text": "La mañana sigue tranquila. Para matar el tiempo, aprovechas para decorar un poco más la cafetería, que al estar recién abierta todavía no está del todo montada."
+	"speaker": "Hunter",
+	"text": "[i]La mañana sigue bastante tranquila. Para matar el tiempo, aprovecho para decorar un poco más la cafetería, que al estar recién abierta todavía no está muy bien montada.[/i]"
   },
   {
-	"speaker": "narrator",
-	"text": "Una hora después entra una anciana de unos setenta y tantos años."
+	"speaker": "Hunter",
+	"text": "[i]Una hora después de conocer a Ovie, veo como entra una anciana de unos setenta y tantos años.[/i]"
   },
   {
 	"meet_character": "abuela_jasmine"
@@ -104,16 +100,16 @@
   },
   {
 	"speaker": "Abuela",
-	"text": "Buenas, hijo. ¿Qué tipo de café tienes? No hay muchas más cafeterías en este pueblecito.",
+	"pronouns": {
+		"male": "Buenas, hijo. ¿Qué tipo de café tienes? No hay muchas más cafeterías en este pueblecito.",
+		"female": "Buenas, hija. ¿Qué tipo de café tienes? No hay muchas más cafeterías en este pueblecito.",
+		"nonbinary": "Buenas, hije. ¿Qué tipo de café tienes? No hay muchas más cafeterías en este pueblecito."
+	},
 	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
-	"pronouns": {
-	  "male": "Él le entrega la carta para que pueda verla mejor.",
-	  "female": "Ella le entrega la carta para que pueda verla mejor.",
-	  "nonbinary": "Elle le entrega la carta para que pueda verla mejor."
-	}
+	"text": "[i]Aquí tiene la carta, para que usted los pueda ver mejor.[/i]"
   },
   {
 	"speaker": "Abuela",
@@ -157,8 +153,8 @@
 	"text": "[i]Le agradezco y me despido de ella. Parece que he conseguido una clienta nueva.[/i]"
   },
   {
-	"speaker": "narrator",
-	"text": "Con el paso de las horas van llegando algunos clientes más, la mayoría por curiosidad ante la novedad de no tener que hacer más el café en casa. Los atiendes con tu mejor sonrisa."
+	"speaker": "Hunter",
+	 "text": "[i]Con el paso de las horas van llegando algunos clientes más, la mayoría por curiosidad ante la novedad de no tener que hacer más el café en casa. Los atiendo con mi mejor sonrisa.[/i]"
   },
   {
 	"scene_action": "time_skip_afternoon"
@@ -182,8 +178,8 @@
 	"text": "[i]Suspiro al ver que ya está oscureciendo. A pesar de todo, el día no fue tan malo. Eso sí… mañana espero poder ver gente de mi edad.[/i]"
   },
   {
-	"speaker": "narrator",
-	"text": "Mientras caminas por la calle, un pequeño gato negro se acerca y se roza con tu pierna."
+	"speaker": "Hunter",
+	 "text": "[i]Mientras voy caminando por la calle, veo que un pequeño gato negro se acerca y se roza con mi pierna.[/i]"
   },
   {
 	"meet_character": "gato_negro"
@@ -202,7 +198,7 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le sonrió y le hago un gesto para que me siga, parece que me entiende porque poco a poco me va siguiendo.[/i]"
+	"text": "[i]Le sonrío y le hago un gesto para que me siga, parece que me entiende porque poco a poco me va siguiendo.[/i]"
   },
   {
 	"transition": "slide"
@@ -221,11 +217,7 @@
   },
   {
 	"speaker": "Hunter",
-	"pronouns": {
-	  "male": "Él se agacha y lo acaricia suavemente.",
-	  "female": "Ella se agacha y lo acaricia suavemente.",
-	  "nonbinary": "Elle se agacha y lo acaricia suavemente."
-	}
+	"text": "[i]Me agacho y lo acaricio suavemente.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -233,7 +225,7 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me mira con sus ojos azules y maúlla. A continuación decide irse.[/]"
+	"text": "[i]Me mira con sus ojos azules y maúlla. A continuación decide irse.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -242,9 +234,9 @@
   {
 	"speaker": "Hunter",
 	"pronouns": {
-	  "male": "Él se rasca la nuca, se levanta y entra a casa dispuesto a descansar.",
-	  "female": "Ella se rasca la nuca, se levanta y entra a casa dispuesta a descansar.",
-	  "nonbinary": "Elle se rasca la nuca, se levanta y entra a casa dispuesto a descansar."
+		"male": "[i]Me rasco la nuca, me levanto y entro a casa dispuesto a descansar.[/i]",
+		"female": "[i]Me rasco la nuca, me levanto y entro a casa dispuesta a descansar.[/i]",
+		"nonbinary": "[i]Me rasco la nuca, me levanto y entro a casa dispueste a descansar.[/i]"
 	}
   },
 	{

@@ -16,7 +16,11 @@ enum Name {
 	HUNTER,
 	JASMINE,
 	NILAM,
-	RONALD
+	RONALD,
+	ALCALDE,
+	OVIE,
+	ABUELA,
+	PADRE
 }
 
 # ===== DATOS DE PERSONAJES =====
@@ -72,7 +76,35 @@ const CHARACTER_DETAILS : Dictionary = {
 		"voice_pitch": 0.92,
 		# TODO: asignarle color
 		"char_color": Color(0, 0, 0, 0)
-	}
+	},
+	Name.ALCALDE: {
+		"name": "Alcalde",
+		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
+		"voice_bus": "Voices",
+		"voice": "res://assets/audio/voices/voice_base.ogg",
+		"char_color": Color("5a7a3ae6")
+	},
+	Name.OVIE: {
+		"name": "Ovie",
+		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
+		"voice_bus": "Voices",
+		"voice": "res://assets/audio/voices/voice_base.ogg",
+		"char_color": Color("3a6a8ae6")
+	},
+	Name.ABUELA: {
+		"name": "Abuela",
+		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
+		"voice_bus": "Voices",
+		"voice": "res://assets/audio/voices/voice_base.ogg",
+		"char_color": Color("8a5a3ae6")
+	},
+	Name.PADRE: {
+		"name": "Padre",
+		"sprite_frames": null,     
+		"voice_bus": "Voices",
+		"voice": "res://assets/audio/voices/voice_base.ogg",
+		"char_color": Color("5a4a3ae6") 
+	},
 	
 }
 

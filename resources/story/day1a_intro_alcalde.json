@@ -16,12 +16,8 @@
 	"text": "[i]En la mano de Dios. Así llamaban mis abuelos a un lugar como este.[/i]"
   },
   {
-	"speaker": "Hunter",
-	"pronouns": {
-	  "male": "Él se incorpora y coge la carta que le entregó el alcalde ayer.",
-	  "female": "Ella se incorpora y coge la carta que le entregó el alcalde ayer.",
-	  "nonbinary": "Elle se incorpora y coge la carta que le entregó el alcalde ayer."
-	}
+  "speaker": "Hunter",
+  "text": "[i]Me incorporo y cojo la carta que me entregó el alcalde ayer.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -39,8 +35,8 @@
 	"music": "memory_theme"
   },
   {
-	"speaker": "narrator",
-	"text": "15 de marzo de 2016."
+	"speaker": "Hunter",
+	"text": "[i]15 de marzo de 2016.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -63,8 +59,12 @@
 	"text": "Mira, puedes trabajar unos meses, hasta junio, cuando toque echar la matrícula para la universidad. Luego ya veremos cómo arreglamos todo esto."
   },
   {
-	"speaker": "Hunter",
-	"text": "[i]Me quedé callado. Él también. Y a los pocos segundos volvió a hablar.[/i]"
+  "speaker": "Hunter",
+	  "pronouns": {
+		"male": "[i]Me quedé callado. Él también. Y a los pocos segundos volvió a hablar.[/i]",
+		"female": "[i]Me quedé callada. Él también. Y a los pocos segundos volvió a hablar.[/i]",
+		"nonbinary": "[i]Me quedé callade. Él también. Y a los pocos segundos volvió a hablar.[/i]"
+	  }
   },
   {
 	"speaker": "Padre",
@@ -94,8 +94,8 @@
 	"music": "morning_theme"
   },
   {
-	"speaker": "narrator",
-	"text": "2 de abril de 2016. Actualmente."
+	"speaker": "Hunter",
+	"text": "[i]2 de abril de 2016. Actualmente.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -103,11 +103,7 @@
   },
   {
 	"speaker": "Hunter",
-	"pronouns": {
-	  "male": "Él va al baño y se mira al espejo.",
-	  "female": "Ella va al baño y se mira al espejo.",
-	  "nonbinary": "Elle va al baño y se mira al espejo."
-	}
+	"text": "[i]Voy al baño y me miro al espejo.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -119,27 +115,27 @@
   },
   {
 	"speaker": "Hunter",
-	"pronouns": {
-	  "male": "Él se viste con el uniforme, coge el teléfono, las llaves y la cartera.",
-	  "female": "Ella se viste con el uniforme, coge el teléfono, las llaves y la cartera.",
-	  "nonbinary": "Elle se viste con el uniforme, coge el teléfono, las llaves y la cartera."
-	}
+	 "text": "[i]Me visto con el uniforme, cojo el teléfono, las llaves y la cartera.[/i]"
   },
   {
 	"speaker": "Hunter",
 	"text": "Listo. O eso creo..."
   },
   {
-	"speaker": "Hunter",
-	"text": "[i]Salgo dispuesto a empezar el día. Espero que no sea tan malo como me lo estoy imaginando.[/i]"
+  "speaker": "Hunter",
+	  "pronouns": {
+		"male": "[i]Salgo dispuesto a empezar el día. Espero que no sea tan malo como me lo estoy imaginando.[/i]",
+		"female": "[i]Salgo dispuesta a empezar el día. Espero que no sea tan malo como me lo estoy imaginando.[/i]",
+		"nonbinary": "[i]Salgo dispueste a empezar el día. Espero que no sea tan malo como me lo estoy imaginando.[/i]"
+	  }
   },
   {
 	"location": "backgrounds/town_street",
 	"music": "town_theme"
   },
   {
-	"speaker": "narrator",
-	"text": "Al pasar por las calles del pueblo hay varias personas mayores que saludan. Ni un signo de alguien joven."
+	"speaker": "Hunter",
+	"text": "[i]Al pasar por las calles del pueblo me encuentro a varias personas mayores las cuales me saludan, pero nada más, ni un signo de alguien joven.[/i]"
   },
   {
 	"transition": "slide"
@@ -166,8 +162,8 @@
 	"counter": "yes"
   },
   {
-	"speaker": "narrator",
-	"text": "Mientras preparas el café, un señor de mediana edad, algo canoso y con un bigote bien arreglado entra por la puerta."
+	"speaker": "Hunter",
+	"text": "[i]Mientras preparo el café, un señor de mediana edad, algo canoso y con un bigote bien arreglado entra por la puerta.[/i]"
   },
   {
 	"meet_character": "alcalde"
@@ -178,8 +174,12 @@
   },
   {
 	"speaker": "Alcalde",
-	"text": "¡Hola! Bienvenido al pueblo, es bueno ver caras nuevas de gente joven.",
-	"expression": "happy"
+	  "pronouns": {
+		"male": "¡Hola! Bienvenido al pueblo, es bueno ver caras nuevas de gente joven.",
+		"female": "¡Hola! Bienvenida al pueblo, es bueno ver caras nuevas de gente joven.",
+		"nonbinary": "¡Hola! Bienvenide al pueblo, es bueno ver caras nuevas de gente joven."
+	  },
+	  "expression": "happy"
   },
   {
 	"speaker": "Hunter",
@@ -194,8 +194,12 @@
   },
   {
 	"speaker": "Alcalde",
-	"text": "O quién sabe, muchacho, igual haces como los chavales de ahora: encuentras una buena moza y haces las maletas.",
-	"expression": "happy2"
+	  "pronouns": {
+		"male": "O quién sabe, muchacho, igual haces como los chavales de ahora: encuentras una buena persona y haces las maletas.",
+		"female": "O quién sabe, muchacha, igual haces como los chavales de ahora: encuentras una buena persona y haces las maletas.",
+		"nonbinary": "O quién sabe, igual haces como los chavales de ahora: encuentras una buena persona y haces las maletas."
+	  },
+	  "expression": "happy2"
   },
   {
 	"speaker": "Hunter",
@@ -209,8 +213,12 @@
   },
   {
 	"speaker": "Alcalde",
-	"text": "Claro hijo, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio.",
-	"expression": "happy"
+	  "pronouns": {
+		"male": "Claro hijo, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio.",
+		"female": "Claro hija, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio.",
+		"nonbinary": "Claro hije, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio."
+	  },
+	  "expression": "happy"
   },
   {
 	"speaker": "Hunter",
