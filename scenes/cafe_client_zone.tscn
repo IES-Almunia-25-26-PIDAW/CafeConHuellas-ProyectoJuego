@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bn854aaerntbw" path="res://scripts/scenes/cafe_client_scene.gd" id="1_uemky"]
 [ext_resource type="PackedScene" uid="uid://cqfch5q72r07h" path="res://scenes/client_char.tscn" id="1_wf4sh"]
+[ext_resource type="Texture2D" uid="uid://n3bhg25o41n1" path="res://assets/images/backgrounds/black.png" id="2_6m3kl"]
 [ext_resource type="PackedScene" uid="uid://ckiusgx7smoia" path="res://scenes/dialog_ui.tscn" id="2_ahhn6"]
-[ext_resource type="Texture2D" uid="uid://d8d3wmgn2qpc" path="res://assets/images/backgrounds/cafeteria.png" id="2_e3vck"]
 [ext_resource type="Texture2D" uid="uid://dxve500h8ilhh" path="res://assets/images/backgrounds/counter.png" id="4_6m3kl"]
 [ext_resource type="PackedScene" uid="uid://ntoxy6ssl6pb" path="res://scenes/menus/pause_button.tscn" id="5_1ptve"]
 [ext_resource type="PackedScene" uid="uid://ciqo2glja1xui" path="res://scenes/menus/pause_menu.tscn" id="6_tp2fe"]
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_e3vck")
+texture = ExtResource("2_6m3kl")
 
 [node name="CharacterCanvas" type="CanvasLayer" parent="." unique_id=133093996]
 

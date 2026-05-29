@@ -165,6 +165,18 @@ func process_current_line() -> void:
 			dialog_index += 1
 		process_current_line()
 		return
+		
+	# -- Ocultar al sprite del personaje de la escena.
+	if line.has("hide_character"):
+		var tween = create_tween()
+		tween.tween_property(character_sprite, "modulate:a", 0.0, 0.3)
+		await tween.finished
+		
+		character_sprite.hide()
+		
+		dialog_index += 1
+		process_current_line()
+		return
 	
 	# -- Conocer a un personaje.
 	if line.has("meet_character"):
@@ -231,14 +243,16 @@ func process_current_line() -> void:
 	
 	# -- Iniciar una orden y enviar al jugador a la cocina.
 	if line.has("start_order"):
-		GameState.current_order_recipe_ids = line["start_order"].duplicate()
+		GameState.current_order_recipe_ids.assign(line["start_order"])
 		# Guardamos el JSON al que volver después de completar la orden.
 		var return_scene: String = line.get("next_scene_after_order", "")
 		if return_scene != "":
 			# Lo guardamos en GameState para que sepa a donde volver desde la cocina.
 			GameState.chapter_id = return_scene
+			# Y ponemos el index a 0 para que comience desde el inicio del nuevo json
+			GameState.dialogue_index = 0
 		SceneManager.transition_out_completed.connect(
-			func(): SceneManager.change_scene("res://scenes/cafe_kitchen_scene.tscn"),
+			func(): SceneManager.change_scene("res://scenes/kitchen/cafe_kitchen_scene.tscn"),
 			CONNECT_ONE_SHOT
 		)
 		SceneManager.transition_out()
@@ -250,8 +264,8 @@ func process_current_line() -> void:
 		var pronoun_texts: Dictionary = line["pronouns"]
 		var resolved_text: String = ""
 		match GameState.player_pronouns:
-			0: resolved_text = pronoun_texts.get("male",      "")
-			1: resolved_text = pronoun_texts.get("female",    "")
+			0: resolved_text = pronoun_texts.get("male", "")
+			1: resolved_text = pronoun_texts.get("female", "")
 			2: resolved_text = pronoun_texts.get("nonbinary", "")
 		# Inyectamos el texto resuelto como si fuera una línea normal.
 		var resolved_line: Dictionary = line.duplicate()
@@ -266,7 +280,9 @@ func process_current_line() -> void:
 		character_sprite.change_character(character_name, false, line.get("expression", ""))
 	elif line.has("speaker"):
 		var character_name = Character.get_enum_from_string(line["speaker"])
-		character_sprite.change_character(character_name, true, line.get("expression", ""))
+		# Hunter no tiene sprite visual
+		if character_name != Character.Name.HUNTER:
+			character_sprite.change_character(character_name, true, line.get("expression", ""))
 	
 	# -- Elecciones o texto
 	if line.has("choices"):
@@ -290,12 +306,19 @@ func _restore_scene_state() -> void:
 	# Busca hacia atrás desde el índice actual la última línea con location.
 	for i in range(dialog_index, -1, -1):
 		var line: Dictionary = dialog_lines[i]
+		
+		# Restaura el fondo
 		if line.has("location"):
 			var background_file = "res://assets/images/" + line["location"] + ".png"
 			background.texture = load(background_file)
-			if line.has("music"):
-				MusicManager.play(line["music"])
-			return
+		
+		# Restaura la música
+		if line.has("music"):
+			MusicManager.play(line["music"])
+		
+		# Restaura el mostrador
+		if line.has("counter"):
+			counter_layer.visible = line["counter"] == "yes"
 
 
 # Lanza la transición de vídeo hacia next_scene.
@@ -320,7 +343,9 @@ func _process_dialogue_line(line: Dictionary) -> void:
 		character_sprite.change_character(character_name, false, line.get("expression", ""))
 	elif line.has("speaker"):
 		var character_name = Character.get_enum_from_string(line["speaker"])
-		character_sprite.change_character(character_name, true, line.get("expression", ""))
+		# Hunter no tiene sprite visual
+		if character_name != Character.Name.HUNTER:
+			character_sprite.change_character(character_name, true, line.get("expression", ""))
 	
 	if line.has("text"):
 		var speaker_name = Character.get_enum_from_string(line["speaker"])

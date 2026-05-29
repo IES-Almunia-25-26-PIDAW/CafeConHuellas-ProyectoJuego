@@ -48,10 +48,6 @@ func _ready() -> void:
 	# OrderReadySignBtn empieza desactivado hasta que la orden esté completa.
 	order_ready_sign.disabled = true
 	
-	# PENDIENTE - esto es solo para las pruebas
-	# TODO: BORRAR ESTO, solo es para probar
-	GameState.current_order_recipe_ids = ["cappuccino", "smoothie_strawberry", "cake_apple", "cookie_butter"]
-	
 	# Conectamos las señales del KitchenManager.
 	KitchenManager.ingredient_correct.connect(_on_ingredient_correct)
 	KitchenManager.ingredient_wrong.connect(_on_ingredient_wrong)
@@ -246,7 +242,9 @@ func _on_order_ready_sign_pressed() -> void:
 	# Si llega aquí, la orden ya está completa (ya que el cartel está en disabled por defecto).
 	KitchenManager.finish_order()
 	var return_file: String = "res://resources/story/" + GameState.chapter_id + ".json"
-	TransitionManager.change_scene("res://scenes/cafe_client_zone.tscn")
+	SceneManager.transition_out_completed.connect(
+		func(): SceneManager.change_scene("res://scenes/cafe_client_zone.tscn"), CONNECT_ONE_SHOT)
+	SceneManager.transition_out()
 
 # Muestra el popup con solo los ingredientes de la categoría activa.
 func _open_ingredient_popup(title: String, category: String) -> void:

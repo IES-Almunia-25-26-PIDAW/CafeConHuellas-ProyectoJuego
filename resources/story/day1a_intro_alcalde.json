@@ -3,6 +3,7 @@
 	"location": "backgrounds/hunter_room",
 	"music": "morning_theme"
   },
+  { "hide_character": true },
   {
 	"speaker": "Hunter",
 	"text": "[i]Un sonoro ruido me despierta. Como un 'ding dong' que despertaría a cualquiera.[/i]"
