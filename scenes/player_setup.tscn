@@ -3,7 +3,83 @@
 [ext_resource type="Script" uid="uid://0lrnh775bpv8" path="res://scripts/scenes/player_setup.gd" id="1_412kp"]
 [ext_resource type="FontFile" uid="uid://chivh8jm7c75d" path="res://assets/fonts/PatrickHand-Regular.ttf" id="2_3iesa"]
 [ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="2_ksabq"]
+[ext_resource type="Texture2D" uid="uid://e3vjvawvft15" path="res://assets/images/backgrounds/letter.png" id="2_weliq"]
 [ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="3_3iesa"]
+[ext_resource type="Theme" uid="uid://caboib3h4tsb4" path="res://assets/themes/button_letter_theme.tres" id="4_qp44s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k06ek"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp44s"]
+bg_color = Color(0.8862745, 0.78431374, 0.7411765, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.45490196, 0.2784314, 0.25490198, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kgxj"]
+bg_color = Color(0.8862745, 0.78431374, 0.7411765, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.45490196, 0.2784314, 0.25490198, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2ept"]
+bg_color = Color(0.8862745, 0.78431374, 0.7411765, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.45490196, 0.2784314, 0.25490198, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k06ek"]
+bg_color = Color(0.8862745, 0.78431374, 0.7411765, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.45490196, 0.2784314, 0.25490198, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0un71"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0un71"]
+bg_color = Color(0.36846972, 0.27646878, 0.264202, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77dka"]
+bg_color = Color(0.27639848, 0.20257458, 0.1927314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jr1qq"]
+bg_color = Color(0.47369397, 0.3444252, 0.32718936, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="PlayerSetup" type="Control" unique_id=786083172]
 layout_mode = 3
@@ -23,33 +99,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_weliq")
 
 [node name="FullContent" type="VBoxContainer" parent="." unique_id=1630650362]
-custom_minimum_size = Vector2(1000, 920)
+custom_minimum_size = Vector2(1300, 900)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -650.0
+offset_top = -461.0
+offset_right = 650.0
+offset_bottom = 439.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 35
 alignment = 1
 
 [node name="HeaderContainer" type="HBoxContainer" parent="FullContent" unique_id=64824218]
 custom_minimum_size = Vector2(900, 120)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 4
 
 [node name="StartLabel" type="RichTextLabel" parent="FullContent/HeaderContainer" unique_id=1568121248]
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.050980393, 0.007843138, 0.007843138, 1)
 theme_override_fonts/normal_font = ExtResource("2_3iesa")
+theme_override_font_sizes/normal_font_size = 30
 text = "Querid"
 scroll_active = false
 vertical_alignment = 1
@@ -60,21 +140,26 @@ alignment = 1
 
 [node name="BtnMale" type="Button" parent="FullContent/HeaderContainer/PronounsChoice" unique_id=1147761516]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(35, 30)
 layout_mode = 2
+theme = ExtResource("4_qp44s")
 theme_override_fonts/font = ExtResource("2_3iesa")
 text = "o"
 
 [node name="BtnFemale" type="Button" parent="FullContent/HeaderContainer/PronounsChoice" unique_id=1881398685]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("4_qp44s")
 theme_override_fonts/font = ExtResource("2_3iesa")
+theme_override_font_sizes/font_size = 26
 text = "a"
 
 [node name="BtnNonbinary" type="Button" parent="FullContent/HeaderContainer/PronounsChoice" unique_id=2055104652]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("4_qp44s")
 theme_override_fonts/font = ExtResource("2_3iesa")
+theme_override_font_sizes/font_size = 26
 text = "e"
 
 [node name="VSeparator" type="VSeparator" parent="FullContent/HeaderContainer" unique_id=1860233634]
@@ -82,15 +167,23 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_k06ek")
 
 [node name="NameInput" type="LineEdit" parent="FullContent/HeaderContainer" unique_id=1972730436]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.050980393, 0.007843138, 0.007843138, 1)
+theme_override_colors/font_placeholder_color = Color(0.05, 0.007499999, 0.007499999, 0.39215687)
+theme_override_colors/caret_color = Color(0.45490196, 0.2784314, 0.25490198, 1)
+theme_override_colors/selection_color = Color(0.45, 0.27510002, 0.252, 0.47058824)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_3iesa")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_qp44s")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8kgxj")
 placeholder_text = "Hunter"
 alignment = 1
 max_length = 10
@@ -100,7 +193,9 @@ custom_minimum_size = Vector2(20, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.05279708, 0.007995843, 0.007995843, 1)
 theme_override_fonts/normal_font = ExtResource("2_ksabq")
+theme_override_font_sizes/normal_font_size = 30
 text = ":"
 scroll_active = false
 vertical_alignment = 1
@@ -108,7 +203,9 @@ vertical_alignment = 1
 [node name="Paragraph1" type="RichTextLabel" parent="FullContent" unique_id=2089966525]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.05279708, 0.007995843, 0.007995843, 1)
 theme_override_fonts/normal_font = ExtResource("2_3iesa")
+theme_override_font_sizes/normal_font_size = 30
 text = "Permíteme ser el primero en darte la bienvenida oficial a nuestro pequeño pueblo, Aínsa. Aunque no seamos muchos vecinos aquí, te aseguro que no te vas a aburrir."
 vertical_alignment = 1
 
@@ -116,20 +213,29 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="CafeLabel1" type="RichTextLabel" parent="FullContent/CafeQuestionContainer" unique_id=997961790]
-custom_minimum_size = Vector2(410, 50)
+custom_minimum_size = Vector2(550, 50)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.05279708, 0.007995843, 0.007995843, 1)
 theme_override_fonts/normal_font = ExtResource("2_3iesa")
+theme_override_font_sizes/normal_font_size = 30
 text = "¡Por fin vas a traer a este pueblecillo tu cafetería!"
 vertical_alignment = 1
 
 [node name="CafeInput" type="LineEdit" parent="FullContent/CafeQuestionContainer" unique_id=637575761]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(240, 0)
+custom_minimum_size = Vector2(370, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.050980393, 0.007843138, 0.007843138, 1)
+theme_override_colors/font_placeholder_color = Color(0.050980393, 0.007843138, 0.007843138, 0.39215687)
+theme_override_colors/caret_color = Color(0.45490196, 0.2784314, 0.25490198, 1)
+theme_override_colors/selection_color = Color(0.4509804, 0.27450982, 0.2509804, 0.47058824)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_3iesa")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_e2ept")
+theme_override_styles/focus = SubResource("StyleBoxFlat_k06ek")
 placeholder_text = "PawCafé"
 alignment = 1
 max_length = 14
@@ -139,40 +245,53 @@ custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0un71")
 
 [node name="CafeLabel2" type="RichTextLabel" parent="FullContent/CafeQuestionContainer" unique_id=1592671260]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.05279708, 0.007995843, 0.007995843, 1)
 theme_override_fonts/normal_font = ExtResource("2_3iesa")
+theme_override_font_sizes/normal_font_size = 30
 text = "se llamaba, ¿verdad?"
 vertical_alignment = 1
 
 [node name="Paragraph2" type="RichTextLabel" parent="FullContent" unique_id=1084844557]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.05279708, 0.007995843, 0.007995843, 1)
 theme_override_fonts/normal_font = ExtResource("2_3iesa")
+theme_override_font_sizes/normal_font_size = 30
 text = "De todas formas, su apertura es una noticia que ha alegrado mucho a nuestra comunidad, ¡estoy seguro de que se convertirá en mi nuevo lugar favorito para tomarme un cafelito!"
 vertical_alignment = 1
 
 [node name="Paragraph3" type="RichTextLabel" parent="FullContent" unique_id=2015443987]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.05279708, 0.007995843, 0.007995843, 1)
 theme_override_fonts/normal_font = ExtResource("2_3iesa")
+theme_override_font_sizes/normal_font_size = 30
 text = "Esperamos que este nuevo comienzo te sea todo un éxito y te sientas como en casa. Cualquier cosa puedes encontrarme en el ayuntamiento, ¡no te olvides de traerme un dulcecito o algo!"
 vertical_alignment = 1
 
 [node name="EndLabel" type="RichTextLabel" parent="FullContent" unique_id=724301275]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.05279708, 0.007995843, 0.007995843, 1)
 theme_override_fonts/normal_font = ExtResource("2_3iesa")
+theme_override_font_sizes/normal_font_size = 30
 text = "Atentamente, el Alcalde de Aínsa."
 vertical_alignment = 1
 
 [node name="StartButton" type="Button" parent="FullContent" unique_id=800425086]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 60)
+custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_3iesa")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_0un71")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_77dka")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jr1qq")
 text = "Continuar"

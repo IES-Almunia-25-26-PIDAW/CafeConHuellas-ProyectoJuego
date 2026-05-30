@@ -50,9 +50,9 @@ func _on_pronoun_selected(pronoun: int) -> void:
 
 # Resalta el botón del pronombre activo y atenúa los demás.
 func _update_pronoun_visuals() -> void:
-	btn_male.modulate = Color.WHITE if _selected_pronouns == 0 else Color(0.6, 0.6, 0.6, 1.0)
-	btn_female.modulate = Color.WHITE if _selected_pronouns == 1 else Color(0.6, 0.6, 0.6, 1.0)
-	btn_nonbinary.modulate = Color.WHITE if _selected_pronouns == 2 else Color(0.6, 0.6, 0.6, 1.0)
+	btn_male.modulate = Color.WHITE if _selected_pronouns == 0 else Color("b8a3a3b9")
+	btn_female.modulate = Color.WHITE if _selected_pronouns == 1 else Color("b8a3a3b9")
+	btn_nonbinary.modulate = Color.WHITE if _selected_pronouns == 2 else Color("b8a3a3b9")
 
 # Guarda los datos del jugador en GameState e inicia la historia con una transición de vídeo.
 # Si los campos están vacíos usa los valores por defecto de GameState.
