@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0d4a32nx5fsy" path="res://scenes/player_choice.tscn" id="2_yjvli"]
 [ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="3_avaca"]
 [ext_resource type="FontFile" uid="uid://kmb7gfn44fgk" path="res://assets/fonts/Fredoka-Medium.ttf" id="4_8nsh5"]
+[ext_resource type="FontFile" uid="uid://bp7q8c8myljib" path="res://assets/fonts/Nunito-MediumItalic.ttf" id="4_ys628"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n58gf"]
 content_margin_left = 40.0
@@ -96,6 +97,7 @@ layout_mode = 2
 theme = SubResource("Theme_n58gf")
 theme_override_colors/default_color = Color(0.31, 0.22113335, 0.1767, 1)
 theme_override_fonts/normal_font = ExtResource("3_avaca")
+theme_override_fonts/italics_font = ExtResource("4_ys628")
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30

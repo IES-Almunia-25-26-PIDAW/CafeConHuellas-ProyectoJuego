@@ -29,12 +29,6 @@
 	"expression": "happy2"
   },
   {
-	"add_relationship": {
-	  "character": "alcalde",
-	  "amount": 1
-	}
-  },
-  {
 	"speaker": "Hunter",
 	"text": "[i]Le sonreí. Sí, sobre todo a él voy a buscar cuando necesite algo.[/i]",
 	"show_character": "Alcalde",
@@ -83,12 +77,6 @@
 	},
 	"show_character": "Ovie",
 	"expression": "happy"
-  },
-  {
-	"add_relationship": {
-	  "character": "ovie",
-	  "amount": 1
-	}
   },
   {
 	"speaker": "Hunter",
@@ -152,12 +140,6 @@
 	"speaker": "Ovie",
 	"text": "¡Ala! ¿En serio? ¡Mañana traigo a mi hermano y que te invite a ti a una!",
 	"expression": "happy"
-  },
-  {
-	"add_relationship": {
-	  "character": "ovie",
-	  "amount": 2
-	}
   },
   {
 	"speaker": "Hunter",

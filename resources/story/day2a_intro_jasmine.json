@@ -1,0 +1,195 @@
+[
+  {
+	"location": "backgrounds/hunter_room",
+	"music": "morning_theme"
+  },
+  {
+	"hide_character": true
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]En cuanto el sol empieza a asomar me preparo para un nuevo día de trabajo. Siempre me gusta llegar un poco antes para preparar los cafés del día.[/i]"
+  },
+  {
+	"location": "backgrounds/cafe_exterior",
+	"music": "cafe_theme"
+  },
+  {
+	"scene_action": "flip_sign_closed_to_open"
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/cafeteria",
+	"music": "Everyday_Life"
+  },
+  {
+	"counter": "yes"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Una vez abro la cafetería, empiezan a llegar los primeros clientes del día, sobre todo personas mayores que madrugan para desayunar.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]A las horas, veo como una chica rubia abre la puerta. Tiene una camisa de flores y se le ve un poco despeinada, como si no hubiera parado de trabajar. Tiene la misma sonrisa que la señora mayor que vino por dos cafés ayer.[/i]"
+  },
+  {
+	"meet_character": "jasmine"
+  },
+  {
+	"show_character": "Jasmine",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "¡Hola! Mi abuela me trajo un café de aquí, estaba tan bueno que decidí venir por mí misma a probarlo. Además, me alegra ver a alguien de mi edad por aquí.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Buenos días, me alegro de que te gustase. ¿El de chocolate, verdad?",
+	"show_character": "Jasmine",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Veo como me asiente.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Es una de nuestras especialidades en cafés."
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "¡Está muy bueno! Me gustaría probar hoy otro distinto, ¿cuál me recomiendas?",
+	"expression": "happy"
+  },
+  {
+	"choices": [
+	  {
+		"text": "No lo sé, mira la carta por ti misma.",
+		"goto": "eleccion_a"
+	  },
+	  {
+		"text": "Si quieres un café te recomendaría el café de avellana, es bastante dulce. También tienes la opción de pedir un smoothie, te refresca bastante.",
+		"goto": "eleccion_b"
+	  },
+	  {
+		"text": "Puedes probar la opción de café solo, y para que no te sepa tan amargo acompañarlo con una porción de tarta.",
+		"goto": "eleccion_c"
+	  }
+	]
+  },
+  {
+	"anchor": "eleccion_a"
+  },
+  {
+	"add_relationship": {
+	  "character": "jasmine",
+	  "amount": -1
+	}
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "Oh.. De acuerdo.",
+	"expression": "sad"
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "¡Muchas gracias de todos modos!",
+	"expression": "neutral"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Observo que coge una de las cartas y le echa un vistazo.[/i]"
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "Creo que probaré el de avellana.",
+	"expression": "neutral"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Ahora mismo te lo preparo.",
+	"show_character": "Jasmine",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le sonrío y me devuelve la sonrisa, a continuación me pongo a ello.[/i]"
+  },
+  {
+	"start_order": [
+      "hazelnut_coffee"
+	],
+	"next_scene_after_order": "day2b_jasmine_post_a"
+  },
+  {
+	"anchor": "eleccion_b"
+  },
+  {
+	"add_relationship": {
+	  "character": "jasmine",
+	  "amount": 1
+	}
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "Muchas gracias, creo que elegiré el de avellana.",
+	"expression": "happy2"
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "Además, quiero un café con leche para mi abuela, porfa.",
+	"expression": "happy2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Claro, ahora mismo te los preparo.",
+	"show_character": "Jasmine",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le sonrío y me devuelve la sonrisa, a continuación me pongo a ello.[/i]"
+  },
+  {
+	"start_order": [
+	  "hazelnut_coffee",
+      "coffee_milk"
+	],
+	"next_scene_after_order": "day2b_jasmine_post_b"
+  },
+  {
+	"anchor": "eleccion_c"
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "Creo que solo me apetece el café, pero muchas gracias por la recomendación. Mañana le diré a mi abuela que venga para probar esas tartas tan ricas que me nombras.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "Además, quiero un café con leche para mi abuela, porfa.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Claro, ahora mismo te los preparo.",
+	"show_character": "Jasmine",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le sonrío y me devuelve la sonrisa, a continuación me pongo a ello.[/i]"
+  },
+  {
+	"start_order": [
+	  "coffee",
+      "coffee_milk"
+	],
+	"next_scene_after_order": "day2b_jasmine_post_c"
+  }
+]
