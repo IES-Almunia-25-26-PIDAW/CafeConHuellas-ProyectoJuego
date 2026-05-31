@@ -172,8 +172,6 @@ func process_current_line() -> void:
 		tween.tween_property(character_sprite, "modulate:a", 0.0, 0.3)
 		await tween.finished
 		
-		character_sprite.hide()
-		
 		dialog_index += 1
 		process_current_line()
 		return
@@ -303,22 +301,33 @@ func process_current_line() -> void:
 
 # Restaura el fondo y música correctos buscando hacia atrás desde el índice actual.
 func _restore_scene_state() -> void:
+	var found_location: bool = false
+	var found_music: bool = false
+	var found_counter: bool = false
+	
 	# Busca hacia atrás desde el índice actual la última línea con location.
-	for i in range(dialog_index, -1, -1):
+	for i in range(dialog_index - 1, -1, -1):
 		var line: Dictionary = dialog_lines[i]
 		
 		# Restaura el fondo
-		if line.has("location"):
+		if not found_location and line.has("location"):
 			var background_file = "res://assets/images/" + line["location"] + ".png"
 			background.texture = load(background_file)
+			found_location = true
 		
 		# Restaura la música
-		if line.has("music"):
+		if not found_music and line.has("music"):
 			MusicManager.play(line["music"])
+			found_music = true
 		
 		# Restaura el mostrador
-		if line.has("counter"):
+		if not found_counter and line.has("counter"):
 			counter_layer.visible = line["counter"] == "yes"
+			found_counter = true
+		
+		# Parar cuando se hayan encontrado los tres
+		if found_location and found_music and found_counter:
+			break
 
 
 # Lanza la transición de vídeo hacia next_scene.

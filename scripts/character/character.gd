@@ -14,13 +14,14 @@ extends Node
 enum Name {
 	NARRATOR,
 	HUNTER,
+	PADRE,
+	BASTIAN,
+	BERENICE,
+	GABRIEL,
 	JASMINE,
 	NILAM,
-	RONALD,
-	ALCALDE,
 	OVIE,
-	ABUELA,
-	PADRE
+	RONALD,
 }
 
 # ===== DATOS DE PERSONAJES =====
@@ -77,22 +78,29 @@ const CHARACTER_DETAILS : Dictionary = {
 		# TODO: asignarle color
 		"char_color": Color(0, 0, 0, 0)
 	},
-	Name.ALCALDE: {
-		"name": "Alcalde",
+	Name.BASTIAN: {
+		"name": "Bastian",
 		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
 		"voice_bus": "Voices",
 		"voice": "res://assets/audio/voices/voice_base.ogg",
 		"char_color": Color("5a7a3ae6")
 	},
+	Name.GABRIEL: {
+		"name": "Gabriel",
+		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
+		"voice_bus": "Voices",
+		"voice": "res://assets/audio/voices/voice_base.ogg",
+		"char_color": Color("20183be6")
+	},
 	Name.OVIE: {
 		"name": "Ovie",
-		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
+		"sprite_frames": preload("res://assets/sprites/ovie/ovie_sprites.tres"),
 		"voice_bus": "Voices",
 		"voice": "res://assets/audio/voices/voice_base.ogg",
 		"char_color": Color("3a6a8ae6")
 	},
-	Name.ABUELA: {
-		"name": "Abuela",
+	Name.BERENICE: {
+		"name": "Berenice",
 		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
 		"voice_bus": "Voices",
 		"voice": "res://assets/audio/voices/voice_base.ogg",

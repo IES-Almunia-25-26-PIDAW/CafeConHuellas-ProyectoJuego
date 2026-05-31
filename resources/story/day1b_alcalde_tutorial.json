@@ -7,31 +7,24 @@
 	"counter": "yes"
   },
   {
-	"scene_action": "tutorial_start"
-  },
-  {
-	"show_character": "Alcalde", 
-	"expression": "happy"
-  },
-  {
 	"speaker": "Hunter",
 	"text": "[i]Me acerco a la barra y le entrego el pedido al alcalde.[/i]"
   },
   {
 	"speaker": "Hunter",
 	"text": "Serían 5,20€, señor. Muchas gracias por venir.",
-	"show_character": "Alcalde",
+	"show_character": "Bastian",
 	"expression": "happy"
   },
   {
-	"speaker": "Alcalde",
+	"speaker": "Bastian",
 	"text": "Quédate el cambio. Y ya sabes que para lo que haga falta, aquí está este viejo.",
 	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Le sonreí. Sí, sobre todo a él voy a buscar cuando necesite algo.[/i]",
-	"show_character": "Alcalde",
+	"show_character": "Bastian",
 	"expression": "neutral"
   },
   { "hide_character": true },
@@ -51,13 +44,9 @@
 	"meet_character": "ovie"
   },
   {
-	"show_character": "Ovie",
-	"expression": "happy"
-  },
-  {
 	"speaker": "Ovie",
 	"text": "¡No me lo puedo creer! ¡Por fin una cafetería donde puedo atiborrarme a batidos y cosas ricas!",
-	"expression": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
@@ -66,7 +55,7 @@
   {
 	"speaker": "Ovie",
 	"text": "¡Hola! Soy Ovie. ¿Cómo te llamas?",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -76,7 +65,7 @@
 		"nonbinary": "Hola, mi nombre es {player_name}. Encantade. ¿Quieres probar entonces alguno de los batidos especiales de la casa?"
 	},
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -87,63 +76,71 @@
 	"pronouns": {
 		"male": "¡Pareces de la edad de mi hermano! No le vendría mal tener un amigo, siempre está solo.",
 		"female": "¡Pareces de la edad de mi hermano! No le vendría mal tener una amiga, siempre está solo.",
-		"nonbinary": "¡Pareces de la edad de mi hermano! No le vendría mal tener un amigue, siempre está solo."
+		"nonbinary": "¡Pareces de la edad de mi hermano! No le vendría mal tener une amigue, siempre está solo."
 	},
-	"expression": "neutral"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
 	"text": "¿En serio? ¿Cómo se llama? Dile que se pase por aquí y pruebe alguno de mis cafés.",
 	"show_character": "Ovie",
-	"expression": "neutral"
+	"expression": "2"
   },
   {
 	"speaker": "Ovie",
 	"text": "Se llama Nilam. ¡Se lo diré! ¡Seguro que le gustan!",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Después de un rato viendo la carta, me señala un smoothie de frutos rojos.[/i]"
+	"text": "[i]Después de un rato viendo la carta, me señala un smoothie de frutos rojos.[/i]",
+	"show_character": "Ovie",
+	"expression": "happy2"
   },
   {
 	"speaker": "Ovie",
 	"text": "Creo que este, nunca los he probado.",
-	"expression": "happy"
+	"expression": "idle",
   },
   {
 	"speaker": "Hunter",
 	"text": "Marchando entonces. ¿No quieres ninguna tarta o galleta?",
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Noto un poco de desánimo en su cara.[/i]"
+	"text": "[i]Noto un poco de desánimo en su cara.[/i]",
+	"show_character": "Ovie",
+	"expression": "sad2"
   },
   {
 	"speaker": "Ovie",
 	"text": "No creo que pueda llegarme la cuenta para una galleta. ¡Pero no pasa nada!",
-	"expression": "sad"
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me quedo pensando un momento.[/i]"
+	"text": "[i]Me quedo pensando un momento.[/i]",
+	"show_character": "Ovie",
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
 	"text": "¿Qué te parece si por ser mi primer cliente te regalo la galleta?",
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "surprise"
   },
   {
 	"speaker": "Ovie",
-	"text": "¡Ala! ¿En serio? ¡Mañana traigo a mi hermano y que te invite a ti a una!",
-	"expression": "happy"
+	"text": "¡Hala! ¿En serio? ¡Mañana traigo a mi hermano y que te invite a ti a una!",
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]No pude evitar reírme ante su pequeño pacto.[/i]"
+	"text": "[i]No pude evitar reírme ante su pequeño pacto.[/i]",
+	"show_character": "Ovie",
+	"expression": "happy2"
   },
   {
 	"start_order": [

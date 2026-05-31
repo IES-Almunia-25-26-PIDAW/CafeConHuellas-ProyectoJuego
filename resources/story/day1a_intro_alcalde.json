@@ -1,8 +1,8 @@
 [
   {
 	"location": "backgrounds/hunter_room",
-	"music": "morning_theme"
   },
+  { "music": "Sol3",},
   { "hide_character": true },
   {
 	"speaker": "Hunter",
@@ -10,7 +10,7 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Poco a poco recobro la conciencia y caigo en la cuenta: esta no es la habitación que conozco.[/i]"
+	"text": "[i]Poco a poco recobro la consciencia y caigo en cuenta: esta no es la habitación que conozco.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -29,11 +29,10 @@
 	"text": "[i]Todo esto comenzó unas semanas atrás.[/i]"
   },
   {
-	"transition": "fade"
+	"location": "backgrounds/black",
   },
   {
-	"location": "backgrounds/hunter_room",
-	"music": "memory_theme"
+	"music": "07_HoliznaCC0_Beginning_6",
   },
   {
 	"speaker": "Hunter",
@@ -88,12 +87,9 @@
 	"text": "Sabía que te convencería. Empiezas el 1 de abril."
   },
   {
-	"transition": "fade"
-  },
-  {
 	"location": "backgrounds/hunter_room",
-	"music": "morning_theme"
   },
+  { "music": "Sol3"},
   {
 	"speaker": "Hunter",
 	"text": "[i]2 de abril de 2016. Actualmente.[/i]"
@@ -131,34 +127,22 @@
 	  }
   },
   {
-	"location": "backgrounds/town_street",
-	"music": "town_theme"
+	"location": "backgrounds/black"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Al pasar por las calles del pueblo me encuentro a varias personas mayores las cuales me saludan, pero nada más, ni un signo de alguien joven.[/i]"
   },
   {
-	"transition": "slide"
+	"location": "backgrounds/cafeteria",
   },
   {
-	"location": "backgrounds/cafe_exterior",
-	"music": "cafe_theme"
-  },
-  {
-	"scene_action": "flip_sign_closed_to_open"
+	"music": "Everyday_Life"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Mi primer día. Con ánimos, supongo.[/i]"
-  },
-  {
-	"transition": "fade"
-  },
-  {
-	"location": "backgrounds/cafeteria",
-	"music": "Everyday_Life"
-  },
+  }, 
   {
 	"counter": "yes"
   },
@@ -170,11 +154,7 @@
 	"meet_character": "alcalde"
   },
   {
-	"show_character": "Alcalde",
-	"expression": "happy"
-  },
-  {
-	"speaker": "Alcalde",
+	"speaker": "Bastian",
 	  "pronouns": {
 		"male": "¡Hola! Bienvenido al pueblo, es bueno ver caras nuevas de gente joven.",
 		"female": "¡Hola! Bienvenida al pueblo, es bueno ver caras nuevas de gente joven.",
@@ -185,16 +165,16 @@
   {
 	"speaker": "Hunter",
 	"text": "Buenas… Sí, solo serán por unos meses. Pero supongo que es bueno...",
-	"show_character": "Alcalde",
+	"show_character": "Bastian",
 	"expression": "neutral"
   },
   {
-	"speaker": "Alcalde",
+	"speaker": "Bastian",
 	"text": "Bueno… nuestro pueblecillo tiene su encanto. A lo mejor acabas echando raíces aquí más tiempo del que piensas.",
 	"expression": "happy"
   },
   {
-	"speaker": "Alcalde",
+	"speaker": "Bastian",
 	  "pronouns": {
 		"male": "O quién sabe, muchacho, igual haces como los chavales de ahora: encuentras una buena persona y haces las maletas.",
 		"female": "O quién sabe, muchacha, igual haces como los chavales de ahora: encuentras una buena persona y haces las maletas.",
@@ -205,7 +185,7 @@
   {
 	"speaker": "Hunter",
 	"text": "[i]Intentó hacer una broma. No me causó mucha gracia.[/i]",
-	"show_character": "Alcalde",
+	"show_character": "Bastian",
 	"expression": "neutral"
   },
   {
@@ -213,7 +193,7 @@
 	"text": "Sí, supongo que se irá viendo… ¿Le apetece tomar algo?"
   },
   {
-	"speaker": "Alcalde",
+	"speaker": "Bastian",
 	  "pronouns": {
 		"male": "Claro hijo, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio.",
 		"female": "Claro hija, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio.",
@@ -224,7 +204,7 @@
   {
 	"speaker": "Hunter",
 	"text": "[i]Otra risa forzada. Asentí y me puse a ello.[/i]",
-	"show_character": "Alcalde",
+	"show_character": "Bastian",
 	"expression": "neutral"
   },
   {

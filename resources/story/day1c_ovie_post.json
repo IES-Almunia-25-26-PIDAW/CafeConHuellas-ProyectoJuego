@@ -7,21 +7,21 @@
 	"counter": "yes"
   },
   {
-	"show_character": "Ovie",
-	"expression": "happy"
-  },
-  {
 	"speaker": "Hunter",
-	"text": "[i]Le entrego el pedido a Ovie en una bolsa bonita.[/i]"
+	"text": "[i]Le entrego el pedido a Ovie en una bolsa bonita.[/i]",
+	"show_character": "Ovie",
+	"expression": "idle"
   },
 	{
 		"speaker": "Ovie", 
 		"text": "Aquí tienes.", 
-		"expression": "happy"
+		"expression": "2"
 	},
 	{
 		"speaker": "Hunter", 
-		"text": "[i]Ovie me entrega el dinero del smoothie con una sonrisa.[/i]"
+		"text": "[i]Ovie me entrega el dinero del smoothie con una sonrisa.[/i]",
+		"show_character": "Ovie",
+		"expression": "2"
 	},
   {
 	"speaker": "Ovie",
@@ -30,13 +30,15 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Antes de irse, me fijo de nuevo en sus ojos.[/i]"
+	"text": "[i]Antes de irse, me fijo de nuevo en sus ojos.[/i]",
+	"show_character": "Ovie",
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "Por cierto, tus ojos son muy bonitos.",
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Ovie",
@@ -47,12 +49,12 @@
 	"speaker": "Hunter",
 	"text": "Te dicen eso porque eres diferente, y a la gente no le suele gustar eso. Pero tú mismo sabes que no llevan razón y que son muy bonitos.",
 	"show_character": "Ovie",
-	"expression": "sad"
+	"expression": "surprise"
   },
   {
 	"speaker": "Ovie",
 	"text": "¡Lo sé! Nil me dice lo mismo. ¡A mí me gustan!",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
