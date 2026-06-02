@@ -80,7 +80,7 @@ const CHARACTER_DETAILS : Dictionary = {
 	},
 	Name.BASTIAN: {
 		"name": "Bastian",
-		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
+		"sprite_frames": preload("res://assets/sprites/bastian/bastian_sprites.tres"),
 		"voice_bus": "Voices",
 		"voice": "res://assets/audio/voices/voice_base.ogg",
 		"char_color": Color("5a7a3ae6")
@@ -101,7 +101,7 @@ const CHARACTER_DETAILS : Dictionary = {
 	},
 	Name.BERENICE: {
 		"name": "Berenice",
-		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
+		"sprite_frames": preload("res://assets/sprites/berenice/berenice_sprites.tres"),
 		"voice_bus": "Voices",
 		"voice": "res://assets/audio/voices/voice_base.ogg",
 		"char_color": Color("8a5a3ae6")

@@ -1,76 +1,59 @@
 [
   {
-	"location": "backgrounds/cafeteria",
+	"location": "backgrounds/cafeteria"
+	},
+	{
 	"music": "Everyday_Life"
   },
   {
 	"counter": "yes"
   }, 
   {
-	"show_character": "Abuela",
-	"expression": "happy"
-  },
-  {
 	"speaker": "Hunter",
-	"text": "Claro. Sobre todo si le gustan las cosas con chocolate, y mire el lado bueno, si no le hace mucha gracia puede volver y probar otro",
-	"show_character": "Abuela",
-	"expression": "happy"
+	"text": "[i]La abuelita me paga los dos cafés y además me da un poco de propina[/i]",
+	"show_character": "Berenice",
+	"expression": "idle"
   },
   {
-	"speaker": "Abuela",
-	"text": "Desde luego. Además, seguro que se llevaría bien con usted. Está deseando hacer amigos nuevos de su edad, y creo que ronda a la suya.",
-	"expression": "happy2"
-  },
-  {
-	"speaker": "Hunter",
-	"text": "Aquí estaré. Yo tampoco conozco a mucha gente, no me vendría mal caras nuevas.",
-	"show_character": "Abuela",
-	"expression": "happy"
-  },
-  {
-	"speaker": "Hunter",
-	"text": "[i]La abuelita me paga los dos cafés y además me da un poco de propina[/i]"
-  },
-  {
-	"speaker": "Abuela",
+	"speaker": "Berenice",
 	"text": "Para apoyar el negocio. Sé que no es fácil abrir un café en un pueblo tan pequeño y siendo tan joven.",
 	"expression": "happy"
   },
+	{ "hide_character": true },
   {
 	"speaker": "Hunter",
 	"text": "[i]Le agradezco y me despido de ella. Parece que he conseguido una clienta nueva.[/i]"
   },
+	{
+	"location": "backgrounds/cafeteria_late"
+	},
   {
 	"speaker": "Hunter",
 	 "text": "[i]Con el paso de las horas van llegando algunos clientes más, la mayoría por curiosidad ante la novedad de no tener que hacer más el café en casa. Los atiendo con mi mejor sonrisa.[/i]"
-  },
-  {
-	"scene_action": "time_skip_afternoon"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Al final del día, cierro la cafetería y hago la caja para comprobar que todo cuadra.[/i]"
   },
   {
-	"transition": "fade"
-  },
-  {
-	"location": "backgrounds/town_street",
-	"music": "evening_theme"
-  },
-  {
 	"counter": "no"
+  },
+  {
+	"location": "backgrounds/black"
+	},
+	{
+	"music": "Sol3"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Suspiro al ver que ya está oscureciendo. A pesar de todo, el día no fue tan malo. Eso sí… mañana espero poder ver gente de mi edad.[/i]"
   },
   {
+	"location": "backgrounds/grass"
+	},
+  {
 	"speaker": "Hunter",
 	 "text": "[i]Mientras voy caminando por la calle, veo que un pequeño gato negro se acerca y se roza con mi pierna.[/i]"
-  },
-  {
-	"meet_character": "gato_negro"
   },
   {
 	"speaker": "Hunter",
@@ -89,12 +72,8 @@
 	"text": "[i]Le sonrío y le hago un gesto para que me siga, parece que me entiende porque poco a poco me va siguiendo.[/i]"
   },
   {
-	"transition": "slide"
-  },
-  {
-	"location": "backgrounds/hunter_house_exterior",
-	"music": "evening_theme"
-  },
+	"location": "backgrounds/grass_food"
+	},
   {
 	"speaker": "Hunter",
 	"text": "[i]Preparo un poco de pollo en un plato y lo coloco fuera, junto a un cuenco de agua por si está sediento.[/i]"
@@ -116,9 +95,15 @@
 	"text": "[i]Me mira con sus ojos azules y maúlla. A continuación decide irse.[/i]"
   },
   {
+	"location": "backgrounds/grass_food"
+	},
+  {
 	"speaker": "Hunter",
 	"text": "Bueno… supongo que eso es un sí. Espero que no le moleste que te haya dado de comer…"
   },
+  {
+	"location": "backgrounds/black"
+	},
   {
 	"speaker": "Hunter",
 	"pronouns": {

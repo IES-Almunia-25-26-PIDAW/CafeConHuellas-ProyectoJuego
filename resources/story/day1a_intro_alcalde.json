@@ -160,13 +160,13 @@
 		"female": "¡Hola! Bienvenida al pueblo, es bueno ver caras nuevas de gente joven.",
 		"nonbinary": "¡Hola! Bienvenide al pueblo, es bueno ver caras nuevas de gente joven."
 	  },
-	  "expression": "happy"
+	  "expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "Buenas… Sí, solo serán por unos meses. Pero supongo que es bueno...",
 	"show_character": "Bastian",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Bastian",
@@ -180,13 +180,13 @@
 		"female": "O quién sabe, muchacha, igual haces como los chavales de ahora: encuentras una buena persona y haces las maletas.",
 		"nonbinary": "O quién sabe, igual haces como los chavales de ahora: encuentras una buena persona y haces las maletas."
 	  },
-	  "expression": "happy2"
+	  "expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Intentó hacer una broma. No me causó mucha gracia.[/i]",
 	"show_character": "Bastian",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -199,13 +199,13 @@
 		"female": "Claro hija, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio.",
 		"nonbinary": "Claro hije, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio."
 	  },
-	  "expression": "happy"
+	  "expression": "wink"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Otra risa forzada. Asentí y me puse a ello.[/i]",
 	"show_character": "Bastian",
-	"expression": "neutral"
+	"expression": "wink"
   },
   {
 	"start_order": [

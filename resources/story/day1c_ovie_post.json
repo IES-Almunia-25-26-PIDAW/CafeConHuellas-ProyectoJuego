@@ -1,6 +1,8 @@
 [
   {
 	"location": "backgrounds/cafeteria",
+	},
+	{
 	"music": "Everyday_Life"
   },
   {
@@ -42,12 +44,12 @@
   },
   {
 	"speaker": "Ovie",
-	"text": "¡Muchas gracias! Aunque en el cole me dicen que son feos, y que parezco más a un alienígena.",
+	"text": "¡Muchas gracias! Aunque en el cole me dicen que son feos, y que parezco más un alienígena.",
 	"expression": "sad"
   },
   {
 	"speaker": "Hunter",
-	"text": "Te dicen eso porque eres diferente, y a la gente no le suele gustar eso. Pero tú mismo sabes que no llevan razón y que son muy bonitos.",
+	"text": "Te dicen eso porque eres diferente y a la gente no le suele gustar eso. Pero tú mismo sabes que no llevan razón y que son muy bonitos.",
 	"show_character": "Ovie",
 	"expression": "surprise"
   },
@@ -69,7 +71,7 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le sonrío y me despido de él con un gesto de la mano también, veo como se aleja del café contento.[/i]"
+	"text": "[i]Le sonrío y me despido de él con un gesto de la mano, veo como se aleja del café contento.[/i]"
   },
   { "hide_character": true },
   {
@@ -81,20 +83,16 @@
 	"text": "[i]Una hora después de conocer a Ovie, veo como entra una anciana de unos setenta y tantos años.[/i]"
   },
   {
-	"meet_character": "abuela_jasmine"
-  },
-  {
-	"show_character": "Abuela",
-	"expression": "happy"
+	"meet_character": "berenice"
   },
   {
 	"speaker": "Hunter",
 	"text": "Buenos días, ¿qué le gustaría tomar?",
-	"show_character": "Abuela",
-	"expression": "happy"
+	"show_character": "Berenice",
+	"expression": "idle"
   },
   {
-	"speaker": "Abuela",
+	"speaker": "Berenice",
 	"pronouns": {
 		"male": "Buenas, hijo. ¿Qué tipo de café tienes? No hay muchas más cafeterías en este pueblecito.",
 		"female": "Buenas, hija. ¿Qué tipo de café tienes? No hay muchas más cafeterías en este pueblecito.",
@@ -104,12 +102,35 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Aquí tiene la carta, para que usted los pueda ver mejor.[/i]"
+	"text": "Aquí tiene la carta, para que usted los pueda ver mejor.",
+	"show_character": "Berenice",
+	"expression": "idle"
   },
   {
-	"speaker": "Abuela",
+	"speaker": "Berenice",
 	"text": "Deme un café solo y un café con chocolate. ¿Cree usted que le gustará a mi nieta? No para de trabajar, quiero llevarle algo para que se endulce un poco.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Claro. Sobre todo si le gustan las cosas con chocolate, y mire el lado bueno, si no le hace mucha gracia puede volver y probar otro.",
+	"show_character": "Berenice",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Berenice",
+	"text": "Desde luego. Además, seguro que se llevaría bien con usted. Está deseando hacer amigos nuevos de su edad, y creo que ronda a la suya.",
 	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Aquí estaré. Yo tampoco conozco a mucha gente, no me vendría mal caras nuevas.",
+	"show_character": "Berenice",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le dedico una sonrisa y empiezo a preparar su pedido.[/i]"
   },
   {
 	"start_order": [

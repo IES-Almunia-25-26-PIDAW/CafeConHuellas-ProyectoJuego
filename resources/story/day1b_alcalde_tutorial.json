@@ -1,6 +1,8 @@
 [
   {
-	"location": "backgrounds/cafeteria",
+	"location": "backgrounds/cafeteria"
+  },
+  {
 	"music": "Everyday_Life"
   },
   {
@@ -19,13 +21,13 @@
   {
 	"speaker": "Bastian",
 	"text": "Quédate el cambio. Y ya sabes que para lo que haga falta, aquí está este viejo.",
-	"expression": "happy2"
+	"expression": "wink"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Le sonreí. Sí, sobre todo a él voy a buscar cuando necesite algo.[/i]",
 	"show_character": "Bastian",
-	"expression": "neutral"
+	"expression": "wink"
   },
   { "hide_character": true },
   {
