@@ -1,38 +1,20 @@
 {
-	"mochi": {
-		"id": "mochi",
-		"name": "Mochi",
+	"milo": {
+		"id": "milo",
+		"name": "Milo",
 		"species": "cat",
-		"gender": "female",
-		"description": "Una gata tranquila y cariñosa que adora los rincones soleados.",
-		"appears_on_day": 1,
-		"image_path": ""
-	},
-	"luna": {
-		"id": "luna",
-		"name": "Luna",
-		"species": "dog",
-		"gender": "female",
-		"description": "Una perra juguetona y leal que siempre está lista para salir a pasear.",
-		"appears_on_day": 2,
-		"image_path": ""
-	},
- 	"canela": {
-		"id": "canela",
-		"name": "Canela",
-		"species": "cat",
-		"gender": "female",
-		"description": "Una gata curiosa y elegante a la que le encanta explorar cada rincón.",
+		"gender": "male",
+		"description": "Un gato tranquilo y cariñoso.",
 		"appears_on_day": 3,
-		"image_path": ""
+		"image_path": "res://assets/sprites/animals/milo/milo_icon.png"
 	},
-	"nube": {
-		"id": "nube",
-		"name": "Nube",
+	"lupi": {
+		"id": "lupi",
+		"name": "Lupi",
 		"species": "dog",
 		"gender": "male",
-		"description": "Un perro tranquilo y observador que disfruta de largas siestas.",
-		"appears_on_day": 4,
-		"image_path": ""
-	}
+		"description": "Un perro revoltoso y juguetón",
+		"appears_on_day": 5,
+		"image_path": "res://assets/sprites/animals/lupi/lupi_icon.png"
+	},
 }

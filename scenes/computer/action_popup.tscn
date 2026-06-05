@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://7v23rs7ymdbf"]
 
 [ext_resource type="Script" uid="uid://bj7wjkujga66x" path="res://scripts/computer/action_popup.gd" id="1_iva1b"]
-[ext_resource type="SpriteFrames" uid="uid://u2kasffg4rdv" path="res://assets/sprites/jasmine/jasmine_sprites.tres" id="1_w71p0"]
 [ext_resource type="FontFile" uid="uid://cwtbqbvgvspm8" path="res://assets/fonts/Fredoka-Regular.ttf" id="3_psm1r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psm1r"]
@@ -17,6 +16,8 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 shadow_color = Color(0.5019608, 0.7490196, 0.98039216, 0.3019608)
 shadow_size = 6
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iva1b"]
 
 [node name="ActionPopup" type="Control" unique_id=1285974780]
 layout_mode = 3
@@ -51,8 +52,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_psm1r")
 [node name="ActionSprite" type="AnimatedSprite2D" parent="PopupPanel" unique_id=985261356]
 unique_name_in_owner = true
 scale = Vector2(0.3, 0.3)
-sprite_frames = ExtResource("1_w71p0")
-animation = &"2-talk"
+sprite_frames = SubResource("SpriteFrames_iva1b")
 centered = false
 offset = Vector2(20, 50)
 

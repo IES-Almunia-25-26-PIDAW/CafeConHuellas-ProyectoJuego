@@ -24,6 +24,10 @@ const SHOW_TIME: float = 2.0
 const FADE_TIME: float = 0.3
 
 
+# ===== VARIABLES =====
+var _current_pet_id: String = ""
+
+
 # ===== CICLO DE VIDA =====
 
 func _ready() -> void:
@@ -32,15 +36,29 @@ func _ready() -> void:
 
 # ===== PUBLIC API =====
 
+## Cambia las animaciones para la mascota indicada.
+func set_pet(animal_id: String) -> void:
+	if animal_id == _current_pet_id:
+		return
+	
+	_current_pet_id = animal_id
+	
+	var frames_path := "res//assets/sprites/animals/%s/%s_sprites.tres" % [animal_id, animal_id]
+	
+	if ResourceLoader.exists(frames_path):
+		action_sprite.sprite_frames = load(frames_path)
+	else:
+		push_warning("No existen SpriteFrames para %s" % animal_id)
+
+
 ## Muestra el popup con la animación y mensaje correspondientes a la necesidad atendida.
 ## [param need] Tipo de necesidad: "food", "bath" o "love".
 func play_action(need: String) -> void:
 	action_label.text = ACTION_LABELS.get(need, "")
-	# Aquí se debe asignar la animación del protagonista según la acción.
-	# TODO: action_sprite.play(need)
 	
-	# Por ahora usamos esta
-	action_sprite.play("talk")
+	if action_sprite.sprite_frames and action_sprite.sprite_frames.has_animation(need):
+		action_sprite.play(need)
+	
 	visible = true
 	modulate.a = 0.0
 	
