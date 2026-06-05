@@ -1,0 +1,65 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bngec6ik40y41"]
+
+[ext_resource type="Texture2D" uid="uid://cdsh1nppa4qr" path="res://assets/sprites/animals/lupi/bath/lupi_bath1.png" id="1_pe0jo"]
+[ext_resource type="Texture2D" uid="uid://c6730dho7ksty" path="res://assets/sprites/animals/lupi/bath/lupi_bath2.png" id="2_qxtwu"]
+[ext_resource type="Texture2D" uid="uid://dl7eesdvc1w7v" path="res://assets/sprites/animals/lupi/bath/lupi_bath3.png" id="3_rjq60"]
+[ext_resource type="Texture2D" uid="uid://dcyg2meutfurh" path="res://assets/sprites/animals/lupi/food/lupi_food1.png" id="4_phxm6"]
+[ext_resource type="Texture2D" uid="uid://c0q1m8j662gw1" path="res://assets/sprites/animals/lupi/food/lupi_food2.png" id="5_55ncy"]
+[ext_resource type="Texture2D" uid="uid://bmfjd2pey42nw" path="res://assets/sprites/animals/lupi/food/lupi_food3.png" id="6_cqer0"]
+[ext_resource type="Texture2D" uid="uid://bh0umf8fylhqi" path="res://assets/sprites/animals/lupi/love/lupi_love1.png" id="7_fkks3"]
+[ext_resource type="Texture2D" uid="uid://su6hblt1h8cx" path="res://assets/sprites/animals/lupi/love/lupi_love2.png" id="8_wqdur"]
+[ext_resource type="Texture2D" uid="uid://cp7hi63r5yox7" path="res://assets/sprites/animals/lupi/love/lupi_love3.png" id="9_r1ju2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pe0jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qxtwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pe0jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rjq60")
+}],
+"loop": true,
+"name": &"bath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_phxm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_55ncy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_phxm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cqer0")
+}],
+"loop": true,
+"name": &"food",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fkks3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wqdur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fkks3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_r1ju2")
+}],
+"loop": true,
+"name": &"love",
+"speed": 5.0
+}]

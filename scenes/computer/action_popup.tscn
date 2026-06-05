@@ -17,8 +17,6 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0.5019608, 0.7490196, 0.98039216, 0.3019608)
 shadow_size = 6
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_iva1b"]
-
 [node name="ActionPopup" type="Control" unique_id=1285974780]
 layout_mode = 3
 anchors_preset = 8
@@ -34,7 +32,7 @@ script = ExtResource("1_iva1b")
 
 [node name="PopupPanel" type="PanelContainer" parent="." unique_id=1093860426]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(600, 400)
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,10 +49,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_psm1r")
 
 [node name="ActionSprite" type="AnimatedSprite2D" parent="PopupPanel" unique_id=985261356]
 unique_name_in_owner = true
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_iva1b")
+position = Vector2(23, 0)
+scale = Vector2(0.4, 0.4)
+animation = &""
 centered = false
-offset = Vector2(20, 50)
 
 [node name="ActionLabel" type="RichTextLabel" parent="PopupPanel" unique_id=1380801710]
 unique_name_in_owner = true

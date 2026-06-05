@@ -66,7 +66,8 @@ func _ready() -> void:
 	# Conexión de la señal del tab de mascotas para saber cuando están atendidas.
 	pets_tab.all_pets_happy.connect(_on_all_pets_happy)
 	# Conectar la señal del popup.
-	pets_tab.show_action_popup.connect(func(need: String):
+	pets_tab.show_action_popup.connect(func(need: String, animal_id: String):
+		_action_popup_instance.set_pet(animal_id)
 		_action_popup_instance.play_action(need)
 	)
 	
@@ -103,7 +104,7 @@ func _ready() -> void:
 # TODO: BORRAR, de prueba
 func _setup_test_data() -> void:
 	# Dos mascotas en casa
-	GameState.animals_athome = ["mochi", "luna", "canela", "nube", "mochi", "luna"]
+	GameState.animals_athome = ["milo", "lupi"]
 	
 	# Dos correos recibidos hoy (day = 1), sin leer
 	GameState.day = 1

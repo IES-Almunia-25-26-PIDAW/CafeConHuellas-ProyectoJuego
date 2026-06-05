@@ -43,7 +43,7 @@ func set_pet(animal_id: String) -> void:
 	
 	_current_pet_id = animal_id
 	
-	var frames_path := "res//assets/sprites/animals/%s/%s_sprites.tres" % [animal_id, animal_id]
+	var frames_path := "res://assets/sprites/animals/%s/%s_sprites.tres" % [animal_id, animal_id]
 	
 	if ResourceLoader.exists(frames_path):
 		action_sprite.sprite_frames = load(frames_path)

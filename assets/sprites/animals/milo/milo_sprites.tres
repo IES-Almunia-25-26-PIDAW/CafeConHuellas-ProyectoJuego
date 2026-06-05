@@ -1,0 +1,65 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bxoregbg2phis"]
+
+[ext_resource type="Texture2D" uid="uid://cd2bftwqf2iql" path="res://assets/sprites/animals/milo/bath/milo_bath1.png" id="1_cfdut"]
+[ext_resource type="Texture2D" uid="uid://mqsnbvqtaosg" path="res://assets/sprites/animals/milo/bath/milo_bath2.png" id="2_exd6j"]
+[ext_resource type="Texture2D" uid="uid://bmkidrd0worwv" path="res://assets/sprites/animals/milo/bath/milo_bath3.png" id="3_v7k15"]
+[ext_resource type="Texture2D" uid="uid://dbcol73334p4k" path="res://assets/sprites/animals/milo/food/milo_food1.png" id="4_x77oh"]
+[ext_resource type="Texture2D" uid="uid://bxr3676tw7i88" path="res://assets/sprites/animals/milo/food/milo_food2.png" id="5_0mmxx"]
+[ext_resource type="Texture2D" uid="uid://buehsi7ucoik5" path="res://assets/sprites/animals/milo/food/milo_food3.png" id="6_2m40i"]
+[ext_resource type="Texture2D" uid="uid://wl0ovaqppcxo" path="res://assets/sprites/animals/milo/love/milo_love1.png" id="7_8pgw5"]
+[ext_resource type="Texture2D" uid="uid://cwtq5tep4cgm2" path="res://assets/sprites/animals/milo/love/milo_love2.png" id="8_4jkxp"]
+[ext_resource type="Texture2D" uid="uid://4kemlstmecia" path="res://assets/sprites/animals/milo/love/milo_love3.png" id="9_6kxrv"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cfdut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_exd6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_cfdut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v7k15")
+}],
+"loop": true,
+"name": &"bath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x77oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0mmxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x77oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2m40i")
+}],
+"loop": true,
+"name": &"food",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8pgw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4jkxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8pgw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6kxrv")
+}],
+"loop": true,
+"name": &"love",
+"speed": 5.0
+}]

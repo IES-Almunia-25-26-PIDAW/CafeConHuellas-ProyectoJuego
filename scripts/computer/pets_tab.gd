@@ -9,7 +9,7 @@ extends Control
 ## Se emite cuando todas las mascotas tienen sus necesidades cubiertas.
 signal all_pets_happy
 ## Se emite cuando una mascota solicita mostrar el popup de acción.
-signal show_action_popup(need: String)
+signal show_action_popup(need: String, animal_id: String)
 
 
 # ===== ESCENAS =====
@@ -52,7 +52,7 @@ func populate() -> void:
 		
 		# Conecta la señal del popup
 		card.action_requested.connect(func(need: String):
-			show_action_popup.emit(need)
+			show_action_popup.emit(need, animal_id)
 		)
 	
 	_check_all_happy()
