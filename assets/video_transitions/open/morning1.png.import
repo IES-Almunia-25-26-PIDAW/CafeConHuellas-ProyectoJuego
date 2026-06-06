@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btt7pk3qqfxqm"
-path="res://.godot/imported/grass_lupi.png-981b0344e7955fb2f73f9a4ec1abde68.ctex"
+uid="uid://tjcigyjy4858"
+path="res://.godot/imported/morning1.png-747dc3beb0146872fe28919725c19601.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/backgrounds/grass_lupi.png"
-dest_files=["res://.godot/imported/grass_lupi.png-981b0344e7955fb2f73f9a4ec1abde68.ctex"]
+source_file="res://assets/video_transitions/open/morning1.png"
+dest_files=["res://.godot/imported/morning1.png-747dc3beb0146872fe28919725c19601.ctex"]
 
 [params]
 

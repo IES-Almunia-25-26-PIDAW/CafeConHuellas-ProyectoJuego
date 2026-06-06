@@ -17,7 +17,7 @@ const LABEL_DELAY: float = 0.5
 # Cuánto tarda en aparecer y desaparecer.
 const LABEL_FADE: float = 0.6
 # Cuántos segundos se queda visible.
-const LABEL_SHOW: float = 2.0
+const LABEL_SHOW: float = 4.0
 
 
 # ===== ESTADO INTERNO =====
@@ -31,15 +31,13 @@ var _next_scene: String = ""
 # Lee los parámetros de cambio de escena.
 func _ready() -> void:
 	SceneManager.transition_in()
-	# DEBUG:
-	print("VideoTransition _ready, next_scene: ", SceneManager.pending_video_next_scene)
-	print("VideoTransition show_day: ", SceneManager.pending_video_show_day)
-	
+
 	setup(SceneManager.pending_video_next_scene, SceneManager.pending_video_show_day)
 	
 	# Limpiamos los parámetros pendientes tras leerlos.
 	SceneManager.pending_video_next_scene = ""
 	SceneManager.pending_video_show_day = true
+	SceneManager.pending_video_animation = "open"
 
 
 # ===== LÓGICA INTERNA =====
@@ -59,9 +57,8 @@ func setup(next_scene: String, show_day: bool = true) -> void:
 	
 	# Al terminar la animación cambia de escena.
 	day_animation.animation_finished.connect(_go_to_next_scene)
-	#day_animation.play("day_start")
-	# TODO: CAMBIAR AL REAL; por ahora solo esta el de jasmine.
-	day_animation.play("BORRAR")
+	
+	day_animation.play(SceneManager.pending_video_animation)
 
 # Anima el label del día con fade in, espera y fade out.
 func _animate_day_label() -> void:

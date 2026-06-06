@@ -72,7 +72,7 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Abrí los ojos. Bueno… ahí ya hablamos de otra cosa.[/i]"
+	"text": "[i]Abrí los ojos. Bueno... ahí ya hablamos de otra cosa.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -164,13 +164,13 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "Buenas… Sí, solo serán por unos meses. Pero supongo que es bueno...",
+	"text": "Buenas... Sí, solo serán por unos meses. Pero supongo que es bueno...",
 	"show_character": "Bastian",
 	"expression": "idle"
   },
   {
 	"speaker": "Bastian",
-	"text": "Bueno… nuestro pueblecillo tiene su encanto. A lo mejor acabas echando raíces aquí más tiempo del que piensas.",
+	"text": "Bueno... nuestro pueblecillo tiene su encanto. A lo mejor acabas echando raíces aquí más tiempo del que piensas.",
 	"expression": "happy"
   },
   {
@@ -190,14 +190,14 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "Sí, supongo que se irá viendo… ¿Le apetece tomar algo?"
+	"text": "Sí, supongo que se irá viendo... ¿Le apetece tomar algo?"
   },
   {
 	"speaker": "Bastian",
 	  "pronouns": {
-		"male": "Claro hijo, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio.",
-		"female": "Claro hija, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio.",
-		"nonbinary": "Claro hije, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón… a ver si hoy no me manda la diabetes al otro barrio."
+		"male": "Claro hijo, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón... a ver si hoy no me manda la diabetes al otro barrio.",
+		"female": "Claro hija, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón... a ver si hoy no me manda la diabetes al otro barrio.",
+		"nonbinary": "Claro hije, habrá que arrimar el hombro con el negocio. Ponme un café con leche y una tarta de limón... a ver si hoy no me manda la diabetes al otro barrio."
 	  },
 	  "expression": "wink"
   },

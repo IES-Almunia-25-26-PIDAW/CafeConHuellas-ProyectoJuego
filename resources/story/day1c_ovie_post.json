@@ -60,7 +60,7 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "Me alegro entonces, no les hagas mucho caso a esos niños",
+	"text": "Me alegro entonces, no les hagas mucho caso a esos niños.",
 	"show_character": "Ovie",
 	"expression": "happy"
   },
@@ -108,12 +108,12 @@
   },
   {
 	"speaker": "Berenice",
-	"text": "Deme un café solo y un café con chocolate. ¿Cree usted que le gustará a mi nieta? No para de trabajar, quiero llevarle algo para que se endulce un poco.",
+	"text": "Deme un café solo y unas galletas de chocolate para mi nieta. ¿Cree usted que le gustarán? No para de trabajar, quiero llevarle algo para que se endulce un poco.",
 	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "Claro. Sobre todo si le gustan las cosas con chocolate, y mire el lado bueno, si no le hace mucha gracia puede volver y probar otro.",
+	"text": "Claro. Sobre todo si le gustan las cosas con chocolate, y mire el lado bueno, si no le hacen mucha gracia puede volver y probar otras.",
 	"show_character": "Berenice",
 	"expression": "idle"
   },
@@ -124,7 +124,7 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "Aquí estaré. Yo tampoco conozco a mucha gente, no me vendría mal caras nuevas.",
+	"text": "Aquí estaré. Yo tampoco conozco a mucha gente, no me vendría mal ver caras nuevas.",
 	"show_character": "Berenice",
 	"expression": "happy"
   },
@@ -135,8 +135,8 @@
   {
 	"start_order": [
 	  "coffee",
-      "chocolate_coffee"
+      "cookie_chocolate"
 	],
-	"next_scene_after_order": "day1c_abuela_post"
+	"next_scene_after_order": "day1d_abuela_post"
   }
 ]

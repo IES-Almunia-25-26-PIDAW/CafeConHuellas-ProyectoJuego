@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btjscyqbqm7bj"
-path="res://.godot/imported/grass_milo.png-ef5c2cda01776a073d15c80b05c07a11.ctex"
+uid="uid://db4xt77j07gqm"
+path="res://.godot/imported/jasmine_happy_idle1.png-2d302384df72929f511b19c9584c6889.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/backgrounds/grass_milo.png"
-dest_files=["res://.godot/imported/grass_milo.png-ef5c2cda01776a073d15c80b05c07a11.ctex"]
+source_file="res://assets/sprites/jasmine/happy-idle/jasmine_happy_idle1.png"
+dest_files=["res://.godot/imported/jasmine_happy_idle1.png-2d302384df72929f511b19c9584c6889.ctex"]
 
 [params]
 

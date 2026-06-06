@@ -10,7 +10,7 @@
   }, 
   {
 	"speaker": "Hunter",
-	"text": "[i]La abuelita me paga los dos cafés y además me da un poco de propina[/i]",
+	"text": "[i]La abuelita me paga los dos cafés y además me da un poco de propina.[/i]",
 	"show_character": "Berenice",
 	"expression": "idle"
   },
@@ -46,10 +46,10 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Suspiro al ver que ya está oscureciendo. A pesar de todo, el día no fue tan malo. Eso sí… mañana espero poder ver gente de mi edad.[/i]"
+	"text": "[i]Suspiro al ver que ya está oscureciendo. A pesar de todo, el día no fue tan malo. Eso sí... mañana espero poder ver gente de mi edad.[/i]"
   },
   {
-	"location": "backgrounds/grass"
+	"location": "backgrounds/animals/grass_milo_wtfood"
 	},
   {
 	"speaker": "Hunter",
@@ -57,7 +57,7 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "Ay, hola… ¿Estás perdido?"
+	"text": "Ay, hola... ¿Estás perdido?"
   },
   {
 	"speaker": "Hunter",
@@ -65,14 +65,14 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "¿Tienes hambre? Supongo que sí… Ven, te daré algo de comida en casa."
+	"text": "¿Tienes hambre? Supongo que sí... Ven, te daré algo de comida en casa."
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Le sonrío y le hago un gesto para que me siga, parece que me entiende porque poco a poco me va siguiendo.[/i]"
   },
   {
-	"location": "backgrounds/grass_food"
+	"location": "backgrounds/animals/grass_milo"
 	},
   {
 	"speaker": "Hunter",
@@ -99,11 +99,12 @@
 	},
   {
 	"speaker": "Hunter",
-	"text": "Bueno… supongo que eso es un sí. Espero que no le moleste que te haya dado de comer…"
+	"text": "Bueno... supongo que eso es un sí. Espero que no le moleste que te haya dado de comer..."
   },
   {
 	"location": "backgrounds/black"
 	},
+	{"music": "silence"},
   {
 	"speaker": "Hunter",
 	"pronouns": {
@@ -113,9 +114,9 @@
 	}
   },
 	{
-	  "next_chapter": "day2a_intro_jasmine"
+	  "next_chapter": "day2a_intro"
 	},
   {
-	"video_day_end": true
+	"video_day_end": true, "next_scene": "res://scenes/cafe_client_scene.tscn"
   }
 ]

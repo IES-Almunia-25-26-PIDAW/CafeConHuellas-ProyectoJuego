@@ -47,6 +47,7 @@ func _ready() -> void:
 	if dialog_index > 0:
 		_restore_scene_state()
 	
+	dialog_ui.modulate.a = 0.0
 	SceneManager.transition_in()
 
 
@@ -87,19 +88,21 @@ func process_current_line() -> void:
 		GameState.day = int(line.get("day", GameState.day))
 		var chapter: String = line["video_day_start"]
 		GameState.chapter_id = chapter
-		_play_video_transition("res://scenes/cafe_client_zone.tscn", true)
+		#GameState.dialogue_index = 0 - si es un nuevo capítulo el índice se pone a 0
+		_play_video_transition("res://scenes/cafe_client_zone.tscn", true, "open")
+		return
+	
+	# -- Fin del día: Vídeo de salida + escena a la que ir.
+	if line.has("video_day_end"):
+		_play_video_transition("res://scenes/cafe_client_zone.tscn", false, "closed")
 		return
 	
 	# -- Guardar el capítulo siguiente para después del ordenador.
 	if line.has("next_chapter"):
 		GameState.chapter_id = line["next_chapter"]
+		GameState.dialogue_index = 0 # resetear el index siempre al cambiar el capítulo
 		dialog_index += 1
 		process_current_line()
-		return
-	
-	# -- Fin del día: Video salida + escena a la que ir.
-	if line.has("video_day_end"):
-		_play_video_transition("res://scenes/computer/computer_scene.tscn", false)
 		return
 	
 	# -- Cambio de escena.
@@ -331,9 +334,10 @@ func _restore_scene_state() -> void:
 
 
 # Lanza la transición de vídeo hacia next_scene.
-func _play_video_transition(next_scene: String, show_day: bool) -> void:
+func _play_video_transition(next_scene: String, show_day: bool, animation: String = "open") -> void:
 	SceneManager.pending_video_next_scene = next_scene
 	SceneManager.pending_video_show_day = show_day
+	SceneManager.pending_video_animation = animation
 	SceneManager.transition_out_completed.connect(
 		func(): SceneManager.change_scene("res://scenes/video_transition.tscn"), CONNECT_ONE_SHOT
 	)
@@ -438,5 +442,9 @@ func _on_transition_out_completed() -> void:
 		
 # Comienza a procesar el diálogo tras completar la transición de entrada.
 func _on_transition_in_completed() -> void:
+	# Crea una animación para mostrar la escena
+	var tween := create_tween()
+	tween.tween_property(dialog_ui, "modulate:a", 1.0, 0.3)
+	await tween.finished
 	# Comienza a procesar el diálogo.
 	process_current_line()

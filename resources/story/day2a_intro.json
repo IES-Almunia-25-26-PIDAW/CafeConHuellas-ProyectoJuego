@@ -1,0 +1,12 @@
+[
+  {"location": "backgrounds/black"},
+  {"music": "silence"},
+  {"counter": "no"},
+  {
+	"hide_character": true
+  },
+  {"change_day": 2},
+  {
+  "video_day_start": "day2a_intro_jasmine"
+  }
+]

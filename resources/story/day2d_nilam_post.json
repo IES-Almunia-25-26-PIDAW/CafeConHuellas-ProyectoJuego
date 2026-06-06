@@ -1,28 +1,27 @@
 [
   {
-	"location": "backgrounds/cafeteria",
+	"location": "backgrounds/cafeteria"},
+	{
 	"music": "Everyday_Life"
   },
   {
 	"counter": "yes"
   },
   {
-	"show_character": "Nilam",
-	"expression": "neutral"
-  },
-  {
 	"speaker": "Hunter",
-	"text": "[i]Mientras he terminado el pedido, Ovie está distraído mirando la carta. Nilam me mira.[/i]"
+	"text": "[i]Mientras he terminado el pedido, Ovie está distraído mirando la carta. Nilam me mira.[/i]",
+	"show_character": "Nilam",
+	"expression": "idle"
   },
   {
 	"speaker": "Nilam",
 	"text": "¿Qué te trae aquí? No creo que fuese idea tuya abrir una cafetería en un pueblo que no conoce nadie.",
-	"expression": "neutral"
+	"expression": "2"
   },
   {
 	"choices": [
 	  {
-		"text": "Si te digo que fue decisión mía… ¿te lo crees?",
+		"text": "Si te digo que fue decisión mía... ¿te lo crees?",
 		"goto": "nilam_eleccion_a"
 	  },
 	  {
@@ -46,13 +45,15 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "Si te digo que fue decisión mía… ¿te lo crees?",
+	"text": "Si te digo que fue decisión mía... ¿te lo crees?",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Bromeo con una leve sonrisa, se ve claro que no fue idea mia. Nilam sonríe con un poco de picardía.[/i]"
+	"text": "[i]Bromeo con una leve sonrisa, se ve claro que no fue idea mia. Nilam sonríe con un poco de picardía.[/i]",
+	"show_character": "Nilam",
+	"expression": "happy2"
   },
   {
 	"speaker": "Nilam",
@@ -61,22 +62,26 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]No puedo evitar reírme un poco. Tiene razón, además Jasmine es tan positiva que no parece que le importe vivir aquí.[/i]"
+	"text": "[i]No puedo evitar reírme un poco. Tiene razón, además Jasmine es tan positiva que no parece que le importe vivir aquí.[/i]",
+	"show_character": "Nilam",
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "Llevas razón, fue idea de mis padres… Ya sabes, seguir el negocio familiar.",
+	"text": "Llevas razón, fue idea de mis padres... Ya sabes, seguir el negocio familiar.",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "idle"
   },
  {
 	"speaker": "Hunter",
-	"text": "[i]Veo como Nilam suspira.[/i]"
+	"text": "[i]Veo como Nilam suspira.[/i]",
+	"show_character": "Nilam",
+	"expression": "idle"
   },
   {
 	"speaker": "Nilam",
 	"text": "Estamos en una situación parecida entonces.",
-	"expression": "neutral"
+	"expression": "2"
   },
   {
 	"goto": "nilam_eleccion2"
@@ -92,23 +97,25 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "Pues… mis padres querían que siguiera el negocio familiar y abrieron una de sus cafeterías aquí. Pensaron que sería una buena idea abrirla en un pueblo que casi nadie conoce.",
+	"text": "Pues... mis padres querían que siguiera el negocio familiar y abrieron una de sus cafeterías aquí. Pensaron que sería una buena idea abrirla en un pueblo que casi nadie conoce.",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Digo encogiéndome de hombros. Nilam suelta una pequeña risa con pasotismo.[/i]"
+	"text": "[i]Digo encogiéndome de hombros. Nilam suelta una pequeña risa con pasotismo.[/i]",
+	"show_character": "Nilam",
+	"expression": "happy2"
   },
   {
 	"speaker": "Nilam",
-	"text": "Bueno, si lo piensas, no es tan mala idea. Aquí solo hay dos cafeterías contadas, y a las personas mayores les gusta mucho tomarse su café por las mañanas… y también ahorrarse tener que hacerlo en casa.",
-	"expression": "happy"
+	"text": "Bueno, si lo piensas, no es tan mala idea. Aquí solo hay dos cafeterías contadas y a las personas mayores les gusta mucho tomarse su café por las mañanas... y también ahorrarse tener que hacerlo en casa.",
+	"expression": "happy2"
   },
   {
 	"speaker": "Nilam",
 	"text": "Estamos en una situación parecida entonces.",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"goto": "nilam_eleccion2"
@@ -126,16 +133,18 @@
 	"speaker": "Hunter",
 	"text": "No mucho, solo negocio familiar.",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Nilam me mira en silencio, como si esperara algo más.[/i]"
+	"text": "[i]Nilam me mira en silencio, como si esperara algo más.[/i]",
+	"show_character": "Nilam",
+	"expression": "2"
   },
   {
 	"speaker": "Nilam",
 	"text": "¿Así que negocio familiar eh? Estamos en una situación parecida entonces.",
-	"expression": "sad"
+	"expression": "2"
   },
   {
 	"goto": "nilam_eleccion2"
@@ -166,27 +175,31 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me quedo en silencio, mirándole con curiosidad. Nilam parece entender que quiero saber más porque empieza a hablar mientras le entrego el pedido.[/i]"
+	"text": "[i]Me quedo en silencio, mirándole con curiosidad. Nilam parece entender que quiero saber más porque empieza a hablar mientras le entrego el pedido.[/i]",
+	"show_character": "Nilam",
+	"expression": "idle"
   },
   {
 	"speaker": "Nilam",
 	"text": "He estado estudiando criminología en Madrid, pero he tenido que volver para echarle una mano a mi padre en el trabajo.",
-	"expression": "neutral"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Criminología. Qué envidia.[/i]"
-  },
-  {
-	"speaker": "Hunter",
-	"text": "Entiendo, no tiene que ser fácil dejar toda tu vida de lado un tiempo…",
+	"text": "[i]Criminología. Qué envidia.[/i]",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "serious2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Entiendo, no tiene que ser fácil dejar toda tu vida de lado un tiempo...",
+	"show_character": "Nilam",
+	"expression": "serious2"
   },
   {
 	"speaker": "Nilam",
-	"text": "Bueno… No lo es, pero al menos veo a mi familia. Es lo único bueno de este pueblo.",
-	"expression": "neutral"
+	"text": "Bueno... No lo es, pero al menos veo a mi familia. Es lo único bueno de este pueblo.",
+	"expression": "idle"
   },
   {
 	"goto": "nilam_carrera"
@@ -198,27 +211,29 @@
 	"speaker": "Hunter",
 	"text": "¿A qué te refieres?",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Nilam",
 	"text": "He estado estudiando criminología en Madrid, pero he tenido que volver para echarle una mano a mi padre en el trabajo.",
-	"expression": "neutral"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Criminología. Qué envidia.[/i]"
-  },
-  {
-	"speaker": "Hunter",
-	"text": "Entiendo, no tiene que ser fácil dejar toda tu vida de lado un tiempo…",
+	"text": "[i]Criminología. Qué envidia.[/i]",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "serious2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Entiendo, no tiene que ser fácil dejar toda tu vida de lado un tiempo...",
+	"show_character": "Nilam",
+	"expression": "serious2"
   },
   {
 	"speaker": "Nilam",
-	"text": "Bueno… No lo es, pero al menos veo a mi familia. Es lo único bueno de este pueblo.",
-	"expression": "neutral"
+	"text": "Bueno... No lo es, pero al menos veo a mi familia. Es lo único bueno de este pueblo.",
+	"expression": "idle"
   },
   {
 	"goto": "nilam_carrera"
@@ -230,41 +245,46 @@
 	"speaker": "Hunter",
 	"text": "¿Cómo es la carrera de criminología? Siempre quise estudiarla.",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le miro con un poco de brillo en los ojos, siempre me alegra encontrar a alguien con las mismas aficiones que yo.[/i]"
+	"text": "[i]Le miro con un poco de brillo en los ojos, siempre me alegra encontrar a alguien con las mismas aficiones que yo.[/i]",
+	"show_character": "Nilam",
+	"expression": "idle"
   },
   {
 	"speaker": "Nilam",
-	"text": "Bueno… dejando de lado la cantidad exagerada de teoría inútil, no está mal.",
-	"expression": "neutral"
+	"text": "Bueno... dejando de lado la cantidad exagerada de teoría inútil, no está mal.",
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Hace una mueca perezosa, mirando a los clientes nuevos que están entrando, y me paga por el pedido.[/i]"
+	"text": "[i]Hace una mueca perezosa, mirando a los clientes nuevos que están entrando, y me paga por el pedido.[/i]",
+	"show_character": "Nilam",
+	"expression": "idle"
   },
   {
 	"speaker": "Nilam",
 	"text": "Si nos vemos otro día, te lo cuento mejor.",
-	"expression": "neutral"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
 	"text": "Entonces esperaré a que llegue ese día.",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Dirijo la mirada hacia Ovie, que se está tomando el batido en silencio mientras nos observa con los ojos llenos de ilusión.[/i]"
+	"text": "[i]Dirijo la mirada hacia Ovie, que se está tomando el batido en silencio mientras nos observa con los ojos llenos de ilusión.[/i]",
+	"show_character": "Ovie",
+	"expression": "happy2"
   },
   {
 	"speaker": "Nilam",
 	"text": "La última vez que estuviste tanto tiempo callado fue porque tenías 40 de fiebre. ¿Qué te pasa?",
-	"expression": "happy",
-	"show_character": "Ovie"
+	"expression": "happy2"
   },
   {
 	"speaker": "Ovie",
@@ -274,41 +294,56 @@
   {
 	"speaker": "Ovie",
 	"text": "No quería molestar.",
-	"expression": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Ovie",
-	"text": "Entonces… ¿Sois amigos?",
-	"expression": "happy2"
+	"text": "Entonces... ¿Sois amigos?",
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
-	"text": "Bueno, si Nilam quiere que seamos amigos…",
+	"text": "Bueno, si Nilam quiere que seamos amigos...",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Ovie",
-	"text": "Nil porfaaa, {player_name} es muy bueno.",
+	"pronouns": {
+	"male": "Nil porfaaa, {player_name} es muy bueno.",
+	"female": "Nil porfaaa, {player_name} es muy buena.",
+	"nonbinary": "Nil porfaaa, {player_name} es muy buene."
+	},
 	"expression": "happy",
 	"show_character": "Ovie"
   },
   {
 	"speaker": "Nilam",
-	"text": "Bueno, ya veremos cuando hablemos de criminología a ver si tenemos las mismas ideas…",
+	"text": "Bueno, ya veremos cuando hablemos de criminología a ver si tenemos las mismas ideas...",
 	"expression": "happy",
 	"show_character": "Nilam"
   },
   {
 	"speaker": "Nilam",
-	"text": "Ahora vamos a dejar que trabaje tranquilo.",
+	"pronouns": {
+	"male": "Ahora vamos a dejar que trabaje tranquilo.",
+	"female": "Ahora vamos a dejar que trabaje tranquila.",
+	"nonbinary": "Ahora vamos a dejar que trabaje tranquile."
+	},
 	"expression": "neutral"
   },
   {
 	"speaker": "Ovie",
-	"text": "¡Vale! ¡Adiós {player_name}! ¡Gracias por los batidos y por ser amigo de mi hermano!",
+	"pronouns": {
+	"male": "¡Vale! ¡Adiós {player_name}! ¡Gracias por los batidos y por ser amigo de mi hermano!",
+	"female": "¡Vale! ¡Adiós {player_name}! ¡Gracias por los batidos y por ser amiga de mi hermano!",
+	"nonbinary": "¡Vale! ¡Adiós {player_name}! ¡Gracias por los batidos y por ser amigue de mi hermano!"
+	},
 	"expression": "happy2",
 	"show_character": "Ovie"
+  },
+  {
+	"hide_character": true
   },
   {
   "speaker": "Hunter",
@@ -319,22 +354,11 @@
 	}
   },
   {
-	"hide_character": true
-  },
-  {
 	"speaker": "Hunter",
 	"text": "[i]El resto del día transcurre sin sobresaltos. Poco a poco llegan más clientes, muchos de ellos atraídos por la novedad de los cafés y batidos. Cuando menos me doy cuenta, otro día ha pasado.[/i]"
   },
-  {
-	"scene_action": "time_skip_afternoon"
-  },
-  {
-	"transition": "fade"
-  },
-  {
-	"location": "backgrounds/town_street",
-	"music": "evening_theme"
-  },
+  {"location": "backgrounds/black"},
+	{"music": "Sol3"},
   {
 	"counter": "no"
   },
@@ -342,6 +366,8 @@
 	"speaker": "Hunter",
 	"text": "[i]De regreso a casa me topo con un cartel enorme que me llama la atención. Al principio no le doy demasiada importancia, pero algo en él me hace detenerme.[/i]"
   },
+  {"location": "backgrounds/black"},
+{"music": "silence"},
   {
 	"speaker": "Hunter",
 	"text": "[i]Me acerco un poco para observarlo mejor y al fijarme en las fotografías y papeles superpuestos, me doy cuenta de lo que es. Siento un escalofrío. Está cubierto de anuncios de personas desaparecidas. ¿Cómo puede ser posible que en un pueblo tan pequeño desaparezcan tantas personas?[/i]"
@@ -354,12 +380,9 @@
 	"text": "[i]Intento no darle demasiadas vueltas. Después de todo, no pienso quedarme aquí mucho tiempo. Con ese pensamiento en mente, reanudo el camino de vuelta a casa.[/i]"
   },
   {
-	"transition": "slide"
-  },
-  {
-	"location": "backgrounds/hunter_house_exterior",
-	"music": "evening_theme"
-  },
+	"location": "backgrounds/hunter_room_night"
+	},
+	{"music": "Sol3"},
   {
 	"speaker": "Hunter",
 	"text": "[i]Una vez en casa, salgo a dejar el plato con pollo y el cuenco con agua por si al gatito de ayer le apetece volver.[/i]"
@@ -380,6 +403,6 @@
 	"next_chapter": "day3a_intro"
   },
   {
-	"video_day_end": true
+	"video_day_end": true, "next_scene": "res://scenes/cafe_client_scene.tscn"
   }
 ]

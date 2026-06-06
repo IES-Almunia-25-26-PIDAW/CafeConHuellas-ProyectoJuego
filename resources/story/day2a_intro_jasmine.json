@@ -1,27 +1,20 @@
 [
   {
-	"location": "backgrounds/hunter_room",
-	"music": "morning_theme"
+	"location": "backgrounds/hunter_room"},
+	{
+	"music": "Sol3"
   },
+{"counter": "no"},
   {
 	"hide_character": true
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]En cuanto el sol empieza a asomar me preparo para un nuevo día de trabajo. Siempre me gusta llegar un poco antes para preparar los cafés del día.[/i]"
+	"text": "[i]En cuanto el sol empieza a asomar, me preparo para un nuevo día de trabajo. Siempre me gusta llegar un poco antes para preparar los cafés del día.[/i]"
   },
   {
-	"location": "backgrounds/cafe_exterior",
-	"music": "cafe_theme"
-  },
-  {
-	"scene_action": "flip_sign_closed_to_open"
-  },
-  {
-	"transition": "fade"
-  },
-  {
-	"location": "backgrounds/cafeteria",
+	"location": "backgrounds/cafeteria"},
+	{
 	"music": "Everyday_Life"
   },
   {
@@ -33,25 +26,25 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]A las horas, veo como una chica rubia abre la puerta. Tiene una camisa de flores y se le ve un poco despeinada, como si no hubiera parado de trabajar. Tiene la misma sonrisa que la señora mayor que vino por dos cafés ayer.[/i]"
+	"text": "[i]A las horas, veo como una chica rubia abre la puerta. Tiene una camisa de flores y se le ve un poco despeinada, como si no hubiera parado de trabajar. Tiene la misma sonrisa que la señora mayor que vino ayer.[/i]"
   },
   {
 	"meet_character": "jasmine"
   },
   {
 	"show_character": "Jasmine",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Jasmine",
-	"text": "¡Hola! Mi abuela me trajo un café de aquí, estaba tan bueno que decidí venir por mí misma a probarlo. Además, me alegra ver a alguien de mi edad por aquí.",
-	"expression": "happy"
+	"text": "¡Hola! Mi abuela me trajo unas galletas de aquí, estaban tan buenas que decidí venir por mí misma a probar algo más. Además, me alegra ver a alguien de mi edad por aquí.",
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "Buenos días, me alegro de que te gustase. ¿El de chocolate, verdad?",
+	"text": "Buenos días, me alegro de que te gustasen. ¿Las de chocolate, verdad?",
 	"show_character": "Jasmine",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -59,25 +52,27 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "Es una de nuestras especialidades en cafés."
+	"text": "Nuestras galletas son muy ricas, es una de nuestras especialidades junto con los cafés.",
+	"show_character": "Jasmine",
+	"expression": "2"
   },
   {
 	"speaker": "Jasmine",
-	"text": "¡Está muy bueno! Me gustaría probar hoy otro distinto, ¿cuál me recomiendas?",
-	"expression": "happy"
+	"text": "¡Están muy buenas! Aunque has llamado mi atención, me gustaría probar hoy uno de los cafés, ¿cuál me recomiendas?",
+	"expression": "happy2"
   },
   {
 	"choices": [
 	  {
-		"text": "No lo sé, mira la carta por ti misma.",
+		"text": "Mira la carta por ti misma.",
 		"goto": "eleccion_a"
 	  },
 	  {
-		"text": "Si quieres un café te recomendaría el café de avellana, es bastante dulce. También tienes la opción de pedir un smoothie, te refresca bastante.",
+		"text": "Un café de avellana.",
 		"goto": "eleccion_b"
 	  },
 	  {
-		"text": "Puedes probar la opción de café solo, y para que no te sepa tan amargo acompañarlo con una porción de tarta.",
+		"text": "Un café solo junto a una tarta.",
 		"goto": "eleccion_c"
 	  }
 	]
@@ -92,39 +87,49 @@
 	}
   },
   {
-	"speaker": "Jasmine",
-	"text": "Oh.. De acuerdo.",
+	"speaker": "Hunter",
+	"text": "No lo sé, mira la carta por ti misma.",
+	"show_character": "Jasmine",
 	"expression": "sad"
   },
   {
 	"speaker": "Jasmine",
+	"text": "Oh.. De acuerdo.",
+	"expression": "sad2"
+  },
+  {
+	"speaker": "Jasmine",
 	"text": "¡Muchas gracias de todos modos!",
-	"expression": "neutral"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Observo que coge una de las cartas y le echa un vistazo.[/i]"
+	"text": "[i]Observo que coge una de las cartas y le echa un vistazo.[/i]",
+	"show_character": "Jasmine",
+	"expression": "2"
   },
   {
 	"speaker": "Jasmine",
 	"text": "Creo que probaré el de avellana.",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "Ahora mismo te lo preparo.",
 	"show_character": "Jasmine",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le sonrío y me devuelve la sonrisa, a continuación me pongo a ello.[/i]"
+	"text": "[i]Le sonrío y me devuelve la sonrisa, a continuación me pongo a ello.[/i]",
+	"show_character": "Jasmine",
+	"expression": "happy"
   },
   {
 	"start_order": [
       "hazelnut_coffee"
 	],
-	"next_scene_after_order": "day2b_jasmine_post_a"
+	"next_scene_after_order": "day2b_jasmine_post"
   },
   {
 	"anchor": "eleccion_b"
@@ -136,60 +141,76 @@
 	}
   },
   {
+	"speaker": "Hunter",
+	"text": "Si quieres un café te recomendaría el café de avellana, es bastante dulce. También tienes la opción de pedir un smoothie, te refresca bastante.",
+	"show_character": "Jasmine",
+	"expression": "2"
+  },
+  {
 	"speaker": "Jasmine",
 	"text": "Muchas gracias, creo que elegiré el de avellana.",
 	"expression": "happy2"
   },
   {
 	"speaker": "Jasmine",
-	"text": "Además, quiero un café con leche para mi abuela, porfa.",
-	"expression": "happy2"
+	"text": "Además, quiero unas galletas de avena para mi abuela, porfa.",
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Claro, ahora mismo te los preparo.",
 	"show_character": "Jasmine",
-	"expression": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le sonrío y me devuelve la sonrisa, a continuación me pongo a ello.[/i]"
+	"text": "[i]Le sonrío y me devuelve la sonrisa, a continuación me pongo a ello.[/i]",
+	"show_character": "Jasmine",
+	"expression": "happy2"
   },
   {
 	"start_order": [
 	  "hazelnut_coffee",
-      "coffee_milk"
+      "cookie_oat_honey"
 	],
-	"next_scene_after_order": "day2b_jasmine_post_b"
+	"next_scene_after_order": "day2b_jasmine_post"
   },
   {
 	"anchor": "eleccion_c"
   },
   {
-	"speaker": "Jasmine",
-	"text": "Creo que solo me apetece el café, pero muchas gracias por la recomendación. Mañana le diré a mi abuela que venga para probar esas tartas tan ricas que me nombras.",
-	"expression": "happy"
+	"speaker": "Hunter",
+	"text": "Puedes probar la opción de café solo, y para que no te sepa tan amargo acompañarlo con una porción de tarta.",
+	"show_character": "Jasmine",
+	"expression": "2"
   },
   {
 	"speaker": "Jasmine",
-	"text": "Además, quiero un café con leche para mi abuela, porfa.",
-	"expression": "happy"
+	"text": "Creo que solo me apetece el café, pero muchas gracias por la recomendación. Mañana le diré a mi abuela que venga para probar esas tartas tan ricas que me nombras.",
+	"expression": "happy2"
+  },
+  {
+	"speaker": "Jasmine",
+	"text": "Además, quiero unas galletas de avena para mi abuela, porfa.",
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "Claro, ahora mismo te los preparo.",
 	"show_character": "Jasmine",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le sonrío y me devuelve la sonrisa, a continuación me pongo a ello.[/i]"
+	"text": "[i]Le sonrío y me devuelve la sonrisa, a continuación me pongo a ello.[/i]",
+	"show_character": "Jasmine",
+	"expression": "happy"
   },
   {
 	"start_order": [
 	  "coffee",
-      "coffee_milk"
+      "cookie_oat_honey"
 	],
-	"next_scene_after_order": "day2b_jasmine_post_c"
+	"next_scene_after_order": "day2b_jasmine_post"
   }
 ]

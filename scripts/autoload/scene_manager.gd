@@ -32,6 +32,7 @@ var transition_rect: ColorRect
 # Escena siguiente pendiente cuando se usa transición con vídeo.
 var pending_video_next_scene: String = ""
 var pending_video_show_day: bool = true
+var pending_video_animation: String = "open"
 
 
 # ===== INICIALIZACIÓN =====

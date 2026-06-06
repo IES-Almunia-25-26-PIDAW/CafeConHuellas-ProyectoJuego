@@ -1,30 +1,28 @@
 [
   {
 	"location": "backgrounds/cafeteria",
+	}, 
+	{
 	"music": "Everyday_Life"
   },
   {
 	"counter": "yes"
   },
   {
-	"show_character": "Jasmine",
-	"expression": "happy"
-  },
-  {
 	"speaker": "Jasmine",
 	"text": "No quiero ser muy entrometida, pero me da un poco de curiosidad. ¿Por qué de todos los sitios abriste un café aquí?... Ya sabes, no hay mucha gente.",
-	"expression": "neutral"
+	"expression": "curious2"
   },
   {
 	"speaker": "Hunter",
-	"text": "Bueno… más bien fue idea de mis padres. Tampoco me apasionaba mucho abrir un café en un pueblo tan pequeño, sin ofender.",
+	"text": "Bueno... más bien fue idea de mis padres. Tampoco me apasionaba mucho abrir un café en un pueblo tan pequeño, sin ofender.",
 	"show_character": "Jasmine",
-	"expression": "neutral"
+	"expression": "curious2"
   },
   {
 	"speaker": "Jasmine",
-	"text": "Entiendo… Es normal, no hay mucha gente aquí.",
-	"expression": "sad"
+	"text": "Entiendo... Es normal, no hay mucha gente aquí.",
+	"expression": "sad2"
   },
   {
 	"choices": [
@@ -55,11 +53,11 @@
 	"speaker": "Hunter",
 	"text": "¿Y tú? ¿Por qué te quedas aquí? En este pueblo tan pequeño no habrá muchas oportunidades de estudiar supongo.",
 	"show_character": "Jasmine",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Jasmine",
-	"text": "Bueno… no me gustaría dejar sola a mi abuelita y su negocio, además me gusta mucho el negocio familiar que tenemos.",
+	"text": "Bueno... no me gustaría dejar sola a mi abuelita y su negocio, además me gusta mucho el negocio familiar que tenemos.",
 	"expression": "happy"
   },
   {
@@ -69,13 +67,15 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Su brillante sonrisa termina contagiándome mientras le entrego su pedido.[/i]"
+	"text": "[i]Su brillante sonrisa termina contagiándome mientras le entrego su pedido.[/i]",
+	"show_character": "Jasmine",
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Entonces tendré que pasarme, tu abuela es muy amable también.",
 	"show_character": "Jasmine",
-	"expression": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Jasmine",
@@ -84,7 +84,9 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me mira con ilusión mientras me paga. Parece que le tiene mucho cariño a su abuela.[/i]"
+	"text": "[i]Me mira con ilusión mientras me paga. Parece que le tiene mucho cariño a su abuela.[/i]",
+	"show_character": "Jasmine",
+	"expression": "happy2"
   },
   {
 	"goto": "presentacion_jasmine"
@@ -100,21 +102,25 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Una vez que termino el pedido se lo entrego a Jasmine.[/i]"
+	"text": "[i]Una vez que termino el pedido se lo entrego a Jasmine.[/i]",
+	"show_character": "Jasmine",
+	"expression": "idle"
   },
   {
 	"speaker": "Jasmine",
 	"text": "Aquí tienes.",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Jasmine me entrega el dinero con una sonrisa.[/i]"
+	"text": "[i]Jasmine me entrega el dinero con una sonrisa.[/i]",
+	"show_character": "Jasmine",
+	"expression": "idle"
   },
   {
 	"speaker": "Jasmine",
 	"text": "Muchas gracias. Ya te contaré qué tal está. Tienes que pasarte también por nuestra floristería, seguro te gusta.",
-	"expression": "neutral"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
@@ -130,26 +136,32 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Una vez que termino el pedido se lo entrego a Jasmine.[/i]"
-  },
-  {
-	"speaker": "Hunter",
-	"text": "Bueno… Al menos el pueblo tiene su encanto, y además todas las personas son muy amables, a pesar de que casi todas sean mayores.",
+	"text": "[i]Una vez que termino el pedido se lo entrego a Jasmine.[/i]",
 	"show_character": "Jasmine",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Se me escapa una pequeña risa.[/i]"
+	"text": "Bueno... Al menos el pueblo tiene su encanto, y además todas las personas son muy amables, a pesar de que casi todas sean mayores.",
+	"show_character": "Jasmine",
+	"expression": "2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Se me escapa una pequeña risa.[/i]",
+	"show_character": "Jasmine",
+	"expression": "2"
   },
   {
 	"speaker": "Jasmine",
 	"text": "Sí, ese también es un punto a favor de estar aquí.",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me mira con ilusión mientras me paga.[/i]"
+	"text": "[i]Me mira con ilusión mientras me paga.[/i]",
+	"show_character": "Jasmine",
+	"expression": "2"
   },
   {
 	"speaker": "Jasmine",
@@ -170,16 +182,20 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Observo cómo la chica empieza a alejarse, pero antes de irse del todo se gira hacia mí con una expresión de torpeza y se acerca de nuevo.[/i]"
+	"text": "[i]Observo cómo la chica empieza a alejarse, pero antes de irse del todo se gira hacia mí con una expresión de torpeza y se acerca de nuevo.[/i]",
+	"show_character": "Jasmine",
+	"expression": "curious2"
   },
   {
 	"speaker": "Jasmine",
 	"text": "Dios, lo siento mucho, no me he presentado. Soy Jasmine.",
-	"expression": "sad"
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le dedicó una expresión amable para tranquilizarla.[/i]"
+	"text": "[i]Le dedicó una expresión amable para tranquilizarla.[/i]",
+	"show_character": "Jasmine",
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
@@ -189,22 +205,23 @@
 	  "nonbinary": "No te preocupes, soy {player_name}, encantade."
 	},
 	"show_character": "Jasmine",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Jasmine",
 	"text": "¡Igualmente! Me caes bien, {player_name}. ¡Nos vemos!",
-	"expression": "happy2"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me mira con calidez y ahora sí, veo cómo se marcha.[/i]"
+	"text": "[i]Me mira con calidez y ahora sí, veo cómo se marcha.[/i]",
+	"show_character": "Jasmine",
+	"expression": "2"
   },
   {
 	"hide_character": true
   },
   {
-	"next_scene": "day2c_nilam_ovie",
-	"transition": "fade"
+	"next_scene": "day2c_nilam_ovie"
   }
 ]

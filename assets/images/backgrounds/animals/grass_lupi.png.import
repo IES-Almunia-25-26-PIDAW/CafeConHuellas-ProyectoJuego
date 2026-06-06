@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://depgd5qhx363i"
-path="res://.godot/imported/ovie_happy1_idle1.png-804992ec758991ce06bf01e9b9186a2f.ctex"
+uid="uid://btt7pk3qqfxqm"
+path="res://.godot/imported/grass_lupi.png-624c08e9492901e8fbbf25e66169d032.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/story/ovie_happy1_idle1.png"
-dest_files=["res://.godot/imported/ovie_happy1_idle1.png-804992ec758991ce06bf01e9b9186a2f.ctex"]
+source_file="res://assets/images/backgrounds/animals/grass_lupi.png"
+dest_files=["res://.godot/imported/grass_lupi.png-624c08e9492901e8fbbf25e66169d032.ctex"]
 
 [params]
 

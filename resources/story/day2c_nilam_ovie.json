@@ -1,6 +1,7 @@
 [
   {
-	"location": "backgrounds/cafeteria",
+	"location": "backgrounds/cafeteria"},
+	{
 	"music": "Everyday_Life"
   },
   {
@@ -14,29 +15,27 @@
 	"meet_character": "nilam"
   },
   {
-	"show_character": "Ovie",
-	"expression": "happy"
-  },
-  {
 	"speaker": "Ovie",
 	"text": "¡{player_name}! ¡Hola! ¡He traído a mi hermano!",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Holaa, a los dos.",
-	"show_character": "Ovie",
-	"expression": "happy"
+	"show_character": "Nilam",
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me fijo sobre todo en su hermano. Es un chico bastante alto con un aspecto bastante imponente. En mi opinión, parece bastante diferente a Ovie. Me fijo en sus ojos, que son de un color azul oscuro.[/i]"
-  },
+	"text": "[i]Me fijo sobre todo en su hermano. Es un chico bastante alto con un aspecto bastante imponente. En mi opinión, parece bastante diferente a Ovie. Me fijo en sus ojos, que son de un color azul oscuro.[/i]",
+	"show_character": "Nilam",
+	"expression": "idle"  
+},
   {
 	"speaker": "Hunter",
 	"text": "¿Qué tal estuvo el batido, Ovie?",
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Ovie",
@@ -45,50 +44,49 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Ahora me fijo en Nilam, que está a su lado.[/i]"
-  },
-  {
+	"text": "[i]Ahora me fijo en Nilam, que está a su lado.[/i]",
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "idle"
   },
   {
 	"speaker": "Nilam",
-	"text": "Buenas… Veo que ya has conocido al torbellino de mi hermano.",
-	"expression": "neutral"
+	"text": "Buenas... Veo que ya has conocido al torbellino de mi hermano.",
+	"expression": "2"
   },
   {
 	"speaker": "Nilam",
 	"text": "Ovie, ¿estás seguro de que necesitas más azúcar en la sangre?",
-	"expression": "neutral",
 	"show_character": "Nilam",
-	"expression2": "neutral"
+	"expression": "2"
   },
   {
 	"speaker": "Ovie",
-	"text": "Nunca es suficiente, porfi porfi Nil.",
+	"text": "Nunca es suficiente, ¡porfi porfi Nil!",
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Nilam",
-	"text": "Bueno… si no hay más remedio. Soy Nilam, por cierto. Gracias por tratar tan bien a mi hermano.",
-	"expression": "happy",
-	"show_character": "Nilam"
+	"text": "Bueno... si no hay más remedio. Soy Nilam, por cierto. Gracias por tratar tan bien a mi hermano.",
+	"show_character": "Nilam",
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
 	"text": "No me agradezcas, tu hermano es muy bueno. Además somos ya amigos, ¿a qué sí, Ovie?",
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Ovie",
-	"text": "Sí, ves cómo me he portado bien.",
+	"text": "¡Sí! ¿Ves cómo me he portado bien?",
 	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Nilam le mira dudando un momento, parece que lo hace para molestarle. Ovie le saca la lengua.[/i]"
+	"text": "[i]Nilam le mira dudando un momento, parece que lo hace para molestarle. Ovie le saca la lengua.[/i]",
+	"show_character": "Nilam",
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
@@ -98,16 +96,18 @@
 	  "nonbinary": "Yo soy {player_name}, encantade. ¿Qué os gustaría tomar?"
 	},
 	"show_character": "Nilam",
-	"expression": "neutral"
+	"expression": "2"
   },
   {
 	"speaker": "Nilam",
 	"text": "Para mí un capuchino.",
-	"expression": "neutral"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Ovie, mientras tanto, está mirando la carta y me señala un smoothie.[/i]"
+	"text": "[i]Ovie, mientras tanto, está mirando la carta y me señala un smoothie.[/i]",
+	"show_character": "Ovie",
+	"expression": "2"
   },
   {
 	"speaker": "Ovie",
@@ -117,13 +117,13 @@
   {
 	"speaker": "Ovie",
 	"text": "Oh, ¿y puedes darnos unas de esas galletitas tan ricas que me diste ayer?",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Claro, ahora mismo os lo preparo.",
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
@@ -133,7 +133,6 @@
 	"start_order": [
 	  "smoothie_tropical",
 	  "cappuccino",
-	  "cookie_butter",
       "cookie_butter"
 	],
 	"next_scene_after_order": "day2d_nilam_post"
