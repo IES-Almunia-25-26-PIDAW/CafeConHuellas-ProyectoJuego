@@ -366,7 +366,7 @@
 	"speaker": "Hunter",
 	"text": "[i]De regreso a casa me topo con un cartel enorme que me llama la atención. Al principio no le doy demasiada importancia, pero algo en él me hace detenerme.[/i]"
   },
-  {"location": "backgrounds/black"},
+  {"location": "backgrounds/missingposters_clue_background"},
 {"music": "silence"},
   {
 	"speaker": "Hunter",
