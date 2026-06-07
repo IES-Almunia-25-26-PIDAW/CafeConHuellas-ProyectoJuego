@@ -1,0 +1,199 @@
+[
+  {
+	"location": "backgrounds/cafeteria"
+  },
+  {
+	"music": "Everyday_Life"
+  },
+  {
+	"counter": "yes"
+  },
+  {
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Ronald se queda callado y empieza a leer la carta como si quisiera estudiarla.[/i]",
+	"show_character": "Ronald",
+	"expression": "2"
+  },
+  {
+	"choices": [
+	  {
+		"text": "Centrarte en preparar el pedido.",
+		"goto": "ronald_conv_a"
+	  },
+	  {
+		"text": "Preguntarle un poco más por su carrera y hablar de tus intereses.",
+		"goto": "ronald_conv_b"
+	  }
+	]
+  },
+  {
+	"anchor": "ronald_conv_a"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me centro en preparar el pedido mientras lo miro. Me parece una persona muy interesante.[/i]"
+  },
+  {
+	"goto": "ronald_entrega"
+  },
+  {
+	"anchor": "ronald_conv_b"
+  },
+  {
+	"add_relationship": {
+	  "character": "ronald",
+	  "amount": 1
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Siempre quise hacer una carrera, pero desgraciadamente por el negocio familiar no pude.",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Hago una pausa y le miro.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¿Qué tal tu carrera? ¿Te gustó?",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Bueno… sí, no estuvo mal, pero creo que las carreras universitarias de hoy en día están bastante anticuadas. ¿Qué carrera pensabas hacer tú?",
+	"expression": "curious"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Criminología, he hecho algún que otro curso de ello pero no creo que me pueda abrir tantas puertas como la carrera universitaria.",
+	"show_character": "Ronald",
+	"expression": "curious"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me regala una pequeña sonrisa.[/i]",
+	"show_character": "Ronald",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Seguro que en un futuro puedes hacerla. Pareces una persona bastante dedicada.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Muchas gracias, eres muy amable.",
+	"show_character": "Ronald",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]No puedo evitar sonreír un poco. Parece que preguntar sobre él ha hecho que le caiga mejor.[/i]"
+  },
+  {
+	"goto": "ronald_entrega"
+  },
+  {
+	"anchor": "ronald_entrega"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le entrego su pedido y él me paga.[/i]",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Muchas gracias. Espero verte de nuevo para poder decirte qué tal estuvo tu café.",
+	"expression": "2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¡Yo también lo espero! Ya sabes dónde encontrarme.",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le sonrío. Él me devuelve el gesto antes de marcharse.[/i]",
+	"show_character": "Ronald",
+	"expression": "happy"
+  },
+  {
+	"hide_character": true
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]El resto del día transcurre con la misma calma de siempre. Preparo smoothies y cafés para distintos clientes hasta que cae la noche.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Cuando llega el momento, me dispongo a cerrar la cafetería e irme a casa.[/i]"
+  },
+  {
+	"counter": "no"
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/black"
+  },
+  {
+	"music": "Sol3"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]En el camino a casa, empiezo a escuchar un pequeño ruido, como un sollozo apagado, como si alguien estuviera llorando.[/i]"
+  },
+  {
+	"choices": [
+	  {
+		"text": "Investigar el sonido.",
+		"goto": "dia3_investiga"
+	  },
+	  {
+		"text": "Seguir el camino a casa.",
+		"goto": "dia3_ignora"
+	  }
+	]
+  },
+  {
+	"anchor": "dia3_ignora"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Intentando ignorar el sonido, sigo caminando hacia casa. Entre mis pensamientos y el cansancio del día, no tardo en llegar.[/i]"
+  },
+  {"location": "backgrounds/animals/grass_food"},
+  {
+	"speaker": "Hunter",
+	"text": "[i]Al llegar dejo comida y bebida de nuevo por si el gatito quiere volver y doy por finalizado mi día.[/i]"
+  },
+  {
+	"next_chapter": "day4a_intro_misterioso"
+  },
+  {
+	"video_day_end": true
+  },
+  {
+	"anchor": "dia3_investiga"
+  },
+  {
+	"add_relationship": {
+	  "character": "nilam",
+	  "amount": 1
+	}
+  },
+  {
+	"next_scene": "day3c_ovie_rescate",
+	"transition": "fade"
+  }
+]

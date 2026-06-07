@@ -22,6 +22,8 @@ enum Name {
 	NILAM,
 	OVIE,
 	RONALD,
+	MISTERIOSO_JEFE,
+	MISTERIOSO_SUBORDINADO
 }
 
 # ===== DATOS DE PERSONAJES =====
@@ -112,6 +114,20 @@ const CHARACTER_DETAILS : Dictionary = {
 		"voice_bus": "Voices",
 		"voice": "res://assets/audio/voices/voice_base.ogg",
 		"char_color": Color("5a4a3ae6") 
+	},
+	Name.MISTERIOSO_JEFE: {
+	"name": "????",
+	"sprite_frames": null,
+	"voice_bus": "Voices",
+	"voice": "res://assets/audio/voices/voice_base.ogg",
+	"char_color": Color("8a1a1ae6")
+	},
+	Name.MISTERIOSO_SUBORDINADO: {
+	"name": "???",
+	"sprite_frames": null,
+	"voice_bus": "Voices",
+	"voice": "res://assets/audio/voices/voice_base.ogg",
+	"char_color": Color("1a3a8ae6")
 	},
 	
 }

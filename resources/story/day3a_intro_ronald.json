@@ -1,0 +1,279 @@
+[
+  {
+	"location": "backgrounds/hunter_room"
+  },
+  {
+	"music": "Sol3"
+  },
+  {
+	"hide_character": true
+  },
+  {
+	"counter": "no"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me dispongo a hacer la rutina matutina que he adoptado en estos últimos tres días, culminando con un paseo al aire libre hasta la cafetería.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Pero al salir de casa, veo algo que me hace detenerme.[/i]"
+  },
+  {
+	"location": "backgrounds/animals/grass_milo"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]El plato de comida que dejé ayer para el gatito negro está vacío... Sin embargo, eso no es lo que más me inquieta. Junto a los dos cuencos hay unas pequeñas manchas de sangre.[/i]"
+  },
+  {
+	"add_clue": "clue_sangre_cuenco"
+  },
+	{
+	  "speaker": "Hunter",
+	  "pronouns": {
+		"male": "[i]Empiezo a revisar por los alrededores a ver si hay algún rastro de sangre o del gatito, pero no encuentro nada. Un poco preocupado, retomo el camino hacia la cafetería.[/i]",
+		"female": "[i]Empiezo a revisar por los alrededores a ver si hay algún rastro de sangre o del gatito, pero no encuentro nada. Un poco preocupada, retomo el camino hacia la cafetería.[/i]",
+		"nonbinary": "[i]Empiezo a revisar por los alrededores a ver si hay algún rastro de sangre o del gatito, pero no encuentro nada. Un poco preocupade, retomo el camino hacia la cafetería.[/i]"
+	}
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/cafeteria"
+  },
+  {
+	"music": "Everyday_Life"
+  },
+  {
+	"counter": "yes"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]El día en el café pasa tan rápido como los dos anteriores. Se nota que hay escuela y trabajo, porque llegan menos personas de lo normal.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]A mitad de mañana, veo cómo un chico albino entra por la puerta y se acerca a la barra.[/i]"
+  },
+  {
+	"meet_character": "ronald"
+  },
+  {
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Buenos días, veo que no soy la única persona nueva en el pueblo.",
+	"expression": "2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¡Buenos días! ¿Tú también eres nuevo? Soy {player_name}.",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Sí, estoy haciendo mi tesis para la universidad, y digamos que este pueblo ha llamado mi atención.",
+	"expression": "idle"
+  },
+  {
+	"choices": [
+	  {
+		"text": "Respetar su decisión y quedarte callado.",
+		"goto": "ronald_eleccion_a"
+	  },
+	  {
+		"text": "No comprendo que hayas elegido este sitio para tu tesis.",
+		"goto": "ronald_eleccion_b"
+	  },
+	  {
+		"text": "¿Y qué tiene este pueblo de especial para llamar tu atención?",
+		"goto": "ronald_eleccion_c"
+	  }
+	]
+  },
+  {
+	"anchor": "ronald_eleccion_a"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Bueno… Supongo que cada persona encuentra intereses en cosas distintas, puede ser que le encuentres mucha historia a este pueblo. Además, el alcalde seguro está dispuesto a ayudarte.",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le sonrío un poco intentando animarle, aunque sinceramente en este pueblo tan pequeño dudo que haya algo interesante.[/i]",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Sí. Estoy investigando la historia del pueblo, cómo ha cambiado su población a lo largo de los años y las características de la zona.",
+	"expression": "2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Su expresión se vuelve ligeramente distante.[/i]",
+	"show_character": "Ronald",
+	"expression": "sad"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Y en cuanto lo del alcalde… no sé si me apetece mucho hablar con él. No es del tipo de persona que comprenda.",
+	"expression": "sad"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me río un poco. Es cierto que el alcalde es una persona… difícil de digerir.[/i]",
+	"show_character": "Ronald",
+	"expression": "sad"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Bueno… en eso llevas razón.",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"goto": "ronald_pedido"
+  },
+  {
+	"anchor": "ronald_eleccion_b"
+  },
+  {
+	"add_relationship": {
+	  "character": "ronald",
+	  "amount": -1
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¿En serio? Yo llevo aquí dos días y sigo sin entender qué tiene este sitio de especial.",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Al decirlo, noto cómo su expresión cambia ligeramente y enseguida me doy cuenta de que ha sonado peor de lo que pretendía.[/i]",
+	"show_character": "Ronald",
+	"expression": "sad2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "No te lo tomes a mal, pero aparte de la gente que vive aquí, no le encuentro nada especialmente destacable.",
+	"show_character": "Ronald",
+	"expression": "sad2"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Bueno, no puedo desmentir eso ya que prácticamente llevo solo unos días aquí, entonces no sabría decirte.",
+	"expression": "idle"
+  },
+  {
+	"goto": "ronald_pedido"
+  },
+  {
+	"anchor": "ronald_eleccion_c"
+  },
+  {
+	"add_relationship": {
+	  "character": "ronald",
+	  "amount": 1
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¿Y qué tiene este pueblo de especial para llamar la atención de alguien que viene de fuera?",
+	"show_character": "Ronald",
+	"expression": "curious"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Hago una pausa y sonrío.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Además de todas las personas amables que te puedas encontrar.",
+	"show_character": "Ronald",
+	"expression": "curious"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Bueno, he venido sobre todo a investigar un poco su historia y cómo ha cambiado su población a lo largo de los años, además de las características de la zona. Me interesa mucho cómo los lugares terminan influyendo en las personas que viven en ellos y a su vez cómo esas personas van cambiando su entorno con el paso del tiempo, haciendo que todo se adapte entre sí.",
+	"expression": "2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me quedo escuchándolo con interés. Pensaba que era mucho más callado, pero parece que cuando encuentra un tema que le apasiona puede hablar durante horas.[/i]",
+	"show_character": "Ronald",
+	"expression": "2"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Además hay ciertas cosas en los registros que no terminan de cuadrarme, como todas esas desapariciones sin resolver.",
+	"expression": "curious2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me quedo pensando un momento y recuerdo el cartel que vi ayer de todas esas personas desaparecidas.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Sí… ¿Cómo en un pueblo tan pequeño hay tantas?",
+	"show_character": "Ronald",
+	"expression": "curious2"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Eso me gustaría saber. Si tenemos los mismos intereses, algún día de estos podríamos investigar juntos.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me sonríe un poco, parece que he tocado un tema que le interesa.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Claro, cuando quieras.",
+	"show_character": "Ronald",
+	"expression": "happy"
+  },
+  {
+	"goto": "ronald_pedido"
+  },
+  {
+	"anchor": "ronald_pedido"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Bueno, siento atrasarte en el trabajo. Venía a probar esos cafés que la gente tanto busca.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Hace una pausa mientras mira la carta.[/i]"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Creo que voy a pedir un café con leche y una galleta de chocolate.",
+	"expression": "2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¡Ahora mismo te lo preparo!",
+	"show_character": "Ronald",
+	"expression": "idle"
+  },
+  {
+	"start_order": [
+	  "coffee_milk",
+      "cookie_chocolate"
+	],
+	"next_scene_after_order": "day3b_ronald_post"
+  }
+]
