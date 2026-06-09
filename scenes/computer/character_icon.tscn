@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://lhvhdag0xw47"]
 
 [ext_resource type="Script" uid="uid://b2gxxbbpduvo3" path="res://scripts/computer/character_icon.gd" id="1_ox4fd"]
-[ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="1_s4jba"]
 [ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="3_nseyp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b682"]
@@ -38,7 +37,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8b682")
 script = ExtResource("1_ox4fd")
-default_icon = ExtResource("1_s4jba")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=488210963]
 layout_mode = 2
@@ -49,7 +47,6 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("1_s4jba")
 expand_mode = 3
 stretch_mode = 5
 

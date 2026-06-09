@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://dh5q5jpvk3xoy"]
 
 [ext_resource type="Script" uid="uid://bksbfm82i167y" path="res://scripts/computer/clue_card.gd" id="1_jtlae"]
-[ext_resource type="Texture2D" uid="uid://becb3d6xuwslm" path="res://assets/images/test_kitchen/check_test.png" id="1_xkqtj"]
-[ext_resource type="Texture2D" uid="uid://o3jlq3jo0bsl" path="res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png" id="2_fx6cj"]
 [ext_resource type="FontFile" uid="uid://bsvdp130waan" path="res://assets/fonts/DMMono-Medium.ttf" id="4_8d67p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d67p"]
@@ -23,6 +21,9 @@ corner_radius_bottom_left = 14
 corner_detail = 10
 shadow_color = Color(0.5019608, 0.7490196, 0.98039216, 0.11372549)
 shadow_size = 5
+
+[sub_resource type="Resource" id="Resource_jtlae"]
+metadata/__load_path__ = "res://assets/images/test_kitchen/cartel_salida_gato_alien_test.png"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihal8"]
 content_margin_left = 10.0
@@ -58,7 +59,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8d67p")
 script = ExtResource("1_jtlae")
-default_icon = ExtResource("2_fx6cj")
+default_icon = SubResource("Resource_jtlae")
 
 [node name="ContentRow" type="HBoxContainer" parent="." unique_id=590105136]
 layout_mode = 2
@@ -77,7 +78,6 @@ custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_xkqtj")
 expand_mode = 3
 stretch_mode = 5
 

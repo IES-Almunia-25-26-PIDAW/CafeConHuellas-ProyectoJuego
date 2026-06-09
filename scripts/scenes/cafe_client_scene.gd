@@ -57,6 +57,10 @@ func _input(event) -> void:
 	# No procesar input del diálogo si el juego está pausado.
 	if get_tree().paused:
 		return
+		
+	# Protección: si no hay líneas cargadas o el índice está fuera de rango se ignora
+	if dialog_lines == null or dialog_index >= dialog_lines.size():
+		return
 	
 	var line = dialog_lines[dialog_index]
 	var has_choices = line.has("choices")

@@ -1,6 +1,6 @@
 [
   {
-	"location": "backgrounds/black"
+	"location": "backgrounds/forest_night"
   },
   {
 	"music": "Sol3"
@@ -13,12 +13,11 @@
 	"text": "[i]La curiosidad termina pudiendo conmigo, así que sigo el sonido hasta que, al pasar por una calle estrecha, veo a una persona en el suelo sollozando.[/i]"
   },
   {
-	"speaker": "Hunter",
-	"text": "[i]Me acerco y al ver quién es me asusto. Es Ovie, está sentado en el suelo llorando mientras parece que está protegiendo algo en sus brazos.[/i]"
+	"location": "backgrounds/cgs/cg1_crying_ovie"
   },
   {
-	"show_character": "Ovie",
-	"expression": "sad"
+	"speaker": "Hunter",
+	"text": "[i]Me acerco y al ver quién es me asusto. Es Ovie, está sentado en el suelo llorando mientras parece que está protegiendo algo en sus brazos.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -26,33 +25,36 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "¿Ovie? ¿Estás bien? ¿Qué ha pasado?",
-	"show_character": "Ovie",
-	"expression": "sad"
+	"text": "¿Ovie? ¿Estás bien? ¿Qué ha pasado?"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Le digo con calma aunque un poco preocupado. Él levanta la vista hacia mí entre lágrimas y entonces me doy cuenta de que tiene una mejilla enrojecida, como si alguien le hubiera dado una bofetada.[/i]",
-	"show_character": "Ovie",
-	"expression": "sad2"
+  },
+{
+	"location": "backgrounds/forest_night"
   },
   {
 	"speaker": "Ovie",
 	"text": "{player_name}, menos mal que eres tú.",
-	"expression": "sad2"
+	"expression": "cry2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me lo dice entre lágrimas antes de lanzarse a abrazarme. Entonces me doy cuenta de que lo que protegía entre sus brazos era el gatito negro. Al fijarme mejor, veo que una de sus patas está herida.[/i]"
+	"text": "[i]Me lo dice entre lágrimas antes de lanzarse a abrazarme. Entonces me doy cuenta de que lo que protegía entre sus brazos era el gatito negro. Al fijarme mejor, veo que una de sus patas está herida.[/i]",
+	"show_character": "Ovie",
+	"expression": "cry2"
   },
   {
 	"speaker": "Ovie",
 	"text": "No te ha seguido nadie, ¿no?",
-	"expression": "sad"
+	"expression": "cry"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le correspondo el abrazo mientras le doy algunas caricias.[/i]"
+	"text": "[i]Le correspondo el abrazo mientras le doy algunas caricias.[/i]",
+	"show_character": "Ovie",
+	"expression": "cry"
   },
   {
 	"speaker": "Hunter",
@@ -68,7 +70,7 @@
   {
 	"speaker": "Ovie",
 	"text": "{player_name}, creo que es por mis ojos.",
-	"expression": "sad"
+	"expression": "cry2"
   },
   {
 	"speaker": "Hunter",
@@ -78,7 +80,7 @@
 	  "nonbinary": "[i]Le miro preocupade. ¿Qué clase de persona le dice eso a un niño?[/i]"
 	},
 	"show_character": "Ovie",
-	"expression": "sad"
+	"expression": "cry2"
   },
   {
 	"speaker": "Hunter",
@@ -88,12 +90,14 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Ovie me asiente y me sonríe un poco.[/i]"
+	"text": "[i]Ovie me asiente y me sonríe un poco.[/i]",
+	"show_character": "Ovie",
+	"expression": "idle"
   },
   {
 	"speaker": "Ovie",
 	"text": "Gracias...",
-	"expression": "sad"
+	"expression": "idle"
   },
   {
 	"speaker": "Ovie",
@@ -107,7 +111,9 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Intento ordenar todo lo que me acaba de contar, pero sigo sin entender bien lo que ha ocurrido.[/i]"
+	"text": "[i]Intento ordenar todo lo que me acaba de contar, pero sigo sin entender bien lo que ha ocurrido.[/i]",
+	"show_character": "Ovie",
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
@@ -119,7 +125,7 @@
 	"speaker": "Hunter",
 	"text": "[i]Le sonrío un poco y veo cómo me esboza otra sonrisa también.[/i]",
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Ovie",
@@ -135,13 +141,13 @@
   {
 	"speaker": "Ovie",
 	"text": "¿Podemos ir más despacio, porfi?",
-	"expression": "sad"
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Ven, te llevo en mi espalda.",
 	"show_character": "Ovie",
-	"expression": "sad"
+	"expression": "surprise"
   },
   {
 	"speaker": "Hunter",
@@ -152,13 +158,13 @@
   {
 	"speaker": "Ovie",
 	"text": "¿Pero y cómo llevaremos al gatito? Tampoco puede andar mucho…",
-	"expression": "sad"
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Lo llevaré en un brazo, no te preocupes.",
 	"show_character": "Ovie",
-	"expression": "sad"
+	"expression": "surprise"
   },
   {
 	"speaker": "Hunter",
@@ -169,16 +175,18 @@
   {
 	"speaker": "Ovie",
 	"text": "Gracias, {player_name}. Eres muy amable.",
-	"expression": "sad"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Mientras voy caminando hacia la dirección que él me va indicando, me va explicando todo lo que ha pasado.[/i]"
+	"text": "[i]Mientras voy caminando hacia la dirección que él me va indicando, me va explicando todo lo que ha pasado.[/i]",
+	"show_character": "Ovie",
+	"expression": "2"
   },
   {
 	"speaker": "Ovie",
 	"text": "Estaba jugando fuera cuando escuché un gatito llorar. Bueno, maullar... pero sonaba como si estuviera llorando. Fui a ver de dónde venía el ruido y vi a un señor malo intentando hacerle daño.",
-	"expression": "sad"
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
@@ -195,7 +203,7 @@
 	"speaker": "Hunter",
 	"text": "Es horrible, Ovie. ¿Recuerdas su cara?",
 	"show_character": "Ovie",
-	"expression": "sad2"
+	"expression": "sad"
   },
   {
 	"speaker": "Ovie",
@@ -210,22 +218,26 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Hago una pausa e intento animarle un poco.[/i]"
+	"text": "[i]Hago una pausa e intento animarle un poco.[/i]",
+	"show_character": "Ovie",
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "Te has convertido en el héroe del gatito.",
 	"show_character": "Ovie",
-	"expression": "happy"
+	"expression": "surprise"
   },
   {
 	"speaker": "Ovie",
 	"text": "¿Tú crees, {player_name}? Es que… no está bien hacerles daño a los animales.",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Guarda silencio unos segundos, como si estuviera pensando en algo importante.[/i]"
+	"text": "[i]Guarda silencio unos segundos, como si estuviera pensando en algo importante.[/i]",
+	"show_character": "Ovie",
+	"expression": "surprise"
   },
   {
 	"speaker": "Ovie",
@@ -234,24 +246,26 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me río un poco ante su emoción.[/i]"
+	"text": "[i]Me río un poco ante su emoción.[/i]",
+	"show_character": "Ovie",
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": " ¡Si! Me gusta como suena eso, pero si me prometes que tendrás cuidado y no te harás daño.",
 	"show_character": "Ovie",
-	"expression": "happy2"
+	"expression": "2"
   },
   {
 	"speaker": "Ovie",
 	"text": "Jo, pero los superhéroes se hacen daño a veces.",
-	"expression": "happy"
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Pero si te haces daño te riñe tu hermano, recuérdalo.",
 	"show_character": "Ovie",
-	"expression": "sad"
+	"expression": "sad2"
   },
   {
 	"speaker": "Ovie",
@@ -260,13 +274,15 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me quedo en silencio unos segundos.[/i]"
+	"text": "[i]Me quedo en silencio unos segundos.[/i]",
+	"show_character": "Ovie",
+	"expression": "sad"
   },
   {
 	"speaker": "Hunter",
 	"text": "Oye… no me has contado cómo acabaste en ese callejón solo.",
 	"show_character": "Ovie",
-	"expression": "sad"
+	"expression": "surprise"
   },
   {
 	"speaker": "Ovie",
@@ -292,22 +308,25 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Vi cómo me dedicaba una pequeña sonrisa, esta vez con algo más de confianza. El resto del camino lo pasamos hablando de superpoderes. Me contó cuáles le gustaría tener y cómo los usaría para rescatar a todos los animales que encontrara en problemas.[/i]"
+	"text": "[i]Vi cómo me dedicaba una pequeña sonrisa, esta vez con algo más de confianza.[/i]",
+	"show_character": "Ovie",
+	"expression": "happy2"
+  },
+{
+	"speaker": "Hunter",
+	"text": "[i]El resto del camino lo pasamos hablando de superpoderes. Me contó cuáles le gustaría tener y cómo los usaría para rescatar a todos los animales que encontrara en problemas.[/i]",
+	"show_character": "Ovie",
+	"expression": "2"
   },
   {
-	"transition": "fade"
-  },
-  {
-	"location": "backgrounds/nilam_house_exterior"
+	"location": "backgrounds/forest_night_house"
   },
   {
 	"music": "Sol3"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Cuando nos acercamos a su casa, veo a su hermano buscándolo con evidente preocupación. Al vernos, se acerca rápidamente.[/i]"
-  },
-  {
+	"text": "[i]Cuando nos acercamos a su casa, veo a su hermano buscándolo con evidente preocupación. Al vernos, se acerca rápidamente.[/i]",
 	"show_character": "Nilam",
 	"expression": "sad"
   },
@@ -315,19 +334,17 @@
 	"speaker": "Hunter",
 	"text": "[i]Bajo a Ovie y Nilam lo abraza.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad2"
+	"expression": "sad"
   },
   {
 	"speaker": "Nilam",
 	"text": "¿Se puede saber dónde estabas? Papá y yo estábamos muy preocupados.",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Ovie",
 	"text": "Perdón, Nilam.",
-	"expression": "sad",
-	"show_character": "Ovie",
-	"expression2": "sad"
+	"expression": "sad"
   },
   {
 	"speaker": "Ovie",
@@ -338,7 +355,7 @@
 	"speaker": "Hunter",
 	"text": "[i]Nilam parece fijarse en sus heridas porque se asusta un poco más.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad2"
+	"expression": "sad"
   },
   {
 	"speaker": "Nilam",
@@ -349,29 +366,28 @@
 	"speaker": "Hunter",
 	"text": "[i]Vi cómo la preocupación desaparecía poco a poco, sustituida por una ira contenida.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad"
+	"expression": "serious2"
   },
   {
 	"speaker": "Ovie",
 	"text": "Alguien malo.",
-	"expression": "sad",
-	"show_character": "Ovie",
-	"expression2": "sad"
+	"expression": "sad2"
   },
   {
 	"speaker": "Ovie",
 	"text": "¡{player_name} me ayudó!",
-	"expression": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Nilam me mira con algo de agradecimiento.[/i]"
+	"text": "[i]Nilam me mira con algo de agradecimiento.[/i]",
+	"show_character": "Nilam",
+	"expression": "happy2"
   },
   {
 	"speaker": "Nilam",
 	"text": "Ven, vamos a entrar y mientras te curo me lo contáis.",
-	"expression": "sad",
-	"show_character": "Nilam"
+	"expression": "idle"
   },
   {
 	"hide_character": true

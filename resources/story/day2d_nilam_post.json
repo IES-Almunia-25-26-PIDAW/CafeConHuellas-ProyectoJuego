@@ -143,7 +143,7 @@
   },
   {
 	"speaker": "Nilam",
-	"text": "¿Así que negocio familiar eh? Estamos en una situación parecida entonces.",
+	"text": "¿Así que negocio familiar, eh? Estamos en una situación parecida entonces.",
 	"expression": "2"
   },
   {
@@ -353,6 +353,7 @@
 	"nonbinary": "[i]Me despido con la mano de ellos mientras me río un poco. Veo como Nilam le despeina el pelo a su hermano mientras que él le sigue molestando con el hecho de que le ha conseguido un amigue.[/i]"
 	}
   },
+{"location": "backgrounds/cafeteria_late"},
   {
 	"speaker": "Hunter",
 	"text": "[i]El resto del día transcurre sin sobresaltos. Poco a poco llegan más clientes, muchos de ellos atraídos por la novedad de los cafés y batidos. Cuando menos me doy cuenta, otro día ha pasado.[/i]"
@@ -370,7 +371,11 @@
 {"music": "silence"},
   {
 	"speaker": "Hunter",
-	"text": "[i]Me acerco un poco para observarlo mejor y al fijarme en las fotografías y papeles superpuestos, me doy cuenta de lo que es. Siento un escalofrío. Está cubierto de anuncios de personas desaparecidas. ¿Cómo puede ser posible que en un pueblo tan pequeño desaparezcan tantas personas?[/i]"
+	"text": "[i]Me acerco un poco para observarlo mejor y al fijarme en las fotografías y papeles superpuestos, me doy cuenta de lo que es.[/i]"
+  },
+{
+	"speaker": "Hunter",
+	"text": "[i]Siento un escalofrío. Está cubierto de anuncios de personas desaparecidas. ¿Cómo puede ser posible que en un pueblo tan pequeño desaparezcan tantas personas?[/i]"
   },
   {
 	"add_clue": "clue_cartel_desaparecidos"
@@ -394,11 +399,12 @@
   {
 	"speaker": "Hunter",
 	"pronouns": {
-	  "male": "[i]Entro dispuesto a acostarme y descansar para tener fuerzas para el día siguiente.[/i]",
-	  "female": "[i]Entro dispuesta a acostarme y descansar para tener fuerzas para el día siguiente.[/i]",
-	  "nonbinary": "[i]Entro dispueste a acostarme y descansar para tener fuerzas para el día siguiente.[/i]"
+	  "male": "[i]Me echo en la cama dispuesto a acostarme y descansar para tener fuerzas para el día siguiente.[/i]",
+	  "female": "[i]Me echo en la cama dispuesta a acostarme y descansar para tener fuerzas para el día siguiente.[/i]",
+	  "nonbinary": "[i]Me echo en la cama dispueste a acostarme y descansar para tener fuerzas para el día siguiente.[/i]"
 	}
   },
+{"music": "silence"},
   {
 	"next_chapter": "day3a_intro"
   },

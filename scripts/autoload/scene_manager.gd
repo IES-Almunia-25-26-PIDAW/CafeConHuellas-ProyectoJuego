@@ -84,6 +84,7 @@ func transition_in(effect: String = "fade") -> void:
 ## Cambia a la escena indicada usando el sistema nativo de Godot.
 ## Llamar siempre desde transition_out_completed para que la pantalla esté cubierta.
 func change_scene(path: String) -> void:
+	print_debug("Loading scene:", path)
 	get_tree().change_scene_to_file(path)
 
 # ===== EFECTOS DE TRANSICIÓN =====

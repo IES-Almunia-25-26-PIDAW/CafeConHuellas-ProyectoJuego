@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c67tabblt7q7e"]
 
 [ext_resource type="Script" uid="uid://d3wyg0eguit72" path="res://scripts/ui/album_card.gd" id="1_u2kyw"]
-[ext_resource type="Texture2D" uid="uid://6lmlib41od4" path="res://assets/images/mainmenu.png" id="2_qmffq"]
 [ext_resource type="FontFile" uid="uid://kmb7gfn44fgk" path="res://assets/fonts/Fredoka-Medium.ttf" id="3_hijis"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmffq"]
@@ -29,7 +28,6 @@ unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_qmffq")
 expand_mode = 2
 stretch_mode = 6
 

@@ -56,19 +56,16 @@
   {
 	"speaker": "Nilam",
 	"text": "Ovie, ¿estás seguro de que necesitas más azúcar en la sangre?",
-	"show_character": "Nilam",
 	"expression": "2"
   },
   {
 	"speaker": "Ovie",
 	"text": "Nunca es suficiente, ¡porfi porfi Nil!",
-	"show_character": "Ovie",
 	"expression": "happy2"
   },
   {
 	"speaker": "Nilam",
 	"text": "Bueno... si no hay más remedio. Soy Nilam, por cierto. Gracias por tratar tan bien a mi hermano.",
-	"show_character": "Nilam",
 	"expression": "happy"
   },
   {

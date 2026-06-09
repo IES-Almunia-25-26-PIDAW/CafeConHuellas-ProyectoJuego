@@ -9,10 +9,6 @@
 	"counter": "yes"
   },
   {
-	"show_character": "Ronald",
-	"expression": "idle"
-  },
-  {
 	"speaker": "Hunter",
 	"text": "[i]Ronald se queda callado y empieza a leer la carta como si quisiera estudiarla.[/i]",
 	"show_character": "Ronald",
@@ -35,7 +31,9 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me centro en preparar el pedido mientras lo miro. Me parece una persona muy interesante.[/i]"
+	"text": "[i]Me centro en preparar el pedido mientras lo miro. Me parece una persona muy interesante.[/i]",
+	"show_character": "Ronald",
+	"expression": "2"
   },
   {
 	"goto": "ronald_entrega"
@@ -68,7 +66,7 @@
   {
 	"speaker": "Ronald",
 	"text": "Bueno… sí, no estuvo mal, pero creo que las carreras universitarias de hoy en día están bastante anticuadas. ¿Qué carrera pensabas hacer tú?",
-	"expression": "curious"
+	"expression": "serious"
   },
   {
 	"speaker": "Hunter",
@@ -85,13 +83,13 @@
   {
 	"speaker": "Ronald",
 	"text": "Seguro que en un futuro puedes hacerla. Pareces una persona bastante dedicada.",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Muchas gracias, eres muy amable.",
 	"show_character": "Ronald",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
@@ -107,27 +105,30 @@
 	"speaker": "Hunter",
 	"text": "[i]Le entrego su pedido y él me paga.[/i]",
 	"show_character": "Ronald",
-	"expression": "idle"
+	"expression": "happy"
   },
   {
 	"speaker": "Ronald",
 	"text": "Muchas gracias. Espero verte de nuevo para poder decirte qué tal estuvo tu café.",
-	"expression": "2"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
 	"text": "¡Yo también lo espero! Ya sabes dónde encontrarme.",
 	"show_character": "Ronald",
-	"expression": "idle"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Le sonrío. Él me devuelve el gesto antes de marcharse.[/i]",
 	"show_character": "Ronald",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"hide_character": true
+  },
+{
+	"location": "backgrounds/cafeteria_late"
   },
   {
 	"speaker": "Hunter",
@@ -139,9 +140,6 @@
   },
   {
 	"counter": "no"
-  },
-  {
-	"transition": "fade"
   },
   {
 	"location": "backgrounds/black"

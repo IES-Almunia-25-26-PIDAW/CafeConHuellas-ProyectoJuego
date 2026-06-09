@@ -99,6 +99,7 @@ func _on_album_button_pressed() -> void:
 
 # Cambia a la escena almacenada en scene_to_load.
 func _on_transition_out_completed() -> void:
+	print_debug("scene_to_load =", scene_to_load)
 	SceneManager.change_scene(scene_to_load)
 
 # Cierra el juego.

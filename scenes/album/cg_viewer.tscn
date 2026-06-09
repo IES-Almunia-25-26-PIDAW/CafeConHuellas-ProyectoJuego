@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://feo50gb6lvne"]
 
 [ext_resource type="Script" uid="uid://6x2eu3qyw3xd" path="res://scripts/ui/cg_viewer.gd" id="1_t12rw"]
-[ext_resource type="Texture2D" uid="uid://6lmlib41od4" path="res://assets/images/mainmenu.png" id="2_uanhq"]
 [ext_resource type="FontFile" uid="uid://kmb7gfn44fgk" path="res://assets/fonts/Fredoka-Medium.ttf" id="3_qfih0"]
 [ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="4_h8tvk"]
 
@@ -28,7 +27,6 @@ color = Color(0, 0, 0, 1)
 [node name="CGImage" type="TextureRect" parent="." unique_id=1216010056]
 unique_name_in_owner = true
 layout_mode = 1
-texture = ExtResource("2_uanhq")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=827335595]
 clip_contents = true

@@ -10,15 +10,15 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Entramos los tres en la casa, con el gatito todavía acurrucado entre mis brazos. Nada más cruzar la puerta, observo el interior. Es una vivienda modesta de dos plantas, acogedora a su manera, aunque algo desordenada. Hay objetos fuera de sitio y algunas cosas desordenadas aquí y allá, dando la impresión de que la gente que vive aquí está demasiado ocupada para preocuparse por mantenerla perfectamente arreglada.[/i]"
+	"text": "[i]Entramos los tres en la casa, con el gatito todavía acurrucado entre mis brazos. Nada más cruzar la puerta, observo el interior.[/i]"
+  },
+{
+	"speaker": "Hunter",
+	"text": "[i]Es una vivienda modesta de dos plantas, acogedora a su manera, aunque algo desordenada. Hay objetos fuera de sitio y algunas cosas desordenadas aquí y allá, dando la impresión de que la gente que vive aquí está demasiado ocupada para preocuparse por mantenerla perfectamente arreglada.[/i]"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]También puedo ver algunos dibujos de Ovie pegados en la pared y fotos de ellos dos con lo que parecen ser sus padres.[/i]"
-  },
-  {
-	"show_character": "Ovie",
-	"expression": "happy2"
   },
   {
 	"speaker": "Ovie",
@@ -34,9 +34,7 @@
   {
 	"speaker": "Nilam",
 	"text": "Y tú mañana tienes colegio. Otro día juegas con él.",
-	"expression": "2",
-	"show_character": "Ovie",
-	"expression2": "sad"
+	"expression": "2"
   },
   {
 	"speaker": "Ovie",
@@ -59,18 +57,24 @@
 	"speaker": "Hunter",
 	"text": "Yo también estoy deseando jugar contigo.",
 	"show_character": "Ovie",
-	"expression": "happy2"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Nos sentamos en el sofá mientras Nilam fue a por el botiquín. Al volver, comenzó a curar a su hermano con cuidado mientras Ovie se quejaba un poco y contaba todo lo que había pasado. Con cada palabra, veía cómo Nilam se tensaba más, aunque intentaba disimular su enfado delante de él.[/i]",
+	"text": "[i]Nos sentamos en el sofá mientras Nilam fue a por el botiquín. Al volver, comenzó a curar a su hermano con cuidado mientras Ovie se quejaba un poco y contaba todo lo que había pasado.[/i]",
+	"show_character": "Ovie",
+	"expression": "sad2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Con cada palabra, veía cómo Nilam se tensaba más, aunque intentaba disimular su enfado delante de él.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad"
+	"expression": "serious2",
   },
   {
 	"speaker": "Nilam",
 	"text": "Tenemos que averiguar quién ha sido. No voy a permitir que le hagan daño a alguien más y menos a mi hermano.",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
@@ -81,9 +85,7 @@
   {
 	"speaker": "Ovie",
 	"text": "¡Estoy bien!",
-	"expression": "happy",
-	"show_character": "Ovie",
-	"expression2": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Ovie",
@@ -99,14 +101,12 @@
   {
 	"speaker": "Nilam",
 	"text": "Bueno… quizás llevaba razón. Pero que no se te suba mucho a la cabeza.",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Ovie",
 	"text": "Oyee.",
-	"expression": "happy",
-	"show_character": "Ovie",
-	"expression2": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
@@ -117,25 +117,23 @@
   {
 	"speaker": "Ovie",
 	"text": "{player_name} me quiere más que tú.",
-	"expression": "happy2"
+	"expression": "idle2"
   },
   {
 	"speaker": "Nilam",
 	"text": "¿Ah sí? Pues ya no te preparo más tortitas por las mañanas.",
-	"expression": "2",
-	"show_character": "Nilam",
-	"expression": "2"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Ovie lo abrazó de repente, de forma un poco exagerada.[/i]"
+	"text": "[i]Ovie lo abrazó de repente, de forma un poco exagerada.[/i]",
+	"show_character": "Ovie",
+	"expression2": "sad2"
   },
   {
 	"speaker": "Ovie",
 	"text": "¡No, no! ¡Nil eres el mejor!",
-	"expression": "happy2",
-	"show_character": "Ovie",
-	"expression2": "happy2"
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
@@ -151,14 +149,12 @@
   {
 	"speaker": "Ovie",
 	"text": "¡Vale!",
-	"expression": "happy2",
-	"show_character": "Ovie",
-	"expression2": "happy2"
+	"expression": "happy2"
   },
   {
 	"speaker": "Ovie",
 	"text": "¡{player_name}, no te vayas sin despedirte!",
-	"expression": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
@@ -175,16 +171,13 @@
   {
 	"speaker": "Nilam",
 	"text": "Ven, hablemos fuera mejor.",
-	"expression": "idle"
+	"expression": "2"
   },
   {
 	"hide_character": true
   },
   {
-	"transition": "fade"
-  },
-  {
-	"location": "backgrounds/nilam_house_exterior"
+	"location": "backgrounds/forest_night_house"
   },
   {
 	"music": "silence"
@@ -194,14 +187,10 @@
 	"text": "[i]Lo sigo hasta el exterior. Aunque ya estamos en abril, el aire todavía conserva algo del fresco de los últimos meses.[/i]"
   },
   {
-	"show_character": "Nilam",
-	"expression": "sad"
-  },
-  {
 	"speaker": "Hunter",
 	"text": "[i]Observo a Nilam. Su expresión es difícil de leer, pero percibo una mezcla de enfado y culpa en su mirada.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad"
+	"expression": "sad2"
   },
   {
 	"speaker": "Nilam",
@@ -212,7 +201,7 @@
 	"speaker": "Hunter",
 	"text": "[i]Guarda silencio unos segundos y aprieta la mandíbula.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Nilam",
@@ -254,18 +243,18 @@
 	"speaker": "Hunter",
 	"text": "[i]Veo cómo me mira y frunce un poco el ceño.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Nilam",
 	"text": "Aun así, debía estar vigilándolo.",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Pero Ovie fue quien se despistó por unos segundos. Él estaba en vuestro jardín jugando, ¿no?",
 	"show_character": "Nilam",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
@@ -281,8 +270,8 @@
   },
   {
 	"speaker": "Nilam",
-	"text": "Quizá, pero no me gusta pensar que pudo pasar mientras yo estaba distraído. Imbéciles y locos hay en todos lados, ¿sabes?",
-	"expression": "sad"
+	"text": "Quizá, pero no me gusta pensar qué pudo pasar mientras yo estaba distraído. Imbéciles y locos hay en todos lados, ¿sabes?",
+	"expression": "sad2"
   },
   {
 	"goto": "nilam_desapariciones"
@@ -292,7 +281,9 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Pensaba que iba a seguir hablando si guardaba silencio, pero Nilam guardó silencio también. Así que decidí seguir hablando yo.[/i]"
+	"text": "[i]Pensaba que iba a seguir hablando si guardaba silencio, pero Nilam guardó silencio también. Así que decidí seguir hablando yo.[/i]",
+	"show_character": "Nilam",
+	"expression": "sad2"
   },
   {
 	"goto": "nilam_desapariciones"
@@ -316,16 +307,18 @@
 	"speaker": "Hunter",
 	"text": "[i]Veo cómo Nilam me mira un poco enfadado, no sé si es más conmigo o consigo mismo.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Nilam",
 	"text": "Bueno, ¿Eso es lo que estoy diciendo no? No necesito que alguien me repita lo que he hecho mal, ¿sabes? Ya está bajo mi responsabilidad.",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Nos quedamos unos segundos en silencio.[/i]"
+	"text": "[i]Nos quedamos unos segundos en silencio.[/i]",
+	"show_character": "Nilam",
+	"expression": "serious2"
   },
   {
 	"goto": "nilam_desapariciones"
@@ -337,33 +330,35 @@
 	"speaker": "Hunter",
 	"text": "¿Crees que lo de esta noche ha estado relacionado con las desapariciones de personas del pueblo?",
 	"show_character": "Nilam",
-	"expression": "curious"
+	"expression": "2"
   },
   {
 	"speaker": "Nilam",
 	"text": "¿De qué me estás hablando?",
-	"expression": "curious"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Parece que no tiene ni idea de ellas.[/i]"
+	"text": "[i]Parece que no tiene ni idea de ellas.[/i]",
+	"show_character": "Nilam",
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "Hay carteles pegados en un tablón de personas desaparecidas. Son demasiadas para un pueblo tan pequeño.",
 	"show_character": "Nilam",
-	"expression": "curious2"
+	"expression": "idle"
   },
   {
 	"speaker": "Nilam",
 	"text": "Espero que no sea así.",
-	"expression": "sad"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Hace una breve pausa.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad"
+	"expression": "serious2"
   },
   {
 	"speaker": "Nilam",
@@ -379,13 +374,13 @@
   {
 	"speaker": "Nilam",
 	"text": "No lo sé. Llevo muy poco tiempo en el pueblo, probablemente sé menos que tú. Pero una cosa tengo clara: quien le puso una mano encima a mi hermano no se va a ir de rositas.",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Aprieta un poco la mandíbula.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
@@ -395,7 +390,9 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le sonrío.[/i]"
+	"text": "[i]Le sonrío.[/i]",
+	"show_character": "Nilam",
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -406,22 +403,24 @@
   {
 	"speaker": "Nilam",
 	"text": "Yo pensaba que tenías una cafetería.",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Me río un poco.[/i]"
+	"text": "[i]Me río un poco.[/i]",
+	"show_character": "Nilam",
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Oye, pero quizás puedo cerrar antes. Es por una buena causa.",
 	"show_character": "Nilam",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Nilam",
 	"text": "Ya veremos si ese entusiasmo dura cuando tengas que madrugar al día siguiente.",
-	"expression": "2"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
@@ -436,13 +435,13 @@
 	  "female": "Pero oye, no me molestaría tenerte como compañera de investigación.",
 	  "nonbinary": "Pero oye, no me molestaría tenerte como compañere de investigación."
 	},
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Entonces está dicho.",
 	"show_character": "Nilam",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
@@ -457,7 +456,7 @@
   {
 	"speaker": "Nilam",
 	"text": "Oye, gracias por todo lo de esta noche.",
-	"expression": "2"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -513,18 +512,18 @@
 	"speaker": "Hunter",
 	"text": "Oye… Ovie me comentó que le insultaban por sus ojos. Además el chico que le golpeó también le insultó por ello.",
 	"show_character": "Nilam",
-	"expression": "sad"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Nilam suspira un poco.[/i]",
 	"show_character": "Nilam",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Nilam",
 	"text": "Lo sé… La gente es imbécil. Ven algo diferente y ya no les gusta. Y lo peor es que les da igual que sea un niño de 10 años.",
-	"expression": "sad2"
+	"expression": "serious2"
   },
   {
 	"speaker": "Hunter",
@@ -539,7 +538,10 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Siento su culpa y decido animarle un poco.[/i]"
+	"text": "[i]Siento su culpa y decido animarle un poco.[/i]",
+	"show_character": "Nilam",
+	"expression": "sad"
+	
   },
   {
 	"speaker": "Hunter",
@@ -549,17 +551,21 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le sonrío.[/i]"
+	"text": "[i]Le sonrío.[/i]",
+	"show_character": "Nilam",
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "Eso no te hace mejor o peor persona, te hace humano. Tu hermano te admira mucho. Se nota que haces un buen trabajo hasta a kilómetros de distancia.",
 	"show_character": "Nilam",
-	"expression": "sad"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Nilam me mira y me sonríe un poco tímido.[/i]"
+	"text": "[i]Nilam me mira y me sonríe un poco tímido.[/i]",
+	"show_character": "Nilam",
+	"expression": "happy2"
   },
   {
 	"speaker": "Nilam",
@@ -582,9 +588,6 @@
 	"hide_character": true
   },
   {
-	"transition": "fade"
-  },
-  {
 	"location": "backgrounds/nilam_house_interior"
   },
   {
@@ -595,23 +598,21 @@
 	"text": "[i]Después de un rato hablando con Nilam bajo la luz de la luna, volvemos a entrar.[/i]"
   },
   {
-	"show_character": "Ovie",
-	"expression": "happy2"
-  },
-  {
 	"speaker": "Ovie",
 	"text": "¡Mira mira, {player_name}! ¡A qué molan!",
 	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Veo las figuras y me asombro.[/i]"
+	"text": "[i]Ovie tiene en sus manos distintas figuras de superhéroes. Veo las figuras y me asombro.[/i]",
+	"show_character": "Ovie",
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Son súper chulas, Ovie.",
 	"show_character": "Ovie",
-	"expression": "happy2"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
@@ -627,36 +628,35 @@
   {
 	"speaker": "Nilam",
 	"text": "¿En serio, Ovie? ¿Qué nombre más raro.",
-	"expression": "2",
-	"show_character": "Nilam"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Veo como Nilam le mira mal a propósito.[/i]"
+	"text": "[i]Veo como Nilam le mira mal a propósito.[/i]",
+	"show_character": "Nilam",
+	"expression": "serious2"
   },
   {
 	"speaker": "Ovie",
 	"text": "¡Oye! Es un nombre muy bonito y original.",
-	"expression": "happy",
-	"show_character": "Ovie",
-	"expression2": "happy"
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Veo cómo Ovie empuja a Nilam un poco y Nilam se ríe.[/i]",
 	"show_character": "Nilam",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Ovie",
 	"text": "{player_name}, ¿te lo puedes quedar tú? Papá dice que no podemos tener mascotas con mamá enferma.",
-	"expression": "sad",
-	"show_character": "Ovie",
-	"expression2": "sad"
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Quizás por eso Nilam tuvo que venir de emergencia hasta aquí, a pesar de que me dijo en un principio que era por trabajo.[/i]"
+	"text": "[i]Quizás por eso Nilam tuvo que venir de emergencia hasta aquí, a pesar de que me dijo en un principio que era por trabajo.[/i]",
+	"show_character": "Nilam",
+	"expression": "sad2"
   },
   {
 	"speaker": "Hunter",
@@ -672,21 +672,22 @@
   {
 	"speaker": "Nilam",
 	"text": "Si no hay más remedio…",
-	"expression": "happy",
-	"show_character": "Nilam"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Nilam le sigue molestando. Con cuidado, cojo a Milo en brazos y me despido de los dos.[/i]",
 	"show_character": "Ovie",
-	"expression": "happy2"
+	"expression": "2"
   },
+  {"add_pet": "milo"},
+  {
+	"hide_character": true
+  },
+{"location": "background/black"},
   {
 	"speaker": "Hunter",
 	"text": "[i]Después me giro y emprendo el camino de vuelta a casa. El día ha terminado, pero siento que tengo demasiado que procesar.[/i]"
-  },
-  {
-	"hide_character": true
   },
   {
 	"next_chapter": "day4a_intro"

@@ -33,10 +33,8 @@ enum Name {
 const CHARACTER_DETAILS : Dictionary = {
 	Name.NARRATOR: {
 		"name": "",
-		"char_color": Color(0,0,0,0),
-		"voice": "",
-		"voice_pitch": 1.0,
-		"voice_bus": "Voices"
+		"sprite_frames": null,
+		"char_color": Color("ffffff00")
 	},
 	Name.HUNTER: {
 		"name": "Hunter",
@@ -56,16 +54,14 @@ const CHARACTER_DETAILS : Dictionary = {
 	},
 	Name.NILAM: {
 		"name": "Nilam",
-		# TODO: asignarle sprite
-		"sprite_frames": null,
+		"sprite_frames": preload("res://assets/sprites/nilam/nilam_sprites.tres"),
 		# Bus con EQ grave y seco
 		"voice_bus": "VoiceNilam",
 		# Ruta al archivo de voz del personaje
 		"voice": "res://assets/audio/voices/voice_base.ogg",
 		# Tono de voz grave y seco
 		"voice_pitch": 0.85,
-		# TODO: asignarle color
-		"char_color": Color(0, 0, 0, 0)
+		"char_color": Color("4c4770e6")
 	}, 
 	Name.RONALD: {
 		"name": "Ronald",
@@ -78,14 +74,14 @@ const CHARACTER_DETAILS : Dictionary = {
 		# Tono de voz de hombre mayor
 		"voice_pitch": 0.92,
 		# TODO: asignarle color
-		"char_color": Color(0, 0, 0, 0)
+		"char_color": Color("73a858e6")
 	},
 	Name.BASTIAN: {
 		"name": "Bastian",
 		"sprite_frames": preload("res://assets/sprites/bastian/bastian_sprites.tres"),
 		"voice_bus": "Voices",
 		"voice": "res://assets/audio/voices/voice_base.ogg",
-		"char_color": Color("5a7a3ae6")
+		"char_color": Color("6f7a3ae6")
 	},
 	Name.GABRIEL: {
 		"name": "Gabriel",
@@ -99,7 +95,7 @@ const CHARACTER_DETAILS : Dictionary = {
 		"sprite_frames": preload("res://assets/sprites/ovie/ovie_sprites.tres"),
 		"voice_bus": "Voices",
 		"voice": "res://assets/audio/voices/voice_base.ogg",
-		"char_color": Color("3a6a8ae6")
+		"char_color": Color("3a7c8ae6")
 	},
 	Name.BERENICE: {
 		"name": "Berenice",
