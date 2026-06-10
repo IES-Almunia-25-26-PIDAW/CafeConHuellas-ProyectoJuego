@@ -1,20 +1,20 @@
 {
-  "email_nube": {
-	"id": "email_nube",
-	"day": 1,
-	"animal_id": "nube",
-	"sender_name": "Familia Martínez",
-	"subject": "Solicitud de adopción para Nube",
-	"body": "Somos una familia con jardín y mucho tiempo libre. Nube estaría muy bien con nosotros. Le daríamos todo el amor que merece.",
+  "email_milo_ovie": {
+	"id": "email_milo_ovie",
+	"day": 5,
+	"animal_id": "milo",
+	"sender_name": "Nilam",
+	"subject": "Qiero adoptar a Milo",
+	"body": "miau",
 	"is_good_decision": true
   },
-  "email_mochi": {
-	"id": "email_mochi",
-	"day": 1,
-	"animal_id": "mochi",
+  "email_milo_bad1": {
+	"id": "email_milo_bad1",
+	"day": 5,
+	"animal_id": "milo",
 	"sender_name": "Sr. Gómez",
-	"subject": "Quiero adoptar a Mochi",
-	"body": "Necesito un gato para que cace ratones en mi almacén.",
+	"subject": "Solicitud de adopción para Milo",
+	"body": "miau",
 	"is_good_decision": false
   }
 }

@@ -1,49 +1,18 @@
 {
-  "clue_01": {
-	"id": "clue_01",
-	"title": "Ejemplo 1",
-	"description": "Ejemplo de la primera pista",
-	"day_found": 1,
-	"related_character": "alcalde",
-	"icon": "res://assets/images/test_kitchen/check_test.png"
-  },
-  "clue_02": {
-	"id": "clue_02",
-	"title": "Ejemplo 2",
-	"description": "Ejemplo de la segunda pista",
+  "clue_cartel_desaparecidos": {
+	"id": "clue_cartel_desaparecidos",
+	"title": "Anuncios de personas desaparecidas",
+	"description": "¿Cómo puede ser posible que en un pueblo tan pequeño desaparezcan tantas personas?",
 	"day_found": 2,
 	"related_character": "",
-	"icon": "res://assets/images/test_kitchen/check_test.png"
-  }, 
-"	pista_animales": {
-		"id": "pista_animales",
-		"title": "Animales desaparecidos",
-		"description": "Varios vecinos han comentado que sus mascotas han desaparecido en los últimos meses sin dejar rastro.",
-		"icon": "res://assets/images/test_kitchen/check_test.png"
-	},
-	"pista_pastor": {
-		"id": "pista_pastor",
-		"title": "El pastor del pueblo",
-		"description": "El pastor parece saber más de lo que dice. Se pone nervioso cuando se menciona a los animales.",
-		"icon": "res://assets/images/test_kitchen/check_test.png"
-	},
-	"pista_ruidos": {
-		"id": "pista_ruidos",
-		"title": "Ruidos nocturnos",
-		"description": "Algunos vecinos han escuchado ruidos extraños cerca de la iglesia por las noches.",
-		"icon": "res://assets/images/test_kitchen/check_test.png"
-	},
-	"pista_jaulas": {
-		"id": "pista_jaulas",
-		"title": "Jaulas en el sótano",
-		"description": "Una fuente anónima menciona haber visto jaulas en el sótano de la iglesia.",
-		"icon": "res://assets/images/test_kitchen/check_test.png"
-	},
-	"pista_secta": {
-		"id": "pista_secta",
-		"title": "Reuniones secretas",
-		"description": "Hay reuniones que se celebran de madrugada a las que solo asisten ciertos vecinos.",
-		"icon": "res://assets/images/test_kitchen/check_test.png"
-	}
-
+	"icon": "res://assets/images/icons/clues/clue_icon.png"
+  },
+  "clue_sangre_cuenco": {
+	"id": "clue_sangre_cuenco",
+	"title": "Cuenco con manchas de sangre",
+	"description": "El cuenco de comida que dejé apareció con manchas de sangre.",
+	"day_found": 3,
+	"related_character": "",
+	"icon": "res://assets/images/icons/clues/clue_icon.png"
+  }
 }

@@ -109,15 +109,15 @@ func _setup_test_data() -> void:
 	# Dos correos recibidos hoy (day = 1), sin leer
 	GameState.day = 1
 	GameState.received_emails_status = {
-		"email_nube": "not_read",
-		"email_mochi": "not_read"
+		"email_milo_ovie": "not_read",
+		"email_milo_bad1": "not_read"
 	}
 	
 	# Dos personajes conocidos — los IDs deben coincidir con los del JSON.
-	GameState.characters_met = ["alcalde", "jasmine"]
+	GameState.characters_met = ["bastian", "jasmine", "ovie", "ronald", "nilam", "berenice", "gabriel"]
 	
 	# Dos pistas encontradas — los IDs deben coincidir con los del JSON.
-	GameState.clues_found = ["clue_01", "clue_02", "pista_animales", "pista_pastor","pista_ruidos", "pista_jaulas", "pista_secta"]
+	GameState.clues_found = ["clue_cartel_desaparecidos", "clue_sangre_cuenco"]
 
 # Muestra la pestaña seleccionada y actualiza el color de los botones de navegación.
 # Recarga el correo cada vez que se abre para reflejar adopciones recientes.

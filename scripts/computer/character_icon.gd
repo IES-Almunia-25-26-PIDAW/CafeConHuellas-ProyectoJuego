@@ -12,7 +12,7 @@ signal icon_clicked
 # ===== REFERENCIAS A NODOS =====
 
 @onready var icon_rect: TextureRect = %Icon
-
+@onready var name_label: RichTextLabel = %NameLabel
 
 # ===== VARIABLES =====
 
@@ -30,6 +30,8 @@ var _char_data: Dictionary = {}
 func setup(char_id: String, char_data: Dictionary) -> void:
 	_char_id = char_id
 	_char_data = char_data
+	
+	name_label.text = char_data.get("name", char_id)
 	
 	var icon_path: String = char_data.get("icon", "")
 	if icon_path != "" and ResourceLoader.exists(icon_path):

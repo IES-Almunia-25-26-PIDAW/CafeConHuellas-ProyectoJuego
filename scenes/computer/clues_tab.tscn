@@ -109,10 +109,11 @@ vertical_scroll_mode = 3
 [node name="CharactersGrid" type="GridContainer" parent="ColumnsContainer/CharactersColumn/CharactersScrollContainer" unique_id=1229175392]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
-columns = 3
+columns = 4
 
 [node name="CluesColumn" type="VBoxContainer" parent="ColumnsContainer" unique_id=462320387]
 custom_minimum_size = Vector2(460, 0)
