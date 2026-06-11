@@ -246,6 +246,24 @@ func process_current_line() -> void:
 		process_current_line()
 		return
 	
+	# -- Guardar una variable temporal de elección para usarla después de un start_order.
+	if line.has("set_var"):
+		GameState.set(line["set_var"]["key"], line["set_var"]["value"])
+		dialog_index += 1
+		process_current_line()
+		return
+
+	# -- Goto condicional por variable temporal (bifurca el diálogo según last_choice u otras vars).
+	if line.has("if_var"):
+		var key = line["if_var"]["key"]
+		var value = line["if_var"]["value"]
+		if GameState.get(key) == value:
+			dialog_index = get_anchor_position(line["goto"])
+		else:
+			dialog_index += 1
+		process_current_line()
+		return
+	
 	# -- Iniciar una orden y enviar al jugador a la cocina.
 	if line.has("start_order"):
 		GameState.current_order_recipe_ids.assign(line["start_order"])

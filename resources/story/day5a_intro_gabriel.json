@@ -1,0 +1,218 @@
+[
+  {
+	"location": "backgrounds/hunter_room"
+  },
+  {
+	"music": "Sol3"
+  },
+  {
+	"hide_character": true
+  },
+  {
+	"counter": "no"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Al día siguiente, nada más despertarme, me quedo unos minutos tumbado mirando al techo. Es imposible no pensar en todo lo que había ocurrido durante los últimos días.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Las desapariciones, los extraños secretos del pueblo, todo lo que ha ido ocurriendo hasta ahora y lo que encontramos ayer Ronald y yo. Tengo demasiadas preguntas y muy pocas respuestas. No sé qué pensar, pero algo es seguro: la iglesia tiene algo que ver.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Intentando no pensar mucho, comienzo mi día como cualquier otro, yendo rumbo a la cafetería.[/i]",
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/cafeteria"
+  },
+  {
+	"music": "Everyday_Life"
+  },
+  {
+	"counter": "yes"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Las primeras horas de la mañana pasan muy tranquilas, hasta que llega el mediodía.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Cuando me doy cuenta está entrando un hombre pelinegro, con algunas canas y con una túnica de cura. Mira por donde… Tal vez le puedo sacar algo.[/i]"
+  },
+  {
+	"meet_character": "gabriel"
+  },
+  {
+	"show_character": "Gabriel",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "Buenos días, es bueno ver caras nuevas jóvenes.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me sonríe… pero con una sonrisa un poco extraña.[/i]",
+	"show_character": "Gabriel",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Buenos días. Supongo que usted es el cura del pueblo.",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "Veo que eres perspicaz. Así es, me llamo Gabriel.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "{player_name}, encantado.",
+	  "female": "{player_name}, encantada.",
+	  "nonbinary": "{player_name}, encantade."
+	},
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]No me da muy buena espina.[/i]"
+  },
+  {
+	"speaker": "Gabriel",
+	"pronouns": {
+	  "male": "Igualmente. No te vi en la misa del domingo, supongo que no eres muy religioso.",
+	  "female": "Igualmente. No te vi en la misa del domingo, supongo que no eres muy religiosa.",
+	  "nonbinary": "Igualmente. No te vi en la misa del domingo, supongo que no eres muy religiose."
+	},
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Sinceramente no, lo siento. Pero quizás algún día me paso por la iglesia.",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Para investigar, pero no se lo voy a decir.[/i]"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "Te estaré esperando entonces.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me sonríe. De nuevo, con esa sonrisa extraña. No sé cómo preguntarle lo de las desapariciones.[/i]",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Siento si la pregunta está fuera de lugar pero… Usted llevará años aquí, ¿está enterado de las desapariciones de personas y animales?",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Veo como guarda silencio por unos segundos.[/i]",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "En los pueblos siempre circulan historias. No tienes que creerte todo lo que escuchas. Hay gente muy curiosa en este pueblo.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me quedo mirándole, sin saber si debería responder.[/i]",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "Y la curiosidad suele traer problemas, especialmente cuando uno no conoce el lugar en el que se encuentra y se mete en donde no le llaman.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me observa sin parpadear. Me da un poco de escalofríos.[/i]",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "¿Has estado investigando entonces?",
+	"expression": "curious"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Bueno… un poco. Me da curiosidad la historia de este pueblo, y las desapariciones llevan pasando durante años.",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "Bueno, que desaparezca gente desde luego que es una desgracia.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Hizo una pausa observándome.[/i]",
+	"show_character": "Gabriel",
+	"expression": "curious"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "Pero, dime, {player_name}, ¿qué te ha llevado exactamente a interesarte tanto por este tema?",
+	"expression": "curious"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Trago saliva. No puedo contarle mucho y menos cuando es sospechoso.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Bueno… siempre me ha llamado la atención este tipo de casos. Además, si hay familias buscando respuestas, creo que es importante intentar ayudar.",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "Es una buena intención, {player_name}. El señor te lo agradecerá. Pocos se preocupan realmente por los demás hoy en día.",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me sonríe de nuevo. Ahora parece contradictorio. Intento cambiar de tema.[/i]",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¿Le apetece algo?",
+	"show_character": "Gabriel",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Gabriel",
+	"text": "Claro, un café solo.",
+	"expression": "idle"
+  },
+  {
+	"start_order": [
+      "coffee"
+	],
+	"next_scene_after_order": "day5b_gabriel_post"
+  }
+]

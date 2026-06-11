@@ -1,0 +1,129 @@
+[
+  {
+	"location": "backgrounds/cafeteria"
+  },
+  {
+	"music": "Everyday_Life"
+  },
+  {
+	"counter": "yes"
+  },
+  {
+	"show_character": "Bastian",
+	"expression": "happy"
+  },
+  {
+	"if_var": {
+	  "key": "last_choice",
+	  "value": "cafe_correcto"
+	},
+	"goto": "alcalde_reaccion_bien"
+  },
+  {
+	"anchor": "alcalde_reaccion_mal"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Cuando se lo entrego, lo observo durante unos segundos y luego me mira con una expresión extraña.[/i]",
+	"show_character": "Bastian",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Bastian",
+	"pronouns": {
+	  "male": "Ay, hijo, tienes menos memoria que yo. No era eso lo que había pedido, pero no te preocupes. A mi edad uno aprende a no desperdiciar un buen café.",
+	  "female": "Ay, hija, tienes menos memoria que yo. No era eso lo que había pedido, pero no te preocupes. A mi edad uno aprende a no desperdiciar un buen café.",
+	  "nonbinary": "Ay, hije, tienes menos memoria que yo. No era eso lo que había pedido, pero no te preocupes. A mi edad uno aprende a no desperdiciar un buen café."
+	},
+	"expression": "wink"
+  },
+  {
+	"goto": "alcalde_despedida"
+  },
+  {
+	"anchor": "alcalde_reaccion_bien"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me dispongo a entregarle el café con leche. Cuando se lo entrego veo como me sonríe.[/i]",
+	"show_character": "Bastian",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Bastian",
+	"pronouns": {
+	  "male": "¡Esto fue lo que pedí! Estás hecho todo un buen camarero.",
+	  "female": "¡Esto fue lo que pedí! Estás hecha toda una buena camarera.",
+	  "nonbinary": "¡Esto fue lo que pedí! Estás heche todo un buen camarere."
+	},
+	"expression": "happy"
+  },
+  {
+	"goto": "alcalde_despedida"
+  },
+  {
+	"anchor": "alcalde_despedida"
+  },
+  {
+	"speaker": "Bastian",
+	"text": "Y no le des muchas vueltas a esas desapariciones, son pamplinas de turistas.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "[i]Le sonrío en respuesta y me despido de él. No sabe que está hablando con un futuro criminólogo.[/i]",
+	  "female": "[i]Le sonrío en respuesta y me despido de él. No sabe que está hablando con una futura criminóloga.[/i]",
+	  "nonbinary": "[i]Le sonrío en respuesta y me despido de él. No sabe que está hablando con une future criminólogue.[/i]"
+	},
+	"show_character": "Bastian",
+	"expression": "idle"
+  },
+  {
+	"hide_character": true
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]El resto del día transcurrió con total normalidad. Como ya no quedaban clientes y no parecía que fuera a entrar nadie más, decidí cerrar la cafetería un poco antes de lo habitual. Tenía otras cosas en mente.[/i]"
+  },
+  {
+	"counter": "no"
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/black"
+  },
+  {
+	"music": "Sol3"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Una vez termino de recoger, salgo a explorar el pueblo por mi cuenta.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"pronouns": {
+	  "male": "[i]Apenas había gente por las calles y, para ser sincero, tampoco encontré nada especialmente interesante. La mayoría de los edificios son casas antiguas, desgastadas por el paso de los años, con fachadas de piedra y tejados envejecidos que parecían llevar allí décadas, quizá incluso siglos.[/i]",
+	  "female": "[i]Apenas había gente por las calles y, para ser sincera, tampoco encontré nada especialmente interesante. La mayoría de los edificios son casas antiguas, desgastadas por el paso de los años, con fachadas de piedra y tejados envejecidos que parecían llevar allí décadas, quizá incluso siglos.[/i]",
+	  "nonbinary": "[i]Apenas había gente por las calles y, para ser sincere, tampoco encontré nada especialmente interesante. La mayoría de los edificios son casas antiguas, desgastadas por el paso de los años, con fachadas de piedra y tejados envejecidos que parecían llevar allí décadas, quizá incluso siglos.[/i]"
+	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Hasta que me detengo enfrente de un edificio que parece abandonado. Gracias a unas letras desgastadas puedo visualizar que es o era la biblioteca del pueblo.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Creo que me vendría muy bien explorarla. Saco el teléfono móvil y pongo la linterna.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me doy cuenta de que la puerta tenía signos de haber sido forzada, como si alguien hubiera entrado antes que yo. Me lleno de valor y entro.[/i]"
+  },
+  {
+	"next_scene": "day4c_biblioteca",
+	"transition": "fade"
+  }
+]

@@ -1,1 +1,285 @@
-null
+[
+  {
+	"location": "backgrounds/forest_night"
+  },
+  {
+	"music": "silence"
+  },
+  {
+	"hide_character": true
+  },
+  {
+	"counter": "no"
+  },
+  {
+	"speaker": "narrator",
+	"text": "[i]En algún lugar recóndito del bosque, donde la luz apenas llega, dos hombres conversan en voz baja. El aire es denso y el silencio del lugar apenas se rompe con sus palabras.[/i]"
+  },
+  {
+	"show_character": "Misterioso_Jefe",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Jefe",
+	"text": "¿En serio? ¿Me estás diciendo que un niño de 10 años se te escapó?",
+	"expression": "idle"
+  },
+  {
+	"show_character": "Misterioso_Subordinado",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Subordinado",
+	"text": "Lo siento, señor, corría muy rápido… No estaba seguro si quería que le hiciera daño al niño también.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Jefe",
+	"text": "¿Qué has dicho?",
+	"expression": "idle"
+  },
+  {
+	"speaker": "narrator",
+	"text": "[i]Al hombre se le oscurece la mirada. No le gustaba el término «dañar».[/i]"
+  },
+  {
+	"speaker": "Misterioso_Subordinado",
+	"text": "Quiero decir… No sabía si querías que el niño participara en nuestros eventos especiales también.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Jefe",
+	"text": "¿No le has visto sus ojos? Es el invitado más especial que podemos tener.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Subordinado",
+	"text": "Pero… es un niño.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Jefe",
+	"text": "¿Y cuándo me ha importado la edad?",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Subordinado",
+	"text": "Lleva razón, lo siento señor.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Jefe",
+	"text": "Sabes que no me hace ninguna gracia perder invitados.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "narrator",
+	"text": "[i]Le fulminó con la mirada.[/i]"
+  },
+  {
+	"speaker": "Misterioso_Jefe",
+	"text": "Que no se vuelva a repetir.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Subordinado",
+	"text": "Sí, señor.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Jefe",
+	"text": "Pronto lograremos nuestro objetivo.",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Misterioso_Subordinado",
+	"text": "Sí, señor.",
+	"expression": "idle"
+  },
+  {
+	"hide_character": true
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/hunter_room"
+  },
+  {
+	"music": "Sol3"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me despierto por la mañana un poco confuso de lo que pasó ayer, pero intento que los pensamientos no arruinen mi día. Tengo un día de trabajo muy largo por delante.[/i]"
+  },
+  {
+	"transition": "fade"
+  },
+  {
+	"location": "backgrounds/cafeteria"
+  },
+  {
+	"music": "Everyday_Life"
+  },
+  {
+	"counter": "yes"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Veo como el primer cliente que llega es ni más ni menos que el alcalde. En cuanto entra en la cafetería se acerca al mostrador.[/i]"
+  },
+  {
+	"show_character": "Bastian",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Bastian",
+	"pronouns": {
+	  "male": "¡Buenos días, muchacho! ¿Cómo llevas ese negocio?",
+	  "female": "¡Buenos días, muchacha! ¿Cómo llevas ese negocio?",
+	  "nonbinary": "¡Buenos días, muchache! ¿Cómo llevas ese negocio?"
+	},
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Por ahora bastante bien. La gente de su pueblo es muy amable.",
+	"show_character": "Bastian",
+	"expression": "happy"
+  },
+  {
+  "speaker": "Bastian",
+	"pronouns": {
+	  "male": "Ese es el encanto de este lugar, hijo. Aquí nos conocemos todos y siempre echamos una mano cuando hace falta.",
+	  "female": "Ese es el encanto de este lugar, hija. Aquí nos conocemos todos y siempre echamos una mano cuando hace falta.",
+	  "nonbinary": "Ese es el encanto de este lugar, hije. Aquí nos conocemos todos y siempre echamos una mano cuando hace falta."
+	},
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le sonrío e intento cambiar de tema.[/i]",
+	"show_character": "Bastian",
+	"expression": "happy"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Oye… ¿Está enterado de todas las desapariciones que hay en el pueblo?",
+	"show_character": "Bastian",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]El alcalde me hace una expresión que no sabría leer bien. Fue apenas un instante, pero su sonrisa pareció tensarse.[/i]",
+	"show_character": "Bastian",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Bastian",
+	"pronouns": {
+	  "male": "¿Te refieres a todos los carteles que hay por el pueblo? Anda muchacho, no hagas caso a eso. Son personas que vienen de fuera y los colocan para perjudicar la imagen del pueblo. Aquí no ha desaparecido nadie.",
+	  "female": "¿Te refieres a todos los carteles que hay por el pueblo? Anda muchacha, no hagas caso a eso. Son personas que vienen de fuera y los colocan para perjudicar la imagen del pueblo. Aquí no ha desaparecido nadie.",
+	  "nonbinary": "¿Te refieres a todos los carteles que hay por el pueblo? Anda muchache, no hagas caso a eso. Son personas que vienen de fuera y los colocan para perjudicar la imagen del pueblo. Aquí no ha desaparecido nadie."
+	},
+	"expression": "idle"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "Entiendo que no quiera manchar la imagen del pueblo ante un residente nuevo, pero puede decirme la verdad.",
+	"show_character": "Bastian",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Bastian",
+	"text": "Anda, usa la cabeza un momento. Mira cuántos viejos seguimos rondando por el pueblo. Si la gente desapareciera como cuentan por ahí, ya no quedaría ninguno de nosotros.",
+	"expression": "wink"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Asentí despacio, a pesar de que hay algo en su explicación que no termina de convencerme. Ha respondido demasiado rápido evitando mirarme a los ojos. Fuera lo que fuese, sé que no me está diciendo la verdad.[/i]",
+	"show_character": "Bastian",
+	"expression": "idle"
+  },
+  {
+	"speaker": "Bastian",
+	"pronouns": {
+	  "male": "Venga, te pongo a prueba a ver si estás hecho un camarero de verdad. Quiero el mismo café que pedí el primer día.",
+	  "female": "Venga, te pongo a prueba a ver si estás hecha una camarera de verdad. Quiero el mismo café que pedí el primer día.",
+	  "nonbinary": "Venga, te pongo a prueba a ver si estás heche un camarere de verdad. Quiero el mismo café que pedí el primer día."
+	},
+	"expression": "happy"
+  },
+  {
+	"choices": [
+	  {
+		"text": "Preparar un café solo.",
+		"goto": "alcalde_cafe_a"
+	  },
+	  {
+		"text": "Preparar un capuchino.",
+		"goto": "alcalde_cafe_b"
+	  },
+	  {
+		"text": "Preparar un café con leche.",
+		"goto": "alcalde_cafe_c"
+	  }
+	]
+  },
+  {
+	"anchor": "alcalde_cafe_a"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me dispongo a prepararle un café solo… o al menos creía que era eso lo que había pedido.[/i]"
+  },
+  {
+	"set_var": {
+	  "key": "last_choice",
+	  "value": "cafe_incorrecto"
+	}
+  },
+  {
+	"start_order": [
+      "coffee"
+	],
+	"next_scene_after_order": "day4b_alcalde_post"
+  },
+  {
+	"anchor": "alcalde_cafe_b"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me dispongo a prepararle un capuchino… o al menos creía que era eso lo que había pedido.[/i]"
+  },
+  {
+	"set_var": {
+	  "key": "last_choice",
+	  "value": "cafe_incorrecto"
+	}
+  },
+  {
+	"start_order": [
+      "cappuccino"
+	],
+	"next_scene_after_order": "day4b_alcalde_post"
+  },
+  {
+	"anchor": "alcalde_cafe_c"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Me dispongo a prepararle un café con leche. Estoy seguro de que fue eso lo que pidió.[/i]"
+  },
+  {
+	"set_var": {
+	  "key": "last_choice",
+	  "value": "cafe_correcto"
+	}
+  },
+  {
+	"start_order": [
+	  "coffee_milk"
+	],
+	"next_scene_after_order": "day4b_alcalde_post"
+  }
+]

@@ -74,6 +74,9 @@ var received_emails_status: Dictionary = {}
 # Lista de recetas que el cliente ha pedido actualmente (máximo 4, se limpia al completar la orden).
 var current_order_recipe_ids: Array[String] = []
 
+# Última elección tomada por el jugador (estado temporal, no se guarda en savefile).
+# Se usa para bifurcar el diálogo después de un start_order.
+var last_choice: String = ""
 
 # ====== VALORES POR DEFECTO Y RESET DE SAVEFILE ======
 
