@@ -65,8 +65,7 @@ const CHARACTER_DETAILS : Dictionary = {
 	}, 
 	Name.RONALD: {
 		"name": "Ronald",
-		# TODO: asignarle sprite
-		"sprite_frames": null,
+		"sprite_frames": preload("res://assets/sprites/ronald/ronald_sprites.tres"),
 		# Bus de audio con los efectos propios de Ronald
 		"voice_bus": "VoiceRonald",
 		# Ruta al archivo de voz del personaje
@@ -74,7 +73,7 @@ const CHARACTER_DETAILS : Dictionary = {
 		# Tono de voz de hombre mayor
 		"voice_pitch": 0.92,
 		# TODO: asignarle color
-		"char_color": Color("73a858e6")
+		"char_color": Color("77906ae6")
 	},
 	Name.BASTIAN: {
 		"name": "Bastian",
@@ -85,7 +84,7 @@ const CHARACTER_DETAILS : Dictionary = {
 	},
 	Name.GABRIEL: {
 		"name": "Gabriel",
-		"sprite_frames": preload("res://assets/sprites/jasmine/jasmine_sprites.tres"),
+		"sprite_frames": preload("res://assets/sprites/gabriel/gabriel_sprites.tres"),
 		"voice_bus": "Voices",
 		"voice": "res://assets/audio/voices/voice_base.ogg",
 		"char_color": Color("20183be6")
@@ -116,14 +115,14 @@ const CHARACTER_DETAILS : Dictionary = {
 	"sprite_frames": null,
 	"voice_bus": "Voices",
 	"voice": "res://assets/audio/voices/voice_base.ogg",
-	"char_color": Color("8a1a1ae6")
+	"char_color": Color("412222e6")
 	},
 	Name.MISTERIOSO_SUBORDINADO: {
 	"name": "???",
 	"sprite_frames": null,
 	"voice_bus": "Voices",
 	"voice": "res://assets/audio/voices/voice_base.ogg",
-	"char_color": Color("1a3a8ae6")
+	"char_color": Color("273351e6")
 	},
 	
 }

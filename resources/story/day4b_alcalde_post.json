@@ -9,65 +9,9 @@
 	"counter": "yes"
   },
   {
-	"show_character": "Bastian",
-	"expression": "happy"
-  },
-  {
-	"if_var": {
-	  "key": "last_choice",
-	  "value": "cafe_correcto"
-	},
-	"goto": "alcalde_reaccion_bien"
-  },
-  {
-	"anchor": "alcalde_reaccion_mal"
-  },
-  {
-	"speaker": "Hunter",
-	"text": "[i]Cuando se lo entrego, lo observo durante unos segundos y luego me mira con una expresión extraña.[/i]",
-	"show_character": "Bastian",
-	"expression": "idle"
-  },
-  {
-	"speaker": "Bastian",
-	"pronouns": {
-	  "male": "Ay, hijo, tienes menos memoria que yo. No era eso lo que había pedido, pero no te preocupes. A mi edad uno aprende a no desperdiciar un buen café.",
-	  "female": "Ay, hija, tienes menos memoria que yo. No era eso lo que había pedido, pero no te preocupes. A mi edad uno aprende a no desperdiciar un buen café.",
-	  "nonbinary": "Ay, hije, tienes menos memoria que yo. No era eso lo que había pedido, pero no te preocupes. A mi edad uno aprende a no desperdiciar un buen café."
-	},
-	"expression": "wink"
-  },
-  {
-	"goto": "alcalde_despedida"
-  },
-  {
-	"anchor": "alcalde_reaccion_bien"
-  },
-  {
-	"speaker": "Hunter",
-	"text": "[i]Me dispongo a entregarle el café con leche. Cuando se lo entrego veo como me sonríe.[/i]",
-	"show_character": "Bastian",
-	"expression": "happy"
-  },
-  {
-	"speaker": "Bastian",
-	"pronouns": {
-	  "male": "¡Esto fue lo que pedí! Estás hecho todo un buen camarero.",
-	  "female": "¡Esto fue lo que pedí! Estás hecha toda una buena camarera.",
-	  "nonbinary": "¡Esto fue lo que pedí! Estás heche todo un buen camarere."
-	},
-	"expression": "happy"
-  },
-  {
-	"goto": "alcalde_despedida"
-  },
-  {
-	"anchor": "alcalde_despedida"
-  },
-  {
 	"speaker": "Bastian",
 	"text": "Y no le des muchas vueltas a esas desapariciones, son pamplinas de turistas.",
-	"expression": "idle"
+	"expression": "wink"
   },
   {
 	"speaker": "Hunter",
@@ -77,7 +21,7 @@
 	  "nonbinary": "[i]Le sonrío en respuesta y me despido de él. No sabe que está hablando con une future criminólogue.[/i]"
 	},
 	"show_character": "Bastian",
-	"expression": "idle"
+	"expression": "wink"
   },
   {
 	"hide_character": true
@@ -88,9 +32,6 @@
   },
   {
 	"counter": "no"
-  },
-  {
-	"transition": "fade"
   },
   {
 	"location": "backgrounds/black"
@@ -105,10 +46,14 @@
   {
 	"speaker": "Hunter",
 	"pronouns": {
-	  "male": "[i]Apenas había gente por las calles y, para ser sincero, tampoco encontré nada especialmente interesante. La mayoría de los edificios son casas antiguas, desgastadas por el paso de los años, con fachadas de piedra y tejados envejecidos que parecían llevar allí décadas, quizá incluso siglos.[/i]",
-	  "female": "[i]Apenas había gente por las calles y, para ser sincera, tampoco encontré nada especialmente interesante. La mayoría de los edificios son casas antiguas, desgastadas por el paso de los años, con fachadas de piedra y tejados envejecidos que parecían llevar allí décadas, quizá incluso siglos.[/i]",
-	  "nonbinary": "[i]Apenas había gente por las calles y, para ser sincere, tampoco encontré nada especialmente interesante. La mayoría de los edificios son casas antiguas, desgastadas por el paso de los años, con fachadas de piedra y tejados envejecidos que parecían llevar allí décadas, quizá incluso siglos.[/i]"
+	  "male": "[i]Apenas había gente por las calles y, para ser sincero, tampoco encontré nada especialmente interesante.[/i]",
+	  "female": "[i]Apenas había gente por las calles y, para ser sincera, tampoco encontré nada especialmente interesante.[/i]",
+	  "nonbinary": "[i]Apenas había gente por las calles y, para ser sincere, tampoco encontré nada especialmente interesante.[/i]"
 	}
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]La mayoría de los edificios son casas antiguas, desgastadas por el paso de los años, con fachadas de piedra y tejados envejecidos que parecían llevar allí décadas, quizá incluso siglos.[/i]"
   },
   {
 	"speaker": "Hunter",

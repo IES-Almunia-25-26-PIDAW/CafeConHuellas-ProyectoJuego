@@ -170,7 +170,7 @@
 	"speaker": "Hunter",
 	"text": "[i]Intentando ignorar el sonido, sigo caminando hacia casa. Entre mis pensamientos y el cansancio del día, no tardo en llegar.[/i]"
   },
-  {"location": "backgrounds/animals/grass_food"},
+  {"location": "backgrounds/grass_food"},
   {
 	"speaker": "Hunter",
 	"text": "[i]Al llegar dejo comida y bebida de nuevo por si el gatito quiere volver y doy por finalizado mi día.[/i]"

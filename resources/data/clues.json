@@ -14,5 +14,37 @@
 	"day_found": 3,
 	"related_character": "",
 	"icon": "res://assets/images/icons/clues/clue_icon.png"
-  }
+  },
+  "clue_ataque_ovie": {
+	"id": "clue_ataque_ovie",
+	"title": "Alguien ha atacado a Milo y a Ovie",
+	"description": "¿Quién querría hacerle daño a un gatito y a un niño? ¿Qué tienen que ver los ojos de Ovie...?",
+	"day_found": 3,
+	"related_character": "ovie",
+	"icon": "res://assets/images/icons/clues/clue_icon.png"
+  },
+  "clue_rosario": {
+	"id": "clue_rosario",
+	"title": "Rosario y biblia",
+	"description": "Un rosario junto a una biblia. Creo que todo esto apunta a que la iglesia tiene algo que ver...",
+	"day_found": 4,
+	"related_character": "ronald",
+	"icon": "res://assets/images/icons/clues/clue_icon.png"
+  },
+  "clue_nota_biblia": {
+	"id": "clue_nota_biblia",
+	"title": "Nota dentro de la biblia",
+	"description": "La biblia tenía una nota... «No sigas haciendo esto, nos estás haciendo daño, a tu hija y a mí.»",
+	"day_found": 4,
+	"related_character": "ronald",
+	"icon": "res://assets/images/icons/clues/clue_icon.png"
+  },
+  "clue_jasmine_parecido": {
+	"id": "clue_jasmine_parecido",
+	"title": "Folleto de una mujer desaparecida",
+	"description": "Un folleto de desaparición de una mujer de ojos verdes y pelo rubio platino, es muy parecida a Jasmine...",
+	"day_found": 4,
+	"related_character": "jasmine",
+	"icon": "res://assets/images/icons/clues/clue_icon.png"
+  },
 }

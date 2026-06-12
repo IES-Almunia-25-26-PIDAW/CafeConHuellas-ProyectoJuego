@@ -5,22 +5,14 @@
   {
 	"music": "silence"
   },
+{"counter": "no"},
   {
 	"speaker": "narrator",
 	"text": "[i]Mientras {player_name} volvía a casa, en las profundidades del bosque surgía otra conversación.[/i]"
   },
   {
-	"show_character": "Misterioso_Jefe",
-	"expression": "idle"
-  },
-  {
 	"speaker": "Misterioso_Jefe",
 	"text": "¿Has perdido otra víctima? ¿Qué voy a hacer contigo?",
-	"expression": "idle"
-  },
-  {
-	"show_character": "Misterioso_Subordinado",
-	"expression": "idle"
   },
   {
 	"speaker": "Misterioso_Subordinado",
@@ -29,7 +21,6 @@
 	  "female": "Lo siento, señor... Vi a esa chica llegar y pensé que sería mejor escapar a que me viera.",
 	  "nonbinary": "Lo siento, señor... Vi a ese chique llegar y pensé que sería mejor escapar a que me viera."
 	},
-	"expression": "idle"
   },
   {
 	"speaker": "Misterioso_Jefe",
@@ -38,7 +29,6 @@
 	  "female": "Debo aceptar que esa chica es astuta.",
 	  "nonbinary": "Debo aceptar que ese chique es astute."
 	},
-	"expression": "idle"
   },
   {
 	"speaker": "narrator",
@@ -46,8 +36,7 @@
   },
   {
 	"speaker": "Misterioso_Jefe",
-	"text": "No obstante, cuanto antes deje de ser un problema, mejor para todos.",
-	"expression": "happy"
+	"text": "No obstante, cuanto antes deje de ser un problema, mejor para todos."
   },
   {
 	"speaker": "narrator",
@@ -55,13 +44,11 @@
   },
   {
 	"speaker": "Misterioso_Jefe",
-	"text": "Pero si sigues perdiendo víctimas, esto no funciona.",
-	"expression": "idle"
+	"text": "Pero si sigues perdiendo víctimas, esto no funciona."
   },
   {
 	"speaker": "Misterioso_Subordinado",
-	"text": "Lo siento, señor, intentaré ser rápido y atento.",
-	"expression": "idle"
+	"text": "Lo siento, señor, intentaré ser rápido y atento."
   },
   {
 	"speaker": "narrator",
@@ -69,18 +56,37 @@
   },
   {
 	"speaker": "Misterioso_Jefe",
-	"text": "Espero que sea así, si queremos lograr nuestro objetivo, no podemos permitirnos más errores.",
-	"expression": "idle"
+	"text": "Espero que sea así, si queremos lograr nuestro objetivo, no podemos permitirnos más errores."
   },
   {
 	"speaker": "Misterioso_Jefe",
-	"text": "Y tú... eres importante en esta fórmula, no me hagas hacer algo de lo que me arrepienta.",
-	"expression": "idle"
+	"text": "Y tú... eres importante en esta fórmula, no me hagas hacer algo de lo que me arrepienta."
   },
   {
-	"hide_character": true
+	"location": "backgrounds/black"
   },
   {
+	"speaker": "narrator",
+	"text": "..."
+  },
+  {
+	"speaker": "narrator",
+	"text": "..."
+  },
+  {
+	"speaker": "narrator",
+	"text": "..."
+  },
+  {
+	"speaker": "narrator",
+	"text": "Y esto ha sido todo, por ahora."
+  },
+  {
+	"speaker": "narrator",
+	"text": "¡Gracias por jugar!"
+  },
+  {
+	"end_game": true,
 	"transition": "fade"
   }
 ]

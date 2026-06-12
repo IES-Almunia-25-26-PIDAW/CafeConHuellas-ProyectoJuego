@@ -92,13 +92,14 @@ func process_current_line() -> void:
 		GameState.day = int(line.get("day", GameState.day))
 		var chapter: String = line["video_day_start"]
 		GameState.chapter_id = chapter
-		#GameState.dialogue_index = 0 - si es un nuevo capítulo el índice se pone a 0
+		GameState.dialogue_index = 0 # si es un nuevo capítulo el índice se pone a 0
 		_play_video_transition("res://scenes/cafe_client_zone.tscn", true, "open")
 		return
 	
 	# -- Fin del día: Vídeo de salida + escena a la que ir.
 	if line.has("video_day_end"):
-		_play_video_transition("res://scenes/cafe_client_zone.tscn", false, "closed")
+		var destination: String = line.get("next_scene", "res://scenes/computer/computer_scene.tscn")
+		_play_video_transition(destination, false, "closed")
 		return
 	
 	# -- Guardar el capítulo siguiente para después del ordenador.
@@ -112,7 +113,12 @@ func process_current_line() -> void:
 	# -- Cambio de escena.
 	if line.has("next_scene"):
 		var next_scene = line["next_scene"]
+		
+		GameState.chapter_id = line["next_scene"]
+		GameState.dialogue_index = 0 # resetear el index siempre al cambiar el capítulo
+		
 		dialog_file = "res://resources/story/" + next_scene + ".json" if !next_scene.is_empty() else ""
+		
 		transition_effect = line.get("transition", "fade") # Si no se especifica una transición se usa fade
 		SceneManager.transition_out(transition_effect)
 		return
@@ -239,6 +245,13 @@ func process_current_line() -> void:
 		process_current_line()
 		return
 	
+	# -- Para desbloquear un CG en el GlobalSave.
+	if line.has("unlock_cg"):
+		GlobalSave.unlock_image(line["unlock_cg"])
+		dialog_index += 1
+		process_current_line()
+		return
+	
 	# -- Cambio de día.
 	if line.has("change_day"):
 		GameState.day = int(line["change_day"])
@@ -320,6 +333,19 @@ func process_current_line() -> void:
 		# No hay elección ni línea de diálogo.
 		dialog_index += 1
 		process_current_line()
+	
+	# -- Terminar el juego y volver a la pantalla de título
+	if line.has("end_game"):
+		MusicManager.stop()
+		
+		SceneManager.transition_out_completed.connect(
+			func():
+				SceneManager.change_scene("res://scenes/title_screen.tscn"),
+			CONNECT_ONE_SHOT
+		)
+		
+		SceneManager.transition_out(line.get("transition", "fade"))
+		return
 
 
 # ===== HELPERS =====

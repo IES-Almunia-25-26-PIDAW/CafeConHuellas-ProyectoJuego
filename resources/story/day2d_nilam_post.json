@@ -409,6 +409,6 @@
 	"next_chapter": "day3a_intro"
   },
   {
-	"video_day_end": true, "next_scene": "res://scenes/cafe_client_scene.tscn"
+	"video_day_end": true, "next_scene": "res://scenes/cafe_client_zone.tscn"
   }
 ]

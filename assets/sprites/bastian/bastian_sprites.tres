@@ -7,11 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://wonhkh81ehw1" path="res://assets/sprites/bastian/idle/bastian_1_idle1.png" id="5_w4l43"]
 [ext_resource type="Texture2D" uid="uid://70m2qrg278fg" path="res://assets/sprites/bastian/idle/bastian_1_idle2.png" id="6_kolab"]
 [ext_resource type="Texture2D" uid="uid://bicqjf0alamgp" path="res://assets/sprites/bastian/idle/bastian_1_idle3.png" id="7_0oyb2"]
+[ext_resource type="Texture2D" uid="uid://elgh0gqwymod" path="res://assets/sprites/bastian/serious-idle/bastian_serious_idle1.png" id="8_0oyb2"]
 [ext_resource type="Texture2D" uid="uid://d2msko5wcu3rt" path="res://assets/sprites/bastian/talk/bastian_1_talk1.png" id="8_5tkeu"]
+[ext_resource type="Texture2D" uid="uid://blrcu3a6iuwte" path="res://assets/sprites/bastian/serious-idle/bastian_serious_idle2.png" id="9_5tkeu"]
 [ext_resource type="Texture2D" uid="uid://wqbtih2v51ru" path="res://assets/sprites/bastian/talk/bastian_1_talk2.png" id="9_bkyv6"]
+[ext_resource type="Texture2D" uid="uid://di21rh2wdshi8" path="res://assets/sprites/bastian/serious-idle/bastian_serious_idle3.png" id="10_bkyv6"]
 [ext_resource type="Texture2D" uid="uid://d4k78cqngljvv" path="res://assets/sprites/bastian/talk/bastian_1_talk3.png" id="10_q3d1m"]
+[ext_resource type="Texture2D" uid="uid://ked3r8jl7w27" path="res://assets/sprites/bastian/serious-talk/bastian_serious_talk1.png" id="11_q3d1m"]
 [ext_resource type="Texture2D" uid="uid://b1u3tq5ixo04f" path="res://assets/sprites/bastian/wink-idle/bastian_wink_idle1.png" id="11_s61nt"]
 [ext_resource type="Texture2D" uid="uid://bbo2j7te33bkq" path="res://assets/sprites/bastian/wink-idle/bastian_wink_idle2.png" id="12_b8172"]
+[ext_resource type="Texture2D" uid="uid://no0caprticlt" path="res://assets/sprites/bastian/serious-talk/bastian_serious_talk2.png" id="12_s61nt"]
+[ext_resource type="Texture2D" uid="uid://ctpnjv7i04qhd" path="res://assets/sprites/bastian/serious-talk/bastian_serious_talk3.png" id="13_b8172"]
 [ext_resource type="Texture2D" uid="uid://lgcbyeqgdedq" path="res://assets/sprites/bastian/wink-idle/bastian_wink_idle3.png" id="13_op6ar"]
 [ext_resource type="Texture2D" uid="uid://bqhjtgt5gugxv" path="res://assets/sprites/bastian/wink-talk/bastian_wink_talk1.png" id="14_bu0s4"]
 [ext_resource type="Texture2D" uid="uid://bfksvkratl6hb" path="res://assets/sprites/bastian/wink-talk/bastian_wink_talk2.png" id="15_tfs51"]
@@ -69,6 +75,49 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 20.0,
+"texture": ExtResource("8_0oyb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5tkeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bkyv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5tkeu")
+}],
+"loop": true,
+"name": &"serious-idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0oyb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q3d1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s61nt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b8172")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s61nt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0oyb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b8172")
+}],
+"loop": true,
+"name": &"serious-talk",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,

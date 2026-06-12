@@ -31,19 +31,23 @@ var _next_scene: String = ""
 # Lee los parámetros de cambio de escena.
 func _ready() -> void:
 	SceneManager.transition_in()
-
-	setup(SceneManager.pending_video_next_scene, SceneManager.pending_video_show_day)
 	
-	# Limpiamos los parámetros pendientes tras leerlos.
+	var next_scene := SceneManager.pending_video_next_scene
+	var show_day := SceneManager.pending_video_show_day
+	var animation := SceneManager.pending_video_animation
+	
+	# Limpiamos los parámetros
 	SceneManager.pending_video_next_scene = ""
 	SceneManager.pending_video_show_day = true
 	SceneManager.pending_video_animation = "open"
+
+	setup(next_scene, show_day, animation)
 
 
 # ===== LÓGICA INTERNA =====
 
 # Configura la escena de destino, el label del día y arranca la animación.
-func setup(next_scene: String, show_day: bool = true) -> void:
+func setup(next_scene: String, show_day: bool = true, animation: String = "open") -> void:
 	_next_scene = next_scene
 	
 	# Configurar el label del día.
@@ -57,8 +61,7 @@ func setup(next_scene: String, show_day: bool = true) -> void:
 	
 	# Al terminar la animación cambia de escena.
 	day_animation.animation_finished.connect(_go_to_next_scene)
-	
-	day_animation.play(SceneManager.pending_video_animation)
+	day_animation.play(animation)
 
 # Anima el label del día con fade in, espera y fade out.
 func _animate_day_label() -> void:

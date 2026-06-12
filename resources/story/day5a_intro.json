@@ -1,0 +1,12 @@
+[
+  {"location": "backgrounds/black"},
+  {"music": "silence"},
+  {"counter": "no"},
+  {
+	"hide_character": true
+  },
+  {"change_day": 5},
+  {
+  "video_day_start": "day5a_intro_gabriel"
+  }
+]

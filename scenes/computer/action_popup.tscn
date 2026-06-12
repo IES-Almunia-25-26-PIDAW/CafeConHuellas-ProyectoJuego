@@ -17,6 +17,8 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0.5019608, 0.7490196, 0.98039216, 0.3019608)
 shadow_size = 6
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_iva1b"]
+
 [node name="ActionPopup" type="Control" unique_id=1285974780]
 layout_mode = 3
 anchors_preset = 8
@@ -51,7 +53,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_psm1r")
 unique_name_in_owner = true
 position = Vector2(23, 0)
 scale = Vector2(0.4, 0.4)
-animation = &""
+sprite_frames = SubResource("SpriteFrames_iva1b")
 centered = false
 
 [node name="ActionLabel" type="RichTextLabel" parent="PopupPanel" unique_id=1380801710]

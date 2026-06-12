@@ -106,7 +106,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="CharacterDetail" type="PanelContainer" unique_id=7960279]
-custom_minimum_size = Vector2(500, 420)
+custom_minimum_size = Vector2(550, 420)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -160,6 +160,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5nve5")
 text = "×"
 
 [node name="BodyContainer" type="HBoxContainer" parent="MainVBox" unique_id=398259855]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -170,7 +171,7 @@ custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_constants/separation = 10
+theme_override_constants/separation = 8
 
 [node name="PhotoWrapper" type="PanelContainer" parent="MainVBox/BodyContainer/LeftColumn" unique_id=517297591]
 layout_mode = 2
@@ -186,7 +187,7 @@ stretch_mode = 5
 
 [node name="NameLabel" type="RichTextLabel" parent="MainVBox/BodyContainer/LeftColumn" unique_id=669460007]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 36)
+custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.18, 0.38, 0.6, 1)
 theme_override_fonts/normal_font = ExtResource("2_mnnke")
@@ -200,7 +201,7 @@ vertical_alignment = 1
 
 [node name="DescLabel" type="RichTextLabel" parent="MainVBox/BodyContainer/LeftColumn" unique_id=326633262]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 100)
+custom_minimum_size = Vector2(150, 110)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.28, 0.45, 0.65, 1)

@@ -41,9 +41,6 @@ var _action_popup_instance: Control = null
 # ===== CICLO DE VIDA =====
 
 func _ready() -> void:
-	# TODO: BORRAR, para datos de prueba
-	_setup_test_data()
-	
 	
 	MusicManager.play("npc_theme_bajo")
 	SceneManager.transition_in()
@@ -100,24 +97,6 @@ func _ready() -> void:
 
 
 # ===== LÓGICA INTERNA =====
-
-# TODO: BORRAR, de prueba
-func _setup_test_data() -> void:
-	# Dos mascotas en casa
-	GameState.animals_athome = ["milo", "lupi"]
-	
-	# Dos correos recibidos hoy (day = 1), sin leer
-	GameState.day = 1
-	GameState.received_emails_status = {
-		"email_milo_ovie": "not_read",
-		"email_milo_bad1": "not_read"
-	}
-	
-	# Dos personajes conocidos — los IDs deben coincidir con los del JSON.
-	GameState.characters_met = ["bastian", "jasmine", "ovie", "ronald", "nilam", "berenice", "gabriel"]
-	
-	# Dos pistas encontradas — los IDs deben coincidir con los del JSON.
-	GameState.clues_found = ["clue_cartel_desaparecidos", "clue_sangre_cuenco"]
 
 # Muestra la pestaña seleccionada y actualiza el color de los botones de navegación.
 # Recarga el correo cada vez que se abre para reflejar adopciones recientes.

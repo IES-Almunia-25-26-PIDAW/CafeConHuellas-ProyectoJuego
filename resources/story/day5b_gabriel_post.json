@@ -9,10 +9,6 @@
 	"counter": "yes"
   },
   {
-	"show_character": "Gabriel",
-	"expression": "idle"
-  },
-  {
 	"speaker": "Hunter",
 	"text": "[i]Le entrego el café.[/i]",
 	"show_character": "Gabriel",
@@ -33,14 +29,14 @@
 	"hide_character": true
   },
   {
+	"location": "backgrounds/cafeteria_late"
+  },
+  {
 	"speaker": "Hunter",
-	"text": "[i]El día transcurrió con bastante normalidad. Al cerrar la cafetería y salir a la calle, escuché unos ladridos a lo lejos.[/i]"
+	"text": "[i]El día transcurrió con bastante normalidad.[/i]"
   },
   {
 	"counter": "no"
-  },
-  {
-	"transition": "fade"
   },
   {
 	"location": "backgrounds/forest_night"
@@ -50,14 +46,22 @@
   },
   {
 	"speaker": "Hunter",
+	"text": "[i]Al cerrar la cafetería y salir a la calle, escuché unos ladridos a lo lejos.[/i]"
+  },
+  {
+	"location": "backgrounds/animals/grass_lupi_wtfood"
+  },
+  {
+	"speaker": "Hunter",
 	"text": "[i]Guiado por el sonido, acabé adentrándome un poco en el bosque hasta que me encontré a un perrito.[/i]"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Estaba acurrucado entre la hierba, con el pelaje sucio y una pata levantada, claramente herido. Veo como tiembla sin parar, y cada vez que me acerco un poco, retrocede arrastrándose, soltando un gruñido débil más por miedo que por agresividad.[/i]"
+	"text": "[i]Estaba acurrucado entre la hierba, con el pelaje sucio y una pata levantada, claramente herido.[/i]"
   },
   {
-	"meet_character": "lupi"
+	"speaker": "Hunter",
+	"text": "[i]Veo como tiembla sin parar, y cada vez que me acerco un poco, retrocede arrastrándose, soltando un gruñido débil más por miedo que por agresividad.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -84,6 +88,9 @@
 	"text": "Vamos a mi casa, seguro estarás hambriento."
   },
   {
+	"location": "backgrounds/black"
+  },
+  {
 	"speaker": "Hunter",
 	"text": "[i]Dicho esto, emprendí el camino de vuelta a casa para curarlo y darle de comer. Y así terminar el día… con un hecho extraño más en la lista.[/i]"
   },
@@ -91,7 +98,9 @@
 	"add_pet": "lupi"
   },
   {
-	"next_scene": "day5c_bosque_narrador",
-	"transition": "fade"
+	"next_chapter": "day5c_outro_ending"
+  },
+  {
+	"video_day_end": true
   }
 ]

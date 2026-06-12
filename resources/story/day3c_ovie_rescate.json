@@ -8,6 +8,7 @@
   {
 	"hide_character": true
   },
+{"counter": "no"},
   {
 	"speaker": "Hunter",
 	"text": "[i]La curiosidad termina pudiendo conmigo, así que sigo el sonido hasta que, al pasar por una calle estrecha, veo a una persona en el suelo sollozando.[/i]"
@@ -15,6 +16,7 @@
   {
 	"location": "backgrounds/cgs/cg1_crying_ovie"
   },
+  {"unlock_cg": "cg1_crying_ovie"},
   {
 	"speaker": "Hunter",
 	"text": "[i]Me acerco y al ver quién es me asusto. Es Ovie, está sentado en el suelo llorando mientras parece que está protegiendo algo en sus brazos.[/i]"
@@ -29,7 +31,11 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Le digo con calma aunque un poco preocupado. Él levanta la vista hacia mí entre lágrimas y entonces me doy cuenta de que tiene una mejilla enrojecida, como si alguien le hubiera dado una bofetada.[/i]",
+	"pronouns": {
+	  "male": "[i]Le digo con calma aunque un poco preocupado. Él levanta la vista hacia mí entre lágrimas y entonces me doy cuenta de que tiene una mejilla enrojecida, como si alguien le hubiera dado una bofetada.[/i]",
+	  "female": "[i]Le digo con calma aunque un poco preocupada. Él levanta la vista hacia mí entre lágrimas y entonces me doy cuenta de que tiene una mejilla enrojecida, como si alguien le hubiera dado una bofetada.[/i]",
+	  "nonbinary": "[i]Le digo con calma aunque un poco preocupade. Él levanta la vista hacia mí entre lágrimas y entonces me doy cuenta de que tiene una mejilla enrojecida, como si alguien le hubiera dado una bofetada.[/i]"
+	},
   },
 {
 	"location": "backgrounds/forest_night"
@@ -177,6 +183,7 @@
 	"text": "Gracias, {player_name}. Eres muy amable.",
 	"expression": "happy2"
   },
+{"add_clue": "clue_ataque_ovie"},
   {
 	"speaker": "Hunter",
 	"text": "[i]Mientras voy caminando hacia la dirección que él me va indicando, me va explicando todo lo que ha pasado.[/i]",

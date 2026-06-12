@@ -8,13 +8,18 @@
   {
 	"hide_character": true
   },
+{"counter": "no"},
   {
 	"speaker": "Hunter",
 	"text": "[i]Entramos los tres en la casa, con el gatito todavía acurrucado entre mis brazos. Nada más cruzar la puerta, observo el interior.[/i]"
   },
 {
 	"speaker": "Hunter",
-	"text": "[i]Es una vivienda modesta de dos plantas, acogedora a su manera, aunque algo desordenada. Hay objetos fuera de sitio y algunas cosas desordenadas aquí y allá, dando la impresión de que la gente que vive aquí está demasiado ocupada para preocuparse por mantenerla perfectamente arreglada.[/i]"
+	"text": "[i]Es una vivienda modesta de dos plantas, acogedora a su manera, aunque algo desordenada.[/i]"
+  },
+{
+	"speaker": "Hunter",
+	"text": "[i]Hay objetos fuera de sitio y algunas cosas desordenadas aquí y allá, dando la impresión de que la gente que vive aquí está demasiado ocupada para preocuparse por mantenerla perfectamente arreglada.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -28,12 +33,15 @@
   {
 	"speaker": "Nilam",
 	"text": "Oye, {player_name} ha tenido un día largo en el trabajo.",
-	"show_character": "Nilam",
 	"expression": "2"
   },
   {
 	"speaker": "Nilam",
-	"text": "Y tú mañana tienes colegio. Otro día juegas con él.",
+	"pronouns": {
+	  "male": "Y tú mañana tienes colegio. Otro día juegas con él.",
+	  "female": "Y tú mañana tienes colegio. Otro día juegas con ella.",
+	  "nonbinary": "Y tú mañana tienes colegio. Otro día juegas con elle."
+	},
 	"expression": "2"
   },
   {
@@ -177,7 +185,7 @@
 	"hide_character": true
   },
   {
-	"location": "backgrounds/forest_night_house"
+	"location": "backgrounds/forest_night"
   },
   {
 	"music": "silence"
@@ -660,7 +668,11 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "¡Claro! Vivo solo así que no me importa.",
+	"pronouns": {
+	  "male": "¡Claro! Vivo solo así que no me importa.",
+	  "female": "¡Claro! Vivo sola así que no me importa.",
+	  "nonbinary": "¡Claro! Vivo sole así que no me importa."
+	},
 	"show_character": "Ovie",
 	"expression": "happy2"
   },
@@ -684,13 +696,13 @@
   {
 	"hide_character": true
   },
-{"location": "background/black"},
+{"location": "backgrounds/black"},
   {
 	"speaker": "Hunter",
 	"text": "[i]Después me giro y emprendo el camino de vuelta a casa. El día ha terminado, pero siento que tengo demasiado que procesar.[/i]"
   },
   {
-	"next_chapter": "day4a_intro"
+	"next_chapter": "day4a_intro_misterioso"
   },
   {
 	"video_day_end": true

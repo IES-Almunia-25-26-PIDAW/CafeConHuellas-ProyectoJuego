@@ -1,9 +1,9 @@
 [
   {
-	"location": "backgrounds/library_night"
+	"location": "backgrounds/library"
   },
   {
-	"music": "silence"
+	"music": "npc_theme_bajo"
   },
   {
 	"hide_character": true
@@ -13,7 +13,11 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Al entrar por la puerta, lo primero que vi fue una biblioteca normal y corriente… aunque completamente abandonada. Estaba cubierta de polvo, con estanterías llenas de libros envejecidos y el aire cargado de ese olor a papel viejo y humedad. El silencio era casi absoluto.[/i]"
+	"text": "[i]Al entrar por la puerta, lo primero que vi fue una biblioteca normal y corriente… aunque completamente abandonada.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Estaba cubierta de polvo, con estanterías llenas de libros envejecidos y el aire cargado de ese olor a papel viejo y humedad. El silencio era casi absoluto.[/i]"
   },
   {
 	"speaker": "Hunter",
@@ -22,10 +26,6 @@
   {
 	"speaker": "Hunter",
 	"text": "[i]Al ver quién es me sorprendo un poco. Es Ronald, el chico albino del otro día. Me comentó que estaba interesado también en las desapariciones del pueblo, así que tendría sentido verlo aquí.[/i]"
-  },
-  {
-	"show_character": "Ronald",
-	"expression": "2"
   },
   {
 	"speaker": "Ronald",
@@ -46,7 +46,7 @@
 	"speaker": "Hunter",
 	"text": "¿Cómo me has escuchado?",
 	"show_character": "Ronald",
-	"expression": "2"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -56,18 +56,18 @@
 	"speaker": "Hunter",
 	"text": "Más bien, ¿cómo has sabido que era yo?",
 	"show_character": "Ronald",
-	"expression": "2"
+	"expression": "happy2"
   },
   {
 	"speaker": "Ronald",
-	"text": "En las estanterías hay pocos libros. Te ves a través de ellas.",
-	"expression": "idle"
+	"text": "Te vi a través de las estanterías, entre los libros.",
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"text": "male": "[i]Al darme cuenta me avergüenzo más.[/i]",
+	"text": "[i]Al darme cuenta me avergüenzo más.[/i]",
 	"show_character": "Ronald",
-	"expression": "idle"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
@@ -78,7 +78,7 @@
   {
 	"speaker": "Ronald",
 	"text": "Creo que los dos hemos venido por lo mismo.",
-	"expression": "2"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -100,13 +100,13 @@
   {
 	"speaker": "Ronald",
 	"text": "Bueno, parece que sabes contar.",
-	"expression": "2"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Ronald espetó en voz baja, sin apartar la vista de los papeles. Y yo de nuevo me avergoncé un poco.[/i]",
 	"show_character": "Ronald",
-	"expression": "2"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
@@ -117,11 +117,17 @@
   {
 	"speaker": "Ronald",
 	"text": "Creo que sí, mira.",
+	"expression": "curious"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Ronald me enseña fotos de todos los desaparecidos.[/i]",
+	"show_character": "Ronald",
 	"expression": "curious2"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Ronald me enseña fotos de todos los desaparecidos. En cuanto me lo enseña me doy cuenta de algo: todas las personas desaparecidas tienen algún rasgo fuera de lo común. Albinos, rubios platinos, pelirrojos, con heterocromía.[/i]",
+	"text": "[i]En cuanto me lo enseña me doy cuenta de algo: todas las personas desaparecidas tienen algún rasgo fuera de lo común. Albinos, rubios platinos, pelirrojos, con heterocromía.[/i]",
 	"show_character": "Ronald",
 	"expression": "curious2"
   },
@@ -129,7 +135,7 @@
 	"speaker": "Hunter",
 	"text": "Son diferentes. Como si esa singularidad fuera la clave de su desaparición.",
 	"show_character": "Ronald",
-	"expression": "curious2"
+	"expression": "idle"
   },
   {
 	"speaker": "Ronald",
@@ -145,13 +151,13 @@
   {
 	"speaker": "Ronald",
 	"text": "Si fuera una invitación «a un lugar mejor», habría señales de comunicación previa o repetición de patrones. No las hay. Tal vez algunos fueron voluntarios, pero no pienso que sean todos.",
-	"expression": "curious2"
+	"expression": "serious"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Ronald se acomoda las gafas mientras me mira. Siempre parece como si me estuviera analizando.[/i]",
 	"show_character": "Ronald",
-	"expression": "2"
+	"expression": "serious"
   },
   {
 	"speaker": "Hunter",
@@ -162,7 +168,7 @@
   {
 	"speaker": "Ronald",
 	"text": "De acuerdo.",
-	"expression": "idle"
+	"expression": "happy"
   },
   {
 	"hide_character": true
@@ -177,21 +183,21 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Paso las páginas rápidamente, pues no creo que encontremos nada relevante en una biblia. Hasta que veo un papel sobresalir. Está muy manchado, como si el tiempo lo hubiese deteriorado.[/i]"
+	"text": "[i]Paso las páginas rápidamente, pues no creo que encontremos nada relevante en una biblia.[/i]"
+  },
+ {
+	"speaker": "Hunter",
+	"text": "[i]Hasta que veo un papel sobresalir. Está muy manchado, como si el tiempo lo hubiese deteriorado.[/i]"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]«No sigas haciendo esto, nos estás haciendo daño, a tu hija y a mí.[/i]»"
-  },
-  {
-	"add_clue": "clue_nota_biblia"
+	"text": "[i]«No sigas haciendo esto, nos estás haciendo daño, a tu hija y a mí.»[/i]"
   },
   {
 	"add_clue": "clue_rosario"
   },
   {
-	"show_character": "Ronald",
-	"expression": "curious2"
+	"add_clue": "clue_nota_biblia"
   },
   {
 	"speaker": "Hunter",
@@ -202,7 +208,7 @@
   {
 	"speaker": "Ronald",
 	"text": "Parece que su anterior dueño se dejó una nota personal.",
-	"expression": "curious"
+	"expression": "curious2"
   },
   {
 	"speaker": "Hunter",
@@ -212,9 +218,9 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "¿Y no solo eso. ¿Crees que esto tiene algo que ver?",
+	"text": "Y no solo eso. ¿Crees que esto tiene algo que ver?",
 	"show_character": "Ronald",
-	"expression": "curious2"
+	"expression": "curious"
   },
   {
 	"speaker": "Hunter",
@@ -224,14 +230,19 @@
   },
   {
 	"speaker": "Ronald",
-	"text": "No lo podemos descartar. Que la iglesia esté detrás de un conjunto de desapariciones no es nada nuevo. Según el folklore social de la edad media, la gente diferente, como albinos o pelirrojos, eran perseguidos por motivos como brujería o herejías.",
+	"text": "No lo podemos descartar. Que la iglesia esté detrás de un conjunto de desapariciones no es nada nuevo.",
+	"expression": "curious2"
+  },
+  {
+	"speaker": "Ronald",
+	"text": "Según el folklore social de la edad media, la gente diferente, como albinos o pelirrojos, eran perseguidos por motivos como brujería o herejías.",
 	"expression": "curious2"
   },
   {
 	"speaker": "Hunter",
-	"pronouns": "[i]Le sonrío, parece muy inteligente y sabe muchísimo. Sus mejillas se sonrojan ligeramente al ver que estoy escuchando con atención.[/i]",
+	"text": "[i]Le sonrío, parece muy inteligente y sabe muchísimo. Sus mejillas se sonrojan ligeramente al ver que estoy escuchando con atención.[/i]",
 	"show_character": "Ronald",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
@@ -242,28 +253,34 @@
   {
 	"speaker": "Ronald",
 	"text": "Sí.",
-	"expression": "2"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Hace una pausa y me mira.[/i]",
 	"show_character": "Ronald",
-	"expression": "curious2"
+	"expression": "curious"
   },
   {
 	"speaker": "Ronald",
 	"text": "Además, mira esto.",
-	"expression": "curious2"
+	"expression": "curious"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Al darme cuenta de la persona que sale en el siguiente folleto de desaparición me sorprendo. Es una mujer joven de ojos verdes y pelo rubio platino. Pero eso no es lo que me sorprende: es igual a Jasmine, la chica que vino el otro día a la cafetería.[/i]",
+	"text": "[i]Al darme cuenta de la persona que sale en el siguiente folleto de desaparición me sorprendo.[/i]",
 	"show_character": "Ronald",
 	"expression": "curious2"
   },
   {
 	"speaker": "Hunter",
-	"text": "¿Qué? Es igual a la chica de la floristería.",
+	"text": "[i]Es una mujer joven de ojos verdes y pelo rubio platino. Pero eso no es lo que me sorprende: es igual a Jasmine, la chica que vino el otro día a la cafetería.[/i]",
+	"show_character": "Ronald",
+	"expression": "curious2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "¿Qué? Es igual a la chica de la floristería, Jasmine.",
 	"show_character": "Ronald",
 	"expression": "curious2"
   },
@@ -308,35 +325,35 @@
 	"speaker": "Hunter",
 	"text": "[i]Le sonrío y veo como se vuelve a avergonzar un poco.[/i]",
 	"show_character": "Ronald",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Ronald",
 	"text": "Gracias por decir eso.",
-	"expression": "2"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Hace una pausa y mira hacia abajo.[/i]",
 	"show_character": "Ronald",
-	"expression": "sad"
+	"expression": "idle"
   },
   {
 	"speaker": "Ronald",
 	"text": "A la gente no suele gustarle pasar el rato conmigo.",
-	"expression": "sad"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
 	"text": "No saben lo que se pierden, pareces muy interesante.",
 	"show_character": "Ronald",
-	"expression": "sad"
+	"expression": "curious"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Hago una pausa y pongo una mueca de preocupación por un segundo. Me acabo de dar cuenta de que él es albino.[/i]",
 	"show_character": "Ronald",
-	"expression": "idle"
+	"expression": "curious"
   },
   {
 	"choices": [
@@ -368,17 +385,19 @@
   {
 	"speaker": "Ronald",
 	"text": "¿Por qué piensas que estoy investigando esto? No me gustaría que alguien como yo siguiera sufriendo.",
-	"expression": "sad"
+	"expression": "serious"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]No sé por qué, pero hay algo que me dice que no es su verdadero motivo de investigación.[/i]"
+	"text": "[i]No sé por qué, pero hay algo que me dice que no es su verdadero motivo de investigación.[/i]",
+	"show_character": "Ronald",
+	"expression": "serious"
   },
   {
 	"speaker": "Hunter",
 	"text": "Aun así, ten cuidado.",
 	"show_character": "Ronald",
-	"expression": "happy"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -400,13 +419,13 @@
   {
 	"speaker": "Ronald",
 	"text": "Será más eficiente si tenemos alguna forma de contactarnos.",
-	"expression": "2"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
-	"pronouns": "[i]Al coger el papel y ver que es su número de teléfono me avergüenzo un poco. Intentando que no se me note, lo guardo en el bolsillo.[/i]",
+	"text": "[i]Al coger el papel y ver que es su número de teléfono me avergüenzo un poco. Intentando que no se me note, lo guardo en el bolsillo.[/i]",
 	"show_character": "Ronald",
-	"expression": "2"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
@@ -417,7 +436,7 @@
   {
 	"speaker": "Ronald",
 	"text": "Yo me quedaré un rato más. Ten cuidado tú también. Quizás les llamas la atención.",
-	"expression": "2"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -427,12 +446,12 @@
 	  "nonbinary": "[i]Le miro confuse y veo como sus mejillas se sonrojan un poco.[/i]"
 	},
 	"show_character": "Ronald",
-	"expression": "happy"
+	"expression": "curious"
   },
   {
 	"speaker": "Ronald",
 	"text": "Lo digo… por tus ojos, son muy bonitos.",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
@@ -442,19 +461,19 @@
 	  "nonbinary": "[i]Ahora quien se sonroja soy yo. Le sonrío avergonzade.[/i]"
 	},
 	"show_character": "Ronald",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"speaker": "Hunter",
 	"text": "Muchas gracias, los tuyos también.",
 	"show_character": "Ronald",
-	"expression": "happy"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Ronald me devuelve la sonrisa.[/i]",
 	"show_character": "Ronald",
-	"expression": "happy"
+	"expression": "happy2"
   },
   {
 	"goto": "ronald_despedida"
@@ -464,7 +483,7 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Intento ignorar ese pensamiento, no es tan cercano a mi como para entrometerme. Ronald me mira y me da un papel.[/i]",
+	"text": "[i]Intento ignorar ese pensamiento, no es tan cercano a mí como para entrometerme. Ronald me mira y me da un papel.[/i]",
 	"show_character": "Ronald",
 	"expression": "2"
   },
@@ -477,11 +496,13 @@
   {
 	"speaker": "Ronald",
 	"text": "Por si las cosas se complican, será mejor que tengas mi número.",
-	"expression": "idle"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Parece que me ha leído la expresión de preocupación. Guardo la nota en el bolsillo y le sonrío un poco.[/i]"
+	"text": "[i]Parece que me ha leído la expresión de preocupación. Guardo la nota en el bolsillo y le sonrío un poco.[/i]",
+	"show_character": "Ronald",
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
@@ -503,29 +524,32 @@
   {
 	"speaker": "Ronald",
 	"text": "Si quieres, llévate lo que hemos encontrado.",
-	"expression": "idle"
+	"expression": "happy2"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Le asentí y recogí el folleto sobre las desapariciones, la Biblia, la nota y el rosario.[/i]",
+	"show_character": "Ronald",
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
 	"pronouns": {
-	  "male": "[i]Le asentí y recogí el folleto sobre las desapariciones, la Biblia, la nota y el rosario. No estaba muy convencido de llevarme algunas de esas cosas, especialmente el rosario, que me daba cierto mal rollo, pero prefería examinarlas con calma más tarde.[/i]",
-	  "female": "[i]Le asentí y recogí el folleto sobre las desapariciones, la Biblia, la nota y el rosario. No estaba muy convencida de llevarme algunas de esas cosas, especialmente el rosario, que me daba cierto mal rollo, pero prefería examinarlas con calma más tarde.[/i]",
-	  "nonbinary": "[i]Le asentí y recogí el folleto sobre las desapariciones, la Biblia, la nota y el rosario. No estaba muy convencide de llevarme algunas de esas cosas, especialmente el rosario, que me daba cierto mal rollo, pero prefería examinarlas con calma más tarde.[/i]"
+	  "male": "[i]No estaba muy convencido de llevarme algunas de esas cosas, especialmente el rosario, que me daba cierto mal rollo, pero prefería examinarlas con calma más tarde.[/i]",
+	  "female": "[i]No estaba muy convencida de llevarme algunas de esas cosas, especialmente el rosario, que me daba cierto mal rollo, pero prefería examinarlas con calma más tarde.[/i]",
+	  "nonbinary": "[i]No estaba muy convencide de llevarme algunas de esas cosas, especialmente el rosario, que me daba cierto mal rollo, pero prefería examinarlas con calma más tarde.[/i]"
 	},
 	"show_character": "Ronald",
-	"expression": "idle"
+	"expression": "2"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Después de eso, me despedí de él y abandoné la biblioteca.[/i]",
 	"show_character": "Ronald",
-	"expression": "idle"
+	"expression": "2"
   },
   {
 	"hide_character": true
-  },
-  {
-	"transition": "fade"
   },
   {
 	"location": "backgrounds/hunter_room_night"
@@ -543,14 +567,14 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Antes de acostarme no se me olvida mandarle un mensaje a Ronald. Él me contesta con un sticker.[/i]"
+	"text": "[i]Antes de acostarme no se me olvida mandarle un mensaje a Ronald. Él me contesta con un emoticono.[/i]"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Con un suspiro, apago la luz y me acuesto. Espero que mañana pueda resolver muchas de las dudas que tengo.[/i]",
   },
   {
-	"next_chapter": "day5a_intro_gabriel"
+	"next_chapter": "day5a_intro"
   },
   {
 	"video_day_end": true

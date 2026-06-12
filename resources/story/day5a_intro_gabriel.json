@@ -17,14 +17,15 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Las desapariciones, los extraños secretos del pueblo, todo lo que ha ido ocurriendo hasta ahora y lo que encontramos ayer Ronald y yo. Tengo demasiadas preguntas y muy pocas respuestas. No sé qué pensar, pero algo es seguro: la iglesia tiene algo que ver.[/i]"
+	"text": "[i]Tengo demasiadas preguntas y muy pocas respuestas. No sé qué pensar, pero algo es seguro: la iglesia tiene algo que ver.[/i]"
+  },
+  {
+	"speaker": "Hunter",
+	"text": "[i]Tengo demasiadas preguntas y muy pocas respuestas. No sé qué pensar, pero algo es seguro: la iglesia tiene algo que ver.[/i]"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Intentando no pensar mucho, comienzo mi día como cualquier otro, yendo rumbo a la cafetería.[/i]",
-  },
-  {
-	"transition": "fade"
   },
   {
 	"location": "backgrounds/cafeteria"
@@ -45,10 +46,6 @@
   },
   {
 	"meet_character": "gabriel"
-  },
-  {
-	"show_character": "Gabriel",
-	"expression": "happy"
   },
   {
 	"speaker": "Gabriel",
@@ -84,7 +81,8 @@
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]No me da muy buena espina.[/i]"
+	"text": "[i]No me da muy buena espina.[/i]",
+	"expression": "idle"
   },
   {
 	"speaker": "Gabriel",
@@ -114,19 +112,19 @@
 	"speaker": "Hunter",
 	"text": "[i]Me sonríe. De nuevo, con esa sonrisa extraña. No sé cómo preguntarle lo de las desapariciones.[/i]",
 	"show_character": "Gabriel",
-	"expression": "idle"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
 	"text": "Siento si la pregunta está fuera de lugar pero… Usted llevará años aquí, ¿está enterado de las desapariciones de personas y animales?",
 	"show_character": "Gabriel",
-	"expression": "idle"
+	"expression": "serious"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Veo como guarda silencio por unos segundos.[/i]",
 	"show_character": "Gabriel",
-	"expression": "idle"
+	"expression": "serious"
   },
   {
 	"speaker": "Gabriel",
@@ -142,18 +140,18 @@
   {
 	"speaker": "Gabriel",
 	"text": "Y la curiosidad suele traer problemas, especialmente cuando uno no conoce el lugar en el que se encuentra y se mete en donde no le llaman.",
-	"expression": "idle"
+	"expression": "serious"
   },
   {
 	"speaker": "Hunter",
 	"text": "[i]Me observa sin parpadear. Me da un poco de escalofríos.[/i]",
 	"show_character": "Gabriel",
-	"expression": "idle"
+	"expression": "serious"
   },
   {
 	"speaker": "Gabriel",
 	"text": "¿Has estado investigando entonces?",
-	"expression": "curious"
+	"expression": "idle"
   },
   {
 	"speaker": "Hunter",
@@ -170,16 +168,18 @@
 	"speaker": "Hunter",
 	"text": "[i]Hizo una pausa observándome.[/i]",
 	"show_character": "Gabriel",
-	"expression": "curious"
+	"expression": "idle"
   },
   {
 	"speaker": "Gabriel",
 	"text": "Pero, dime, {player_name}, ¿qué te ha llevado exactamente a interesarte tanto por este tema?",
-	"expression": "curious"
+	"expression": "serious"
   },
   {
 	"speaker": "Hunter",
-	"text": "[i]Trago saliva. No puedo contarle mucho y menos cuando es sospechoso.[/i]"
+	"text": "[i]Trago saliva. No puedo contarle mucho y menos cuando es sospechoso.[/i]",
+	"show_character": "Gabriel",
+	"expression": "serious"
   },
   {
 	"speaker": "Hunter",
@@ -196,7 +196,7 @@
 	"speaker": "Hunter",
 	"text": "[i]Me sonríe de nuevo. Ahora parece contradictorio. Intento cambiar de tema.[/i]",
 	"show_character": "Gabriel",
-	"expression": "idle"
+	"expression": "happy"
   },
   {
 	"speaker": "Hunter",
@@ -207,7 +207,7 @@
   {
 	"speaker": "Gabriel",
 	"text": "Claro, un café solo.",
-	"expression": "idle"
+	"expression": "happy"
   },
   {
 	"start_order": [

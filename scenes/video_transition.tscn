@@ -11,6 +11,7 @@ script = ExtResource("1_6yl7j")
 [node name="DayAnimation" type="AnimatedSprite2D" parent="." unique_id=1694334349]
 unique_name_in_owner = true
 sprite_frames = ExtResource("2_3fjla")
+animation = &"closed"
 centered = false
 
 [node name="DayLabel" type="RichTextLabel" parent="." unique_id=1141772174]

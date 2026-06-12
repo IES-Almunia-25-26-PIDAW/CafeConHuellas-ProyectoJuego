@@ -3,9 +3,9 @@
 	"id": "email_milo_ovie",
 	"day": 5,
 	"animal_id": "milo",
-	"sender_name": "Nilam",
+	"sender_name": "Nilam Kaloki",
 	"subject": "Qiero adoptar a Milo",
-	"body": "miau",
+	"body": "Holaa!!! Soy Nilam :-)!! Quiero adoptar a Milo, se qe dije el otro día que no podiamos tener mascotaz en casa, pero e cambiado de opinuin porque Ovie sta muy triste sin él! Grasias por leerme, espero ver a Milo prontito ^^",
 	"is_good_decision": true
   },
   "email_milo_bad1": {
@@ -13,8 +13,8 @@
 	"day": 5,
 	"animal_id": "milo",
 	"sender_name": "Sr. Gómez",
-	"subject": "Solicitud de adopción para Milo",
-	"body": "miau",
+	"subject": "Interesado en adoptar a Milo",
+	"body": "Hola, estoy interesado en adoptar a Milo. Siempre me han gustado los gatos negros y sus bonitos ojos y pelaje se verían geniales en mis fotos de redes sociales. Suelo trabajar muchas horas fuera de casa pero no creo que sea un problema para el gato, se las arreglan bien ellos solos. Quedo atento a tu respuesta.",
 	"is_good_decision": false
   }
 }

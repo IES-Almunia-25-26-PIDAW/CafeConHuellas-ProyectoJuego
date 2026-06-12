@@ -4,6 +4,26 @@
 [ext_resource type="FontFile" uid="uid://kmb7gfn44fgk" path="res://assets/fonts/Fredoka-Medium.ttf" id="3_qfih0"]
 [ext_resource type="FontFile" uid="uid://crq1nva6wem8r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="4_h8tvk"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uanhq"]
+bg_color = Color(0.07, 0.07, 0.07, 0.627451)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfih0"]
+bg_color = Color(0.07058824, 0.07058824, 0.07058824, 0.627451)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8tvk"]
+bg_color = Color(0.3290106, 0.3290106, 0.3290106, 0.627451)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
 [node name="CgViewer" type="Control" unique_id=1328507022]
 layout_mode = 3
 anchors_preset = 15
@@ -51,7 +71,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_fonts/normal_font = ExtResource("3_qfih0")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 35
 text = "Image Title"
 scroll_active = false
 horizontal_alignment = 1
@@ -63,6 +83,7 @@ custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("3_qfih0")
+theme_override_font_sizes/normal_font_size = 22
 text = "Image Description
 Image Desc
 a"
@@ -72,10 +93,14 @@ vertical_alignment = 1
 [node name="CloseButton" type="Button" parent="PanelContainer/ImageInfo" unique_id=876765348]
 unique_name_in_owner = true
 z_index = 1
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(180, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("4_h8tvk")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_uanhq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qfih0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h8tvk")
 text = "Cerrar
 "

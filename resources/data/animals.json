@@ -4,7 +4,7 @@
 		"name": "Milo",
 		"species": "cat",
 		"gender": "male",
-		"description": "Un gato tranquilo y cariñoso que Ovie rescató de un hombre encapuchado.",
+		"description": "Un gato tranquilo y cariñoso que Ovie rescató de un hombre misterioso que le estaba haciendo daño.",
 		"appears_on_day": 3,
 		"image_path": "res://assets/sprites/animals/milo/milo_icon.png"
 	},
@@ -13,7 +13,7 @@
 		"name": "Lupi",
 		"species": "dog",
 		"gender": "male",
-		"description": "Un perro revoltoso y juguetón que encontró Jasmine en el bosque.",
+		"description": "Un perro revoltoso y juguetón que encontraste en el bosque con una pata herida.",
 		"appears_on_day": 5,
 		"image_path": "res://assets/sprites/animals/lupi/lupi_icon.png"
 	},
